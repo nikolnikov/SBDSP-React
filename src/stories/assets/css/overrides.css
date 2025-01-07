@@ -1,3 +1,6 @@
+@import url('https://ds.cdn.questdiagnostics.com/DSP-Core.css');
+/* @import '../../../../../core-styles/Pro/dist/DSP-Core.css'; */
+
 h1.sbdocs-title,
 h2#stories,
 .sbdocs.sbdocs-content div:has(~ h2#stories) {
