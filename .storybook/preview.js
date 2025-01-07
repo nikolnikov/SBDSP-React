@@ -1,4 +1,3 @@
-import '!style-loader!css-loader!sass-loader!../../core-styles/Pro/dist/DSP-Core.css';
 import '!style-loader!css-loader!sass-loader!/src/stories/assets/css/overrides.css';
 
 /** @type { import('@storybook/react').Preview } */
