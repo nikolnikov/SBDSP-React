@@ -1,5 +1,5 @@
-/* @import url('https://qd-designsystem.s3.us-east-2.amazonaws.com/DSP-Core.css'); */
-@import '../../../../../core-styles/Pro/dist/DSP-Core.css';
+@import url('https://qd-designsystem.s3.us-east-2.amazonaws.com/DSP-Core.css');
+/* @import '../../../../../core-styles/Pro/dist/DSP-Core.css'; */
 
 h1.sbdocs-title,
 h2#stories,
