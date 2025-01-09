@@ -3,7 +3,7 @@ import { Canvas, Unstyled } from '@storybook/blocks';
 import { Button } from './Button';
 
 export default {
-    title: 'Components/Button/HTML',
+    title: 'Components/Button/Angular',
     component: Button,
     parameters: {
         layout: 'centered',

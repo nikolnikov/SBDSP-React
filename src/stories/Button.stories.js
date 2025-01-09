@@ -46,7 +46,7 @@ export default {
             )
         }
     },
-    tags: ['autodocs']
+    tags: ['autodocs', '!dev']
 };
 
 const Template = args => <Button {...args} />;

@@ -17,7 +17,7 @@ export default {
             page: () => (
                 <>
                     <Unstyled>
-                        <h3 className="title">Single</h3>
+                        <h3 className="title">Single accordion</h3>
                         <p>Accordion with single item expanded.</p>
                     </Unstyled>
                     <Canvas
@@ -50,7 +50,7 @@ export default {
                     />
 
                     <Unstyled>
-                        <h3 className="title">Multiple</h3>
+                        <h3 className="title">Multiple accordion</h3>
                         <p>
                             Accordion with multiple items expanded
                             simultaneously.

@@ -59,11 +59,9 @@ export default {
 const Template = args => <Autocomplete {...args} />;
 
 export const Primary = Template.bind({});
-Primary.parameters = {
-    storyName: 'Accordion with single item expanded.'
-};
+Primary.storyName = 'Autocomplete';
 Primary.args = {
-    label: 'Input Label',
+    label: 'Input label',
     getSelection: selection => {
         console.log(selection);
     },
@@ -72,8 +70,9 @@ Primary.args = {
 };
 
 export const PrimaryRequired = Template.bind({});
+PrimaryRequired.storyName = 'Autocomplete required';
 PrimaryRequired.args = {
-    label: 'Input Label',
+    label: 'Input label',
     getSelection: selection => {
         console.log(selection);
     },
@@ -83,12 +82,50 @@ PrimaryRequired.args = {
 };
 
 export const PrimaryDisabled = Template.bind({});
+PrimaryDisabled.storyName = 'Autocomplete disabled';
 PrimaryDisabled.args = {
-    label: 'Input Label',
+    label: 'Input label',
     getSelection: selection => {
         console.log(selection);
     },
     inputId: 'input-id',
     isDisabled: true,
+    optionList: options
+};
+
+export const PrimaryWithIcon = Template.bind({});
+PrimaryWithIcon.storyName = 'Autocomplete with search icon';
+PrimaryWithIcon.args = {
+    label: 'Input label',
+    getSelection: selection => {
+        console.log(selection);
+    },
+    inputId: 'input-id',
+    optionList: options,
+    searchIcon: true
+};
+
+export const PrimaryWithError = Template.bind({});
+PrimaryWithError.storyName = 'Autocomplete with error';
+PrimaryWithError.args = {
+    label: 'Input label',
+    errorMessage: 'Error message goes here.',
+    getSelection: selection => {
+        console.log(selection);
+    },
+    hasError: true,
+    inputId: 'input-id',
+    optionList: options
+};
+
+export const PrimaryWithHint = Template.bind({});
+PrimaryWithHint.storyName = 'Autocomplete with hint';
+PrimaryWithHint.args = {
+    label: 'Input label',
+    hintMessage: 'Hint message goes here.',
+    getSelection: selection => {
+        console.log(selection);
+    },
+    inputId: 'input-id',
     optionList: options
 };

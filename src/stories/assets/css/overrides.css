@@ -1,5 +1,5 @@
-@import url('https://ds.cdn.questdiagnostics.com/DSP-Core.css');
-/* @import '../../../../../core-styles/Pro/dist/DSP-Core.css'; */
+/* @import url('https://qd-designsystem.s3.us-east-2.amazonaws.com/DSP-Core.css'); */
+@import '../../../../../core-styles/Pro/dist/DSP-Core.css';
 
 h1.sbdocs-title,
 h2#stories,
@@ -40,12 +40,16 @@ h2.sbdocs-subtitle {
 }
 
 h2.sbdocs-subtitle h4 {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
     margin: 0;   
 }
 
+.sbdocs h3,
 h3.title {
-    font-family: "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 20px;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 16px;
     margin: 20px 0 8px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -55,8 +59,12 @@ h3.title {
     cursor: text;
     position: relative;
     color: #2E3438;
-    font-weight: 700;
+    font-weight: 500;
+    text-transform: lowercase;
 }
+
+.sbdocs h3::first-letter,
+h3.title::first-letter { text-transform: uppercase }
 
 .sb-unstyled:first-of-type h3.title {
     margin: 0;
@@ -67,6 +75,8 @@ h3.title {
 }
 
 .ds-list li {
+    font: 15px 'Roboto', sans-serif;
+    line-height: 150%;
     padding: 0;
 }
 
