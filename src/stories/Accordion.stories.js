@@ -20,7 +20,7 @@ export default {
 
                     <Subtitle>
                         <div className="props-card">
-                            <h4>Available Props:</h4>
+                            <h4>Available props</h4>
                             <ul className="ds-list">
                                 <li>customClasses: PropTypes.string,</li>
                                 <li>openSingleItem: PropTypes.bool,</li>

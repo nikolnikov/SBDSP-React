@@ -1,5 +1,5 @@
-@import url('https://qd-designsystem.s3.us-east-2.amazonaws.com/DSP-Core.css');
-/* @import '../../../../../core-styles/Pro/dist/DSP-Core.css'; */
+/* @import url('https://qd-designsystem.s3.us-east-2.amazonaws.com/DSP-Core.css'); */
+@import '../../../../../core-styles/Pro/dist/DSP-Core.css';
 
 h1.sbdocs-title,
 h2#stories,
@@ -13,6 +13,26 @@ h2#stories,
 
 .sbdocs.sb-unstyled {
     margin: 16px 0 24px;
+    overflow: visible !important
+}
+
+.sbdocs.sb-unstyled .docs-story {
+    border-radius: 4px;
+}
+
+.sbdocs.sb-unstyled .docs-story:has(+ .css-1xrl4hz) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.docs-story,
+.docs-story > div {
+    overflow: visible !important;
+}
+
+.docs-story div[scale],
+.docs-story:not(.sb-story *)    {
+    transform: none !important;
 }
 
 .docs-story > div > div,
@@ -84,12 +104,19 @@ h3.title::first-letter { text-transform: uppercase }
     border-radius: 4px 0 0 0;
 }
 
+.docs-story .ds-input,
+.docs-story .ds-input__select,
+.docs-story .ds-textarea {
+    min-width: 300px;
+}
+
 .sbdocs-preview.sb-unstyled {
     background-color: #fafafa !important;
 }
 
-.sb-anchor[id*='-inverse'] .sbdocs-preview.sb-unstyled,
-.sbdocs-preview.sb-unstyled.inverse {
+.dark-bg .sbdocs-preview.sb-unstyled .docs-story,
+.sb-anchor[id*='-inverse'] .sbdocs-preview.sb-unstyled .docs-story,
+.sbdocs-preview.sb-unstyled.inverse .docs-story {
     background-color: #023616 !important;
 }
 
