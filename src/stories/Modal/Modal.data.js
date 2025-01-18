@@ -1,8 +1,36 @@
-export const ModalData = [
+export const Tabs = [
+    {
+        title: 'React'
+    },
+    {
+        title: 'Angular',
+        subtabs: [
+            {
+                title: 'component.html'
+            },
+            {
+                title: 'component.ts'
+            }
+        ]
+    },
+    {
+        title: 'HTML'
+    }
+];
+
+export const StoryData = [
     {
         title: 'Modal',
         template: 'Primary',
         reactCode: `
+import React, { useState } from 'react';
+import Modal from '@ds-react/pro/Modal';
+
+const [showModal, setShowModal] = useState(false);
+const closeModal = () => {
+    setShowModal(false);
+};
+
 <Modal
     buttonHandler={() => {}}
     buttonLabel="Button"
@@ -67,6 +95,14 @@ async launchDialog() {
         title: 'Modal with status icon',
         template: 'PrimaryStatus',
         reactCode: `
+import React, { useState } from 'react';
+import Modal from '@ds-react/pro/Modal';
+
+const [showModal, setShowModal] = useState(false);
+const closeModal = () => {
+    setShowModal(false);
+};
+
 <Modal
     buttonHandler={() => {}}
     buttonLabel="Button"
@@ -132,6 +168,14 @@ async launchDialog() {
         title: 'Modal with secondary button',
         template: 'PrimarySecondaryButton',
         reactCode: `
+import React, { useState } from 'react';
+import Modal from '@ds-react/pro/Modal';
+
+const [showModal, setShowModal] = useState(false);
+const closeModal = () => {
+    setShowModal(false);
+};
+
 <Modal
     buttonHandler={() => {}}
     buttonLabel="Button"
@@ -210,6 +254,14 @@ async launchDialog() {
         title: 'Modal with ghost button',
         template: 'PrimaryGhostButton',
         reactCode: `
+import React, { useState } from 'react';
+import Modal from '@ds-react/pro/Modal';
+
+const [showModal, setShowModal] = useState(false);
+const closeModal = () => {
+    setShowModal(false);
+};
+
 <Modal
     buttonHandler={() => {}}
     buttonLabel="Button"
@@ -284,6 +336,14 @@ async launchDialog() {
         title: 'Modal with all buttons',
         template: 'PrimaryAllButtons',
         reactCode: `
+import React, { useState } from 'react';
+import Modal from '@ds-react/pro/Modal';
+
+const [showModal, setShowModal] = useState(false);
+const closeModal = () => {
+    setShowModal(false);
+};
+
 <Modal
     buttonHandler={() => {}}
     buttonLabel="Button"
@@ -372,6 +432,14 @@ async launchDialog() {
         title: 'Modal with scrollable content',
         template: 'PrimaryScrollable',
         reactCode: `
+import React, { useState } from 'react';
+import Modal from '@ds-react/pro/Modal';
+
+const [showModal, setShowModal] = useState(false);
+const closeModal = () => {
+    setShowModal(false);
+};
+
 <Modal
     buttonHandler={() => {}}
     buttonLabel="Button"

@@ -1,118 +1,141 @@
 import React, { useState } from 'react';
 import { Source, Story, Subtitle, Unstyled } from '@storybook/blocks';
 import { Modal } from './Modal';
-import { ModalData } from './Modal.data';
+import { StoryData, Tabs } from './Modal.data';
 
 export const StoryDocs = () => {
     const [activeTabs, setActiveTabs] = useState({});
 
     const handleTabClick = (itemKey, tabKey) => {
-        setActiveTabs(prevState => ({
-            ...prevState,
-            [itemKey]: tabKey
-        }));
+        setActiveTabs(prevState => {
+            const newState = { ...prevState, [itemKey]: tabKey };
+            if (
+                tabKey === 'Angular' &&
+                Tabs.find(tab => tab.title === 'Angular').subtabs
+            ) {
+                newState[`${itemKey}-subtab`] = Tabs.find(
+                    tab => tab.title === 'Angular'
+                ).subtabs[0].title;
+            }
+            return newState;
+        });
     };
 
     return (
         <>
-            {Object.keys(ModalData).map(
+            {Object.keys(StoryData).map(
                 key =>
-                    ModalData[key] && (
+                    StoryData[key] && (
                         <div className="ds-story" key={key}>
                             <Unstyled className="ds-story__header">
-                                <h3>{ModalData[key].title}</h3>
+                                <h3>{StoryData[key].title}</h3>
                             </Unstyled>
 
                             <div className="ds-story__canvas">
                                 <div className="ds-story__preview">
-                                    {ModalData[key].template && (
-                                        <Story of={ModalData[key].template} />
+                                    {StoryData[key].template === 'Primary' && (
+                                        <Story of={Primary} />
+                                    )}
+                                    {StoryData[key].template ===
+                                        'PrimaryStatus' && (
+                                        <Story of={PrimaryStatus} />
+                                    )}
+                                    {StoryData[key].template ===
+                                        'PrimarySecondaryButton' && (
+                                        <Story of={PrimarySecondaryButton} />
+                                    )}
+                                    {StoryData[key].template ===
+                                        'PrimaryGhostButton' && (
+                                        <Story of={PrimaryGhostButton} />
+                                    )}
+                                    {StoryData[key].template ===
+                                        'PrimaryAllButtons' && (
+                                        <Story of={PrimaryAllButtons} />
+                                    )}
+                                    {StoryData[key].template ===
+                                        'PrimaryScrollable' && (
+                                        <Story of={PrimaryScrollable} />
                                     )}
                                 </div>
 
-                                <div className="ds-story__source">
-                                    <div
-                                        className={
-                                            `ds-story__tabs` +
-                                            (activeTabs[key]
-                                                ? ' tabs-shown'
-                                                : '')
-                                        }
-                                    >
-                                        {Object.keys(ModalData).map(
-                                            tabKey =>
-                                                ModalData[tabKey] && (
+                                <div
+                                    className={
+                                        `ds-story__tabs` +
+                                        (activeTabs[key] ? ' tabs-shown' : '')
+                                    }
+                                >
+                                    {Tabs.map(tab => (
+                                        <button
+                                            key={tab.title}
+                                            className={`ds-story__tab ${activeTabs[key] === tab.title ? 'active' : ''}`}
+                                            onClick={() =>
+                                                handleTabClick(key, tab.title)
+                                            }
+                                        >
+                                            {tab.title}
+                                        </button>
+                                    ))}
+                                </div>
+
+                                {Tabs.map(
+                                    tab =>
+                                        tab.subtabs &&
+                                        activeTabs[key] === tab.title && (
+                                            <div
+                                                className="ds-story__subtabs"
+                                                key={tab.title}
+                                            >
+                                                {tab.subtabs.map(subtab => (
                                                     <button
-                                                        key={tabKey}
-                                                        className={`ds-story__tab ${activeTabs[key] === tabKey ? 'active' : ''}`}
+                                                        key={subtab.title}
+                                                        className={`ds-story__tab ${activeTabs[`${key}-subtab`] === subtab.title ? 'active' : ''}`}
                                                         onClick={() =>
                                                             handleTabClick(
-                                                                key,
-                                                                tabKey
+                                                                `${key}-subtab`,
+                                                                subtab.title
                                                             )
                                                         }
                                                     >
-                                                        {tabKey}
+                                                        {subtab.title}
                                                     </button>
-                                                )
-                                        )}
-                                    </div>
+                                                ))}
+                                            </div>
+                                        )
+                                )}
 
-                                    {(activeTabs[key] === 'Angular' ||
-                                        activeTabs[key] === 'TS') && (
-                                        <div className="ds-story__subtabs">
-                                            <button
-                                                className={`ds-story__tab ${activeTabs[key] === 'Angular' ? 'active' : ''}`}
-                                                onClick={() =>
-                                                    handleTabClick(
-                                                        key,
-                                                        'Angular'
-                                                    )
-                                                }
-                                            >
-                                                component.html
-                                            </button>
-
-                                            <button
-                                                className={`ds-story__tab ${activeTabs[key] === 'TS' ? 'active' : ''}`}
-                                                onClick={() =>
-                                                    handleTabClick(key, 'TS')
-                                                }
-                                            >
-                                                component.ts
-                                            </button>
-                                        </div>
-                                    )}
-
+                                <div className="ds-story__source">
                                     {activeTabs[key] === 'React' &&
-                                        ModalData[key].reactCode && (
+                                        StoryData[key].reactCode && (
                                             <Source
+                                                dark
+                                                code={StoryData[key].reactCode}
+                                            />
+                                        )}
+                                    {activeTabs[key] === 'Angular' &&
+                                        activeTabs[`${key}-subtab`] ===
+                                            'component.html' &&
+                                        StoryData[key].angularCode && (
+                                            <Source
+                                                dark
                                                 code={
-                                                    ModalData[key].reactCode[0]
+                                                    StoryData[key].angularCode
                                                 }
                                             />
                                         )}
                                     {activeTabs[key] === 'Angular' &&
-                                        ModalData[key].angularCode && (
+                                        activeTabs[`${key}-subtab`] ===
+                                            'component.ts' &&
+                                        StoryData[key].tsCode && (
                                             <Source
-                                                code={
-                                                    ModalData[key]
-                                                        .angularCode[0]
-                                                }
-                                            />
-                                        )}
-                                    {activeTabs[key] === 'TS' &&
-                                        ModalData[key].tsCode && (
-                                            <Source
-                                                code={ModalData[key].tsCode[0]}
+                                                dark
+                                                code={StoryData[key].tsCode}
                                             />
                                         )}
                                     {activeTabs[key] === 'HTML' &&
-                                        ModalData[key].htmlCode && (
+                                        StoryData[key].htmlCode && (
                                             <Source
-                                                code={
-                                                    ModalData[key].htmlCode[0]
-                                                }
+                                                dark
+                                                code={StoryData[key].htmlCode}
                                             />
                                         )}
                                 </div>
