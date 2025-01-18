@@ -18,7 +18,7 @@ export default {
             page: () => (
                 <>
                     <Unstyled>
-                        <h3 className="title">Input</h3>
+                        <h3 className="title">Input select</h3>
                     </Unstyled>
                     <Canvas
                         of={Primary}
@@ -28,7 +28,13 @@ export default {
     <mat-label class="ds-input__label">
         <span>Input label</span>
     </mat-label>
-    <input matInput />
+    <mat-select placeholder="Select an option" disableOptionCentering panelClass="ds-dropdown">
+        <mat-option class="ds-dropdown__item" value="1">Last 1 Day</mat-option>
+        <mat-option class="ds-dropdown__item" value="2">Last 2 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="3">Last 3 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="4">Last 4 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="5">Last 5 Days</mat-option>
+    </mat-select>
 </mat-form-field>
 `
                         }}
@@ -45,7 +51,13 @@ export default {
     <mat-label class="ds-input__label">
         <span>Input label</span>
     </mat-label>
-    <input matInput />
+    <mat-select placeholder="Select an option" disableOptionCentering panelClass="ds-dropdown">
+        <mat-option class="ds-dropdown__item" value="1">Last 1 Day</mat-option>
+        <mat-option class="ds-dropdown__item" value="2">Last 2 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="3">Last 3 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="4">Last 4 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="5">Last 5 Days</mat-option>
+    </mat-select>
 </mat-form-field>
 `
                         }}
@@ -62,7 +74,13 @@ export default {
     <mat-label class="ds-input__label">
         <span>Input label</span>
     </mat-label>
-    <input matInput disabled />
+    <mat-select placeholder="Select an option" disableOptionCentering panelClass="ds-dropdown" disabled>
+        <mat-option class="ds-dropdown__item" value="1">Last 1 Day</mat-option>
+        <mat-option class="ds-dropdown__item" value="2">Last 2 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="3">Last 3 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="4">Last 4 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="5">Last 5 Days</mat-option>
+    </mat-select>
 </mat-form-field>
 `
                         }}
@@ -79,7 +97,13 @@ export default {
     <mat-label class="ds-input__label">
         <span>Input label</span>
     </mat-label>
-    <input matInput />
+    <mat-select placeholder="Select an option" disableOptionCentering panelClass="ds-dropdown">
+        <mat-option class="ds-dropdown__item" value="1">Last 1 Day</mat-option>
+        <mat-option class="ds-dropdown__item" value="2">Last 2 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="3">Last 3 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="4">Last 4 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="5">Last 5 Days</mat-option>
+    </mat-select>
     <div class="ds-input__error">
         Error message goes here.
     </div>
@@ -99,7 +123,13 @@ export default {
     <mat-label class="ds-input__label">
         <span>Input label</span>
     </mat-label>
-    <input matInput />
+    <mat-select placeholder="Select an option" disableOptionCentering panelClass="ds-dropdown">
+        <mat-option class="ds-dropdown__item" value="1">Last 1 Day</mat-option>
+        <mat-option class="ds-dropdown__item" value="2">Last 2 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="3">Last 3 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="4">Last 4 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="5">Last 5 Days</mat-option>
+    </mat-select>
     <div class="ds-input__hint">
         Hint message goes here.
     </div>
@@ -118,11 +148,17 @@ export default {
 <mat-form-field class="ds-input">
     <mat-label class="ds-input__label">
         <span>Input label</span>
-        <button class="ds-button --icon --sm" aria-label="button text" matTooltip="Tooltip message goes here" matTooltipPosition="above">
+        <button class="ds-button --icon --sm" aria-label="button text" matTooltip="Tooltip goes here" matTooltipPosition="above">
             <span class="ds-icon--info" aria-label="ds-icon--info"></span>
         </button>
     </mat-label>
-    <input matInput />
+    <mat-select placeholder="Select an option" disableOptionCentering panelClass="ds-dropdown">
+        <mat-option class="ds-dropdown__item" value="1">Last 1 Day</mat-option>
+        <mat-option class="ds-dropdown__item" value="2">Last 2 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="3">Last 3 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="4">Last 4 Days</mat-option>
+        <mat-option class="ds-dropdown__item" value="5">Last 5 Days</mat-option>
+    </mat-select>
 </mat-form-field>
 `
                         }}
@@ -149,55 +185,40 @@ Primary.args = {
 export const PrimaryRequired = Template.bind({});
 PrimaryRequired.storyName = 'Input select required';
 PrimaryRequired.args = {
+    ...Primary.args,
     inputId: 'input-2',
-    label: 'Input label',
-    isRequired: true,
-    onChange: value => console.log(value),
-    options: inputSelectOptions,
-    placeholder: 'Select an option'
+    isRequired: true
 };
 
 export const PrimaryDisabled = Template.bind({});
 PrimaryDisabled.storyName = 'Input select disabled';
 PrimaryDisabled.args = {
+    ...Primary.args,
     inputId: 'input-3',
-    label: 'Input label',
-    isDisabled: true,
-    onChange: value => console.log(value),
-    options: inputSelectOptions,
-    placeholder: 'Select an option'
+    isDisabled: true
 };
 
 export const PrimaryError = Template.bind({});
 PrimaryError.storyName = 'Input select with error';
 PrimaryError.args = {
-    inputId: 'input-8',
-    label: 'Input label',
+    ...Primary.args,
+    inputId: 'input-4',
     hasError: true,
-    errorMessage: 'Error message goes here.',
-    onChange: value => console.log(value),
-    options: inputSelectOptions,
-    placeholder: 'Select an option'
+    errorMessage: 'Error message goes here.'
 };
 
 export const PrimaryHint = Template.bind({});
 PrimaryHint.storyName = 'Input select with hint';
 PrimaryHint.args = {
-    inputId: 'input-9',
-    label: 'Input label',
-    hintMessage: 'Hint message goes here.',
-    onChange: value => console.log(value),
-    options: inputSelectOptions,
-    placeholder: 'Select an option'
+    ...Primary.args,
+    inputId: 'input-5',
+    hintMessage: 'Hint message goes here.'
 };
 
 export const PrimaryTooltip = Template.bind({});
 PrimaryTooltip.storyName = 'Input select with tooltip';
 PrimaryTooltip.args = {
-    inputId: 'input-10',
-    label: 'Input label',
-    tooltipMessage: 'Tooltip message goes here.',
-    onChange: value => console.log(value),
-    options: inputSelectOptions,
-    placeholder: 'Select an option'
+    ...Primary.args,
+    inputId: 'input-6',
+    tooltipMessage: 'Tooltip message goes here.'
 };

@@ -3,12 +3,11 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const Message = ({
-    children,
+    actions,
     closeHandler,
     customClasses,
     message,
     noIcon,
-    showActions,
     title,
     type
 }) => {
@@ -40,8 +39,18 @@ const Message = ({
                 {title && <h3>{title}</h3>}
                 {message}
 
-                {showActions && (
-                    <div className="ds-message__actions">{children}</div>
+                {actions && (
+                    <div className="ds-message__actions">
+                        {actions.map((action, index) => (
+                            <a
+                                key={index}
+                                className="ds-link"
+                                href={action.action}
+                            >
+                                {action.title}
+                            </a>
+                        ))}
+                    </div>
                 )}
             </div>
 
@@ -64,12 +73,11 @@ const Message = ({
 };
 
 Message.propTypes = {
-    children: PropTypes.node,
+    actions: PropTypes.array,
     closeHandler: PropTypes.func,
     customClasses: PropTypes.string,
     message: PropTypes.node.isRequired,
     noIcon: PropTypes.bool,
-    showActions: PropTypes.bool,
     title: PropTypes.string,
     type: PropTypes.oneOf(['informative', 'success', 'warning', 'error'])
         .isRequired

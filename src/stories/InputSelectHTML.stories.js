@@ -21,6 +21,7 @@ export default {
                         <h3 className="title">Input select</h3>
                     </Unstyled>
                     <Canvas
+                        of={InputSelectHTML}
                         source={{
                             code: `
 <div class="ds-input__select">
@@ -39,14 +40,13 @@ export default {
 </div>
 `
                         }}
-                    >
-                        <InputSelectHTML />
-                    </Canvas>
+                    />
 
                     <Unstyled>
                         <h3 className="title">Input select required</h3>
                     </Unstyled>
                     <Canvas
+                        of={InputSelectRequiredHTML}
                         source={{
                             code: `
 <div class="ds-input__select --required">
@@ -65,14 +65,13 @@ export default {
 </div>
 `
                         }}
-                    >
-                        <InputSelectRequiredHTML />
-                    </Canvas>
+                    />
 
                     <Unstyled>
                         <h3 className="title">Input select disabled</h3>
                     </Unstyled>
                     <Canvas
+                        of={InputSelectDisabledHTML}
                         source={{
                             code: `
 <div class="ds-input__select --disabled">
@@ -91,14 +90,13 @@ export default {
 </div>
 `
                         }}
-                    >
-                        <InputSelectDisabledHTML />
-                    </Canvas>
+                    />
 
                     <Unstyled>
                         <h3 className="title">Input select with error</h3>
                     </Unstyled>
                     <Canvas
+                        of={InputSelectErrorHTML}
                         source={{
                             code: `
 <div class="ds-input__select --error">
@@ -121,14 +119,13 @@ export default {
 </div>
 `
                         }}
-                    >
-                        <InputSelectErrorHTML />
-                    </Canvas>
+                    />
 
                     <Unstyled>
                         <h3 className="title">Input select with hint</h3>
                     </Unstyled>
                     <Canvas
+                        of={InputSelectHintHTML}
                         source={{
                             code: `
 <div class="ds-input__select">
@@ -151,17 +148,52 @@ export default {
 </div>
 `
                         }}
-                    >
-                        <InputSelectHintHTML />
-                    </Canvas>
+                    />
+
+                    <Unstyled>
+                        <h3 className="title">Input select with tooltip</h3>
+                    </Unstyled>
+                    <Canvas
+                        of={InputSelectTooltipHTML}
+                        source={{
+                            code: `
+<div class="ds-input__select">
+    <label class="ds-input__label" for="input-6">
+        <span>Input label</span>
+
+        <div class="ds-tooltip">
+            <div class="--top" data-tip="Tooltip message goes here.">
+                <button
+                    class="ds-button --icon --sm"
+                    aria-label="button text"
+                >
+                    <span
+                        class="ds-icon--info"
+                        aria-label="ds-icon--info"
+                    ></span>
+                </button>
+            </div>
+        </div>
+    </label>
+
+    <select name="input-6">
+        <option value="">Select an option</option>
+        <option value="1">Last 1 Day</option>
+        <option value="2">Last 2 Days</option>
+        <option value="3">Last 3 Days</option>
+        <option value="4">Last 4 Days</option>
+        <option value="5">Last 5 Days</option>
+    </select>
+</div>
+`
+                        }}
+                    />
                 </>
             )
         }
     },
     tags: ['autodocs', '!dev']
 };
-
-const Template = args => <InputSelect {...args} />;
 
 export const InputSelectHTML = () => {
     return (
@@ -268,14 +300,17 @@ export const InputSelectTooltipHTML = () => {
             <label className="ds-input__label" htmlFor="input-6">
                 <span>Input label</span>
 
-                <div class="ds-tooltip">
-                    <div class="--top" data-tip="Tooltip message goes here.">
+                <div className="ds-tooltip">
+                    <div
+                        className="--top"
+                        data-tip="Tooltip message goes here."
+                    >
                         <button
-                            class="ds-button --icon --sm"
+                            className="ds-button --icon --sm"
                             aria-label="button text"
                         >
                             <span
-                                class="ds-icon--info"
+                                className="ds-icon--info"
                                 aria-label="ds-icon--info"
                             ></span>
                         </button>

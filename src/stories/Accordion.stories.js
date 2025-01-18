@@ -73,16 +73,5 @@ Multiple.parameters = {
     }
 };
 Multiple.args = {
-    accordionContent: [
-        {
-            header: 'Title 1',
-            content:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.'
-        },
-        {
-            header: 'Title 2',
-            content:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.'
-        }
-    ]
+    ...Single.args
 };

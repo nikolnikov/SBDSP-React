@@ -186,60 +186,35 @@ Primary.args = {
 export const PrimaryRequired = Template.bind({});
 PrimaryRequired.storyName = 'Autocomplete required';
 PrimaryRequired.args = {
-    label: 'Input label',
-    getSelection: selection => {
-        console.log(selection);
-    },
-    inputId: 'input-id',
-    isRequired: true,
-    optionList: options
+    ...Primary.args,
+    isRequired: true
 };
 
 export const PrimaryDisabled = Template.bind({});
 PrimaryDisabled.storyName = 'Autocomplete disabled';
 PrimaryDisabled.args = {
-    label: 'Input label',
-    getSelection: selection => {
-        console.log(selection);
-    },
-    inputId: 'input-id',
-    isDisabled: true,
-    optionList: options
+    ...Primary.args,
+    isDisabled: true
 };
 
 export const PrimaryWithIcon = Template.bind({});
 PrimaryWithIcon.storyName = 'Autocomplete with search icon';
 PrimaryWithIcon.args = {
-    label: 'Input label',
-    getSelection: selection => {
-        console.log(selection);
-    },
-    inputId: 'input-id',
-    optionList: options,
+    ...Primary.args,
     searchIcon: true
 };
 
 export const PrimaryWithError = Template.bind({});
 PrimaryWithError.storyName = 'Autocomplete with error';
 PrimaryWithError.args = {
-    label: 'Input label',
+    ...Primary.args,
     errorMessage: 'Error message goes here.',
-    getSelection: selection => {
-        console.log(selection);
-    },
-    hasError: true,
-    inputId: 'input-id',
-    optionList: options
+    hasError: true
 };
 
 export const PrimaryWithHint = Template.bind({});
 PrimaryWithHint.storyName = 'Autocomplete with hint';
 PrimaryWithHint.args = {
-    label: 'Input label',
-    hintMessage: 'Hint message goes here.',
-    getSelection: selection => {
-        console.log(selection);
-    },
-    inputId: 'input-id',
-    optionList: options
+    ...Primary.args,
+    hintMessage: 'Hint message goes here.'
 };

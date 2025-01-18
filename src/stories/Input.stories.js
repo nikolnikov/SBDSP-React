@@ -61,82 +61,73 @@ Primary.args = {
 export const PrimaryRequired = Template.bind({});
 PrimaryRequired.storyName = 'Input required';
 PrimaryRequired.args = {
+    ...Primary.args,
     inputId: 'input-2',
-    label: 'Input label',
-    isRequired: true,
-    type: 'text'
+    isRequired: true
 };
 
 export const PrimaryDisabled = Template.bind({});
 PrimaryDisabled.storyName = 'Input disabled';
 PrimaryDisabled.args = {
+    ...Primary.args,
     inputId: 'input-3',
-    label: 'Input label',
-    isDisabled: true,
-    type: 'text'
+    isDisabled: true
 };
 
 export const PrimaryIconLeft = Template.bind({});
 PrimaryIconLeft.storyName = 'Input with left icon';
 PrimaryIconLeft.args = {
+    ...Primary.args,
     inputId: 'input-4',
-    label: 'Input label',
-    leftIcon: 'ds-icon--search',
-    type: 'text'
+    leftIcon: 'ds-icon--search'
 };
 
 export const PrimaryIconRight = Template.bind({});
 PrimaryIconRight.storyName = 'Input with right icon';
 PrimaryIconRight.args = {
+    ...Primary.args,
     inputId: 'input-5',
-    label: 'Input label',
-    rightIcon: 'ds-icon--location',
-    type: 'text'
+    rightIcon: 'ds-icon--location'
 };
 
 export const PrimaryBothIcons = Template.bind({});
 PrimaryBothIcons.storyName = 'Input with both icons';
 PrimaryBothIcons.args = {
+    ...Primary.args,
     inputId: 'input-6',
-    label: 'Input label',
     leftIcon: 'ds-icon--search',
-    rightIcon: 'ds-icon--location',
-    type: 'text'
+    rightIcon: 'ds-icon--location'
 };
 
 export const PrimaryLoading = Template.bind({});
 PrimaryLoading.storyName = 'Input loading';
 PrimaryLoading.args = {
+    ...Primary.args,
     inputId: 'input-7',
-    label: 'Input label',
-    isLoading: true,
-    type: 'text'
+    isLoading: true
 };
 
 export const PrimaryError = Template.bind({});
 PrimaryError.storyName = 'Input with error';
 PrimaryError.args = {
+    ...Primary.args,
     inputId: 'input-8',
-    label: 'Input label',
     hasError: true,
-    errorMessage: 'Error message goes here.',
-    type: 'text'
+    errorMessage: 'Error message goes here.'
 };
 
 export const PrimaryHint = Template.bind({});
 PrimaryHint.storyName = 'Input with hint';
 PrimaryHint.args = {
+    ...Primary.args,
     inputId: 'input-9',
-    label: 'Input label',
-    hintMessage: 'Hint message goes here.',
-    type: 'text'
+    hintMessage: 'Hint message goes here.'
 };
 
 export const PrimaryTooltip = Template.bind({});
 PrimaryTooltip.storyName = 'Input with tooltip';
 PrimaryTooltip.args = {
+    ...Primary.args,
     inputId: 'input-10',
-    label: 'Input label',
-    tooltipMessage: 'Tooltip message goes here.',
-    type: 'text'
+    tooltipMessage: 'Tooltip message goes here.'
 };

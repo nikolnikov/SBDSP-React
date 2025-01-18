@@ -20,7 +20,7 @@ export default {
 
                     <Subtitle>
                         <div className="props-card">
-                            <h4>Available props</h4>
+                            <h4>Available Props:</h4>
                             <ul className="ds-list">
                                 <li>children: PropTypes.node,</li>
                                 <li>color: PropTypes.string,</li>

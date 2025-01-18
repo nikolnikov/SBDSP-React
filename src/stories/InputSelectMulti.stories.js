@@ -1,11 +1,11 @@
 import React from 'react';
 import { Stories, Subtitle } from '@storybook/blocks';
-import { InputSelect } from './InputSelect';
-import { inputSelectOptions } from './data';
+import { InputSelectMulti } from './InputSelectMulti';
+import { nameOptions } from './data';
 
 export default {
-    title: 'Components/Input Select/React',
-    component: InputSelect,
+    title: 'Components/Input Select Multi/React',
+    component: InputSelectMulti,
     parameters: {
         layout: 'centered',
         controls: {
@@ -35,7 +35,10 @@ export default {
                                 <li>onChange: PropTypes.func.isRequired</li>
                                 <li>options: PropTypes.array.isRequired</li>
                                 <li>placeholder: PropTypes.string</li>
-                                <li>selectedValue: PropTypes.string</li>
+                                <li>
+                                    selectedValue:
+                                    PropTypes.arrayOf(PropTypes.string),
+                                </li>
                                 <li>tooltipMessage: PropTypes.string</li>
                             </ul>
                         </div>
@@ -47,20 +50,20 @@ export default {
     tags: ['autodocs', '!dev']
 };
 
-const Template = args => <InputSelect {...args} />;
+const Template = args => <InputSelectMulti {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Input select';
+Primary.storyName = 'Input select multi';
 Primary.args = {
     inputId: 'input-1',
     label: 'Input label',
     onChange: value => console.log(value),
-    options: inputSelectOptions,
-    placeholder: 'Select an option'
+    options: nameOptions,
+    placeholder: 'Select options'
 };
 
 export const PrimaryRequired = Template.bind({});
-PrimaryRequired.storyName = 'Input select required';
+PrimaryRequired.storyName = 'Input select multi required';
 PrimaryRequired.args = {
     ...Primary.args,
     inputId: 'input-2',
@@ -68,7 +71,7 @@ PrimaryRequired.args = {
 };
 
 export const PrimaryDisabled = Template.bind({});
-PrimaryDisabled.storyName = 'Input select disabled';
+PrimaryDisabled.storyName = 'Input select multi disabled';
 PrimaryDisabled.args = {
     ...Primary.args,
     inputId: 'input-3',
@@ -76,7 +79,7 @@ PrimaryDisabled.args = {
 };
 
 export const PrimaryError = Template.bind({});
-PrimaryError.storyName = 'Input select with error';
+PrimaryError.storyName = 'Input select multi with error';
 PrimaryError.args = {
     ...Primary.args,
     inputId: 'input-4',
@@ -85,7 +88,7 @@ PrimaryError.args = {
 };
 
 export const PrimaryHint = Template.bind({});
-PrimaryHint.storyName = 'Input select with hint';
+PrimaryHint.storyName = 'Input select multi with hint';
 PrimaryHint.args = {
     ...Primary.args,
     inputId: 'input-5',
@@ -93,7 +96,7 @@ PrimaryHint.args = {
 };
 
 export const PrimaryTooltip = Template.bind({});
-PrimaryTooltip.storyName = 'Input select with tooltip';
+PrimaryTooltip.storyName = 'Input select multi with tooltip';
 PrimaryTooltip.args = {
     ...Primary.args,
     inputId: 'input-6',

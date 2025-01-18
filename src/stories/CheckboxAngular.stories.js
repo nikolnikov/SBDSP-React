@@ -93,32 +93,23 @@ Primary.args = {
 export const PrimaryChecked = Template.bind({});
 PrimaryChecked.storyName = 'Checkbox checked';
 PrimaryChecked.args = {
+    ...Primary.args,
     inputId: 'checkbox-2',
-    isChecked: true,
-    label: 'Checkbox label',
-    name: 'checkbox',
-    onChange: () => {},
-    value: 'checkbox'
+    isChecked: true
 };
 
 export const PrimaryDisabled = Template.bind({});
 PrimaryDisabled.storyName = 'Checkbox disabled';
 PrimaryDisabled.args = {
+    ...Primary.args,
     inputId: 'checkbox-3',
-    isDisabled: true,
-    label: 'Checkbox label',
-    name: 'checkbox',
-    onChange: () => {},
-    value: 'checkbox'
+    isDisabled: true
 };
 
 export const PrimaryIndeterminate = Template.bind({});
 PrimaryIndeterminate.storyName = 'Checkbox indeterminate';
 PrimaryIndeterminate.args = {
+    ...Primary.args,
     inputId: 'checkbox-4',
-    isIndeterminate: true,
-    label: 'Checkbox label',
-    name: 'checkbox',
-    onChange: () => {},
-    value: 'checkbox'
+    isIndeterminate: true
 };

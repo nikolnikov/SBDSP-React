@@ -14,3 +14,32 @@ export const inputSelectOptions = [
     'Last 6 weeks',
     'Last 8 weeks'
 ];
+
+export const menuItemData = [
+    {
+        title: 'Menu item 1',
+        action: () => {
+            console.log('Menu item 1 clicked');
+        }
+    },
+    {
+        title: 'Menu item 2',
+        action: () => {
+            console.log('Menu item 2 clicked');
+        }
+    },
+    {
+        title: 'Menu item 3',
+        action: () => {
+            console.log('Menu item 3 clicked');
+        }
+    }
+];
+
+export const nameOptions = [
+    'Blake, Edward',
+    'Jupiter, Sally',
+    'Kovachs, Walter',
+    'Mason, Hollis',
+    'Osterman, Jon'
+];
