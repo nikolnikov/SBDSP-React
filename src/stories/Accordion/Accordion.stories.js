@@ -51,5 +51,6 @@ Single.args = {
     openSingleItem: true
 };
 Single.argTypes = {
-    customClasses: { table: { disable: true } }
+    customClasses: { table: { disable: true } },
+    isExpanded: { table: { disable: true } }
 };

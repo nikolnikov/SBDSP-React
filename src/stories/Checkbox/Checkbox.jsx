@@ -5,10 +5,10 @@ export const Checkbox = ({
     inputId,
     label,
     name,
-    isChecked,
+    isChecked = false,
     customClasses = [],
-    isDisabled,
-    isIndeterminate,
+    isDisabled = false,
+    isIndeterminate = false,
     onChange,
     value,
     ...props
@@ -41,7 +41,7 @@ export const Checkbox = ({
                 type="checkbox"
                 onChange={value => onChange(value)}
                 value={value}
-                {...(isChecked && { defaultChecked: true })}
+                {...(isChecked && { checked: true })}
             ></input>
             <span></span>
             {label}

@@ -75,7 +75,6 @@ const storyData = [
         title: 'Single accordion',
         template: Single,
         reactCode: `
-import React from 'react';
 import Accordion from '@ds-react/pro/Accordion';
 
 <Accordion
@@ -146,7 +145,6 @@ import Accordion from '@ds-react/pro/Accordion';
         title: 'Multiple accordion',
         template: Multiple,
         reactCode: `
-import React from 'react';
 import Accordion from '@ds-react/pro/Accordion';
 
 <Accordion

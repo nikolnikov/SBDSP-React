@@ -15,6 +15,7 @@ const DatePickerInput = ({
     isRange,
     isRequired,
     fromDate,
+    placeholder,
     selectedDay,
     toDate,
     showCalendar
@@ -48,7 +49,7 @@ const DatePickerInput = ({
                     <input
                         className="ds-from-field"
                         aria-labelledby="from"
-                        placeholder="mm/dd/yyyy"
+                        placeholder={placeholder}
                         onChange={handleInputDateChange}
                         value={fromDate}
                         name="from"
@@ -59,7 +60,7 @@ const DatePickerInput = ({
                     <input
                         className="ds-to-field"
                         aria-labelledby="to"
-                        placeholder="mm/dd/yyyy"
+                        placeholder={placeholder}
                         onChange={e => handleInputDateChange(e)}
                         value={toDate}
                         name="to"
@@ -80,7 +81,7 @@ const DatePickerInput = ({
                 <div className="ds-flex --start-center --row">
                     <input
                         aria-labelledby="Selected day"
-                        placeholder="mm/dd/yyyy"
+                        placeholder={placeholder}
                         onChange={e => handleInputDateChange(e)}
                         value={selectedDay}
                         name="Selected day"
@@ -121,6 +122,7 @@ DatePickerInput.propTypes = {
     isRange: PropTypes.bool,
     isRequired: PropTypes.bool,
     fromDate: PropTypes.string,
+    placeholder: PropTypes.string,
     toDate: PropTypes.string,
     showCalendar: PropTypes.bool
 };

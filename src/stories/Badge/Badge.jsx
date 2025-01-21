@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 export const Badge = ({ 
     customClasses = [],
-    hasNotification,
-    isCircle,
+    hasNotification = false,
+    isCircle = false,
     color,
     label,
-    secondary,
-    status,
+    secondary = false,
+    status = 'neutral',
     ...props
 }) => {
     const badgeClass = ['ds-badge'];
@@ -63,5 +63,5 @@ Badge.propTypes = {
     color: PropTypes.string,
     label: PropTypes.string,
     secondary: PropTypes.bool,
-    status: PropTypes.string,
+    status: PropTypes.oneOf(['neutral', 'informative', 'success', 'warning', 'error', 'new']),
 };

@@ -94,12 +94,11 @@ const storyData = [
         title: 'Autocomplete',
         template: Primary,
         reactCode: `
-import React from 'react';
 import Autocomplete from '@ds-react/pro/Autocomplete';
 
 <Autocomplete
     getSelection={() => {}}
-    inputId="input-id"
+    inputId="input"
     label="Input label"
     optionList={[
         'Adrian Veidt',
@@ -162,10 +161,10 @@ private _filter(value: string): string[] {
         `,
         htmlCode: `
 <div class="ds-input">
-    <label class="ds-input__label" for="labelname1" aria-label="Static Input">
+    <label class="ds-input__label" for="input" aria-label="Static Input">
         <span>Input label</span>
     </label>
-    <input type="text" id="labelname1" />
+    <input type="text" id="input" />
 </div>
 
 <div class="ds-dropdown">
@@ -179,12 +178,11 @@ private _filter(value: string): string[] {
         title: 'Autocomplete required',
         template: PrimaryRequired,
         reactCode: `
-import React from 'react';
 import Autocomplete from '@ds-react/pro/Autocomplete';
 
 <Autocomplete
     getSelection={() => {}}
-    inputId="input-id"
+    inputId="input"
     isRequired
     label="Input label"
     optionList={[
@@ -248,10 +246,10 @@ private _filter(value: string): string[] {
         `,
         htmlCode: `
 <div class="ds-input --required">
-    <label class="ds-input__label" for="labelname1" aria-label="Static Input">
+    <label class="ds-input__label" for="input" aria-label="Static Input">
         <span>Input label</span>
     </label>
-    <input type="text" id="labelname1" />
+    <input type="text" id="input" />
 </div>
 
 <div class="ds-dropdown">
@@ -265,12 +263,11 @@ private _filter(value: string): string[] {
         title: 'Autocomplete disabled',
         template: PrimaryDisabled,
         reactCode: `
-import React from 'react';
 import Autocomplete from '@ds-react/pro/Autocomplete';
 
 <Autocomplete
     getSelection={() => {}}
-    inputId="input-id"
+    inputId="input"
     isDisabled
     label="Input label"
     optionList={[
@@ -334,10 +331,10 @@ private _filter(value: string): string[] {
         `,
         htmlCode: `
 <div class="ds-input --disabled">
-    <label class="ds-input__label" for="labelname1" aria-label="Static Input">
+    <label class="ds-input__label" for="input" aria-label="Static Input">
         <span>Input label</span>
     </label>
-    <input type="text" id="labelname1" disabled />
+    <input type="text" id="input" disabled />
 </div>
 
 <div class="ds-dropdown">
@@ -351,12 +348,11 @@ private _filter(value: string): string[] {
         title: 'Autocomplete with search icon',
         template: PrimaryWithIcon,
         reactCode: `
-import React from 'react';
 import Autocomplete from '@ds-react/pro/Autocomplete';
 
 <Autocomplete
     getSelection={() => {}}
-    inputId="input-id"
+    inputId="input"
     label="Input label"
     optionList={[
         'Adrian Veidt',
@@ -421,12 +417,12 @@ private _filter(value: string): string[] {
         `,
         htmlCode: `
 <div class="ds-input --icons --icon-left">
-    <label class="ds-input__label" for="labelname1" aria-label="Static Input">
+    <label class="ds-input__label" for="input" aria-label="Static Input">
         <span>Input label</span>
     </label>
     <div class="ds-flex --start-center --row">
         <span class="ds-icon--search --left" aria-label="search"></span>                                
-        <input type="text" id="labelname1" />
+        <input type="text" id="input" />
     </div>
 </div>
 
@@ -441,14 +437,13 @@ private _filter(value: string): string[] {
         title: 'Autocomplete with error',
         template: PrimaryWithError,
         reactCode: `
-import React from 'react';
 import Autocomplete from '@ds-react/pro/Autocomplete';
 
 <Autocomplete
     errorMessage="Error message goes here."
     getSelection={() => {}}
     hasError
-    inputId="input-id"
+    inputId="input"
     label="Input label"
     optionList={[
         'Adrian Veidt',
@@ -515,10 +510,10 @@ private _filter(value: string): string[] {
         `,
         htmlCode: `
 <div class="ds-input --error">
-    <label class="ds-input__label" for="labelname1" aria-label="Static Input">
+    <label class="ds-input__label" for="input" aria-label="Static Input">
         <span>Input label</span>
     </label>
-    <input type="text" id="labelname1" />
+    <input type="text" id="input" />
 
     <div class="ds-input__error">
         Error message goes here.
@@ -536,13 +531,12 @@ private _filter(value: string): string[] {
         title: 'Autocomplete with hint',
         template: PrimaryWithHint,
         reactCode: `
-import React from 'react';
 import Autocomplete from '@ds-react/pro/Autocomplete';
 
 <Autocomplete
     getSelection={() => {}}
     hintMessage="Hint message goes here."
-    inputId="input-id"
+    inputId="input"
     label="Input label"
     optionList={[
         'Adrian Veidt',
@@ -609,10 +603,10 @@ private _filter(value: string): string[] {
         `,
         htmlCode: `
 <div class="ds-input">
-    <label class="ds-input__label" for="labelname1" aria-label="Static Input">
+    <label class="ds-input__label" for="input" aria-label="Static Input">
         <span>Input label</span>
     </label>
-    <input type="text" id="labelname1" />
+    <input type="text" id="input" />
 
     <div class="ds-input__hint">
         Hint message goes here.

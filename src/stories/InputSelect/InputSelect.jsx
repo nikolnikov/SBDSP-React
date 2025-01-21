@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import DSInputSelect from '../components/InputSelect';
+import DSInputSelect from '../../components/InputSelect';
 
 export const InputSelect = ({
     customClasses = [],
     errorMessage,
-    hasError,
+    hasError = false,
     hintMessage,
     inputId,
-    isDisabled,
+    isDisabled = false,
     menuClass,
-    isRequired,
+    isRequired = false,
     label,
     onChange,
     options,

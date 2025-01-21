@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
 import { StoriesTemplate } from '../Stories.template';
-import { P } from 'storybook/internal/components';
 
 export const StoryDocs = () => {
     return (
@@ -172,7 +171,6 @@ const storyData = [
         title: 'Button',
         template: Primary,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button label="Button" />
@@ -193,7 +191,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button with icon',
         template: PrimaryWithIcon,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button label="Button" iconClass="ds-icon--plus-circle" />
@@ -216,7 +213,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button with icon right',
         template: PrimaryWithIconRight,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 
@@ -243,7 +239,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button disabled',
         template: PrimaryDisabled,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 
@@ -267,7 +262,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button destructive',
         template: PrimaryDestructive,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 
@@ -291,7 +285,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button secondary',
         template: Secondary,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 
@@ -315,7 +308,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button secondary disabled',
         template: SecondaryDisabled,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 
@@ -340,7 +332,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button ghost',
         template: Ghost,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 
@@ -364,7 +355,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button ghost destructive',
         template: GhostDestructive,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 
@@ -389,7 +379,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button save',
         template: PrimarySave,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 
@@ -397,12 +386,19 @@ import Button from '@ds-react/pro/Button';
 />
         `,
         angularCode: `
-<button type="button" class="ds-button --save" aria-label="Button label">
-    <div className="step1">
+<button
+    type="button"
+    class="ds-button --primary --save {{
+        customSaveClasses
+    }}"
+    aria-label="Button label"
+    (click)="setSave(); test($event)"
+>
+    <div class="step1" *ngIf="buttonStatus === ''">
         <span>Save</span>
     </div>
-    <div className="step2">
-        <div className="ds-loading --small ds-mr-4">
+    <div class="step2" *ngIf="buttonStatus === 'saving'">
+        <div class="ds-loading --small ds-mr-4">
             <div></div>
             <div></div>
             <div></div>
@@ -410,15 +406,49 @@ import Button from '@ds-react/pro/Button';
         </div>
         <span>Saving</span>
     </div>
-    <div className="step3">
-        <div className="checkmark animate"></div>
+    <div class="step3" *ngIf="buttonStatus === 'saved'">
+        <div class="checkmark animate"></div>
         <span>Saved</span>
     </div>
 </button>
         `,
-        tsCode: '',
+        tsCode: `
+buttonStatus: string = '';
+
+ngOnInit() {
+    this.updateButtonStatus();
+}
+
+updateButtonStatus() {
+    if (this.buttonStatus === 'saving') {
+        setTimeout(() => {
+        this.buttonStatus = 'saved';
+        this.updateButtonStatus();
+        }, 3000);
+    } else if (this.buttonStatus === 'saved') {
+        setTimeout(() => {
+        this.buttonStatus = '';
+        }, 1500);
+    }
+}
+
+setSave() {
+    if (this.buttonStatus === '') {
+        this.buttonStatus = 'saving';
+        this.updateButtonStatus();
+    }
+}
+
+get customSaveClasses() {
+    return this.buttonStatus === 'saving'
+        ? '--saving'
+        : this.buttonStatus === 'saved'
+        ? '--saved'
+        : '';
+}
+        `,
         htmlCode: `
-<button type="button" class="ds-button --save" aria-label="Button label">
+<button type="button" class="ds-button --primary --save" aria-label="Button label">
     <div className="step1">
         <span>Save</span>
     </div>
@@ -442,7 +472,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button small',
         template: PrimarySmall,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button label="Button" size="small" />
@@ -463,7 +492,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button secondary small',
         template: SecondarySmall,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button label="Button" size="small" secondary />
@@ -485,7 +513,6 @@ import Button from '@ds-react/pro/Button';
         template: PrimaryInverse,
         theme: 'dark-bg',
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button label="Button" isInverse />
@@ -507,7 +534,6 @@ import Button from '@ds-react/pro/Button';
         template: SecondaryInverse,
         theme: 'dark-bg',
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button label="Button" type="secondary" isInverse />
@@ -528,7 +554,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button icon large',
         template: IconButtonLarge,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button iconClass="ds-icon--gear" type="icon" />
@@ -549,7 +574,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button icon medium',
         template: IconButtonMedium,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 
@@ -574,7 +598,6 @@ import Button from '@ds-react/pro/Button';
         title: 'Button icon small',
         template: IconButtonSmall,
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 
@@ -600,7 +623,6 @@ import Button from '@ds-react/pro/Button';
         template: IconButtonLargeInverse,
         theme: 'dark-bg',
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 
@@ -626,7 +648,6 @@ import Button from '@ds-react/pro/Button';
         template: IconButtonMediumInverse,
         theme: 'dark-bg',
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 
@@ -653,7 +674,6 @@ import Button from '@ds-react/pro/Button';
         template: IconButtonSmallInverse,
         theme: 'dark-bg',
         reactCode: `
-import React from 'react';
 import Button from '@ds-react/pro/Button';
 
 <Button 

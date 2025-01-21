@@ -1,7 +1,6 @@
 import { themes } from '@storybook/theming';
 import '!style-loader!css-loader!sass-loader!/src/stories/assets/css/overrides.css';
 import '!style-loader!css-loader!sass-loader!/src/stories/assets/css/ds-story.scss';
-import { alpha } from '@mui/material';
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {

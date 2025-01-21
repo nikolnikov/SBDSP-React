@@ -20,6 +20,7 @@ const DatePicker = ({
     isRange,
     isRequired,
     label,
+    placeholder = 'mm/dd/yyyy',
     offset,
     showOnTop
 }) => {
@@ -149,10 +150,10 @@ const DatePicker = ({
                               disabled: { before: new Date() }
                           }
                         : disabledDays === 'future'
-                        ? {
-                              disabled: { after: new Date() }
-                          }
-                        : {})}
+                          ? {
+                                disabled: { after: new Date() }
+                            }
+                          : {})}
                     style={{ top: calendarPositionY, right: 0 }}
                     {...(isRange
                         ? {
@@ -200,6 +201,7 @@ const DatePicker = ({
                     isDisabled={isDisabled}
                     isRange={isRange}
                     isRequired={isRequired}
+                    placeholder={placeholder}
                     {...(isRange
                         ? {
                               fromDate: fromDate,
@@ -229,12 +231,13 @@ DatePicker.propTypes = {
     hasError: PropTypes.bool,
     hintMessage: PropTypes.string,
     disabledDays: PropTypes.oneOf(['past', 'future']),
-    inputId: PropTypes.string,
+    inputId: PropTypes.string.isRequired,
     isDisabled: PropTypes.bool,
     isRange: PropTypes.bool,
     isRequired: PropTypes.bool,
-    label: PropTypes.string,
+    label: PropTypes.string.isRequired,
     offset: PropTypes.number,
+    placeholder: PropTypes.string,
     showOnTop: PropTypes.bool
 };
 

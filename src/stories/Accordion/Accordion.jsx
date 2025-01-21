@@ -4,10 +4,9 @@ import classNames from 'classnames';
 
 export const Accordion = ({ 
     customClasses,
-    openSingleItem = false,
+    openSingleItem = true,
     isExpanded = false,
     accordionContent,
-    ...props
 }) => {
     const [activeIndex, setActiveIndex] = useState(isExpanded ? 0 : -1);
     const [openStates, setOpenStates] = useState(

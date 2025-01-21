@@ -79,15 +79,28 @@ export const StoriesTemplate = ({ storyData, storyPropTypes }) => {
                                 (activeTabs[i] ? ' tabs-shown' : '')
                             }
                         >
-                            {Tabs.map(tab => (
-                                <button
-                                    key={tab.title}
-                                    className={`ds-story__tab ${activeTabs[i] === tab.title ? 'active' : ''}`}
-                                    onClick={() => handleTabClick(i, tab.title)}
-                                >
-                                    {tab.title}
-                                </button>
-                            ))}
+                            {Tabs.map(
+                                tab =>
+                                    (tab.title !== 'HTML' ||
+                                        (tab.title === 'HTML' &&
+                                            storyData[i].htmlCode)) &&
+                                    (tab.title !== 'React' ||
+                                        (tab.title === 'React' &&
+                                            storyData[i].reactCode)) &&
+                                    (tab.title !== 'Angular' ||
+                                        (tab.title === 'Angular' &&
+                                            storyData[i].angularCode)) && (
+                                        <button
+                                            key={tab.title}
+                                            className={`ds-story__tab ${activeTabs[i] === tab.title ? 'active' : ''}`}
+                                            onClick={() =>
+                                                handleTabClick(i, tab.title)
+                                            }
+                                        >
+                                            {tab.title}
+                                        </button>
+                                    )
+                            )}
                         </div>
 
                         {Tabs.map(

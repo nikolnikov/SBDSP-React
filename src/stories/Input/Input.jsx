@@ -1,17 +1,17 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import DSInput from '../components/Input';
+import DSInput from '../../components/Input';
 
 export const Input = ({
     customClasses = [],
     errorMessage,
-    hasError,
+    hasError = false,
     hintMessage,
     inputId,
-    isDisabled,
-    isLoading,
-    isRequired,
+    isDisabled = false,
+    isLoading = false,
+    isRequired = false,
     label,
     leftIcon,
     name,

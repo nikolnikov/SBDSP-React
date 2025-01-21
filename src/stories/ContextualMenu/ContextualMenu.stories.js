@@ -1,10 +1,10 @@
 import React from 'react';
-import { Canvas, Unstyled } from '@storybook/blocks';
+import { Canvas, Controls } from '@storybook/blocks';
 import { ContextualMenu } from './ContextualMenu';
 import { menuItemData } from './data';
 
 export default {
-    title: 'Components/Contextual Menu/HTML',
+    title: 'Components/Contextual Menu',
     component: ContextualMenu,
     parameters: {
         layout: 'centered',
@@ -17,25 +17,8 @@ export default {
         docs: {
             page: () => (
                 <>
-                    <Unstyled>
-                        <h3 className="title">Contextual menu</h3>
-                    </Unstyled>
-                    <Canvas
-                        of={Primary}
-                        source={{
-                            code: `
-<button class="ds-button --icon" aria-haspopup="true">
-    <span class="ds-icon--user-circle" aria-label="ds-icon--user-circle"></span>
-</button>
-
-<div class="ds-menu" role="menu">
-    <div class="ds-menu__item">Item 1</div>
-    <div class="ds-menu__item">Item 2</div>
-    <div class="ds-menu__item">Item 3</div>
-</div>
-`
-                        }}
-                    />
+                    <Canvas of={Primary} sourceState="none" />
+                    <Controls />
                 </>
             )
         }
@@ -51,4 +34,11 @@ Primary.args = {
     closeMenu: () => console.log('Close menu'),
     menuItems: menuItemData,
     openMenu: { current: 'menu' }
+};
+Primary.argTypes = {
+    closeMenu: { table: { disable: true } },
+    menuItems: { table: { disable: true } },
+    openMenu: { table: { disable: true } },
+    children: { table: { disable: true } },
+    menuClass: { table: { disable: true } }
 };

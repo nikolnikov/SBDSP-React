@@ -3,23 +3,24 @@ import { format } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import DatePickerInput from '../components/DatePicker/DatePickerInput';
-import Caption from '../components/DatePicker/Caption';
-import Overlay from '../components/Overlay';
+import DatePickerInput from '../../components/DatePicker/DatePickerInput';
+import Caption from '../../components/DatePicker/Caption';
+import Overlay from '../../components/Overlay';
 
 export const Datepicker = ({ 
     customClasses,
     errorMessage,
-    hasError,
+    hasError = false,
     hintMessage,
     disabledDays,
     inputId,
-    isDisabled,
-    isRange,
-    isRequired,
+    isDisabled = false,
+    isRange = false,
+    isRequired = false,
     label,
     offset,
-    showOnTop
+    placeholder,
+    showOnTop = false
 }) => {
     const pastMonth = new Date();
 
@@ -198,6 +199,7 @@ export const Datepicker = ({
                     isDisabled={isDisabled}
                     isRange={isRange}
                     isRequired={isRequired}
+                    placeholder={placeholder}
                     {...(isRange
                         ? {
                               fromDate: fromDate,
@@ -233,5 +235,6 @@ Datepicker.propTypes = {
     isRequired: PropTypes.bool,
     label: PropTypes.string,
     offset: PropTypes.number,
+    placeholder: PropTypes.string,
     showOnTop: PropTypes.bool
 };

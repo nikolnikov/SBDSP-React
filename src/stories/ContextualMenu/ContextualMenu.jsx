@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import DSMenu from '../components/Menu';
+import DSMenu from '../../components/Menu';
 
 export const ContextualMenu = ({ 
     children,
     closeMenu,
     menuItems,
-    menuRight,
+    menuRight = false,
     menuWidth,
     menuClass,
     openMenu,

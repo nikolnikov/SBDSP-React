@@ -313,7 +313,6 @@ const storyData = [
         title: 'Neutral badge',
         template: NeutralBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" />
@@ -334,7 +333,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Informative badge',
         template: InformativeBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" status="informative" />
@@ -355,7 +353,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Success badge',
         template: SuccessBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" status="success" />
@@ -376,7 +373,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Warning badge',
         template: WarningBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" status="warning" />
@@ -397,7 +393,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Error badge',
         template: ErrorBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" status="error" />
@@ -418,7 +413,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'New badge',
         template: NewBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" status="new" />
@@ -439,7 +433,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Neutral circle badge',
         template: NeutralCircleBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="#" isCircle />
@@ -460,7 +453,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Informative circle badge',
         template: InformativeCircleBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="#" status="informative" isCircle />
@@ -481,7 +473,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Success circle badge',
         template: SuccessCircleBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="#" status="success" isCircle />
@@ -502,7 +493,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Warning circle badge',
         template: WarningCircleBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="#" status="warning" isCircle />
@@ -523,7 +513,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Error circle badge',
         template: ErrorCircleBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="#" status="error" isCircle />
@@ -544,7 +533,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'New circle badge',
         template: NewCircleBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="#" status="new" isCircle />
@@ -565,7 +553,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Neutral secondary badge',
         template: NeutralSecondaryBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" secondary />
@@ -586,7 +573,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Informative secondary badge',
         template: InformativeSecondaryBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" status="informative" secondary />
@@ -607,7 +593,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Success secondary badge',
         template: SuccessSecondaryBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" status="success" secondary />
@@ -628,7 +613,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Warning secondary badge',
         template: WarningSecondaryBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" status="warning" secondary />
@@ -649,7 +633,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Error secondary badge',
         template: ErrorSecondaryBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" status="error" secondary />
@@ -670,7 +653,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'New secondary badge',
         template: NewSecondaryBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" status="new" secondary />
@@ -691,7 +673,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Neutral secondary circle badge',
         template: NeutralSecondaryCircleBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="#" isCircle secondary />
@@ -712,7 +693,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Informative secondary circle badge',
         template: InformativeSecondaryCircleBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="#" status="informative" isCircle secondary />
@@ -733,7 +713,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Success secondary circle badge',
         template: SuccessSecondaryCircleBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="#" status="success" isCircle secondary />
@@ -754,7 +733,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Warning secondary circle badge',
         template: WarningSecondaryCircleBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="#" status="warning" isCircle secondary />
@@ -775,7 +753,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Error secondary circle badge',
         template: ErrorSecondaryCircleBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="#" status="error" isCircle secondary />
@@ -796,7 +773,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'New secondary circle badge',
         template: NewSecondaryCircleBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="#" status="new" isCircle secondary />
@@ -817,7 +793,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Neutral notification badge',
         template: NeutralNotificationBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge hasNotification />
@@ -838,7 +813,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Informative notification badge',
         template: InformativeNotificationBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge status="informative" hasNotification />
@@ -859,7 +833,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Success notification badge',
         template: SuccessNotificationBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge status="success" hasNotification />
@@ -880,7 +853,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Warning notification badge',
         template: WarningNotificationBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge status="warning" hasNotification />
@@ -901,7 +873,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Error notification badge',
         template: ErrorNotificationBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge status="error" hasNotification />
@@ -922,7 +893,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'New notification badge',
         template: NewNotificationBadge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge status="new" hasNotification />
@@ -943,7 +913,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Blue 700 badge',
         template: Blue700Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="blue-700" />
@@ -964,7 +933,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Blue 300 badge',
         template: Blue300Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="blue-300" />
@@ -985,7 +953,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Purple 700 badge',
         template: Purple700Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="purple-700" />
@@ -1006,7 +973,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Purple 300 badge',
         template: Purple300Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="purple-300" />
@@ -1027,7 +993,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Salmon 900 badge',
         template: Salmon900Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="salmon-900" />
@@ -1048,7 +1013,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Salmon 700 badge',
         template: Salmon700Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="salmon-700" />
@@ -1069,7 +1033,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Gold 900 badge',
         template: Gold900Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="gold-900" />
@@ -1090,7 +1053,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Gold 700 badge',
         template: Gold700Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="gold-700" />
@@ -1111,7 +1073,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Mint 900 badge',
         template: Mint900Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="mint-900" />
@@ -1132,7 +1093,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Chestnut 700 badge',
         template: Chestnut700Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="chestnut-700" />
@@ -1153,7 +1113,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Chestnut 300 badge',
         template: Chestnut300Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="chestnut-300" />
@@ -1174,7 +1133,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Amethyst 700 badge',
         template: Amethyst700Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="amethyst-700" />
@@ -1195,7 +1153,6 @@ import Badge from '@ds-react/pro/Badge';
         title: 'Amethyst 500 badge',
         template: Amethyst500Badge,
         reactCode: `
-import React from 'react';
 import Badge from '@ds-react/pro/Badge';
 
 <Badge label="Status" color="amethyst-500" />
@@ -1221,5 +1178,5 @@ const storyPropTypes = [
     'isCircle: PropTypes.bool,',
     'label: PropTypes.string,',
     'secondary: PropTypes.bool,',
-    'status: PropTypes.string'
+    "status: PropTypes.oneOf(['neutral', 'informative', 'success', 'warning', 'error', 'new']),"
 ];
