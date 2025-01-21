@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import DSModal from '../../components/Modal';
 
 export const Modal = ({ 
+    backdropClickable = true,
     buttonHandler,
     buttonLabel,
     children,
     ghostButtonHandler,
     ghostButtonLabel,
-    hideX,
-    modalClose,
-    opened,
+    hideX = false,
     secondaryButtonHandler,
     secondaryButtonLabel,
     status,
@@ -34,6 +33,7 @@ export const Modal = ({
             </button>
 
             <DSModal
+                backdropClickable={backdropClickable}
                 buttonHandler={buttonHandler}
                 buttonLabel={buttonLabel}
                 children={children}
@@ -53,6 +53,7 @@ export const Modal = ({
 };
 
 Modal.propTypes = {
+    backdropClickable: PropTypes.bool,
     buttonHandler: PropTypes.func,
     buttonLabel: PropTypes.string,
     children: PropTypes.node,

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Stories, Subtitle } from '@storybook/blocks';
+import { Canvas, Controls } from '@storybook/blocks';
 import { Accordion } from './Accordion';
 
 export default {
-    title: 'Components/Accordion/React',
+    title: 'Components/Accordion',
     component: Accordion,
     parameters: {
         layout: 'centered',
@@ -16,19 +16,8 @@ export default {
         docs: {
             page: () => (
                 <>
-                    <Stories />
-
-                    <Subtitle>
-                        <div className="props-card">
-                            <h4>Available props</h4>
-                            <ul className="ds-list">
-                                <li>customClasses: PropTypes.string,</li>
-                                <li>openSingleItem: PropTypes.bool,</li>
-                                <li>defaultExpanded: PropTypes.bool,</li>
-                                <li>accordionContent: PropTypes.array</li>
-                            </ul>
-                        </div>
-                    </Subtitle>
+                    <Canvas of={Single} sourceState="none" />
+                    <Controls />
                 </>
             )
         }
@@ -39,7 +28,6 @@ export default {
 const Template = args => <Accordion {...args} />;
 
 export const Single = Template.bind({});
-Single.storyName = 'Single accordion';
 Single.parameters = {
     docs: {
         description: {
@@ -62,16 +50,6 @@ Single.args = {
     ],
     openSingleItem: true
 };
-
-export const Multiple = Template.bind({});
-Multiple.storyName = 'Multiple accordion';
-Multiple.parameters = {
-    docs: {
-        description: {
-            story: 'Accordion with multiple items expanded simultaneously.'
-        }
-    }
-};
-Multiple.args = {
-    ...Single.args
+Single.argTypes = {
+    customClasses: { table: { disable: true } }
 };

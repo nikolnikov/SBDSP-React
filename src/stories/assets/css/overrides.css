@@ -1,10 +1,11 @@
-@import url('https://qd-designsystem.s3.us-east-2.amazonaws.com/DSP-Core.css');
-/* @import '../../../../../core-styles/Pro/styles/styles.scss'; */
+/* @import url('https://qd-designsystem.s3.us-east-2.amazonaws.com/DSP-Core.css');*/
+@import '../../../../../core-styles/Pro/styles/styles.scss';
 
+
+.css-1yedr2a,
 h1.sbdocs-title,
-h2#stories,
-.sbdocs.sbdocs-content div:has(~ h2#stories) {
-    display: none;
+h2#stories {
+    display: none !important;
 }
 
 .sbdocs.sbdocs-wrapper {
@@ -12,7 +13,7 @@ h2#stories,
 }
 
 .sbdocs.sb-unstyled {
-    margin: 16px 0 24px;
+    margin: 0 0 24px;
     overflow: visible !important
 }
 
@@ -56,6 +57,11 @@ h2#stories,
 .docs-story > div > div,
 .sb-story.sb-unstyled {
     width: 100%;
+}
+
+.docs-story .css-1qq744x {
+    background: url(../img/p6.webp);
+    padding: 40px 20px;
 }
 
 .sb-story.sb-unstyled > div {

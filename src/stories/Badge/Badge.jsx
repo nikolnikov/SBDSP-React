@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const Badge = ({ 
-    children,
     customClasses = [],
     hasNotification,
     isCircle,
     color,
+    label,
     secondary,
     status,
     ...props
@@ -51,17 +51,17 @@ export const Badge = ({
             role={status || 'status'}
             {...props}
         >
-            {children}
+            {label}
         </div>
     );
 };
 
 Badge.propTypes = {
-    children: PropTypes.node,
     customClasses: PropTypes.array,
     hasNotification: PropTypes.bool,
     isCircle: PropTypes.bool,
     color: PropTypes.string,
+    label: PropTypes.string,
     secondary: PropTypes.bool,
     status: PropTypes.string,
 };
