@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import DSLoader from '../components/Loader';
+import DSLoader from '../../components/Loader';
 
 export const Loader = ({ 
     customClasses = [],
-    isDeterminate,
-    isCentered,
-    isFixed,
-    small
+    isDeterminate = false,
+    isCentered = false,
+    isFixed = false,
+    small = false
 }) => {
     const [progress, setProgress] = useState(0);
     const animationFrameIdRef = useRef(null);

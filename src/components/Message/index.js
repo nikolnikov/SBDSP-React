@@ -6,6 +6,7 @@ const Message = ({
     actions,
     closeHandler,
     customClasses,
+    hideX,
     message,
     noIcon,
     title,
@@ -54,7 +55,7 @@ const Message = ({
                 )}
             </div>
 
-            {closeHandler && (
+            {!hideX && (
                 <div className="ds-message__close">
                     <button
                         className="ds-button --icon --md"

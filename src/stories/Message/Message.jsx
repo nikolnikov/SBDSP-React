@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DSMessage from '../components/Message';
+import DSMessage from '../../components/Message';
 
 export const Message = ({
     actions,
     closeHandler,
+    hideX = false,
     message,
-    noIcon,
-    showActions,
+    noIcon = false,
     title,
     type
 }) => {
@@ -17,11 +17,11 @@ export const Message = ({
 
     return (
         <DSMessage
-            actions={actions}
+            {...(actions && actions.length > 0 && { actions })}
             closeHandler={closeHandler || closeMessage}
+            hideX={hideX}
             message={message}
             noIcon={noIcon}
-            showActions={showActions}
             title={title}
             type={type}
         />
@@ -31,9 +31,9 @@ export const Message = ({
 Message.propTypes = {
     actions: PropTypes.array,
     closeHandler: PropTypes.func,
+    hideX: PropTypes.bool,
     message: PropTypes.node.isRequired,
     noIcon: PropTypes.bool,
-    showActions: PropTypes.bool,
     title: PropTypes.string,
     type: PropTypes.oneOf(['informative', 'success', 'warning', 'error']).isRequired
 };
