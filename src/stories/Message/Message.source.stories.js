@@ -88,7 +88,6 @@ import Message from '@ds-react/pro/Message';
     ]}
     closeHandler={() => {}}
     message="We've sent you an email detailing your recent account changes. Didn't receive an email? Click below."
-    showActions
     title="Heading"
     type="informative"
 />
@@ -158,7 +157,6 @@ import Message from '@ds-react/pro/Message';
     ]}
     closeHandler={() => {}}
     message="We've sent you an email detailing your recent account changes. Didn't receive an email? Click below."
-    showActions
     title="Heading"
     type="success"
 />
@@ -228,7 +226,6 @@ import Message from '@ds-react/pro/Message';
     ]}
     closeHandler={() => {}}
     message="We've sent you an email detailing your recent account changes. Didn't receive an email? Click below."
-    showActions
     title="Heading"
     type="success"
 />
@@ -298,7 +295,6 @@ import Message from '@ds-react/pro/Message';
     ]}
     closeHandler={() => {}}
     message="We've sent you an email detailing your recent account changes. Didn't receive an email? Click below."
-    showActions
     title="Heading"
     type="error"
 />
@@ -355,7 +351,7 @@ const storyPropTypes = [
     'actions: PropTypes.array,',
     'closeHandler: PropTypes.func,',
     'customClasses: PropTypes.string,',
-
+    'hideX: PropTypes.bool,',
     'message: PropTypes.node.isRequired,',
     'noIcon: PropTypes.bool,',
     'title: PropTypes.string,',
