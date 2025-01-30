@@ -29,7 +29,6 @@ export default {
 const Template = args => <InputSelect {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Input select';
 Primary.args = {
     inputId: 'input-1',
     label: 'Input label',

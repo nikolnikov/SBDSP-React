@@ -29,7 +29,6 @@ export default {
 const Template = args => <InputSelectMulti {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Input select multi';
 Primary.args = {
     inputId: 'input-1',
     label: 'Input label',

@@ -28,7 +28,6 @@ export default {
 const Template = args => <Divider {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Divider';
 Primary.args = {};
 Primary.argTypes = {
     customClasses: { table: { disable: true } }

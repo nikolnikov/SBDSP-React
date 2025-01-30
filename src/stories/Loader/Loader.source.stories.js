@@ -32,17 +32,14 @@ export default {
 const Template = args => <Loader {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Loader';
 Primary.args = {};
 
 export const PrimarySmall = Template.bind({});
-PrimarySmall.storyName = 'Loader small';
 PrimarySmall.args = {
     small: true
 };
 
 export const PrimaryDeterminate = Template.bind({});
-PrimaryDeterminate.storyName = 'Loader determinate';
 PrimaryDeterminate.args = {
     isDeterminate: true
 };

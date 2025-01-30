@@ -32,7 +32,6 @@ export default {
 const Template = args => <Message {...args} />;
 
 export const Informative = Template.bind({});
-Informative.storyName = 'Informative';
 Informative.args = {
     actions: [
         { title: 'Yes', action: null },
@@ -48,21 +47,18 @@ Informative.args = {
 };
 
 export const Success = Template.bind({});
-Success.storyName = 'Success';
 Success.args = {
     ...Informative.args,
     type: 'success'
 };
 
 export const Warning = Template.bind({});
-Warning.storyName = 'Warning';
 Warning.args = {
     ...Informative.args,
     type: 'warning'
 };
 
 export const Error = Template.bind({});
-Error.storyName = 'Error';
 Error.args = {
     ...Informative.args,
     type: 'error'

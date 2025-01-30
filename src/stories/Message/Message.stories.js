@@ -28,7 +28,6 @@ export default {
 const Template = args => <Message {...args} />;
 
 export const Informative = Template.bind({});
-Informative.storyName = 'Informative';
 Informative.args = {
     actions: [
         { title: 'Yes', action: null },

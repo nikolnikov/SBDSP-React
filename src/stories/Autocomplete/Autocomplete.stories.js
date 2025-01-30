@@ -39,7 +39,6 @@ const storyOptions = [
 ];
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Autocomplete';
 Primary.args = {
     label: 'Input label',
     getSelection: selection => {

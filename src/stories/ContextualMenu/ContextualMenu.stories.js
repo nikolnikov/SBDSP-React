@@ -29,7 +29,6 @@ export default {
 const Template = args => <ContextualMenu {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Contextual menu';
 Primary.args = {
     closeMenu: () => console.log('Close menu'),
     menuItems: menuItemData,

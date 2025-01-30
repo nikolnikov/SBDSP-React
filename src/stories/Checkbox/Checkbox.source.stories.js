@@ -32,7 +32,6 @@ export default {
 const Template = args => <Checkbox {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Checkbox';
 Primary.args = {
     inputId: 'checkbox-1',
     label: 'Checkbox label',
@@ -42,7 +41,6 @@ Primary.args = {
 };
 
 export const PrimaryChecked = Template.bind({});
-PrimaryChecked.storyName = 'Checkbox checked';
 PrimaryChecked.args = {
     ...Primary.args,
     inputId: 'checkbox-2',
@@ -50,7 +48,6 @@ PrimaryChecked.args = {
 };
 
 export const PrimaryDisabled = Template.bind({});
-PrimaryDisabled.storyName = 'Checkbox disabled';
 PrimaryDisabled.args = {
     ...Primary.args,
     inputId: 'checkbox-3',
@@ -58,7 +55,6 @@ PrimaryDisabled.args = {
 };
 
 export const PrimaryIndeterminate = Template.bind({});
-PrimaryIndeterminate.storyName = 'Checkbox indeterminate';
 PrimaryIndeterminate.args = {
     ...Primary.args,
     inputId: 'checkbox-4',

@@ -32,14 +32,12 @@ export default {
 const Template = args => <Link {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Link';
 Primary.args = {
     label: 'Link example',
     url: 'https://www.google.com'
 };
 
 export const PrimaryInverse = Template.bind({});
-PrimaryInverse.storyName = 'Link inverse';
 PrimaryInverse.args = {
     isInverse: true,
     label: 'Link example',
@@ -47,7 +45,6 @@ PrimaryInverse.args = {
 };
 
 export const PrimaryDestructive = Template.bind({});
-PrimaryDestructive.storyName = 'Link destructive';
 PrimaryDestructive.args = {
     isDestructive: true,
     label: 'Link example',
@@ -55,7 +52,6 @@ PrimaryDestructive.args = {
 };
 
 export const PrimaryIconLeft = Template.bind({});
-PrimaryIconLeft.storyName = 'Link with left icon';
 PrimaryIconLeft.args = {
     label: 'Link example',
     iconLeft: 'ds-icon--info',
@@ -63,7 +59,6 @@ PrimaryIconLeft.args = {
 };
 
 export const PrimaryIconRight = Template.bind({});
-PrimaryIconRight.storyName = 'Link with right icon';
 PrimaryIconRight.args = {
     label: 'Link example',
     iconRight: 'ds-icon--info',

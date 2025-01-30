@@ -28,7 +28,6 @@ export default {
 const Template = args => <Datepicker {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Datepicker';
 Primary.args = {
     inputId: 'datepicker-1',
     label: 'Datepicker',

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import DSButton from '../../components/Button'
 
 export const Button = ({ 
-    clickHandler = () => {},
     customClasses = null,
     iconClass = null,
     iconRight = false,
@@ -13,7 +14,6 @@ export const Button = ({
     label,
     size = 'large',
     type = 'primary',
-    ...props
 }) => {  
     const [buttonStatus, setButtonStatus] = useState('');
 
@@ -42,103 +42,25 @@ export const Button = ({
             ? '--saved'
             : '';
 
-    const buttonClass = ['ds-button'];
-
-    if (customClasses) {
-        buttonClass.push(customClasses);
-    }
-    
-    if (type === 'primary') {
-        buttonClass.push('--primary');
-    } else if (type === 'secondary') {
-        buttonClass.push('--secondary');
-    } else if (type === 'ghost') {
-        buttonClass.push('--ghost');
-    } else if (type === 'icon') {
-        buttonClass.push('--icon');
-    }
-
-    if (size === 'large') {
-        buttonClass.push('');
-    } else if (size === 'small' && type !== 'icon') {
-        buttonClass.push('--small');
-    } else if (size === 'small' && type === 'icon') {
-        buttonClass.push('--sm');
-    } else if (size === 'medium' && type === 'icon') {
-        buttonClass.push('--md');
-    }
-
-    if (isDestructive) {
-        buttonClass.push('--warning');
-    }
-
-    if (isDisabled) {
-        buttonClass.push('--disabled');
-    }
-
-    if (isInverse) {
-        buttonClass.push('--inverse');
-    }
-
-    if (isSave) {
-        buttonClass.push('--save ' + customSaveClasses);
-    }
+    const buttonClick = e => {
+        e.preventDefault();
+        console.log('Button Clicked');
+    };
 
     return (
-        <button
-            type="button"
-            className={buttonClass.join(' ')}
-            aria-label={label}
-            onClick={isSave ? setSave : clickHandler}
-            {...props}
-        >
-            {isSave ? (
-                <>
-                    <div className="step1">
-                        <span>Save</span>
-                    </div>
-                    <div className="step2">
-                        <div className="ds-loading --small ds-mr-4">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <span>Saving</span>
-                    </div>
-                    <div className="step3">
-                        <div className="checkmark animate"></div>
-                        <span>Saved</span>
-                    </div>
-                </>
-            ) : (
-                type === 'icon' ? (
-                    <span
-                        className={`${iconClass}`}
-                        aria-label={iconClass}
-                        role="img"
-                    ></span>
-                ) : (
-                    <>
-                        {iconClass && !iconRight && (
-                            <span
-                                className={`${iconClass} --left`}
-                                aria-label={iconClass}
-                                role="img"
-                            ></span>
-                        )}
-                        <span>{label}</span>
-                        {iconClass && iconRight && (
-                            <span
-                                className={`${iconClass} --right`}
-                                aria-label={iconClass}
-                                role="img"
-                            ></span>
-                        )}
-                    </>
-                )
-            )}
-        </button>
+        <DSButton
+            clickHandler={isSave ? setSave : buttonClick}
+            customClasses={isSave ? `${customSaveClasses}` : classNames(customClasses)}
+            iconClass={iconClass}
+            iconRight={iconRight}
+            isDestructive={isDestructive}
+            isDisabled={isDisabled}
+            isInverse={isInverse}
+            isSave={isSave}
+            label={label}
+            size={size}
+            type={type}
+        />
     );
 };
 

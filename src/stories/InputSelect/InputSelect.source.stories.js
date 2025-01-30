@@ -33,7 +33,6 @@ export default {
 const Template = args => <InputSelect {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Input select';
 Primary.args = {
     inputId: 'input-1',
     label: 'Input label',
@@ -43,7 +42,6 @@ Primary.args = {
 };
 
 export const PrimaryRequired = Template.bind({});
-PrimaryRequired.storyName = 'Input select required';
 PrimaryRequired.args = {
     ...Primary.args,
     inputId: 'input-2',
@@ -51,7 +49,6 @@ PrimaryRequired.args = {
 };
 
 export const PrimaryDisabled = Template.bind({});
-PrimaryDisabled.storyName = 'Input select disabled';
 PrimaryDisabled.args = {
     ...Primary.args,
     inputId: 'input-3',
@@ -59,7 +56,6 @@ PrimaryDisabled.args = {
 };
 
 export const PrimaryError = Template.bind({});
-PrimaryError.storyName = 'Input select with error';
 PrimaryError.args = {
     ...Primary.args,
     inputId: 'input-4',
@@ -68,7 +64,6 @@ PrimaryError.args = {
 };
 
 export const PrimaryHint = Template.bind({});
-PrimaryHint.storyName = 'Input select with hint';
 PrimaryHint.args = {
     ...Primary.args,
     inputId: 'input-5',
@@ -76,7 +71,6 @@ PrimaryHint.args = {
 };
 
 export const PrimaryTooltip = Template.bind({});
-PrimaryTooltip.storyName = 'Input select with tooltip';
 PrimaryTooltip.args = {
     ...Primary.args,
     inputId: 'input-6',

@@ -1,6 +1,10 @@
-@import url('https://qd-designsystem.s3.us-east-2.amazonaws.com/DSP-Core.css');
-/* @import '../../../../../core-styles/Pro/styles/styles.scss'; */
+/* @import url('https://qd-designsystem.s3.us-east-2.amazonaws.com/DSP-Core.css'); */
+@import '../../../../../core-styles/Pro/styles/styles.scss';
 
+body {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px;
+}
 
 .css-1yedr2a,
 h1.sbdocs-title,
@@ -13,12 +17,13 @@ h2#stories {
 }
 
 .sbdocs.sb-unstyled {
+    font-family: 'Roboto', sans-serif !important;
     margin: 0 0 24px;
     overflow: visible !important
 }
 
 .sb-story.sb-unstyled {
-    
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .docblock-source.sb-unstyled {
@@ -60,7 +65,7 @@ h2#stories {
 }
 
 .docs-story .css-1qq744x {
-    background: url(../img/p6.webp);
+    background: #fff;
     padding: 40px 20px;
 }
 
@@ -112,6 +117,10 @@ h2.sbdocs-subtitle h4 {
 .docs-story .ds-input__select,
 .docs-story .ds-textarea {
     min-width: 300px;
+}
+
+.ds-pagination__size .ds-input {
+    min-width: auto;
 }
 
 .sbdocs-preview.sb-unstyled {

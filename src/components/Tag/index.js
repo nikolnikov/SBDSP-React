@@ -5,12 +5,12 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const Tag = ({
-    children,
     clickHandler,
     customClasses = [],
     isDisabled,
     isSecondary,
     isSelected,
+    label,
     showClose
 }) => {
     return (
@@ -21,10 +21,10 @@ const Tag = ({
                 '--selected': isSelected
             })}
             onClick={clickHandler}
-            aria-label={children}
+            aria-label={label}
             tabIndex={isDisabled ? '-1' : 0}
         >
-            {children}
+            {label}
             {showClose && (
                 <span className="ds-icon--close" aria-label="close"></span>
             )}
@@ -33,12 +33,12 @@ const Tag = ({
 };
 
 Tag.propTypes = {
-    children: PropTypes.node.isRequired,
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
     isDisabled: PropTypes.bool,
     isSecondary: PropTypes.bool,
     isSelected: PropTypes.bool,
+    label: PropTypes.string.isRequired,
     showClose: PropTypes.bool
 };
 

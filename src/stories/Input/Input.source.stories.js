@@ -32,7 +32,6 @@ export default {
 const Template = args => <Input {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Input';
 Primary.args = {
     inputId: 'input-1',
     label: 'Input label',
@@ -40,7 +39,6 @@ Primary.args = {
 };
 
 export const PrimaryRequired = Template.bind({});
-PrimaryRequired.storyName = 'Input required';
 PrimaryRequired.args = {
     ...Primary.args,
     inputId: 'input-2',
@@ -48,7 +46,6 @@ PrimaryRequired.args = {
 };
 
 export const PrimaryDisabled = Template.bind({});
-PrimaryDisabled.storyName = 'Input disabled';
 PrimaryDisabled.args = {
     ...Primary.args,
     inputId: 'input-3',
@@ -56,7 +53,6 @@ PrimaryDisabled.args = {
 };
 
 export const PrimaryIconLeft = Template.bind({});
-PrimaryIconLeft.storyName = 'Input with left icon';
 PrimaryIconLeft.args = {
     ...Primary.args,
     inputId: 'input-4',
@@ -64,7 +60,6 @@ PrimaryIconLeft.args = {
 };
 
 export const PrimaryIconRight = Template.bind({});
-PrimaryIconRight.storyName = 'Input with right icon';
 PrimaryIconRight.args = {
     ...Primary.args,
     inputId: 'input-5',
@@ -72,7 +67,6 @@ PrimaryIconRight.args = {
 };
 
 export const PrimaryBothIcons = Template.bind({});
-PrimaryBothIcons.storyName = 'Input with both icons';
 PrimaryBothIcons.args = {
     ...Primary.args,
     inputId: 'input-6',
@@ -81,7 +75,6 @@ PrimaryBothIcons.args = {
 };
 
 export const PrimaryLoading = Template.bind({});
-PrimaryLoading.storyName = 'Input loading';
 PrimaryLoading.args = {
     ...Primary.args,
     inputId: 'input-7',
@@ -89,7 +82,6 @@ PrimaryLoading.args = {
 };
 
 export const PrimaryError = Template.bind({});
-PrimaryError.storyName = 'Input with error';
 PrimaryError.args = {
     ...Primary.args,
     inputId: 'input-8',
@@ -98,7 +90,6 @@ PrimaryError.args = {
 };
 
 export const PrimaryHint = Template.bind({});
-PrimaryHint.storyName = 'Input with hint';
 PrimaryHint.args = {
     ...Primary.args,
     inputId: 'input-9',
@@ -106,7 +97,6 @@ PrimaryHint.args = {
 };
 
 export const PrimaryTooltip = Template.bind({});
-PrimaryTooltip.storyName = 'Input with tooltip';
 PrimaryTooltip.args = {
     ...Primary.args,
     inputId: 'input-10',

@@ -1,3 +1,37 @@
+import React from 'react';
+import Avatar from '../components/Avatar';
+
+export const headerNavData = [
+    {
+        label: 'Notifications',
+        icon: 'ds-icon--bell',
+        route: 'https://www.google.com',
+        hasDropdown: false,
+        dropdownContents: null
+    },
+    {
+        label: 'Account',
+        icon: 'ds-icon--user-circle',
+        route: null,
+        hasDropdown: true,
+        dropdownContents: 'Dropdown content goes here.'
+    }
+];
+
+export const avatarMenuContent = (
+    <div className="ds-ptb-16 ds-flex --column">
+        <div className="ds-plr-12 ds-flex --row --start-center">
+            <Avatar size="small">E</Avatar>
+
+            <h4 className="ds-m-0 ds-ml-8">Edward, Blake</h4>
+        </div>
+
+        <hr className="ds-mtb-12 ds-gray__100--bg" />
+
+        <button className="ds-menu__item">Sign out</button>
+    </div>
+);
+
 export const inputSelectOptions = [
     'Last 1 day',
     'Last 2 days',
@@ -33,4 +67,23 @@ export const nameOptions = [
     'Kovachs, Walter',
     'Mason, Hollis',
     'Osterman, Jon'
+];
+
+export const stepperData = [
+    {
+        title: 'Label',
+        subTitle: 'Subcategory'
+    },
+    {
+        title: 'Label',
+        subTitle: 'Subcategory'
+    },
+    {
+        title: 'Label',
+        subTitle: 'Subcategory'
+    },
+    {
+        title: 'Label',
+        subTitle: 'Subcategory'
+    }
 ];

@@ -32,19 +32,15 @@ export default {
 const Template = args => <Divider {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Divider';
 Primary.args = {};
 
 export const PrimaryDarkGray = Template.bind({});
-PrimaryDarkGray.storyName = 'Divider dark gray';
 PrimaryDarkGray.args = { color: 'ds-gray__300-bg' };
 
 export const PrimaryGray = Template.bind({});
-PrimaryGray.storyName = 'Divider gray';
 PrimaryGray.args = { color: 'ds-gray__200-bg' };
 
 export const PrimaryWhite = Template.bind({});
-PrimaryWhite.storyName = 'Divider white';
 PrimaryWhite.args = { color: 'ds-white-bg' };
 
 const storyData = [

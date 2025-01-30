@@ -28,7 +28,6 @@ export default {
 const Template = args => <Input {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Input';
 Primary.args = {
     inputId: 'input-1',
     label: 'Input label',

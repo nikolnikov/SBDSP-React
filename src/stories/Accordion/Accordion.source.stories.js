@@ -32,7 +32,6 @@ export default {
 const Template = args => <Accordion {...args} />;
 
 export const Single = Template.bind({});
-Single.storyName = 'Single accordion';
 Single.parameters = {
     docs: {
         description: {
@@ -57,7 +56,6 @@ Single.args = {
 };
 
 export const Multiple = Template.bind({});
-Multiple.storyName = 'Multiple accordion';
 Multiple.parameters = {
     docs: {
         description: {

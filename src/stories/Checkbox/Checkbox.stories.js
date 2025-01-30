@@ -28,7 +28,6 @@ export default {
 const Template = args => <Checkbox {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Checkbox';
 Primary.args = {
     inputId: 'checkbox-1',
     label: 'Checkbox label',

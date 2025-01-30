@@ -43,7 +43,6 @@ const storyOptions = [
 ];
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Autocomplete';
 Primary.args = {
     label: 'Input label',
     getSelection: selection => {
@@ -54,28 +53,24 @@ Primary.args = {
 };
 
 export const PrimaryRequired = Template.bind({});
-PrimaryRequired.storyName = 'Autocomplete required';
 PrimaryRequired.args = {
     ...Primary.args,
     isRequired: true
 };
 
 export const PrimaryDisabled = Template.bind({});
-PrimaryDisabled.storyName = 'Autocomplete disabled';
 PrimaryDisabled.args = {
     ...Primary.args,
     isDisabled: true
 };
 
 export const PrimaryWithIcon = Template.bind({});
-PrimaryWithIcon.storyName = 'Autocomplete with search icon';
 PrimaryWithIcon.args = {
     ...Primary.args,
     searchIcon: true
 };
 
 export const PrimaryWithError = Template.bind({});
-PrimaryWithError.storyName = 'Autocomplete with error';
 PrimaryWithError.args = {
     ...Primary.args,
     errorMessage: 'Error message goes here.',
@@ -83,7 +78,6 @@ PrimaryWithError.args = {
 };
 
 export const PrimaryWithHint = Template.bind({});
-PrimaryWithHint.storyName = 'Autocomplete with hint';
 PrimaryWithHint.args = {
     ...Primary.args,
     hintMessage: 'Hint message goes here.'

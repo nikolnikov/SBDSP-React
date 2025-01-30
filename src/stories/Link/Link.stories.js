@@ -28,7 +28,6 @@ export default {
 const Template = args => <Link {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Link';
 Primary.args = {
     label: 'Link example',
     url: 'https://www.google.com'

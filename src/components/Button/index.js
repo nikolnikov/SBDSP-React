@@ -110,7 +110,7 @@ Button.propTypes = {
     isSave: PropTypes.bool,
     label: PropTypes.string,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
-    type: PropTypes.oneOf(['secondary', 'ghost', 'icon'])
+    type: PropTypes.oneOf(['primary', 'secondary', 'ghost', 'icon'])
 };
 
 export default Button;

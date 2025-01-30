@@ -33,7 +33,6 @@ export default {
 const Template = args => <ContextualMenu {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Contextual menu';
 Primary.args = {
     closeMenu: () => console.log('Close menu'),
     menuItems: menuItemData,
@@ -41,7 +40,6 @@ Primary.args = {
 };
 
 export const PrimaryRight = Template.bind({});
-PrimaryRight.storyName = 'Contextual menu right';
 PrimaryRight.args = {
     ...Primary.args,
     menuRight: true

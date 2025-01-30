@@ -32,7 +32,6 @@ export default {
 const Template = args => <Datepicker {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Datepicker';
 Primary.args = {
     inputId: 'datepicker-1',
     label: 'Datepicker',
@@ -40,7 +39,6 @@ Primary.args = {
 };
 
 export const PrimaryRequired = Template.bind({});
-PrimaryRequired.storyName = 'Datepicker required';
 PrimaryRequired.args = {
     inputId: 'datepicker-2',
     isRequired: true,
@@ -49,7 +47,6 @@ PrimaryRequired.args = {
 };
 
 export const PrimaryDisabled = Template.bind({});
-PrimaryDisabled.storyName = 'Datepicker disabled';
 PrimaryDisabled.args = {
     inputId: 'datepicker-3',
     isDisabled: true,
@@ -58,7 +55,6 @@ PrimaryDisabled.args = {
 };
 
 export const PrimaryError = Template.bind({});
-PrimaryError.storyName = 'Datepicker with error text';
 PrimaryError.args = {
     inputId: 'datepicker-5',
     hasError: true,
@@ -68,7 +64,6 @@ PrimaryError.args = {
 };
 
 export const PrimaryHint = Template.bind({});
-PrimaryHint.storyName = 'Datepicker with hint text';
 PrimaryHint.args = {
     inputId: 'datepicker-4',
     hintMessage: 'mm/dd/yyyy',
@@ -77,7 +72,6 @@ PrimaryHint.args = {
 };
 
 export const PrimaryUnselectableDays = Template.bind({});
-PrimaryUnselectableDays.storyName = 'Datepicker with unselectable days';
 PrimaryUnselectableDays.args = {
     disabledDays: 'past',
     inputId: 'datepicker-6',
@@ -86,7 +80,6 @@ PrimaryUnselectableDays.args = {
 };
 
 export const PrimaryRange = Template.bind({});
-PrimaryRange.storyName = 'Datepicker range';
 PrimaryRange.args = {
     inputId: 'datepicker-7',
     isRange: true,

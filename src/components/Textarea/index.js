@@ -59,7 +59,7 @@ Textarea.propTypes = {
     isDisabled: PropTypes.bool,
     isRequired: PropTypes.bool,
     label: PropTypes.string,
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
     onChange: PropTypes.func,
     placeholder: PropTypes.string
 };

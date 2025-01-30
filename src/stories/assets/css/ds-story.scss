@@ -32,7 +32,7 @@
     }
 
     &__preview {
-        background: url(../img/p6.webp);
+        background: #fff;
         padding: 40px 20px;
 
         &.dark-bg {
@@ -41,6 +41,10 @@
 
         .ds-input {
             width: 260px;
+        }
+
+        .ds-pagination__size .ds-input {
+            width: auto;
         }
     }
 

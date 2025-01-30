@@ -58,7 +58,7 @@ const Header = ({
                                 clickHandler={buttonClickHandler}
                                 customClasses="ds-ml-16"
                                 label={buttonLabel}
-                                small
+                                size="small"
                                 type={secondaryButton ? 'secondary' : null}
                             >
                                 {buttonLabel}

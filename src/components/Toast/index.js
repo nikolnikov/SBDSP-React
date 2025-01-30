@@ -26,12 +26,10 @@ const Toast = ({
             {!duration && !textLinkLabel && (
                 <Button
                     ariaLabel="close"
-                    inverse
+                    iconClass="ds-icon--close"
                     type="icon"
                     clickHandler={onClose}
-                >
-                    <span className="ds-icon--close" aria-label="close"></span>
-                </Button>
+                />
             )}
         </>
     );

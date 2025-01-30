@@ -27,7 +27,6 @@ export default {
 const Template = args => <Loader {...args} />;
 
 export const Primary = Template.bind({});
-Primary.storyName = 'Loader';
 Primary.args = {};
 Primary.argTypes = {
     customClasses: { table: { disable: true } },
