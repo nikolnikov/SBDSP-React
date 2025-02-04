@@ -260,7 +260,33 @@ const ELEMENT_DATA: Patient[] = [
         </tr>
     </tbody>
 </table>
-`
+`,
+        cssCode: `
+.ds-table__head-th:nth-child(1),
+.ds-table__row-td:nth-child(1) {
+    width: 200px;
+}
+
+.ds-table__head-th:nth-child(2),
+.ds-table__row-td:nth-child(2) {
+    width: auto;
+}
+
+.ds-table__head-th:nth-child(3),
+.ds-table__row-td:nth-child(3) {
+    width: 110px;
+}
+
+.ds-table__head-th:nth-child(4),
+.ds-table__row-td:nth-child(4) {
+    width: 160px;
+}
+
+.ds-table__head-th:nth-child(5),
+.ds-table__row-td:nth-child(5) {
+    width: 150px;
+}
+        `
     },
     {
         title: 'Table flat and transparent',
@@ -439,6 +465,32 @@ const ELEMENT_DATA: Patient[] = [
         </tr>
     </tbody>
 </table>
+`,
+        cssCode: `
+.ds-table__head-th:nth-child(1),
+.ds-table__row-td:nth-child(1) {
+    width: 200px;
+}
+
+.ds-table__head-th:nth-child(2),
+.ds-table__row-td:nth-child(2) {
+    width: auto;
+}
+
+.ds-table__head-th:nth-child(3),
+.ds-table__row-td:nth-child(3) {
+    width: 110px;
+}
+
+.ds-table__head-th:nth-child(4),
+.ds-table__row-td:nth-child(4) {
+    width: 160px;
+}
+
+.ds-table__head-th:nth-child(5),
+.ds-table__row-td:nth-child(5) {
+    width: 150px;
+}
 `
     },
     {
@@ -650,6 +702,32 @@ const ELEMENT_DATA: Patient[] = [
         </tr>
     </tbody>
 </table>
+`,
+        cssCode: `
+.ds-table__head-th:nth-child(1),
+.ds-table__row-td:nth-child(1) {
+    width: 200px;
+}
+
+.ds-table__head-th:nth-child(2),
+.ds-table__row-td:nth-child(2) {
+    width: auto;
+}
+
+.ds-table__head-th:nth-child(3),
+.ds-table__row-td:nth-child(3) {
+    width: 110px;
+}
+
+.ds-table__head-th:nth-child(4),
+.ds-table__row-td:nth-child(4) {
+    width: 160px;
+}
+
+.ds-table__head-th:nth-child(5),
+.ds-table__row-td:nth-child(5) {
+    width: 150px;
+}
 `
     },
     {
@@ -901,6 +979,37 @@ const ELEMENT_DATA: Patient[] = [
         </tr>
     </tbody>
 </table>
+`,
+        cssCode: `
+.ds-table__head-th:nth-child(1),
+.ds-table__row-td:nth-child(1) {
+    width: 200px;
+}
+
+.ds-table__head-th:nth-child(2),
+.ds-table__row-td:nth-child(2) {
+    width: auto;
+}
+
+.ds-table__head-th:nth-child(3),
+.ds-table__row-td:nth-child(3) {
+    width: 110px;
+}
+
+.ds-table__head-th:nth-child(4),
+.ds-table__row-td:nth-child(4) {
+    width: 160px;
+}
+
+.ds-table__head-th:nth-child(5),
+.ds-table__row-td:nth-child(5) {
+    width: 150px;
+}
+
+.ds-table__head-th:nth-child(6),
+.ds-table__row-td:nth-child(6) {
+    width: 150px;
+}
 `
     },
     {
@@ -1212,6 +1321,37 @@ const ELEMENT_DATA: Patient[] = [
         </tr>
     </tbody>
 </table>
+`,
+        cssCode: `
+.ds-table__head-th:nth-child(1),
+.ds-table__row-td:nth-child(1) {
+    width: 200px;
+}
+
+.ds-table__head-th:nth-child(2),
+.ds-table__row-td:nth-child(2) {
+    width: auto;
+}
+
+.ds-table__head-th:nth-child(3),
+.ds-table__row-td:nth-child(3) {
+    width: 110px;
+}
+
+.ds-table__head-th:nth-child(4),
+.ds-table__row-td:nth-child(4) {
+    width: 160px;
+}
+
+.ds-table__head-th:nth-child(5),
+.ds-table__row-td:nth-child(5) {
+    width: 150px;
+}
+
+.ds-table__head-th:nth-child(6),
+.ds-table__row-td:nth-child(6) {
+    width: 56px;
+}
 `
     },
     {
@@ -1493,11 +1633,47 @@ const ELEMENT_DATA: Patient[] = [
     }
 ];
         `,
-        htmlCode: ''
+        cssCode: `
+.ds-table__head-th:nth-child(1),
+.ds-table__row-td:nth-child(1) {
+    width: 200px;
+}
+
+.ds-table__head-th:nth-child(2),
+.ds-table__row-td:nth-child(2) {
+    width: auto;
+}
+
+.ds-table__head-th:nth-child(3),
+.ds-table__row-td:nth-child(3) {
+    width: 110px;
+}
+
+.ds-table__head-th:nth-child(4),
+.ds-table__row-td:nth-child(4) {
+    width: 160px;
+}
+
+.ds-table__head-th:nth-child(5),
+.ds-table__row-td:nth-child(5) {
+    width: 150px;
+}
+
+.ds-table__head-th:nth-child(6),
+.ds-table__row-td:nth-child(6) {
+    width: 150px;
+}
+
+.ds-table__head-th:nth-child(7),
+.ds-table__row-td:nth-child(7) {
+    width: 56px;
+}
+`
     }
 ];
 
 const storyPropTypes = [
+    'customClasses: PropTypes.string,',
     'isExpandable: PropTypes.bool,',
     'isFlat: PropTypes.bool,',
     'isSortable: PropTypes.bool,',

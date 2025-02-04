@@ -20,6 +20,9 @@ export const StoriesTemplate = ({ storyData, storyPropTypes }) => {
         },
         {
             title: 'HTML'
+        },
+        {
+            title: 'CSS'
         }
     ];
 
@@ -84,6 +87,9 @@ export const StoriesTemplate = ({ storyData, storyPropTypes }) => {
                                     (tab.title !== 'HTML' ||
                                         (tab.title === 'HTML' &&
                                             storyData[i].htmlCode)) &&
+                                    (tab.title !== 'CSS' ||
+                                        (tab.title === 'CSS' &&
+                                            storyData[i].cssCode)) &&
                                     (tab.title !== 'React' ||
                                         (tab.title === 'React' &&
                                             storyData[i].reactCode)) &&
@@ -147,6 +153,9 @@ export const StoriesTemplate = ({ storyData, storyPropTypes }) => {
                                 )}
                             {activeTabs[i] === 'HTML' && story.htmlCode && (
                                 <Source dark code={story.htmlCode} />
+                            )}
+                            {activeTabs[i] === 'CSS' && story.cssCode && (
+                                <Source dark code={story.cssCode} />
                             )}
                         </div>
                     </div>
