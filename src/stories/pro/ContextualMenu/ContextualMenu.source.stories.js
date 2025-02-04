@@ -52,7 +52,7 @@ const storyData = [
         reactCode: `
 import Menu from '@ds-react/pro/Menu';
 
-<ContextualMenu
+<Menu
     closeMenu={() => {}}
     menuItems={[
         {
@@ -103,7 +103,7 @@ import Menu from '@ds-react/pro/Menu';
         reactCode: `
 import Menu from '@ds-react/pro/Menu';
 
-<ContextualMenu
+<Menu
     closeMenu={() => {}}
     menuItems={[
         {

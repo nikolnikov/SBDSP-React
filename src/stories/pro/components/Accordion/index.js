@@ -30,6 +30,7 @@ const Accordion = ({
                 isExpanded={isOpen}
                 onClick={toggle}
                 header={item.header}
+                icon={item.icon}
                 content={item.content}
                 key={index}
             />

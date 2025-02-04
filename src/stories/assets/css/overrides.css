@@ -127,7 +127,7 @@ h2.sbdocs-subtitle h4 {
 .dark-bg .sbdocs-preview.sb-unstyled .docs-story,
 .sb-anchor[id*='-inverse'] .sbdocs-preview.sb-unstyled .docs-story,
 .sbdocs-preview.sb-unstyled.inverse .docs-story {
-    background-color: #023616 !important;
+    background-color: #034C1F !important;
 }
 
 .props-card {
@@ -135,4 +135,12 @@ h2.sbdocs-subtitle h4 {
     border: 1px solid #e5e5e5;
     border-radius: 4px;
     padding: 24px;
+}
+
+.ds-list {
+    margin-bottom: 0 !important;
+}
+
+.ds-list li {
+    padding: 0 !important;
 }

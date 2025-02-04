@@ -4,13 +4,14 @@ import React, { useMemo, useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { getComparator, stableSort } from './helpers';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableContainer from '@mui/material/TableContainer';
-import DataTableHead from './DataTableHead';
-import DataTableRow from './DataTableRows';
+import MuiTable from '@mui/material/Table';
+import MuiTableBody from '@mui/material/TableBody';
+import MuiTableContainer from '@mui/material/TableContainer';
+import DSTableHead from './TableHead';
+import DSTableRow from './TableRow';
 
-const DataTable = ({
+const Table = ({
+    customClasses,
     isExpandable,
     isFlat,
     isSortable,
@@ -31,13 +32,13 @@ const DataTable = ({
 
     const visibleRows = useMemo(
         () => stableSort(tableCellData, getComparator(order, orderBy)).slice(),
-        [order, orderBy]
+        [order, orderBy, tableCellData]
     );
 
     return (
-        <TableContainer className="ds-table__wrapper">
-            <Table
-                className={classNames('ds-table', {
+        <MuiTableContainer className="ds-table__wrapper">
+            <MuiTable
+                className={classNames('ds-table', customClasses, {
                     '--flat': isFlat,
                     '--expandable': isExpandable,
                     '--sortable': isSortable,
@@ -45,34 +46,37 @@ const DataTable = ({
                 })}
                 aria-label="table"
             >
-                <DataTableHead
+                <DSTableHead
                     order={order}
                     orderBy={orderBy}
                     onRequestSort={handleRequestSort}
                     tableHeadData={tableHeadData}
                     tableCellData={tableCellData}
                 />
-                <TableBody>
+                <MuiTableBody>
                     {visibleRows.map(tableCellData => (
-                        <DataTableRow
-                            key={tableCellData}
+                        <DSTableRow
+                            key={tableCellData.id}
                             expandable={isExpandable}
                             tableCellData={tableCellData}
                         />
                     ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                </MuiTableBody>
+            </MuiTable>
+        </MuiTableContainer>
     );
 };
 
-DataTableHead.propTypes = {
+Table.propTypes = {
+    customClasses: PropTypes.string,
     isExpandable: PropTypes.bool,
     isFlat: PropTypes.bool,
     isSortable: PropTypes.bool,
     tableHeadData: PropTypes.array.isRequired,
     tableCellData: PropTypes.array.isRequired,
-    isTransparent: PropTypes.bool
+    isTransparent: PropTypes.bool,
+    sortOrder: PropTypes.oneOf(['asc', 'desc']),
+    sortProperty: PropTypes.string
 };
 
-export default DataTable;
+export default Table;

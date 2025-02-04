@@ -6,16 +6,15 @@ const AccordionItem = ({
     onClick,
     content,
     header,
-    isExpanded = false,
-    isStandalone
+    icon,
+    isExpanded = false
 }) => {
     const ariaExpanded = isExpanded ? 'true' : 'false';
 
     return (
         <div
             className={classNames('ds-accordion', {
-                '--expanded': isExpanded,
-                '--standAlone': isStandalone
+                '--expanded': isExpanded
             })}
         >
             <button
@@ -24,7 +23,10 @@ const AccordionItem = ({
                 onClick={() => onClick()}
                 tabIndex="0"
             >
-                <span className="accordion-title">{header}</span>
+                <div className="ds-accordion__title-wrapper">
+                    {icon && <span className={icon} aria-label={icon}></span>}
+                    {header}
+                </div>
                 <span className="ds-icon--expand" aria-label="expand"></span>
             </button>
 
@@ -40,11 +42,11 @@ const AccordionItem = ({
 };
 
 AccordionItem.propTypes = {
+    icon: PropTypes.string,
     onClick: PropTypes.func,
     content: PropTypes.node,
     header: PropTypes.node,
-    isExpanded: PropTypes.bool,
-    isStandalone: PropTypes.bool
+    isExpanded: PropTypes.bool
 };
 
 export default AccordionItem;

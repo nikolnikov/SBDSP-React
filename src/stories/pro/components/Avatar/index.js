@@ -6,10 +6,10 @@ import PropTypes from 'prop-types';
 
 const Avatar = ({
     button,
-    children,
     clickHandler,
     customClasses = [],
     isDisabled,
+    initial,
     hasNotification,
     outlined,
     size
@@ -25,7 +25,7 @@ const Avatar = ({
             })}
             onClick={clickHandler}
         >
-            {children}
+            {initial}
         </button>
     ) : (
         <div
@@ -38,20 +38,20 @@ const Avatar = ({
                 [`--${size}`]: size
             })}
         >
-            {children}
+            {initial}
         </div>
     );
 };
 
 Avatar.propTypes = {
     button: PropTypes.bool,
-    children: PropTypes.node,
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
     isDisabled: PropTypes.bool,
     hasNotification: PropTypes.bool,
+    initial: PropTypes.string,
     outlined: PropTypes.bool,
-    size: PropTypes.string
+    size: PropTypes.oneOf(['xlarge', 'large', 'medium', 'small'])
 };
 
 export default Avatar;

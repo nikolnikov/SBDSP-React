@@ -39,11 +39,13 @@ Single.args = {
     accordionContent: [
         {
             header: 'Title 1',
+            icon: 'ds-icon--question',
             content:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.'
         },
         {
             header: 'Title 2',
+            icon: 'ds-icon--question',
             content:
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.'
         }

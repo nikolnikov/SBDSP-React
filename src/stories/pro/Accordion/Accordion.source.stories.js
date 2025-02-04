@@ -32,13 +32,6 @@ export default {
 const Template = args => <Accordion {...args} />;
 
 export const Single = Template.bind({});
-Single.parameters = {
-    docs: {
-        description: {
-            story: 'Accordion with single item expanded.'
-        }
-    }
-};
 Single.args = {
     accordionContent: [
         {
@@ -55,16 +48,34 @@ Single.args = {
     openSingleItem: true
 };
 
-export const Multiple = Template.bind({});
-Multiple.parameters = {
-    docs: {
-        description: {
-            story: 'Accordion with multiple items expanded simultaneously.'
+export const SingleIcon = Template.bind({});
+SingleIcon.args = {
+    accordionContent: [
+        {
+            header: 'Title 1',
+            icon: 'ds-icon--question',
+            content:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.'
+        },
+        {
+            header: 'Title 2',
+            icon: 'ds-icon--question',
+            content:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.'
         }
-    }
+    ],
+    openSingleItem: true
 };
+
+export const Multiple = Template.bind({});
 Multiple.args = {
     ...Single.args,
+    openSingleItem: false
+};
+
+export const MultipleIcon = Template.bind({});
+MultipleIcon.args = {
+    ...SingleIcon.args,
     openSingleItem: false
 };
 
@@ -93,7 +104,9 @@ import Accordion from '@ds-react/pro/Accordion';
 <mat-accordion class="ds-accordion__wrapper">
     <mat-expansion-panel class="ds-accordion">
         <mat-expansion-panel-header class="ds-accordion__title">
-            <span>Title 1</span>
+            <div class="ds-accordion__title-wrapper">
+                <span>Title 1</span>
+            </div>
         </mat-expansion-panel-header>
 
         <div class="ds-accordion__content">
@@ -103,7 +116,9 @@ import Accordion from '@ds-react/pro/Accordion';
 
     <mat-expansion-panel class="ds-accordion">
         <mat-expansion-panel-header class="ds-accordion__title">
-            <span>Title 2</span>
+            <div class="ds-accordion__title-wrapper">
+                <span>Title 2</span>
+            </div>
         </mat-expansion-panel-header>
 
         <div class="ds-accordion__content">
@@ -117,7 +132,9 @@ import Accordion from '@ds-react/pro/Accordion';
 <div class="ds-accordion__wrapper">
     <div class="ds-accordion">
         <button class="ds-accordion__title" aria-expanded="false" tabindex="0">
-            <span>Title 1</span>
+            <div class="ds-accordion__title-wrapper">
+                <span>Title 1</span>
+            </div>
             <span class="ds-icon--expand" aria-label="expand"></span>
         </button>
         
@@ -128,7 +145,93 @@ import Accordion from '@ds-react/pro/Accordion';
     
     <div class="ds-accordion">
         <button class="ds-accordion__title" aria-expanded="false" tabindex="0">
-            <span>Title 2</span>
+            <div class="ds-accordion__title-wrapper">
+                <span>Title 2</span>
+            </div>
+            <span class="ds-icon--expand" aria-label="expand"></span>
+        </button>
+        
+        <div class="ds-accordion__content">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.</div>
+        </div>
+    </div>
+</div>
+        `
+    },
+    {
+        title: 'Single accordion with icon',
+        template: SingleIcon,
+        reactCode: `
+import Accordion from '@ds-react/pro/Accordion';
+
+<Accordion
+    accordionContent={[
+        {
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.',
+            icon: 'ds-icon--question',
+            header: 'Title 1'
+        },
+        {
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.',
+            icon: 'ds-icon--question',
+            header: 'Title 2'
+        }
+    ]}
+    openSingleItem
+/>
+        `,
+        angularCode: `
+<mat-accordion class="ds-accordion__wrapper">
+    <mat-expansion-panel class="ds-accordion">
+        <mat-expansion-panel-header class="ds-accordion__title">
+            <div class="ds-accordion__title-wrapper">
+                <span class="ds-icon--question" aria-label="icon-question"></span>
+                <span>Title 1</span>
+            </div>
+        </mat-expansion-panel-header>
+
+        <div class="ds-accordion__content">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.</div>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel class="ds-accordion">
+        <mat-expansion-panel-header class="ds-accordion__title">
+            <div class="ds-accordion__title-wrapper">
+                <span class="ds-icon--question" aria-label="icon-question"></span>
+                <span>Title 2</span>
+            </div>
+        </mat-expansion-panel-header>
+
+        <div class="ds-accordion__content">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.</div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>
+        `,
+        tsCode: '',
+        htmlCode: `
+<div class="ds-accordion__wrapper">
+    <div class="ds-accordion">
+        <button class="ds-accordion__title" aria-expanded="false" tabindex="0">
+            <div class="ds-accordion__title-wrapper">
+                <span class="ds-icon--question" aria-label="icon-question"></span>
+                <span>Title 1</span>
+            </div>
+            <span class="ds-icon--expand" aria-label="expand"></span>
+        </button>
+        
+        <div class="ds-accordion__content">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.</div>
+        </div>
+    </div>
+    
+    <div class="ds-accordion">
+        <button class="ds-accordion__title" aria-expanded="false" tabindex="0">
+            <div class="ds-accordion__title-wrapper">
+                <span class="ds-icon--question" aria-label="icon-question"></span>
+                <span>Title 2</span>
+            </div>
             <span class="ds-icon--expand" aria-label="expand"></span>
         </button>
         
@@ -162,7 +265,9 @@ import Accordion from '@ds-react/pro/Accordion';
 <mat-accordion class="ds-accordion__wrapper" [multi]="true">
     <mat-expansion-panel class="ds-accordion">
         <mat-expansion-panel-header class="ds-accordion__title">
-            <span>Title 1</span>
+            <div class="ds-accordion__title-wrapper">
+                <span>Title 1</span>
+            </div>
         </mat-expansion-panel-header>
 
         <div class="ds-accordion__content">
@@ -172,7 +277,9 @@ import Accordion from '@ds-react/pro/Accordion';
 
     <mat-expansion-panel class="ds-accordion">
         <mat-expansion-panel-header class="ds-accordion__title">
-            <span>Title 2</span>
+            <div class="ds-accordion__title-wrapper">
+                <span>Title 2</span>
+            </div>
         </mat-expansion-panel-header>
 
         <div class="ds-accordion__content">
@@ -186,7 +293,9 @@ import Accordion from '@ds-react/pro/Accordion';
 <div class="ds-accordion__wrapper">
     <div class="ds-accordion">
         <button class="ds-accordion__title" aria-expanded="false" tabindex="0" data-multiopen>
-            <span>Title 1</span>
+            <div class="ds-accordion__title-wrapper">
+                <span>Title 1</span>
+            </div>
             <span class="ds-icon--expand" aria-label="expand"></span>
         </button>
         
@@ -197,7 +306,92 @@ import Accordion from '@ds-react/pro/Accordion';
     
     <div class="ds-accordion">
         <button class="ds-accordion__title" aria-expanded="false" tabindex="0" data-multiopen>
-            <span>Title 2</span>
+            <div class="ds-accordion__title-wrapper">
+                <span>Title 2</span>
+            </div>
+            <span class="ds-icon--expand" aria-label="expand"></span>
+        </button>
+        
+        <div class="ds-accordion__content">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.</div>
+        </div>
+    </div>
+</div>
+        `
+    },
+    {
+        title: 'Multiple accordion with icon',
+        template: MultipleIcon,
+        reactCode: `
+import Accordion from '@ds-react/pro/Accordion';
+
+<Accordion
+    accordionContent={[
+        {
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.',
+            icon: 'ds-icon--question',
+            header: 'Title 1'
+        },
+        {
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.',
+            icon: 'ds-icon--question',
+            header: 'Title 2'
+        }
+    ]}
+/>
+        `,
+        angularCode: `
+<mat-accordion class="ds-accordion__wrapper" [multi]="true">
+    <mat-expansion-panel class="ds-accordion">
+        <mat-expansion-panel-header class="ds-accordion__title">
+            <div class="ds-accordion__title-wrapper">
+                <span class="ds-icon--question" aria-label="icon-question"></span>
+                <span>Title 1</span>
+            </div>
+        </mat-expansion-panel-header>
+
+        <div class="ds-accordion__content">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.</div>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel class="ds-accordion">
+        <mat-expansion-panel-header class="ds-accordion__title">
+            <div class="ds-accordion__title-wrapper">
+                <span class="ds-icon--question" aria-label="icon-question"></span>
+                <span>Title 2</span>
+            </div>
+        </mat-expansion-panel-header>
+
+        <div class="ds-accordion__content">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.</div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>
+        `,
+        tsCode: '',
+        htmlCode: `
+<div class="ds-accordion__wrapper">
+    <div class="ds-accordion">
+        <button class="ds-accordion__title" aria-expanded="false" tabindex="0" data-multiopen>
+            <div class="ds-accordion__title-wrapper">
+                <span class="ds-icon--question" aria-label="icon-question"></span>
+                <span>Title 1</span>
+            </div>
+            <span class="ds-icon--expand" aria-label="expand"></span>
+        </button>
+        
+        <div class="ds-accordion__content">
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.</div>
+        </div>
+    </div>
+    
+    <div class="ds-accordion">
+        <button class="ds-accordion__title" aria-expanded="false" tabindex="0" data-multiopen>
+            <div class="ds-accordion__title-wrapper">
+                <span class="ds-icon--question" aria-label="icon-question"></span>
+                <span>Title 2</span>
+            </div>
             <span class="ds-icon--expand" aria-label="expand"></span>
         </button>
         
