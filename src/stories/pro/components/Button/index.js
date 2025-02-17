@@ -76,7 +76,7 @@ const Button = ({
                         ></span>
                     ) : (
                         <>
-                            {iconClass && !iconRight && (
+                            {iconClass && (
                                 <span
                                     className={`${iconClass} --left`}
                                     aria-label={iconClass}
@@ -84,10 +84,10 @@ const Button = ({
                                 ></span>
                             )}
                             <span>{label}</span>
-                            {iconClass && iconRight && (
+                            {iconRight && (
                                 <span
-                                    className={`${iconClass} --right`}
-                                    aria-label={iconClass}
+                                    className={`${iconRight} --right`}
+                                    aria-label={iconRight}
                                     role="img"
                                 ></span>
                             )}
@@ -103,7 +103,7 @@ Button.propTypes = {
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
     iconClass: PropTypes.string,
-    iconRight: PropTypes.bool,
+    iconRight: PropTypes.string,
     isDestructive: PropTypes.bool,
     isDisabled: PropTypes.bool,
     isInverse: PropTypes.bool,

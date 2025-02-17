@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DSMenu from '../components/Menu';
 import PropTypes from 'prop-types';
 
-import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.css';
+import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.scss';
 
 export const ContextualMenu = ({ 
     menuItems,

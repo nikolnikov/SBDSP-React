@@ -3,14 +3,14 @@ import Avatar from './components/Avatar';
 
 export const headerNavData = [
     {
-        label: 'Notifications',
-        icon: 'ds-icon--bell',
+        label: 'Menu item',
+        icon: 'ds-icon--user-circle',
         route: 'https://www.google.com',
         hasDropdown: false,
         dropdownContents: null
     },
     {
-        label: 'Account',
+        label: 'Menu item',
         icon: 'ds-icon--user-circle',
         route: null,
         hasDropdown: true,
@@ -21,7 +21,7 @@ export const headerNavData = [
 export const avatarMenuContent = (
     <div className="ds-ptb-16 ds-flex --column">
         <div className="ds-plr-12 ds-flex --row --start-center">
-            <Avatar size="small">E</Avatar>
+            <Avatar size="small" initial="E" />
 
             <h4 className="ds-m-0 ds-ml-8">Edward, Blake</h4>
         </div>
@@ -67,6 +67,66 @@ export const nameOptions = [
     'Kovachs, Walter',
     'Mason, Hollis',
     'Osterman, Jon'
+];
+
+export const navItems = [
+    {
+        label: 'Home',
+        iconClass: 'ds-icon--house',
+        hasNotification: false,
+        notificationCount: '',
+        route: ''
+    },
+    {
+        label: 'Tests',
+        iconClass: 'ds-icon--test-tube-label',
+        hasNotification: true,
+        notificationCount: '#',
+        route: '',
+        subItems: [
+            {
+                label: 'Tests sub menu label',
+                route: '',
+                expandedSubItems: [
+                    {
+                        label: 'Sub menu label'
+                    },
+                    {
+                        label: 'Sub menu label'
+                    }
+                ]
+            },
+            {
+                label: 'Tests sub menu label',
+                route: ''
+            }
+        ]
+    },
+    {
+        label: 'Results',
+        iconClass: 'ds-icon--notepad',
+        hasNotification: true,
+        notificationCount: '',
+        route: '',
+        subItems: [
+            {
+                label: 'Results sub menu label',
+                route: '',
+                expandedSubItems: [
+                    {
+                        label: 'Sub menu label'
+                    },
+                    {
+                        label: 'Sub menu label'
+                    }
+                ]
+            },
+            {
+                label: 'Results sub menu label',
+                route: ''
+            }
+        ]
+    }
 ];
 
 export const stepperData = [

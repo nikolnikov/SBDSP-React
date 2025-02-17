@@ -18,7 +18,7 @@ const Toast = ({
     const action = (
         <>
             {textLinkLabel && (
-                <a className="ds-link" onClick={onClose}>
+                <a className="ds-link" href onClick={onClose}>
                     {textLinkLabel}
                 </a>
             )}

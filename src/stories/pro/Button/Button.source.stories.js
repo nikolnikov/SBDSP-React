@@ -12,7 +12,7 @@ export const StoryDocs = () => {
 };
 
 export default {
-    title: 'Professional/Button/Code',
+    title: 'Professional/Button/Standard/Code',
     component: Button,
     parameters: {
         layout: 'centered',
@@ -46,8 +46,15 @@ PrimaryWithIcon.args = {
 
 export const PrimaryWithIconRight = Template.bind({});
 PrimaryWithIconRight.args = {
-    iconClass: 'ds-icon--plus-circle',
-    iconRight: true,
+    iconRight: 'ds-icon--plus-circle',
+    label: 'Button label',
+    type: 'primary'
+};
+
+export const PrimaryWithBothIcons = Template.bind({});
+PrimaryWithBothIcons.args = {
+    iconClass: 'ds-icon--info',
+    iconRight: 'ds-icon--caret-right',
     label: 'Button label',
     type: 'primary'
 };
@@ -123,52 +130,9 @@ SecondaryInverse.args = {
     type: 'secondary'
 };
 
-export const IconButtonLarge = Template.bind({});
-IconButtonLarge.args = {
-    iconClass: 'ds-icon--gear',
-    type: 'icon'
-};
-
-export const IconButtonMedium = Template.bind({});
-IconButtonMedium.args = {
-    iconClass: 'ds-icon--gear',
-    type: 'icon',
-    size: 'medium'
-};
-
-export const IconButtonSmall = Template.bind({});
-IconButtonSmall.args = {
-    iconClass: 'ds-icon--gear',
-    type: 'icon',
-    size: 'small'
-};
-
-export const IconButtonLargeInverse = Template.bind({});
-IconButtonLargeInverse.args = {
-    iconClass: 'ds-icon--gear',
-    type: 'icon',
-    isInverse: true
-};
-
-export const IconButtonMediumInverse = Template.bind({});
-IconButtonMediumInverse.args = {
-    iconClass: 'ds-icon--gear',
-    type: 'icon',
-    size: 'medium',
-    isInverse: true
-};
-
-export const IconButtonSmallInverse = Template.bind({});
-IconButtonSmallInverse.args = {
-    iconClass: 'ds-icon--gear',
-    type: 'icon',
-    size: 'small',
-    isInverse: true
-};
-
 const storyData = [
     {
-        title: 'Button',
+        title: 'Primary button',
         template: Primary,
         reactCode: `
 import Button from '@ds-react/pro/Button';
@@ -188,7 +152,7 @@ import Button from '@ds-react/pro/Button';
         `
     },
     {
-        title: 'Button with icon',
+        title: 'Primary button with left icon',
         template: PrimaryWithIcon,
         reactCode: `
 import Button from '@ds-react/pro/Button';
@@ -210,7 +174,7 @@ import Button from '@ds-react/pro/Button';
         `
     },
     {
-        title: 'Button with icon right',
+        title: 'Primary button with right icon',
         template: PrimaryWithIconRight,
         reactCode: `
 import Button from '@ds-react/pro/Button';
@@ -236,7 +200,36 @@ import Button from '@ds-react/pro/Button';
         `
     },
     {
-        title: 'Button disabled',
+        title: 'Primary button with both icons',
+        template: PrimaryWithBothIcons,
+        reactCode: `
+import Button from '@ds-react/pro/Button';
+
+<Button 
+    label="Button"
+    iconClass="ds-icon--info"
+    iconRight="ds-icon--caret-right"
+    iconRight
+/>
+        `,
+        angularCode: `
+<button type="button" class="ds-button --primary" aria-label="Button label">
+    <span class="ds-icon--info --left" aria-label="ds-icon--info" role="img"></span>
+    <span>Button label</span>
+    <span class="ds-icon--caret-right --right" aria-label="ds-icon--caret-right" role="img"></span>
+</button>
+        `,
+        tsCode: '',
+        htmlCode: `
+<button type="button" class="ds-button --primary" aria-label="Button label">
+    <span class="ds-icon--info --left" aria-label="ds-icon--info" role="img"></span>
+    <span>Button label</span>
+    <span class="ds-icon--caret-right --right" aria-label="ds-icon--caret-right" role="img"></span>
+</button>
+        `
+    },
+    {
+        title: 'Primary disabled button',
         template: PrimaryDisabled,
         reactCode: `
 import Button from '@ds-react/pro/Button';
@@ -259,7 +252,7 @@ import Button from '@ds-react/pro/Button';
         `
     },
     {
-        title: 'Button destructive',
+        title: 'Primary destructive button',
         template: PrimaryDestructive,
         reactCode: `
 import Button from '@ds-react/pro/Button';
@@ -282,7 +275,7 @@ import Button from '@ds-react/pro/Button';
         `
     },
     {
-        title: 'Button secondary',
+        title: 'Secondary button',
         template: Secondary,
         reactCode: `
 import Button from '@ds-react/pro/Button';
@@ -305,7 +298,7 @@ import Button from '@ds-react/pro/Button';
         `
     },
     {
-        title: 'Button secondary disabled',
+        title: 'Secondary disabled button',
         template: SecondaryDisabled,
         reactCode: `
 import Button from '@ds-react/pro/Button';
@@ -329,7 +322,7 @@ import Button from '@ds-react/pro/Button';
         `
     },
     {
-        title: 'Button ghost',
+        title: 'Ghost button',
         template: Ghost,
         reactCode: `
 import Button from '@ds-react/pro/Button';
@@ -352,7 +345,7 @@ import Button from '@ds-react/pro/Button';
         `
     },
     {
-        title: 'Button ghost destructive',
+        title: 'Ghost destructive button',
         template: GhostDestructive,
         reactCode: `
 import Button from '@ds-react/pro/Button';
@@ -376,7 +369,7 @@ import Button from '@ds-react/pro/Button';
         `
     },
     {
-        title: 'Button save',
+        title: 'Primary save button',
         template: PrimarySave,
         reactCode: `
 import Button from '@ds-react/pro/Button';
@@ -469,7 +462,7 @@ get customSaveClasses() {
         `
     },
     {
-        title: 'Button small',
+        title: 'Primary small button',
         template: PrimarySmall,
         reactCode: `
 import Button from '@ds-react/pro/Button';
@@ -489,7 +482,7 @@ import Button from '@ds-react/pro/Button';
         `
     },
     {
-        title: 'Button secondary small',
+        title: 'Secondary small button',
         template: SecondarySmall,
         reactCode: `
 import Button from '@ds-react/pro/Button';
@@ -509,7 +502,7 @@ import Button from '@ds-react/pro/Button';
         `
     },
     {
-        title: 'Button inverse',
+        title: 'Primary inverse button',
         template: PrimaryInverse,
         theme: 'dark-bg',
         reactCode: `
@@ -530,7 +523,7 @@ import Button from '@ds-react/pro/Button';
         `
     },
     {
-        title: 'Button secondary inverse',
+        title: 'Secondary inverse button',
         template: SecondaryInverse,
         theme: 'dark-bg',
         reactCode: `
@@ -549,151 +542,6 @@ import Button from '@ds-react/pro/Button';
     <span>Button label</span>
 </button>
         `
-    },
-    {
-        title: 'Button icon large',
-        template: IconButtonLarge,
-        reactCode: `
-import Button from '@ds-react/pro/Button';
-
-<Button iconClass="ds-icon--gear" type="icon" />
-        `,
-        angularCode: `
-<button type="button" class="ds-button --icon">
-    <span class="ds-icon--gear" aria-label="ds-icon--gear" role="img"></span>
-</button>
-        `,
-        tsCode: '',
-        htmlCode: `
-<button type="button" class="ds-button --icon">
-    <span class="ds-icon--gear" aria-label="ds-icon--gear" role="img"></span>
-</button>
-        `
-    },
-    {
-        title: 'Button icon medium',
-        template: IconButtonMedium,
-        reactCode: `
-import Button from '@ds-react/pro/Button';
-
-<Button 
-    iconClass="ds-icon--gear" 
-    size="medium"
-    type="icon"
-/>
-        `,
-        angularCode: `
-<button type="button" class="ds-button --icon --md">
-    <span class="ds-icon--gear" aria-label="ds-icon--gear" role="img"></span>
-</button>
-        `,
-        tsCode: '',
-        htmlCode: `
-<button type="button" class="ds-button --icon --md">
-    <span class="ds-icon--gear" aria-label="ds-icon--gear" role="img"></span>
-</button>
-        `
-    },
-    {
-        title: 'Button icon small',
-        template: IconButtonSmall,
-        reactCode: `
-import Button from '@ds-react/pro/Button';
-
-<Button 
-    iconClass="ds-icon--gear" 
-    size="small"
-    type="icon"
-/>
-        `,
-        angularCode: `
-<button type="button" class="ds-button --icon --sm">
-    <span class="ds-icon--gear" aria-label="ds-icon--gear" role="img"></span>
-</button>
-        `,
-        tsCode: '',
-        htmlCode: `
-<button type="button" class="ds-button --icon --sm">
-    <span class="ds-icon--gear" aria-label="ds-icon--gear" role="img"></span>
-</button>
-        `
-    },
-    {
-        title: 'Button icon large inverse',
-        template: IconButtonLargeInverse,
-        theme: 'dark-bg',
-        reactCode: `
-import Button from '@ds-react/pro/Button';
-
-<Button 
-    iconClass="ds-icon--gear"
-    isInverse
-    type="icon"
-/>
-        `,
-        angularCode: `
-<button type="button" class="ds-button --icon --inverse">
-    <span class="ds-icon--gear" aria-label="ds-icon--gear" role="img"></span>
-</button>
-        `,
-        tsCode: '',
-        htmlCode: `
-<button type="button" class="ds-button --icon --inverse">
-    <span class="ds-icon--gear" aria-label="ds-icon--gear" role="img"></span>
-</button>
-        `
-    },
-    {
-        title: 'Button icon medium inverse',
-        template: IconButtonMediumInverse,
-        theme: 'dark-bg',
-        reactCode: `
-import Button from '@ds-react/pro/Button';
-
-<Button 
-    iconClass="ds-icon--gear" 
-    isInverse
-    size="medium"
-    type="icon"
-/>
-        `,
-        angularCode: `
-<button type="button" class="ds-button --icon --inverse --md">
-    <span class="ds-icon--gear" aria-label="ds-icon--gear" role="img"></span>
-</button>
-        `,
-        tsCode: '',
-        htmlCode: `
-<button type="button" class="ds-button --icon --inverse --md">
-    <span class="ds-icon--gear" aria-label="ds-icon--gear" role="img"></span>
-</button>
-        `
-    },
-    {
-        title: 'Button icon small inverse',
-        template: IconButtonSmallInverse,
-        theme: 'dark-bg',
-        reactCode: `
-import Button from '@ds-react/pro/Button';
-
-<Button 
-    iconClass="ds-icon--gear" 
-    isInverse
-    size="small"
-    type="icon"
-/>
-        `,
-        angularCode: `
-<button type="button" class="ds-button --icon --inverse --sm">
-    <span class="ds-icon--gear" aria-label="ds-icon--gear" role="img"></span>
-</button>
-        `,
-        tsCode: '',
-        htmlCode: `
-<button type="button" class="ds-button --icon --inverse --sm">
-    <span class="ds-icon--gear" aria-label="ds-icon--gear" role="img"></span>
-</button>
-        `
     }
 ];
 
@@ -707,6 +555,6 @@ const storyPropTypes = [
     'isInverse: PropTypes.bool,',
     'isSave: PropTypes.bool,',
     'label: PropTypes.string,',
-    "size: PropTypes.oneOf(['small', 'medium', 'large']),",
-    "type: PropTypes.oneOf(['secondary', 'ghost', 'icon'])"
+    "size: PropTypes.oneOf(['small', 'large']),",
+    "type: PropTypes.oneOf(['primary', 'secondary', 'ghost'])"
 ];

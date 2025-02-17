@@ -2,7 +2,7 @@ import React from 'react';
 import DSTooltip from '../components/Tooltip';
 import PropTypes from 'prop-types';
 
-import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.css';
+import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.scss';
 
 export const Tooltip = ({ 
     children, 

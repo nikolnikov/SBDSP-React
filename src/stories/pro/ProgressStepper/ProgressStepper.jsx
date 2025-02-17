@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { stepperData } from '../data';
 
-import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.css';
+import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.scss';
 
 export const ProgressStepper = ({ 
     customClasses = [],

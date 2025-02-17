@@ -144,3 +144,32 @@ h2.sbdocs-subtitle h4 {
 .ds-list li {
     padding: 0 !important;
 }
+
+.navrail {
+    position: relative !important;
+    height: 400px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.navrail .ds-navrail__rail,
+.navrail .ds-navrail__drawer {
+    height: calc(100% - 90px) !important;
+    position: absolute !important;
+}
+
+.navrail .ds-navrail.--no-header .ds-navrail__rail,
+.navrail .ds-navrail.--no-header .ds-navrail__drawer {
+    height: 100% !important;   
+}
+
+.navrail .ds-header {
+    position: absolute !important;
+    top: 0 !important;
+    width: 100% !important;
+}
+
+.navrail .css-s230ta,
+.navrail .docs-story, .docs-story > div {
+    height: 100% !important;
+}

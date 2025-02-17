@@ -1,52 +1,138 @@
-"use client";
-import React, { useState } from "react";
-import classNames from "classnames";
-import Overlay from "../../Overlay";
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import classNames from 'classnames';
+import Button from '../../Button';
+import Menu from '../../Menu';
 
-const HeaderNav = ({ navData }) => {
-  const [menuOpen, setMenuOpen] = useState(Array(navData.length).fill(false));
+const HeaderNav = ({
+    buttonClickHandler,
+    buttonLabel,
+    navData,
+    secondaryButton,
+    userAvatarInitial,
+    userMenuContent,
+    userName
+}) => {
+    const [userMenu, setUserMenu] = useState();
+    const [menuOpen, setMenuOpen] = useState(null);
+    const navRef = useRef(null);
 
-  const menuToggle = (idx) => {
-    setMenuOpen(menuOpen.map((open, index) => (index === idx ? !open : false)));
-  };
+    const handleClick = e => {
+        setUserMenu(e.currentTarget);
+    };
+    const handleClose = () => {
+        setUserMenu();
+    };
 
-  return (
-    <>
-      {navData.map((navItem, idx) => (
-        <div
-          key={idx}
-          className={classNames("ds-header__nav-item", {
-            "--active": menuOpen[idx],
-          })}
-        >
-          <button onClick={() => menuToggle(idx)}>
-            <span className={navItem.icon} aria-label={navItem.label}></span>
-            {navItem.label}
-            {navItem.hasDropdown && (
-              <span
-                className="ds-icon--caret-down"
-                aria-label="Dropdown"
-              ></span>
+    const menuToggle = idx => {
+        setMenuOpen(prevState => (prevState === idx ? null : idx));
+    };
+
+    const handleClickOutside = useCallback(event => {
+        if (navRef.current && !navRef.current.contains(event.target)) {
+            setMenuOpen(null);
+        }
+    }, []);
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [handleClickOutside]);
+
+    return (
+        <nav className="ds-header__nav" ref={navRef}>
+            <div className="ds-header__nav-item-wrapper">
+                {navData &&
+                    navData.length > 0 &&
+                    navData.map((navItem, idx) => (
+                        <React.Fragment key={idx}>
+                            <div
+                                className={classNames('ds-header__nav-item', {
+                                    '--active': menuOpen === idx
+                                })}
+                            >
+                                <button
+                                    onClick={
+                                        navItem.route
+                                            ? () =>
+                                                  (window.location.href =
+                                                      navItem.route)
+                                            : () => menuToggle(idx)
+                                    }
+                                >
+                                    {navItem.icon && (
+                                        <span
+                                            className={navItem.icon}
+                                            aria-label={navItem.label}
+                                        ></span>
+                                    )}
+                                    {navItem.label}
+                                    <span
+                                        className="ds-icon--caret-down"
+                                        aria-label="Dropdown"
+                                    ></span>
+                                </button>
+
+                                {navItem.dropdownContents &&
+                                    menuOpen === idx && (
+                                        <div className="ds-header__dropdown">
+                                            {navItem.dropdownContents}
+                                        </div>
+                                    )}
+                            </div>
+                        </React.Fragment>
+                    ))}
+            </div>
+
+            {buttonLabel && (
+                <Button
+                    ariaLabel={buttonLabel}
+                    clickHandler={buttonClickHandler}
+                    label={buttonLabel}
+                    size="small"
+                    type={secondaryButton ? 'secondary' : null}
+                >
+                    {buttonLabel}
+                </Button>
             )}
-          </button>
 
-          {navItem.hasDropdown && (
-            <>
-              <div className="ds-header__dropdown">
-                {navItem.dropdownContents}
-              </div>
+            {userAvatarInitial && (
+                <>
+                    <button
+                        className={classNames(
+                            'ds-header__account ds-menu__trigger',
+                            {
+                                '--opened': userMenu
+                            }
+                        )}
+                        aria-label="account menu"
+                        onClick={handleClick}
+                    >
+                        <div className="ds-avatar --solid --medium">
+                            {userAvatarInitial}
+                        </div>
+                        {userName && (
+                            <div className="ds-header__account-name">
+                                {userName}
+                            </div>
+                        )}
+                        <span className="ds-icon--caret-down"></span>
+                    </button>
 
-              <Overlay
-                clickHandler={() => menuToggle(idx)}
-                opened={menuOpen[idx]}
-                transparent
-              />
-            </>
-          )}
-        </div>
-      ))}
-    </>
-  );
+                    <Menu
+                        closeMenu={handleClose}
+                        menuClass="--account-menu"
+                        menuRight
+                        menuWidth={320}
+                        openMenu={userMenu}
+                    >
+                        {userMenuContent}
+                    </Menu>
+                </>
+            )}
+        </nav>
+    );
 };
 
 export default HeaderNav;

@@ -20,7 +20,7 @@ const DatePicker = ({
     isRange,
     isRequired,
     label,
-    placeholder = 'mm/dd/yyyy',
+    placeholder,
     offset,
     showOnTop
 }) => {

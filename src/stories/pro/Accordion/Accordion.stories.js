@@ -28,13 +28,6 @@ export default {
 const Template = args => <Accordion {...args} />;
 
 export const Single = Template.bind({});
-Single.parameters = {
-    docs: {
-        description: {
-            story: 'Accordion with single item expanded.'
-        }
-    }
-};
 Single.args = {
     accordionContent: [
         {

@@ -3,7 +3,7 @@ import { Canvas, Controls } from '@storybook/blocks';
 import { Button } from './Button';
 
 export default {
-    title: 'Professional/Button',
+    title: 'Professional/Button/Standard',
     component: Button,
     parameters: {
         layout: 'centered',
@@ -30,6 +30,7 @@ const Template = args => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
     label: 'Button label',
+    size: 'large',
     type: 'primary'
 };
 Primary.argTypes = {

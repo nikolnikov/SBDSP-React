@@ -3,7 +3,7 @@ import DSAutocomplete from '../components/Autocomplete';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.css';
+import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.scss';
 
 export const Autocomplete = ({ 
     customClasses = [],

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Source, Story, Subtitle, Unstyled } from '@storybook/blocks';
 
-export const StoriesTemplate = ({ storyData, storyPropTypes }) => {
+export const StoriesTemplate = ({ isNavrail, storyData, storyPropTypes }) => {
     const Tabs = [
         {
             title: 'React'
@@ -71,7 +71,7 @@ export const StoriesTemplate = ({ storyData, storyPropTypes }) => {
                         </div>
 
                         <div
-                            className={`ds-story__preview ${story.theme ? story.theme : ''}`}
+                            className={`ds-story__preview ${isNavrail ? 'navrail' : ''} ${story.theme ? story.theme : ''}`}
                         >
                             <Story of={story.template} />
                         </div>
@@ -162,7 +162,7 @@ export const StoriesTemplate = ({ storyData, storyPropTypes }) => {
                 </div>
             ))}
 
-            <Subtitle>
+            {/* <Subtitle>
                 <div className="props-card">
                     <h4>React props</h4>
                     <ul className="ds-list">
@@ -171,12 +171,13 @@ export const StoriesTemplate = ({ storyData, storyPropTypes }) => {
                         ))}
                     </ul>
                 </div>
-            </Subtitle>
+            </Subtitle> */}
         </>
     );
 };
 
 StoriesTemplate.propTypes = {
+    isNavrail: PropTypes.bool,
     storyData: PropTypes.array,
     storyPropTypes: PropTypes.array
 };

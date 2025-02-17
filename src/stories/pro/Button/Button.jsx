@@ -3,12 +3,12 @@ import DSButton from '../components/Button'
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.css';
+import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.scss';
 
 export const Button = ({ 
     customClasses = null,
     iconClass = null,
-    iconRight = false,
+    iconRight = null,
     isDestructive = false,
     isDisabled = false,
     isInverse = false,
@@ -70,12 +70,12 @@ Button.propTypes = {
     label: PropTypes.string,
     customClasses: PropTypes.string,
     iconClass: PropTypes.string,
-    iconRight: PropTypes.bool,
+    iconRight: PropTypes.string,
     isDestructive: PropTypes.bool,
     isDisabled: PropTypes.bool,
     isInverse: PropTypes.bool,
     isSave: PropTypes.bool,
     clickHandler: PropTypes.func,
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
-    type: PropTypes.oneOf(['primary', 'secondary', 'ghost', 'icon']),
+    size: PropTypes.oneOf(['small', 'large']),
+    type: PropTypes.oneOf(['primary', 'secondary', 'ghost']),
 };

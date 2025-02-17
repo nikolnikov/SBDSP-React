@@ -55,7 +55,7 @@ const Input = ({
                 {leftIcon && (
                     <span
                         className={`${leftIcon} --left`}
-                        aria-label="{leftIcon}"
+                        aria-label={`${leftIcon}`}
                     ></span>
                 )}
                 <input
@@ -69,7 +69,7 @@ const Input = ({
                 {rightIcon && (
                     <span
                         className={`${rightIcon} --right`}
-                        aria-label="{rightIcon}"
+                        aria-label={`${rightIcon}`}
                     ></span>
                 )}
                 {isLoading && (

@@ -41,20 +41,26 @@ Primary.args = {
     maxWidth: true
 };
 
-export const PrimaryNavButtonAvatar = Template.bind({});
-PrimaryNavButtonAvatar.args = {
-    logo: 'https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg',
-    logoSize: 'small',
-    margins: true,
-    maxWidth: true,
-    hasNav: true,
-    navData: headerNavData,
-    buttonClickHandler: () => {},
-    buttonLabel: 'Sign In',
-    secondaryButton: true,
+export const PrimaryAvatar = Template.bind({});
+PrimaryAvatar.args = {
+    ...Primary.args,
     userAvatarInitial: 'E',
-    userMenuContent: avatarMenuContent,
-    userName: 'Edward Blake'
+    userMenuContent: avatarMenuContent
+};
+
+export const PrimaryButton = Template.bind({});
+PrimaryButton.args = {
+    ...Primary.args,
+    buttonClickHandler: () => console.log('Button clicked'),
+    buttonLabel: 'Sign In'
+};
+
+export const PrimaryButtonSecondary = Template.bind({});
+PrimaryButtonSecondary.args = {
+    ...Primary.args,
+    buttonClickHandler: () => console.log('Button clicked'),
+    buttonLabel: 'Sign In',
+    secondaryButton: true
 };
 
 const storyData = [
@@ -62,14 +68,177 @@ const storyData = [
         title: 'Header',
         template: Primary,
         reactCode: `
-Contact DesignSystem team for code.
+import Header from '@ds-react/pro/Header';
+
+<Header
+    logo="https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg"
+    logoSize="medium"
+    margins
+    maxWidth
+/>
         `,
         angularCode: `
-Contact DesignSystem team for code.
+<header class="ds-header">
+    <div class="ds-grid --max-width --margins">
+        <button class="ds-brand-wrapper --medium">
+            <img src="https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg" alt="Quest Diagnostics" />
+        </button>
+    </div>
+</header>
         `,
         tsCode: '',
         htmlCode: `
-Contact DesignSystem team for code.
+<header class="ds-header">
+    <div class="ds-grid --max-width --margins">
+        <button class="ds-brand-wrapper --medium">
+            <img src="https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg" alt="Quest Diagnostics" />
+        </button>
+    </div>
+</header>
+`
+    },
+    {
+        title: 'Header with avatar',
+        template: PrimaryAvatar,
+        reactCode: `
+import Header from '@ds-react/pro/Header';
+
+const avatarMenuContent = (
+    <div className="ds-ptb-16 ds-flex --column">
+        <div className="ds-plr-12 ds-flex --row --start-center">
+            <Avatar size="small" initial="E" />
+
+            <h4 className="ds-m-0 ds-ml-8">Edward, Blake</h4>
+        </div>
+
+        <hr className="ds-mtb-12 ds-gray__100--bg" />
+
+        <button className="ds-menu__item">Sign out</button>
+    </div>
+);
+
+<Header
+    logo="https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg"
+    logoSize="medium"
+    margins
+    maxWidth
+    userAvatarInitial="E"
+    userMenuContent={avatarMenuContent}
+/>
+        `,
+        angularCode: `
+<header class="ds-header">
+    <div class="ds-grid --max-width --margins">
+        <button class="ds-brand-wrapper --medium">
+            <img src="https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg" alt="Quest Diagnostics" />
+        </button>
+    </div>
+</header>
+        `,
+        tsCode: '',
+        htmlCode: `
+<header class="ds-header">
+    <div class="ds-grid --max-width --margins">
+        <button class="ds-brand-wrapper --medium">
+            <img src="https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg" alt="Quest Diagnostics" />
+        </button>
+    </div>
+</header>
+`
+    },
+    {
+        title: 'Header with button',
+        template: PrimaryButton,
+        reactCode: `
+import Header from '@ds-react/pro/Header';
+
+<Header
+    logo="https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg"
+    logoSize="medium"
+    margins
+    maxWidth
+    buttonClickHandler={() => console.log('Button clicked')}
+    buttonLabel="Sign in"
+/>
+        `,
+        angularCode: `
+<header class="ds-header">
+    <div class="ds-grid --max-width --margins">
+        <button class="ds-brand-wrapper --medium">
+            <img src="https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg" alt="Quest Diagnostics" />
+        </button>
+
+        <nav class="ds-header__nav">
+            <button class="ds-button --primary --small ds-ml-16">
+                Sign in
+            </button>
+        </nav>
+    </div>
+</header>
+        `,
+        tsCode: '',
+        htmlCode: `
+<header class="ds-header">
+    <div class="ds-grid --max-width --margins">
+        <button class="ds-brand-wrapper --medium">
+            <img src="https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg" alt="Quest Diagnostics" />
+        </button>
+
+        <nav class="ds-header__nav">
+            <button class="ds-button --primary --small ds-ml-16">
+                Sign in
+            </button>
+        </nav>
+    </div>
+</header>
+`
+    },
+    {
+        title: 'Header with secondary button',
+        template: PrimaryButtonSecondary,
+        reactCode: `
+import Header from '@ds-react/pro/Header';
+
+<Header
+    logo="https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg"
+    logoSize="medium"
+    margins
+    maxWidth
+    buttonClickHandler={() => console.log('Button clicked')}
+    buttonLabel="Sign in"
+    secondaryButton
+/>
+        `,
+        angularCode: `
+<header class="ds-header">
+    <div class="ds-grid --max-width --margins">
+        <button class="ds-brand-wrapper --medium">
+            <img src="https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg" alt="Quest Diagnostics" />
+        </button>
+
+        <nav class="ds-header__nav">
+            <button class="ds-button --secondary --small ds-ml-16">
+                Sign in
+            </button>
+        </nav>
+    </div>
+</header>
+        `,
+        tsCode: '',
+        htmlCode: `
+<header class="ds-header">
+    <div class="ds-grid --max-width --margins">
+        <button class="ds-brand-wrapper --medium">
+            <img src="https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg" alt="Quest Diagnostics" />
+        </button>
+
+        <nav class="ds-header__nav">
+            <button class="ds-button --secondary --small ds-ml-16">
+                Sign in
+            </button>
+        </nav>
+    </div>
+</header>
 `
     }
 ];

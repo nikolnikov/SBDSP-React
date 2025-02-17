@@ -2,7 +2,7 @@ import React from 'react';
 import DSTabs from '../components/Tabs';
 import PropTypes from 'prop-types';
 
-import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.css';
+import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.scss';
 
 export const Tabs = ({ 
     children,
