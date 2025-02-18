@@ -1,10 +1,10 @@
 import React from 'react';
 import { Canvas, Controls } from '@storybook/blocks';
-import { DSCButton } from './Button';
+import { DSCIconButton } from './IconButton';
 
 export default {
-    title: 'Consumer/Button/Standard',
-    component: DSCButton,
+    title: 'Consumer/Button/Icon',
+    component: DSCIconButton,
     parameters: {
         layout: 'centered',
         controls: {
@@ -25,12 +25,12 @@ export default {
     tags: ['autodocs', '!dev']
 };
 
-const Template = args => <DSCButton {...args} />;
+const Template = args => <DSCIconButton {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    label: 'Button label',
-    type: 'primary',
+    iconClass: 'ds-icon--gear',
+    type: 'icon',
     size: 'large'
 };
 Primary.argTypes = {

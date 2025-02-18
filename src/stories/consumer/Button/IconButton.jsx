@@ -5,46 +5,34 @@ import PropTypes from 'prop-types';
 
 import '!style-loader!css-loader!sass-loader!../../assets/css/dsc.scss';
 
-export const DSCButton = ({ 
+export const DSCIconButton = ({ 
     clickHandler = () => console.log('Button Clicked'),
     customClasses = [],
     iconClass,
-    iconRight,
     isDisabled = false,
     isInverse = false,
-    isDestructive = false,
-    isDownload = false,
-    label,
     size = 'large',
-    type = 'primary'
+    type = 'icon'
 }) => {  
     return (
         <DSButton
             clickHandler={clickHandler}
             customClasses={classNames(customClasses)}
             iconClass={iconClass}
-            iconRight={iconRight}
             isDisabled={isDisabled}
             isInverse={isInverse}
-            isDestructive={isDestructive}
-            isDownload={isDownload}
-            label={label}
             size={size}
             type={type}
         />
     );
 };
 
-DSCButton.propTypes = {
+DSCIconButton.propTypes = {
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
     iconClass: PropTypes.string,
-    iconRight: PropTypes.string,
     isDisabled: PropTypes.bool,
     isInverse: PropTypes.bool,
-    isDestructive: PropTypes.bool,
-    isDownload: PropTypes.bool,
-    label: PropTypes.string,
-    size: PropTypes.oneOf(['small', 'large']),
-    type: PropTypes.oneOf(['primary', 'secondary', 'ghost'])
+    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    type: PropTypes.oneOf(['icon'])
 };
