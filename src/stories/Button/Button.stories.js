@@ -18,9 +18,6 @@ export default {
         },
         interactions: {
             disable: true
-        },
-        source: {
-            type: 'code'
         }
     },
     tags: ['autodocs']

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Canvas, Controls } from '@storybook/blocks';
 import { IconButton } from './IconButton';
 
 export default {
@@ -7,33 +6,31 @@ export default {
     component: IconButton,
     parameters: {
         layout: 'centered',
-        controls: {
-            disable: true
+        backgrounds: {
+            default: 'Light',
+            values: [
+                { name: 'Light', value: '#ffffff' },
+                { name: 'Dark', value: '#034C1F' }
+            ]
         },
         actions: {
             disable: true
         },
-        docs: {
-            page: () => (
-                <>
-                    <Canvas of={Primary} sourceState="none" />
-                    <Controls />
-                </>
-            )
+        interactions: {
+            disable: true
         }
     },
-    tags: ['autodocs', '!dev']
+    tags: ['autodocs']
 };
 
-const Template = args => <IconButton {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-    iconClass: 'ds-icon--gear',
-    size: 'large',
-    type: 'icon'
-};
-Primary.argTypes = {
-    customClasses: { table: { disable: true } },
-    clickHandler: { table: { disable: true } }
+export const Primary = {
+    args: {
+        iconClass: 'ds-icon--gear',
+        size: 'large',
+        type: 'icon'
+    },
+    argTypes: {
+        customClasses: { table: { disable: true } },
+        clickHandler: { table: { disable: true } }
+    }
 };
