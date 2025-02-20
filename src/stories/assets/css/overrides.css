@@ -16,7 +16,8 @@ h2#stories {
 .sbdocs.sb-unstyled {
     font-family: 'Roboto', sans-serif !important;
     margin: 0 0 24px;
-    overflow: visible !important
+    overflow: visible !important;
+    padding-top: 0;
 }
 
 .sb-story.sb-unstyled {
@@ -120,10 +121,6 @@ h2.sbdocs-subtitle h4 {
     min-width: auto;
 }
 
-.sbdocs-preview.sb-unstyled {
-    background-color: #fafafa !important;
-}
-
 .dark-bg .sbdocs-preview.sb-unstyled .docs-story,
 .sb-anchor[id*='-inverse'] .sbdocs-preview.sb-unstyled .docs-story,
 .sbdocs-preview.sb-unstyled.inverse .docs-story {
@@ -169,7 +166,7 @@ h2.sbdocs-subtitle h4 {
     width: 100% !important;
 }
 
-.navrail .css-s230ta,
+/* .navrail .css-s230ta,
 .navrail .docs-story, .docs-story > div {
     height: 100% !important;
-}
+} */
