@@ -68,7 +68,7 @@ const DatePickerInput = ({
                     />
                     <button
                         onClick={toggleCalendar}
-                        className="ds-button --icon --md"
+                        className="ds-button --icon --right"
                         aria-label="Select Date Range"
                     >
                         <span
@@ -90,7 +90,7 @@ const DatePickerInput = ({
 
                     <button
                         onClick={toggleCalendar}
-                        className="ds-button --icon --md --right"
+                        className="ds-button --icon --right"
                         aria-label="Select Date Range"
                     >
                         <span

@@ -8,7 +8,7 @@ const Card = ({ children, customClasses = [], title }) => {
     return (
         <div className={classNames('ds-card', customClasses, {})}>
             <div className="ds-card__content">
-                <div className="ds-card__title">{title}</div>
+                {title && <h3>{title}</h3>}
                 {children}
             </div>
         </div>

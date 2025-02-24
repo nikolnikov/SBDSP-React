@@ -4,7 +4,7 @@ import React from 'react';
 import MuiMenu from '@mui/material/Menu';
 import PropTypes from 'prop-types';
 
-const Menu = ({
+const ContextualMenu = ({
     children,
     closeMenu,
     menuItems,
@@ -69,7 +69,7 @@ const Menu = ({
     );
 };
 
-Menu.propTypes = {
+ContextualMenu.propTypes = {
     children: PropTypes.node,
     closeMenu: PropTypes.func,
     menuItems: PropTypes.array,
@@ -79,4 +79,4 @@ Menu.propTypes = {
     openMenu: PropTypes.object
 };
 
-export default Menu;
+export default ContextualMenu;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from './Button';
 
 export default {
@@ -6,13 +5,6 @@ export default {
     component: Button,
     parameters: {
         layout: 'centered',
-        backgrounds: {
-            default: 'Light',
-            values: [
-                { name: 'Light', value: '#ffffff' },
-                { name: 'Dark', value: '#034C1F' }
-            ]
-        },
         actions: {
             disable: true
         },
@@ -20,10 +12,10 @@ export default {
             disable: true
         }
     },
-    tags: ['autodocs']
+    tags: ['autodocs', '!dev']
 };
 
-export const Primary = {
+export const PrimaryButton = {
     args: {
         label: 'Button label',
         size: 'large',
@@ -35,22 +27,43 @@ export const Primary = {
     }
 };
 
-export const PrimaryDisabled = {
+export const InversePrimaryButton = {
     args: {
-        ...Primary.args,
-        isDisabled: true
+        ...PrimaryButton.args,
+        isInverse: true
     },
     argTypes: {
-        ...Primary.argTypes
+        ...PrimaryButton.argTypes
     }
 };
 
-export const PrimaryDestructive = {
+export const SecondaryButton = {
     args: {
-        ...Primary.args,
-        isDestructive: true
+        ...PrimaryButton.args,
+        type: 'secondary'
     },
     argTypes: {
-        ...Primary.argTypes
+        ...PrimaryButton.argTypes
+    }
+};
+
+export const InverseSecondaryButton = {
+    args: {
+        ...PrimaryButton.args,
+        isInverse: true,
+        type: 'secondary'
+    },
+    argTypes: {
+        ...PrimaryButton.argTypes
+    }
+};
+
+export const GhostButton = {
+    args: {
+        ...PrimaryButton.args,
+        type: 'ghost'
+    },
+    argTypes: {
+        ...PrimaryButton.argTypes
     }
 };

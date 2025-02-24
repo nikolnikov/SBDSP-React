@@ -1,5 +1,6 @@
 import { addons } from '@storybook/manager-api';
 import { create } from '@storybook/theming';
+import '../src/assets/css/overrides.css';
 
 addons.setConfig({
     theme: create({
@@ -8,5 +9,6 @@ addons.setConfig({
         brandUrl: 'https://designsystem.questdiagnostics.com',
         brandImage:
             'https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--white.svg'
-    })
+    }),
+    title: 'DSP React Storybook'
 });

@@ -5,7 +5,9 @@ body {
 
 .css-1yedr2a,
 h1.sbdocs-title,
-h2#stories {
+h2#stories,
+.sb-bar.css-1yedr2a,
+.css-gwq172 {
     display: none !important;
 }
 
@@ -53,7 +55,7 @@ h2#stories {
 }
 
 .docs-story div[scale],
-.docs-story:not(.sb-story *)    {
+.docs-story:not(.sb-story *) {
     transform: none !important;
 }
 
@@ -75,10 +77,28 @@ h2#stories {
 
 .sbdocs.sbdocs-content p {
     font-size: 16px;
-    font-family: "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:
+        'Nunito Sans',
+        -apple-system,
+        '.SFNSText-Regular',
+        'San Francisco',
+        BlinkMacSystemFont,
+        'Segoe UI',
+        'Helvetica Neue',
+        Helvetica,
+        Arial,
+        sans-serif;
     line-height: 24px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.sb-anchor .css-wzniqs {
+    text-transform: lowercase;
+}
+
+.sb-anchor .css-wzniqs:first-letter {
+    text-transform: uppercase;
 }
 
 h2.sbdocs-subtitle {
@@ -87,10 +107,10 @@ h2.sbdocs-subtitle {
 }
 
 h2.sbdocs-subtitle h4 {
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: 500;
-    margin: 0;   
+    margin: 0;
 }
 
 .sb-unstyled:first-of-type h3.title {
@@ -102,7 +122,9 @@ h2.sbdocs-subtitle h4 {
 }
 
 .ds-list li {
-    font: 15px 'Roboto', sans-serif;
+    font:
+        15px 'Roboto',
+        sans-serif;
     line-height: 150%;
     padding: 0;
 }
@@ -121,10 +143,11 @@ h2.sbdocs-subtitle h4 {
     min-width: auto;
 }
 
-.dark-bg .sbdocs-preview.sb-unstyled .docs-story,
-.sb-anchor[id*='-inverse'] .sbdocs-preview.sb-unstyled .docs-story,
-.sbdocs-preview.sb-unstyled.inverse .docs-story {
-    background-color: #034C1F !important;
+.dark-bg .sbdocs-preview.sb-unstyled .docs-story .css-1qq744x,
+.sb-anchor[id*='-inverse'] .sbdocs-preview.sb-unstyled .docs-story .css-1qq744x,
+.sbdocs-preview.sb-unstyled.inverse .docs-story .css-1qq744x,
+body.sb-show-main.dark-theme {
+    background-color: #034c1f !important;
 }
 
 .props-card {
@@ -157,7 +180,7 @@ h2.sbdocs-subtitle h4 {
 
 .navrail .ds-navrail.--no-header .ds-navrail__rail,
 .navrail .ds-navrail.--no-header .ds-navrail__drawer {
-    height: 100% !important;   
+    height: 100% !important;
 }
 
 .navrail .ds-header {

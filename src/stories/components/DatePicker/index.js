@@ -40,7 +40,7 @@ const DatePicker = ({
     const DAYS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
     const toggleCalendar = () => {
-        const yPositionOffset = showOnTop ? offset || -334 : offset || 63;
+        const yPositionOffset = showOnTop ? offset || -335 : offset || 63;
 
         setCalendarPositionY(
             () => (inputRef.current.style.top = 0 + yPositionOffset)

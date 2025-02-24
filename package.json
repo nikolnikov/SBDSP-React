@@ -104,6 +104,7 @@
     "@storybook/addon-onboarding": "^8.4.7",
     "@storybook/addon-storysource": "^8.4.7",
     "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
+    "@storybook/api": "^7.6.17",
     "@storybook/blocks": "^8.4.7",
     "@storybook/react": "^8.4.7",
     "@storybook/react-webpack5": "^8.4.7",
