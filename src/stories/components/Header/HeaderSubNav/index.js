@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import classNames from 'classnames';
 
-const HeaderSubNav = ({ customClasses, margins, maxWidth, subNavData }) => {
+const HeaderSubNav = ({ customClasses, noMargins, noMaxWidth, subNavData }) => {
     const [menuOpen, setMenuOpen] = useState(null);
     const navRef = useRef(null);
 
@@ -26,8 +26,8 @@ const HeaderSubNav = ({ customClasses, margins, maxWidth, subNavData }) => {
         <nav className="ds-header__subnav" ref={navRef}>
             <div
                 className={classNames('ds-grid', customClasses, {
-                    '--margins': margins,
-                    '--max-width': maxWidth
+                    '--margins': !noMargins,
+                    '--max-width': !noMaxWidth
                 })}
             >
                 {subNavData &&

@@ -12,13 +12,13 @@ const Toast = ({
     noIcon,
     onClose,
     opened,
-    status,
-    textLinkLabel
+    textLinkLabel,
+    type
 }) => {
     const action = (
         <>
             {textLinkLabel && (
-                <a className="ds-link" href onClick={onClose}>
+                <a className="ds-link" href={null} onClick={onClose}>
                     {textLinkLabel}
                 </a>
             )}
@@ -36,7 +36,7 @@ const Toast = ({
     return (
         <Snackbar
             classes={{
-                root: `ds-toast ${status ? `--${status}` : ''} ${
+                root: `ds-toast ${type ? `--${type}` : ''} ${
                     noIcon ? '--no-icon' : ''
                 }`
             }}
@@ -61,8 +61,8 @@ Toast.propTypes = {
     noIcon: PropTypes.bool,
     onClose: PropTypes.func.isRequired,
     opened: PropTypes.bool.isRequired,
-    status: PropTypes.oneOf(['success', 'error', 'alert', 'informative']),
-    textLinkLabel: PropTypes.string
+    textLinkLabel: PropTypes.string,
+    type: PropTypes.oneOf(['success', 'error', 'alert', 'informative'])
 };
 
 export default Toast;

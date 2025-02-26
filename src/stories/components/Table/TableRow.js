@@ -3,7 +3,7 @@ import Button from '../Button';
 import Collapse from '@mui/material/Collapse';
 import MuiTableCell from '@mui/material/TableCell';
 import MuiTableRow from '@mui/material/TableRow';
-import Menu from '../Menu';
+import ContextualMenu from '../ContextualMenu';
 import PropTypes from 'prop-types';
 
 const TableRow = ({ expandable, tableCellData }) => {
@@ -74,7 +74,7 @@ const TableRow = ({ expandable, tableCellData }) => {
                                     size="large"
                                     type="icon"
                                 />
-                                <Menu
+                                <ContextualMenu
                                     closeMenu={closeMenu}
                                     menuItems={tableCellData.action.menuItems}
                                     menuRight

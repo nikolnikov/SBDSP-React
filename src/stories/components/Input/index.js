@@ -47,7 +47,7 @@ const Input = ({
                                 className="ds-icon--info"
                                 aria-label="info filled"
                                 role="img"
-                            />
+                            ></span>
                         </button>
                     </Tooltip>
                 )}

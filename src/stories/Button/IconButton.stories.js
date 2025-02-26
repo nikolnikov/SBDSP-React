@@ -31,6 +31,24 @@ PrimaryIconButton.argTypes = {
     clickHandler: { table: { disable: true } }
 };
 
+export const DisabledPrimaryIconButton = Template.bind({});
+DisabledPrimaryIconButton.args = {
+    ...PrimaryIconButton.args,
+    isDisabled: true
+};
+DisabledPrimaryIconButton.argTypes = {
+    ...PrimaryIconButton.argTypes
+};
+
+export const DestructivePrimaryIconButton = Template.bind({});
+DestructivePrimaryIconButton.args = {
+    ...PrimaryIconButton.args,
+    isDestructive: true
+};
+DestructivePrimaryIconButton.argTypes = {
+    ...PrimaryIconButton.argTypes
+};
+
 export const InverseIconButton = Template.bind({});
 InverseIconButton.args = {
     ...PrimaryIconButton.args,

@@ -25,7 +25,7 @@ const Button = ({
                         [`--${type}`]: type,
                         '--primary': type !== 'secondary',
                         [`--${size}`]: size,
-                        '--warning': isDestructive,
+                        '--destructive': isDestructive,
                         '--disabled': isDisabled,
                         '--inverse': isInverse,
                         '--save': isSave
@@ -64,7 +64,7 @@ const Button = ({
                             type !== 'secondary' &&
                             type !== 'icon',
                         [`--${size}`]: size,
-                        '--warning': isDestructive,
+                        '--destructive': isDestructive,
                         '--disabled': isDisabled,
                         '--inverse': isInverse,
                         '--save': isSave

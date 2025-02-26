@@ -4,11 +4,11 @@ import React, { forwardRef } from 'react';
 import MUITooltip from '@mui/material/Tooltip';
 import PropTypes from 'prop-types';
 
-const Tooltip = forwardRef(({ children, placement = 'top', title }, ref) => {
+const Tooltip = forwardRef(({ children, placement = 'top', tooltip }, ref) => {
     return (
         <MUITooltip
             classes={{ popper: 'ds-tooltip' }}
-            title={title}
+            title={tooltip}
             placement={placement}
             ref={ref}
         >
@@ -20,7 +20,7 @@ const Tooltip = forwardRef(({ children, placement = 'top', title }, ref) => {
 Tooltip.propTypes = {
     children: PropTypes.node,
     placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-    title: PropTypes.string
+    tooltip: PropTypes.string
 };
 
 Tooltip.displayName = 'Tooltip';

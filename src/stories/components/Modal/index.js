@@ -18,21 +18,22 @@ const Modal = ({
     opened,
     secondaryButtonHandler,
     secondaryButtonLabel,
-    status,
-    title
+    title,
+    type
 }) => {
     return (
         <>
             <MuiModal
                 open={opened}
                 onClose={backdropClickable ? modalClose : null}
-                aria-labelledby={title || 'modal'}
+                aria-label={title || 'modal'}
+                role="dialog"
             >
                 <div
                     className={classNames('ds-modal', {
-                        '--alert': status === 'alert',
-                        '--error': status === 'error',
-                        '--informative': status === 'informative',
+                        '--alert': type === 'alert',
+                        '--error': type === 'error',
+                        '--informative': type === 'informative',
                         '--opened': opened
                     })}
                 >
@@ -100,8 +101,8 @@ Modal.propTypes = {
     opened: propTypes.bool,
     secondaryButtonHandler: propTypes.func,
     secondaryButtonLabel: propTypes.string,
-    status: propTypes.oneOf(['alert', 'error', 'informative']),
-    title: propTypes.string
+    title: propTypes.string,
+    type: propTypes.oneOf(['alert', 'error', 'informative'])
 };
 
 export default Modal;

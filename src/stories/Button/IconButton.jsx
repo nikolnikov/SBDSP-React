@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 export const IconButton = ({ 
     customClasses = null,
     iconClass = null,
+    isDestructive = false,
     isDisabled = false,
     isInverse = false,
     size = 'large',
@@ -16,6 +17,7 @@ export const IconButton = ({
             clickHandler={() => console.log('Button Clicked')}
             customClasses={classNames(customClasses)}
             iconClass={iconClass}
+            isDestructive={isDestructive}
             isDisabled={isDisabled}
             isInverse={isInverse}
             size={size}
@@ -27,6 +29,7 @@ export const IconButton = ({
 IconButton.propTypes = {
     customClasses: PropTypes.string,
     iconClass: PropTypes.string,
+    isDestructive: PropTypes.bool,
     isDisabled: PropTypes.bool,
     isInverse: PropTypes.bool,
     clickHandler: PropTypes.func,

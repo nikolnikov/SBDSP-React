@@ -112,7 +112,7 @@ function Pagination({
 }
 
 Pagination.propTypes = {
-    customClasses: PropTypes.array,
+    customClasses: PropTypes.string,
     nextHandler: PropTypes.func,
     prevHandler: PropTypes.func,
     totalItemCount: PropTypes.number,

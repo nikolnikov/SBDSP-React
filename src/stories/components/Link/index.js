@@ -14,7 +14,7 @@ const Link = ({
     newWindow,
     url
 }) => {
-    return (
+    return iconLeft || iconRight ? (
         <a
             href={url}
             target={newWindow ? '_blank' : '_self'}
@@ -32,6 +32,19 @@ const Link = ({
             {iconRight && (
                 <span className={iconRight} aria-label={iconRight}></span>
             )}
+        </a>
+    ) : (
+        <a
+            href={url}
+            target={newWindow ? '_blank' : '_self'}
+            rel={newWindow ? 'noreferrer' : undefined}
+            className={classNames('ds-link', customClasses, {
+                '--destructive': isDestructive,
+                '--inverse': isInverse,
+                '--icons': iconLeft || iconRight
+            })}
+        >
+            {label}
         </a>
     );
 };

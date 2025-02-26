@@ -11,7 +11,7 @@ const Loader = ({
     isCentered,
     isFixed,
     progress,
-    small
+    isSmall
 }) => {
     return (
         <CircularProgress
@@ -22,7 +22,7 @@ const Loader = ({
             className={classNames('ds-loading', customClasses, {
                 '--centered': isCentered,
                 '--fixed': isFixed,
-                '--small': small
+                '--small': isSmall
             })}
         />
     );
@@ -34,7 +34,7 @@ Loader.propTypes = {
     isDeterminate: PropTypes.bool,
     isFixed: PropTypes.bool,
     progress: PropTypes.number,
-    small: PropTypes.bool
+    isSmall: PropTypes.bool
 };
 
 export default Loader;

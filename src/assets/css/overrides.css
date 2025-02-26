@@ -165,31 +165,32 @@ body.sb-show-main.dark-theme {
     padding: 0 !important;
 }
 
-.navrail {
+#anchor--components-navigation-rail--basic-rail .css-1qq744x,
+#anchor--components-navigation-rail--rail-with-no-header .css-1qq744x {
     position: relative !important;
     height: 400px !important;
     position: relative !important;
     overflow: hidden !important;
 }
 
-.navrail .ds-navrail__rail,
-.navrail .ds-navrail__drawer {
+#anchor--components-navigation-rail--basic-rail .css-1qq744x .ds-navrail__rail,
+#anchor--components-navigation-rail--basic-rail .css-1qq744x .ds-navrail__drawer,
+#anchor--components-navigation-rail--rail-with-no-header .css-1qq744x .ds-navrail__rail,
+#anchor--components-navigation-rail--rail-with-no-header .css-1qq744x .ds-navrail__drawer {
     height: calc(100% - 90px) !important;
     position: absolute !important;
 }
 
-.navrail .ds-navrail.--no-header .ds-navrail__rail,
-.navrail .ds-navrail.--no-header .ds-navrail__drawer {
+#anchor--components-navigation-rail--basic-rail .css-1qq744x .ds-navrail.--no-header .ds-navrail__rail,
+#anchor--components-navigation-rail--basic-rail .css-1qq744x .ds-navrail.--no-header .ds-navrail__drawer,
+#anchor--components-navigation-rail--rail-with-no-header .css-1qq744x .ds-navrail.--no-header .ds-navrail__rail,
+#anchor--components-navigation-rail--rail-with-no-header .css-1qq744x .ds-navrail.--no-header .ds-navrail__drawer {
     height: 100% !important;
 }
 
-.navrail .ds-header {
+#anchor--components-navigation-rail--basic-rail .css-1qq744x .ds-header,
+#anchor--components-navigation-rail--rail-with-no-header .css-1qq744x .ds-header {
     position: absolute !important;
     top: 0 !important;
     width: 100% !important;
 }
-
-/* .navrail .css-s230ta,
-.navrail .docs-story, .docs-story > div {
-    height: 100% !important;
-} */

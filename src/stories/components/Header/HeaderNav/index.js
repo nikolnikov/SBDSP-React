@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import classNames from 'classnames';
 import Button from '../../Button';
-import Menu from '../../Menu';
+import ContextualMenu from '../../ContextualMenu';
 
 const HeaderNav = ({
     buttonClickHandler,
@@ -120,7 +120,7 @@ const HeaderNav = ({
                         <span className="ds-icon--caret-down"></span>
                     </button>
 
-                    <Menu
+                    <ContextualMenu
                         closeMenu={handleClose}
                         menuClass="--account-menu"
                         menuRight
@@ -128,7 +128,7 @@ const HeaderNav = ({
                         openMenu={userMenu}
                     >
                         {userMenuContent}
-                    </Menu>
+                    </ContextualMenu>
                 </>
             )}
         </nav>

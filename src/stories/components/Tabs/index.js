@@ -7,9 +7,8 @@ import PropTypes from 'prop-types';
 const Tabs = ({
     children,
     contentClasses = [],
-    isDisabled,
     labels,
-    defaultSelectedTab = 0
+    defaultSelectedTab
 }) => {
     const [selectedValue, setSelectedValue] = useState(defaultSelectedTab);
     const tabContent = children;
@@ -65,7 +64,6 @@ Tabs.propTypes = {
         PropTypes.oneOfType([PropTypes.object, PropTypes.node])
     ).isRequired,
     contentClasses: PropTypes.string,
-    isDisabled: PropTypes.bool,
     labels: PropTypes.arrayOf(
         PropTypes.shape({
             isDisabled: PropTypes.bool,

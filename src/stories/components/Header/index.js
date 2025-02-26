@@ -12,8 +12,8 @@ const Header = ({
     customClasses = [],
     logo,
     logoSize,
-    margins,
-    maxWidth,
+    noMargins,
+    noMaxWidth,
     navData,
     secondaryButton,
     subNavData,
@@ -25,8 +25,8 @@ const Header = ({
         <header className="ds-header">
             <div
                 className={classNames('ds-grid', customClasses, {
-                    '--margins': margins,
-                    '--max-width': maxWidth
+                    '--margins': !noMargins,
+                    '--max-width': !noMaxWidth
                 })}
             >
                 <a
@@ -52,8 +52,8 @@ const Header = ({
             {subNavData && subNavData.length > 0 && (
                 <HeaderSubNav
                     customClasses={customClasses}
-                    margins={margins}
-                    maxWidth={maxWidth}
+                    noMargins={noMargins}
+                    noMaxWidth={noMaxWidth}
                     subNavData={subNavData}
                 />
             )}
@@ -67,8 +67,8 @@ Header.propTypes = {
     customClasses: PropTypes.array,
     logo: PropTypes.string,
     logoSize: PropTypes.string,
-    margins: PropTypes.bool,
-    maxWidth: PropTypes.bool,
+    noMargins: PropTypes.bool,
+    noMaxWidth: PropTypes.bool,
     navData: PropTypes.array,
     secondaryButton: PropTypes.bool,
     subNavData: PropTypes.array,

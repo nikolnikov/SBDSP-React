@@ -31,7 +31,7 @@ const Checkbox = ({
                 type="checkbox"
                 onChange={value => onChange(value)}
                 value={value}
-                checked={!!isChecked}
+                {...(isChecked && { checked: true })}
             ></input>
             <span></span>
             {label}

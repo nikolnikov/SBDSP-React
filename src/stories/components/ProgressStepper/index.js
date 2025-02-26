@@ -11,20 +11,20 @@ const ProgressStepper = ({
     isError,
     isWarning,
     hideLabels,
-    indexLastCompletedStep = -1,
+    lastCompletedStep = -1,
     isVertical,
     showNumbers,
     steps
 }) => {
     if (steps.length === 0) {
         return null;
-    } else if (indexLastCompletedStep > steps.length - 1) {
+    } else if (lastCompletedStep > steps.length - 1) {
         return new Error(
             'The last completed step index must not be greater than the total number of steps.'
         );
     }
 
-    const currentStep = indexLastCompletedStep + 1;
+    const currentStep = lastCompletedStep + 1;
 
     return (
         <div
@@ -57,7 +57,7 @@ ProgressStepper.propTypes = {
     isCancelled: PropTypes.number,
     isError: PropTypes.number,
     isWarning: PropTypes.number,
-    indexLastCompletedStep: PropTypes.number,
+    lastCompletedStep: PropTypes.number,
     isVertical: PropTypes.bool,
     showNumbers: PropTypes.bool
 };
