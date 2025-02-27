@@ -17,7 +17,7 @@ export default {
 
 export const DefaultDivider = {
     args: {
-        color: 'ds-green__800-bg'
+        color: 'green__800'
     },
     argTypes: {
         customClasses: { table: { disable: true } }
