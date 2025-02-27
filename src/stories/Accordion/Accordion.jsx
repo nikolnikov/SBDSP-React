@@ -6,14 +6,14 @@ import PropTypes from 'prop-types';
 export const Accordion = ({ 
     customClasses,
     openSingleItem = false,
-    isExpanded = false,
+    defaultExpanded = false,
     accordionContent,
 }) => {
     return (
         <DSAccordion
             customClasses={classNames(customClasses)}
             openSingleItem={openSingleItem}
-            isExpanded={isExpanded}
+            defaultExpanded={defaultExpanded}
             accordionContent={accordionContent}
         />
     );
@@ -22,7 +22,7 @@ export const Accordion = ({
 Accordion.propTypes = {
     customClasses: PropTypes.string,
     openSingleItem: PropTypes.bool,
-    isExpanded: PropTypes.bool,
+    defaultExpanded: PropTypes.bool,
     accordionContent: PropTypes.arrayOf(
         PropTypes.shape({
             header: PropTypes.string.isRequired,

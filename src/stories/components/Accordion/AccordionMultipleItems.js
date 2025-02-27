@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AccordionItem from './AccordionItem';
 import PropTypes from 'prop-types';
 
-const AccordionMultipleItems = ({ onClick, icon, item, defaultExpanded }) => {
+const AccordionMultipleItems = ({ onClick, item, defaultExpanded }) => {
     const [isOpen, setOpen] = useState(defaultExpanded);
 
     const toggle = () => {
@@ -12,7 +12,7 @@ const AccordionMultipleItems = ({ onClick, icon, item, defaultExpanded }) => {
 
     return (
         <AccordionItem
-            isExpanded={isOpen}
+            isExpanded={isOpen || defaultExpanded}
             onClick={toggle}
             header={item.header}
             icon={item.icon}
