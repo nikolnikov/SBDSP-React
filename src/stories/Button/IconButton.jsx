@@ -3,7 +3,7 @@ import DSButton from '../components/Button'
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const IconButton = ({ 
+const IconButton = ({ 
     customClasses = null,
     iconClass = null,
     isDestructive = false,
@@ -36,3 +36,5 @@ IconButton.propTypes = {
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     type: PropTypes.oneOf(['icon']),
 };
+
+export { IconButton as Button }
