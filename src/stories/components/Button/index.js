@@ -59,10 +59,7 @@ const Button = ({
                 <button
                     className={classNames('ds-button', customClasses, {
                         [`--${type}`]: type,
-                        '--primary':
-                            type !== 'ghost' &&
-                            type !== 'secondary' &&
-                            type !== 'icon',
+                        '--primary': type !== 'ghost' && type !== 'secondary',
                         [`--${size}`]: size,
                         '--destructive': isDestructive,
                         '--disabled': isDisabled,
@@ -72,31 +69,23 @@ const Button = ({
                     aria-label={label}
                     onClick={clickHandler}
                 >
-                    {type === 'icon' ? (
-                        <span
-                            className={iconClass}
-                            aria-label={iconClass}
-                            role="img"
-                        ></span>
-                    ) : (
-                        <>
-                            {iconClass && (
-                                <span
-                                    className={`${iconClass} --left`}
-                                    aria-label={iconClass}
-                                    role="img"
-                                ></span>
-                            )}
-                            <span>{label}</span>
-                            {iconRight && (
-                                <span
-                                    className={`${iconRight} --right`}
-                                    aria-label={iconRight}
-                                    role="img"
-                                ></span>
-                            )}
-                        </>
-                    )}
+                    <>
+                        {iconClass && (
+                            <span
+                                className={`${iconClass} --left`}
+                                aria-label={iconClass}
+                                role="img"
+                            ></span>
+                        )}
+                        <span>{label}</span>
+                        {iconRight && (
+                            <span
+                                className={`${iconRight} --right`}
+                                aria-label={iconRight}
+                                role="img"
+                            ></span>
+                        )}
+                    </>
                 </button>
             )}
         </>
@@ -114,7 +103,7 @@ Button.propTypes = {
     isSave: PropTypes.bool,
     label: PropTypes.string,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
-    type: PropTypes.oneOf(['primary', 'secondary', 'ghost', 'icon'])
+    type: PropTypes.oneOf(['primary', 'secondary', 'ghost'])
 };
 
 export default Button;
