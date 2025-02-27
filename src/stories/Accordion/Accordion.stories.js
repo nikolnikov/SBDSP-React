@@ -20,13 +20,13 @@ export const MultipleItemAccordion = {
         accordionContent: [
             {
                 header: 'Title 1',
-                icon: 'ds-icon--question',
+                icon: 'question',
                 content:
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.'
             },
             {
                 header: 'Title 2',
-                icon: 'ds-icon--question',
+                icon: 'question',
                 content:
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.'
             }
@@ -42,13 +42,11 @@ export const SingleItemAccordion = {
         accordionContent: [
             {
                 header: 'Title 1',
-                icon: 'ds-icon--question',
                 content:
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.'
             },
             {
                 header: 'Title 2',
-                icon: 'ds-icon--question',
                 content:
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum imperdiet sollicitudin.'
             }

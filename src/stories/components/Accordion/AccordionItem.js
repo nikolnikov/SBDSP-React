@@ -24,7 +24,12 @@ const AccordionItem = ({
                 tabIndex="0"
             >
                 <div className="ds-accordion__title-wrapper">
-                    {icon && <span className={icon} aria-label={icon}></span>}
+                    {icon && (
+                        <span
+                            className={`ds-icon--${icon}`}
+                            aria-label={icon}
+                        ></span>
+                    )}
                     {header}
                 </div>
                 <span className="ds-icon--expand" aria-label="expand"></span>
