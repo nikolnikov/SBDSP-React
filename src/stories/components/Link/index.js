@@ -26,11 +26,17 @@ const Link = ({
             })}
         >
             {iconLeft && (
-                <span className={iconLeft} aria-label={iconLeft}></span>
+                <span
+                    className={`ds-icon--${iconLeft}`}
+                    aria-label={iconLeft}
+                ></span>
             )}
             <span>{label}</span>
             {iconRight && (
-                <span className={iconRight} aria-label={iconRight}></span>
+                <span
+                    className={`ds-icon--${iconRight}`}
+                    aria-label={iconRight}
+                ></span>
             )}
         </a>
     ) : (

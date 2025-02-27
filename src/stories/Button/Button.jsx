@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 export const Button = ({ 
     customClasses = null,
-    iconClass = null,
+    icon = null,
     iconRight = null,
     isDestructive = false,
     isDisabled = false,
@@ -51,7 +51,7 @@ export const Button = ({
         <DSButton
             clickHandler={isSave ? setSave : buttonClick}
             customClasses={isSave ? `${customSaveClasses}` : classNames(customClasses)}
-            iconClass={iconClass}
+            icon={icon}
             iconRight={iconRight}
             isDestructive={isDestructive}
             isDisabled={isDisabled}
@@ -67,7 +67,7 @@ export const Button = ({
 Button.propTypes = {
     label: PropTypes.string,
     customClasses: PropTypes.string,
-    iconClass: PropTypes.string,
+    icon: PropTypes.string,
     iconRight: PropTypes.string,
     isDestructive: PropTypes.bool,
     isDisabled: PropTypes.bool,

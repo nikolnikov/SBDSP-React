@@ -56,7 +56,7 @@ export const InputWithLeftIcon = {
     args: {
         ...BasicInput.args,
         inputId: 'input-4',
-        leftIcon: 'ds-icon--search'
+        iconLeft: 'search'
     },
     argTypes: {
         ...BasicInput.argTypes
@@ -67,7 +67,7 @@ export const InputWithRightIcon = {
     args: {
         ...BasicInput.args,
         inputId: 'input-5',
-        rightIcon: 'ds-icon--location'
+        iconRight: 'location'
     },
     argTypes: {
         ...BasicInput.argTypes
@@ -78,8 +78,8 @@ export const InputWithBothIcons = {
     args: {
         ...BasicInput.args,
         inputId: 'input-6',
-        leftIcon: 'ds-icon--search',
-        rightIcon: 'ds-icon--location'
+        iconLeft: 'search',
+        iconRight: 'location'
     },
     argTypes: {
         ...BasicInput.argTypes

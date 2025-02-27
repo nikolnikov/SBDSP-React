@@ -15,11 +15,11 @@ const Input = ({
     isLoading,
     isRequired,
     label,
-    leftIcon,
+    iconLeft,
+    iconRight,
     name,
     onChange,
     placeholder,
-    rightIcon,
     tooltipMessage,
     type
 }) => {
@@ -28,9 +28,9 @@ const Input = ({
             className={classNames('ds-input', customClasses, {
                 '--disabled': isDisabled,
                 '--error': hasError,
-                '--icons': rightIcon || leftIcon || isLoading,
-                '--icon-left': leftIcon,
-                '--icon-right': rightIcon || isLoading,
+                '--icons': iconRight || iconLeft || isLoading,
+                '--icon-left': iconLeft,
+                '--icon-right': iconRight || isLoading,
                 '--required': isRequired
             })}
         >
@@ -53,10 +53,10 @@ const Input = ({
                 )}
             </label>
             <div className="ds-flex --start-center --row">
-                {leftIcon && (
+                {iconLeft && (
                     <span
-                        className={`${leftIcon} --left`}
-                        aria-label={`${leftIcon}`}
+                        className={`ds-icon--${iconLeft} --left`}
+                        aria-label={`${iconLeft}`}
                         role="img"
                     ></span>
                 )}
@@ -68,10 +68,10 @@ const Input = ({
                     type={type}
                     onChange={value => onChange(value)}
                 />
-                {rightIcon && (
+                {iconRight && (
                     <span
-                        className={`${rightIcon} --right`}
-                        aria-label={`${rightIcon}`}
+                        className={`ds-icon--${iconRight} --right`}
+                        aria-label={`${iconRight}`}
                         role="img"
                     ></span>
                 )}
@@ -90,9 +90,15 @@ const Input = ({
             </div>
 
             {errorMessage && (
-                <div className="ds-input__error">{errorMessage}</div>
+                <div className="ds-input__error" role="alert">
+                    {errorMessage}
+                </div>
             )}
-            {hintMessage && <div className="ds-input__hint">{hintMessage}</div>}
+            {hintMessage && (
+                <div className="ds-input__hint" role="tooltip">
+                    {hintMessage}
+                </div>
+            )}
         </div>
     );
 };
@@ -107,11 +113,11 @@ Input.propTypes = {
     isLoading: PropTypes.bool,
     isRequired: PropTypes.bool,
     label: PropTypes.string,
-    leftIcon: PropTypes.string,
+    iconLeft: PropTypes.string,
+    iconRight: PropTypes.string,
     name: PropTypes.string,
     onChange: PropTypes.func,
     placeholder: PropTypes.string,
-    rightIcon: PropTypes.string,
     tooltipMessage: PropTypes.string,
     type: PropTypes.string
 };

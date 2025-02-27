@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const IconButton = ({
     clickHandler,
     customClasses = [],
-    iconClass,
+    icon,
     isDestructive,
     isDisabled,
     isInverse,
@@ -21,12 +21,12 @@ const IconButton = ({
                 '--disabled': isDisabled,
                 '--inverse': isInverse
             })}
-            aria-label={iconClass}
+            aria-label={icon}
             onClick={clickHandler}
         >
             <span
-                className={`${iconClass}`}
-                aria-label={iconClass}
+                className={`ds-icon--${icon}`}
+                aria-label={icon}
                 role="img"
             ></span>
         </button>
@@ -36,7 +36,7 @@ const IconButton = ({
 IconButton.propTypes = {
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
-    iconClass: PropTypes.string,
+    icon: PropTypes.string,
     isDestructive: PropTypes.bool,
     isDisabled: PropTypes.bool,
     isInverse: PropTypes.bool,

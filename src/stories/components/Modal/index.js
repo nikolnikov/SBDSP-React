@@ -4,6 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import propTypes from 'prop-types';
 import Button from '../Button';
+import IconButton from '../Button/IconButton.index';
 import MuiModal from '@mui/material/Modal';
 
 const Modal = ({
@@ -41,10 +42,8 @@ const Modal = ({
                         <h1>{title}</h1>
 
                         {!hideX && (
-                            <Button
-                                ariaLabel="close"
-                                iconClass="ds-icon--close"
-                                type="icon"
+                            <IconButton
+                                icon="close"
                                 size="medium"
                                 clickHandler={modalClose}
                             />
@@ -56,7 +55,6 @@ const Modal = ({
                     <div className="ds-modal__actions">
                         {ghostButtonLabel && (
                             <Button
-                                ariaLabel={ghostButtonLabel}
                                 label={ghostButtonLabel}
                                 type="ghost"
                                 clickHandler={ghostButtonHandler}
@@ -66,7 +64,6 @@ const Modal = ({
                         <div className="ds-modal__actions-right">
                             {secondaryButtonLabel && (
                                 <Button
-                                    ariaLabel={secondaryButtonLabel}
                                     label={secondaryButtonLabel}
                                     type="secondary"
                                     clickHandler={secondaryButtonHandler}
@@ -75,7 +72,6 @@ const Modal = ({
 
                             {buttonLabel && (
                                 <Button
-                                    ariaLabel={buttonLabel}
                                     label={buttonLabel}
                                     clickHandler={buttonHandler}
                                 />

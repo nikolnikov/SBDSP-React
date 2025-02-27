@@ -3,8 +3,6 @@ import DSDatePicker from '../components/DatePicker'
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.scss';
-
 export const Datepicker = ({ 
     customClasses,
     errorMessage,

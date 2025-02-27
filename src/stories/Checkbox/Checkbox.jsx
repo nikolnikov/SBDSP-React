@@ -3,8 +3,6 @@ import DSCheckbox from '../components/Checkbox';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.scss';
-
 export const Checkbox = ({ 
     inputId,
     label,

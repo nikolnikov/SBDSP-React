@@ -3,7 +3,7 @@
 import React from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import { SnackbarContent } from '@mui/material';
-import Button from '../Button';
+import IconButton from '../Button/IconButton.index';
 import PropTypes from 'prop-types';
 
 const Toast = ({
@@ -24,11 +24,7 @@ const Toast = ({
             )}
 
             {!duration && !textLinkLabel && (
-                <Button
-                    iconClass="ds-icon--close"
-                    type="icon"
-                    clickHandler={onClose}
-                />
+                <IconButton icon="close" size="medium" clickHandler={onClose} />
             )}
         </>
     );

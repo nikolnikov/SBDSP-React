@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../Button';
+import IconButton from '../Button/IconButton.index';
 import Collapse from '@mui/material/Collapse';
 import MuiTableCell from '@mui/material/TableCell';
 import MuiTableRow from '@mui/material/TableRow';
@@ -31,11 +32,10 @@ const TableRow = ({ expandable, tableCellData }) => {
             <MuiTableRow className="ds-table__row" key={tableCellData.id}>
                 {expandable && (
                     <MuiTableCell className="ds-table__row-td expansion-tab">
-                        <Button
+                        <IconButton
                             customClasses={open ? '--expanded' : ''}
-                            iconClass="ds-icon--expand"
-                            type="icon"
-                            size="medium"
+                            icon="expand"
+                            size="large"
                             clickHandler={handleRowClick}
                         />
                     </MuiTableCell>
@@ -68,11 +68,10 @@ const TableRow = ({ expandable, tableCellData }) => {
                     >
                         {tableCellData.action.menuItems ? (
                             <>
-                                <Button
+                                <IconButton
                                     clickHandler={openMenu}
-                                    iconClass="ds-icon--legacy--overflow"
+                                    icon="legacy--overflow"
                                     size="large"
-                                    type="icon"
                                 />
                                 <ContextualMenu
                                     closeMenu={closeMenu}

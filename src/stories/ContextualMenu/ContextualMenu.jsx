@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import DSMenu from '../components/ContextualMenu';
+import DSIconButton from '../components/Button/IconButton.index';
 import PropTypes from 'prop-types';
-
-import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.scss';
 
 export const ContextualMenu = ({ 
     menuItems,
@@ -20,13 +19,10 @@ export const ContextualMenu = ({
     };
     return (
         <>
-            <button
-                aria-haspopup="true"
-                onClick={handleClick}
-                className="ds-button --icon"
-            >
-                <span aria-label="icon" className="ds-icon--user-circle"></span>
-            </button>
+            <DSIconButton
+                icon="user-circle"
+                clickHandler={handleClick}
+            />
 
             <DSMenu
                 menuItems={menuItems}

@@ -40,7 +40,7 @@ export const DisabledPrimaryButton = {
 export const PrimaryButtonWithLeftIcon = {
     args: {
         ...PrimaryButton.args,
-        iconClass: 'ds-icon--plus-circle'
+        icon: 'plus-circle'
     },
     argTypes: {
         ...PrimaryButton.argTypes
@@ -50,7 +50,7 @@ export const PrimaryButtonWithLeftIcon = {
 export const PrimaryButtonWithRightIcon = {
     args: {
         ...PrimaryButton.args,
-        iconRight: 'ds-icon--plus-circle'
+        iconRight: 'plus-circle'
     },
     argTypes: {
         ...PrimaryButton.argTypes
@@ -60,8 +60,8 @@ export const PrimaryButtonWithRightIcon = {
 export const PrimaryButtonWithBothIcons = {
     args: {
         ...PrimaryButton.args,
-        iconClass: 'ds-icon--info',
-        iconRight: 'ds-icon--caret-right'
+        icon: 'info',
+        iconRight: 'caret-right'
     },
     argTypes: {
         ...PrimaryButton.argTypes

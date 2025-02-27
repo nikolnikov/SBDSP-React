@@ -3,8 +3,6 @@ import DSBadge from '../components/Badge'
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import '!style-loader!css-loader!sass-loader!../../assets/css/dsp.scss';
-
 export const Badge = ({ 
     customClasses = [],
     hasNotification = false,

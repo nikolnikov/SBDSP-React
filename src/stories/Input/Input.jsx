@@ -13,11 +13,11 @@ export const Input = ({
     isLoading = false,
     isRequired = false,
     label,
-    leftIcon,
+    iconLeft,
+    iconRight,
     name,
     onChange = () => {},
     placeholder,
-    rightIcon,
     tooltipMessage,
     type
 }) => {
@@ -32,11 +32,11 @@ export const Input = ({
             isLoading={isLoading}
             isRequired={isRequired}
             label={label}
-            leftIcon={leftIcon}
+            iconLeft={iconLeft}
+            iconRight={iconRight}
             name={name}
             onChange={onChange}
             placeholder={placeholder}
-            rightIcon={rightIcon}
             tooltipMessage={tooltipMessage}
             type={type}
         />
@@ -53,11 +53,11 @@ Input.propTypes = {
     isLoading: PropTypes.bool,
     isRequired: PropTypes.bool,
     label: PropTypes.string.isRequired,
-    leftIcon: PropTypes.string,
+    iconLeft: PropTypes.string,
+    iconRight: PropTypes.string,
     name: PropTypes.string,
     onChange: PropTypes.func,
     placeholder: PropTypes.string,
-    rightIcon: PropTypes.string,
     tooltipMessage: PropTypes.string,
     type: PropTypes.string
 };

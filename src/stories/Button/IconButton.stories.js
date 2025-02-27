@@ -17,7 +17,7 @@ export default {
 
 export const PrimaryIconButton = {
     args: {
-        iconClass: 'ds-icon--gear',
+        icon: 'gear',
         size: 'large'
     },
     argTypes: {

@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import IconButton from '../Button/IconButton.index';
 
 const Message = ({
     actions,
@@ -58,17 +59,12 @@ const Message = ({
 
             {!hideX && (
                 <div className="ds-message__close">
-                    <button
-                        className="ds-button --icon --md"
-                        aria-label="close"
-                        onClick={closeHandler}
-                    >
-                        <span
-                            className="ds-icon--close"
-                            aria-label="close"
-                            role="img"
-                        ></span>
-                    </button>
+                    <IconButton
+                        icon="close"
+                        label="close"
+                        clickHandler={closeHandler}
+                        size="medium"
+                    />
                 </div>
             )}
         </div>

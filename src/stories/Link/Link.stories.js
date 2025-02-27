@@ -48,7 +48,7 @@ export const DestructiveLink = {
 export const LinkWithLeftIcon = {
     args: {
         ...DefaultLink.args,
-        iconLeft: 'ds-icon--info'
+        iconLeft: 'info'
     },
     argTypes: {
         ...DefaultLink.argTypes
@@ -58,7 +58,7 @@ export const LinkWithLeftIcon = {
 export const LinkWithRightIcon = {
     args: {
         ...DefaultLink.args,
-        iconRight: 'ds-icon--info'
+        iconRight: 'info'
     },
     argTypes: {
         ...DefaultLink.argTypes

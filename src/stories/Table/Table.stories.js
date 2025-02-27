@@ -59,12 +59,12 @@ SortableTable.argTypes = {
     ...BasicTable.argTypes
 };
 
-export const ExpandableSortableTable = Template.bind({});
-ExpandableSortableTable.args = {
+export const ExpandableSortableTableWithActions = Template.bind({});
+ExpandableSortableTableWithActions.args = {
     ...SortableTable.args,
     isExpandable: true
 };
-ExpandableSortableTable.argTypes = {
+ExpandableSortableTableWithActions.argTypes = {
     ...BasicTable.argTypes
 };
 
