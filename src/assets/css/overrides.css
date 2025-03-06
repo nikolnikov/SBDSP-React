@@ -173,6 +173,10 @@ body.sb-show-main.dark-theme {
     padding: 0 !important;
 }
 
+.ds-header .ds-grid[class*="--margins"] {
+    padding: 0 24px !important;
+}
+
 #anchor--components-navigation-rail--basic-rail .css-1qq744x,
 #anchor--components-navigation-rail--rail-with-no-header .css-1qq744x {
     position: relative !important;
