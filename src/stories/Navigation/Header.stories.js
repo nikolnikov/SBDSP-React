@@ -1,5 +1,5 @@
 import React from 'react';
-import DSAvatar from '../components/Avatar';
+import Button from '../components/Button';
 import { Header } from './Header';
 
 export default {
@@ -19,34 +19,177 @@ export default {
 
 const headerNavData = [
     {
-        label: 'Menu item',
-        icon: 'ds-icon--user-circle',
-        route: null,
-        hasDropdown: false,
-        dropdownContents: null
+        label: 'Text button',
+        icon: 'user-circle',
+        route: null
     },
     {
-        label: 'Menu item',
-        icon: 'ds-icon--user-circle',
-        route: null,
-        hasDropdown: true,
-        dropdownContents: 'Dropdown content goes here.'
+        label: 'Text button',
+        icon: 'user-circle',
+        route: null
+    },
+    {
+        label: 'Text button',
+        icon: 'user-circle',
+        subNav: [
+            {
+                icon: 'user-circle',
+                label: 'Text button',
+                route: null
+            },
+            {
+                icon: 'user-circle',
+                label: 'Text button',
+                route: null
+            },
+            {
+                icon: 'user-circle',
+                label: 'Text button',
+                route: null
+            },
+            {
+                icon: 'user-circle',
+                label: 'Text button',
+                route: null
+            },
+            {
+                icon: 'user-circle',
+                label: 'Text button',
+                route: null
+            }
+        ]
     }
 ];
 
-const avatarMenuContent = (
-    <div className="ds-ptb-16 ds-flex --column">
-        <div className="ds-plr-12 ds-flex --row --start-center">
-            <DSAvatar size="small" initial="E" />
+const headerSubNavData = [
+    {
+        label: 'Text button',
+        route: null
+    },
+    {
+        label: 'Text button',
+        subNav: [
+            {
+                icon: 'user-circle',
+                label: 'Text button',
+                route: null
+            },
+            {
+                icon: 'user-circle',
+                label: 'Text button',
+                route: null
+            },
+            {
+                icon: 'user-circle',
+                label: 'Text button',
+                route: null
+            }
+        ]
+    }
+];
 
-            <h4 className="ds-m-0 ds-ml-8">Edward, Blake</h4>
-        </div>
+const userMenuContent = (
+    <div className="ds-flex --column">
+        <Button
+            customClasses="ds-header__dropdown-item"
+            icon="user-circle"
+            label="Edit profile"
+        />
 
-        <hr className="ds-mtb-12 ds-gray__100--bg" />
+        <Button
+            customClasses="ds-header__dropdown-item"
+            icon="lock-simple-open"
+            label="Settings and privacy"
+        />
 
-        <button className="ds-menu__item">Sign out</button>
+        <Button
+            customClasses="ds-header__dropdown-item"
+            icon="arrow-square-up-right"
+            label="Logout"
+        />
     </div>
 );
+
+export const HeaderWithNavigationSubnavAndUserMenu = {
+    args: {
+        logo: 'https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg',
+        logoSize: 'medium',
+        navData: headerNavData,
+        subNavData: headerSubNavData,
+        userAvatarInitial: 'E',
+        userMenuContent: userMenuContent
+    },
+    argTypes: {
+        button: { table: { disable: true } },
+        customClasses: { table: { disable: true } },
+        noMargins: { table: { disable: true } },
+        noMaxWidth: { table: { disable: true } },
+        userName: { table: { disable: true } }
+    },
+    name: 'Header with navigation, subnav and user menu'
+};
+
+export const HeaderWithNavigationAndButton = {
+    args: {
+        logo: 'https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg',
+        logoSize: 'medium',
+        button: (
+            <Button
+                label="Sign on"
+                icon="plus-circle"
+                iconRight="caret-right"
+                onClick={() => {}}
+                size="small"
+            />
+        ),
+        navData: headerNavData
+    },
+    argTypes: {
+        ...HeaderWithNavigationSubnavAndUserMenu.argTypes
+    }
+};
+
+export const HeaderWithNavigation = {
+    args: {
+        logo: 'https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg',
+        logoSize: 'medium',
+        navData: headerNavData
+    },
+    argTypes: {
+        ...HeaderWithNavigationSubnavAndUserMenu.argTypes
+    }
+};
+
+export const HeaderWithButton = {
+    args: {
+        logo: 'https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg',
+        logoSize: 'medium',
+        button: (
+            <Button
+                label="Sign on"
+                icon="plus-circle"
+                iconRight="caret-right"
+                onClick={() => {}}
+                size="small"
+            />
+        )
+    },
+    argTypes: {
+        ...HeaderWithNavigationSubnavAndUserMenu.argTypes
+    }
+};
+
+export const HeaderWithAvatar = {
+    args: {
+        logo: 'https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg',
+        logoSize: 'medium',
+        userAvatarInitial: 'E',
+        userMenuContent: userMenuContent
+    },
+    argTypes: {
+        ...HeaderWithNavigationSubnavAndUserMenu.argTypes
+    }
+};
 
 export const BasicHeader = {
     args: {
@@ -54,56 +197,6 @@ export const BasicHeader = {
         logoSize: 'medium'
     },
     argTypes: {
-        buttonClickHandler: { table: { disable: true } },
-        customClasses: { table: { disable: true } },
-        customContent: { table: { disable: true } },
-        logoSize: { table: { disable: true } },
-        noMargins: { table: { disable: true } },
-        noMaxWidth: { table: { disable: true } },
-        userMenuContent: { table: { disable: true } }
-    }
-};
-
-export const HeaderWithAvatar = {
-    args: {
-        ...BasicHeader.args,
-        userAvatarInitial: 'E',
-        userMenuContent: avatarMenuContent
-    },
-    argTypes: {
-        ...BasicHeader.argTypes
-    }
-};
-
-export const HeaderWithButton = {
-    args: {
-        ...BasicHeader.args,
-        buttonClickHandler: () => {},
-        buttonLabel: 'Sign in'
-    },
-    argTypes: {
-        ...BasicHeader.argTypes
-    }
-};
-
-export const HeaderWithSecondaryButton = {
-    args: {
-        ...BasicHeader.args,
-        buttonClickHandler: () => {},
-        buttonLabel: 'Sign in',
-        secondaryButton: true
-    },
-    argTypes: {
-        ...BasicHeader.argTypes
-    }
-};
-
-export const HeaderWithNavigation = {
-    args: {
-        ...BasicHeader.args,
-        navData: headerNavData
-    },
-    argTypes: {
-        ...BasicHeader.argTypes
+        ...HeaderWithNavigationSubnavAndUserMenu.argTypes
     }
 };

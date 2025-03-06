@@ -3,32 +3,28 @@ import DSHeader from '../components/Header';
 import PropTypes from 'prop-types';
 
 export const Header = ({ 
-    buttonClickHandler,
-    buttonLabel,
-    customContent,
-    hasNav = true,
+    button,
+    customClasses,
     logo,
     logoSize,
-    navData,
     noMargins = false,
     noMaxWidth = false,
-    secondaryButton = false,
+    navData,
+    subNavData,
     userAvatarInitial,
     userMenuContent,
     userName
 }) => {
     return (
         <DSHeader
-            buttonClickHandler={buttonClickHandler}
-            buttonLabel={buttonLabel}
-            customContent={customContent}
-            hasNav={hasNav}
+            button={button}
+            customClasses={customClasses}
             logo={logo}
             logoSize={logoSize}
             noMargins={noMargins}
-            navData={navData}
-            secondaryButton={secondaryButton}
             noMaxWidth={noMaxWidth}
+            navData={navData}
+            subNavData={subNavData}
             userAvatarInitial={userAvatarInitial}
             userMenuContent={userMenuContent}
             userName={userName}
@@ -37,16 +33,14 @@ export const Header = ({
 };
 
 Header.propTypes = {
-    buttonClickHandler: PropTypes.func,
-    buttonLabel: PropTypes.string,
-    customContent: PropTypes.node,
-    hasNav: PropTypes.bool,
+    button: PropTypes.object,
+    customClasses: PropTypes.string,
     logo: PropTypes.string,
     logoSize: PropTypes.string,
-    navData: PropTypes.array,
     noMargins: PropTypes.bool,
     noMaxWidth: PropTypes.bool,
-    secondaryButton: PropTypes.bool,
+    navData: PropTypes.array,
+    subNavData: PropTypes.array,
     userAvatarInitial: PropTypes.string,
     userMenuContent: PropTypes.node,
     userName: PropTypes.string

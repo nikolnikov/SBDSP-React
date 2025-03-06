@@ -82,7 +82,7 @@ function Pagination({
                         })}
                         onClick={groupPreviousHandler}
                     >
-                        <Tooltip title="Previous page">
+                        <Tooltip tooltip="Previous page">
                             <span
                                 className="ds-icon--caret-left"
                                 aria-label="Previous"
@@ -97,7 +97,7 @@ function Pagination({
                         })}
                         onClick={groupNextHandler}
                     >
-                        <Tooltip title="Next page">
+                        <Tooltip tooltip="Next page">
                             <span
                                 className="ds-icon--caret-right"
                                 aria-label="Next"

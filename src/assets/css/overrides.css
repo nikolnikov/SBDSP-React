@@ -3,6 +3,7 @@ body {
     font-size: 16px;
 }
 
+.sb-bar,
 .css-1yedr2a,
 h1.sbdocs-title,
 h2#stories,
@@ -47,6 +48,13 @@ h2#stories,
 .sbdocs.sb-unstyled .docs-story:has(+ .css-1xrl4hz) {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+}
+
+.docs-story { 
+    min-height: 150px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
 
 .docs-story,

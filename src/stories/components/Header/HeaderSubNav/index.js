@@ -64,12 +64,32 @@ const HeaderSubNav = ({ customClasses, noMargins, noMaxWidth, subNavData }) => {
                                     ></span>
                                 </button>
 
-                                {navItem.dropdownContents &&
-                                    menuOpen === idx && (
-                                        <div className="ds-header__dropdown">
-                                            {navItem.dropdownContents}
-                                        </div>
-                                    )}
+                                {navItem.subNav && (
+                                    <div className="ds-header__dropdown">
+                                        {navItem.subNav.map(
+                                            (subNavItem, subIdx) => (
+                                                <button
+                                                    key={subIdx}
+                                                    className="ds-header__dropdown-item"
+                                                    onClick={() =>
+                                                        (window.location.href =
+                                                            subNavItem.route)
+                                                    }
+                                                >
+                                                    {subNavItem.icon && (
+                                                        <span
+                                                            className={`ds-icon--${subNavItem.icon}`}
+                                                            aria-label={
+                                                                subNavItem.label
+                                                            }
+                                                        ></span>
+                                                    )}
+                                                    {subNavItem.label}
+                                                </button>
+                                            )
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         </React.Fragment>
                     ))}

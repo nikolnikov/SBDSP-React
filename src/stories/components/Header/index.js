@@ -7,15 +7,13 @@ import HeaderNav from './HeaderNav';
 import HeaderSubNav from './HeaderSubNav';
 
 const Header = ({
-    buttonClickHandler,
-    buttonLabel,
-    customClasses = [],
+    button,
+    customClasses,
     logo,
     logoSize,
     noMargins,
     noMaxWidth,
     navData,
-    secondaryButton,
     subNavData,
     userAvatarInitial,
     userMenuContent,
@@ -39,10 +37,8 @@ const Header = ({
                 </a>
 
                 <HeaderNav
-                    buttonClickHandler={buttonClickHandler}
-                    buttonLabel={buttonLabel}
+                    button={button}
                     navData={navData}
-                    secondaryButton={secondaryButton}
                     userAvatarInitial={userAvatarInitial}
                     userMenuContent={userMenuContent}
                     userName={userName}
@@ -62,15 +58,13 @@ const Header = ({
 };
 
 Header.propTypes = {
-    buttonClickHandler: PropTypes.func,
-    buttonLabel: PropTypes.string,
-    customClasses: PropTypes.array,
+    button: PropTypes.object,
+    customClasses: PropTypes.string,
     logo: PropTypes.string,
     logoSize: PropTypes.string,
     noMargins: PropTypes.bool,
     noMaxWidth: PropTypes.bool,
     navData: PropTypes.array,
-    secondaryButton: PropTypes.bool,
     subNavData: PropTypes.array,
     userAvatarInitial: PropTypes.string,
     userMenuContent: PropTypes.node,

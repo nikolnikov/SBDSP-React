@@ -34,7 +34,7 @@ const InputSelect = ({
             <label className="ds-input__label" htmlFor={inputId}>
                 {label && <span>{label}</span>}
                 {tooltipMessage && (
-                    <Tooltip title={tooltipMessage}>
+                    <Tooltip tooltip={tooltipMessage}>
                         <button
                             className="ds-tooltip ds-button --icon --sm"
                             aria-label="tooltip"

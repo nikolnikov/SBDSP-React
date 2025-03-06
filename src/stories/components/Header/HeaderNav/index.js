@@ -1,26 +1,19 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import classNames from 'classnames';
-import Button from '../../Button';
-import ContextualMenu from '../../ContextualMenu';
 
 const HeaderNav = ({
-    buttonClickHandler,
-    buttonLabel,
+    button,
     navData,
-    secondaryButton,
     userAvatarInitial,
     userMenuContent,
     userName
 }) => {
-    const [userMenu, setUserMenu] = useState();
+    const [userMenu, setUserMenu] = useState(false);
     const [menuOpen, setMenuOpen] = useState(null);
     const navRef = useRef(null);
 
-    const handleClick = e => {
-        setUserMenu(e.currentTarget);
-    };
-    const handleClose = () => {
-        setUserMenu();
+    const userMenuToggle = () => {
+        setUserMenu(!userMenu);
     };
 
     const menuToggle = idx => {
@@ -31,6 +24,8 @@ const HeaderNav = ({
         if (navRef.current && !navRef.current.contains(event.target)) {
             setMenuOpen(null);
         }
+
+        setUserMenu(false);
     }, []);
 
     useEffect(() => {
@@ -63,7 +58,7 @@ const HeaderNav = ({
                                 >
                                     {navItem.icon && (
                                         <span
-                                            className={navItem.icon}
+                                            className={`ds-icon--${navItem.icon}`}
                                             aria-label={navItem.label}
                                         ></span>
                                     )}
@@ -74,40 +69,49 @@ const HeaderNav = ({
                                     ></span>
                                 </button>
 
-                                {navItem.dropdownContents &&
-                                    menuOpen === idx && (
-                                        <div className="ds-header__dropdown">
-                                            {navItem.dropdownContents}
-                                        </div>
-                                    )}
+                                {navItem.subNav && (
+                                    <div className="ds-header__dropdown">
+                                        {navItem.subNav.map(
+                                            (subNavItem, subIdx) => (
+                                                <button
+                                                    key={subIdx}
+                                                    className="ds-header__dropdown-item"
+                                                    onClick={() =>
+                                                        (window.location.href =
+                                                            subNavItem.route)
+                                                    }
+                                                >
+                                                    {subNavItem.icon && (
+                                                        <span
+                                                            className={`ds-icon--${subNavItem.icon}`}
+                                                            aria-label={
+                                                                subNavItem.label
+                                                            }
+                                                        ></span>
+                                                    )}
+                                                    {subNavItem.label}
+                                                </button>
+                                            )
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         </React.Fragment>
                     ))}
             </div>
 
-            {buttonLabel && (
-                <Button
-                    ariaLabel={buttonLabel}
-                    clickHandler={buttonClickHandler}
-                    label={buttonLabel}
-                    size="small"
-                    type={secondaryButton ? 'secondary' : null}
-                >
-                    {buttonLabel}
-                </Button>
-            )}
+            {button && button}
 
             {userAvatarInitial && (
-                <>
+                <div
+                    className={classNames('ds-header__account', {
+                        '--opened': userMenu
+                    })}
+                >
                     <button
-                        className={classNames(
-                            'ds-header__account ds-menu__trigger',
-                            {
-                                '--opened': userMenu
-                            }
-                        )}
+                        className="ds-header__account-trigger"
                         aria-label="account menu"
-                        onClick={handleClick}
+                        onClick={userMenuToggle}
                     >
                         <div className="ds-avatar --solid --medium">
                             {userAvatarInitial}
@@ -120,16 +124,12 @@ const HeaderNav = ({
                         <span className="ds-icon--caret-down"></span>
                     </button>
 
-                    <ContextualMenu
-                        closeMenu={handleClose}
-                        menuClass="--account-menu"
-                        menuRight
-                        menuWidth={320}
-                        openMenu={userMenu}
-                    >
-                        {userMenuContent}
-                    </ContextualMenu>
-                </>
+                    {userMenu && userMenuContent && (
+                        <div className="ds-header__dropdown">
+                            {userMenuContent}
+                        </div>
+                    )}
+                </div>
             )}
         </nav>
     );
