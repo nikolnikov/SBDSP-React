@@ -56,7 +56,9 @@ const HeaderSubNav = ({ customClasses, noMargins, noMaxWidth, subNavData }) => {
                                         <Icon name={navItem.icon} />
                                     )}
                                     {navItem.label}
-                                    <Icon name="caret-down" />
+                                    {navItem.subNav && (
+                                        <Icon name="caret-down" />
+                                    )}
                                 </button>
 
                                 {navItem.subNav && (
