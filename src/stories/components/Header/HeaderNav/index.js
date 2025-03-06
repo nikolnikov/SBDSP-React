@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import classNames from 'classnames';
+import Icon from '../../Icon';
 
 const HeaderNav = ({
     button,
@@ -8,12 +9,13 @@ const HeaderNav = ({
     userMenuContent,
     userName
 }) => {
-    const [userMenu, setUserMenu] = useState(false);
+    const [userMenuOpen, setUserMenuOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(null);
     const navRef = useRef(null);
+    const userMenuRef = useRef(null);
 
     const userMenuToggle = () => {
-        setUserMenu(!userMenu);
+        setUserMenuOpen(prevState => !prevState);
     };
 
     const menuToggle = idx => {
@@ -25,7 +27,12 @@ const HeaderNav = ({
             setMenuOpen(null);
         }
 
-        setUserMenu(false);
+        if (
+            userMenuRef.current &&
+            !userMenuRef.current.contains(event.target)
+        ) {
+            setUserMenuOpen(false);
+        }
     }, []);
 
     useEffect(() => {
@@ -57,16 +64,12 @@ const HeaderNav = ({
                                     }
                                 >
                                     {navItem.icon && (
-                                        <span
-                                            className={`ds-icon--${navItem.icon}`}
-                                            aria-label={navItem.label}
-                                        ></span>
+                                        <Icon name={navItem.icon} />
                                     )}
                                     {navItem.label}
-                                    <span
-                                        className="ds-icon--caret-down"
-                                        aria-label="Dropdown"
-                                    ></span>
+                                    {navItem.subNav && (
+                                        <Icon name="caret-down" />
+                                    )}
                                 </button>
 
                                 {navItem.subNav && (
@@ -82,12 +85,11 @@ const HeaderNav = ({
                                                     }
                                                 >
                                                     {subNavItem.icon && (
-                                                        <span
-                                                            className={`ds-icon--${subNavItem.icon}`}
-                                                            aria-label={
-                                                                subNavItem.label
+                                                        <Icon
+                                                            name={
+                                                                subNavItem.icon
                                                             }
-                                                        ></span>
+                                                        />
                                                     )}
                                                     {subNavItem.label}
                                                 </button>
@@ -105,13 +107,14 @@ const HeaderNav = ({
             {userAvatarInitial && (
                 <div
                     className={classNames('ds-header__account', {
-                        '--opened': userMenu
+                        '--opened': userMenuOpen
                     })}
                 >
                     <button
                         className="ds-header__account-trigger"
                         aria-label="account menu"
                         onClick={userMenuToggle}
+                        ref={userMenuRef}
                     >
                         <div className="ds-avatar --solid --medium">
                             {userAvatarInitial}
@@ -124,7 +127,7 @@ const HeaderNav = ({
                         <span className="ds-icon--caret-down"></span>
                     </button>
 
-                    {userMenu && userMenuContent && (
+                    {userMenuOpen && userMenuContent && (
                         <div className="ds-header__dropdown">
                             {userMenuContent}
                         </div>

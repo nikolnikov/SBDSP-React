@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import classNames from 'classnames';
+import Icon from '../../Icon';
 
 const HeaderSubNav = ({ customClasses, noMargins, noMaxWidth, subNavData }) => {
     const [menuOpen, setMenuOpen] = useState(null);
@@ -52,16 +53,10 @@ const HeaderSubNav = ({ customClasses, noMargins, noMaxWidth, subNavData }) => {
                                     }
                                 >
                                     {navItem.icon && (
-                                        <span
-                                            className={navItem.icon}
-                                            aria-label={navItem.label}
-                                        ></span>
+                                        <Icon name={navItem.icon} />
                                     )}
                                     {navItem.label}
-                                    <span
-                                        className="ds-icon--caret-down"
-                                        aria-label="Dropdown"
-                                    ></span>
+                                    <Icon name="caret-down" />
                                 </button>
 
                                 {navItem.subNav && (
@@ -77,12 +72,11 @@ const HeaderSubNav = ({ customClasses, noMargins, noMaxWidth, subNavData }) => {
                                                     }
                                                 >
                                                     {subNavItem.icon && (
-                                                        <span
-                                                            className={`ds-icon--${subNavItem.icon}`}
-                                                            aria-label={
-                                                                subNavItem.label
+                                                        <Icon
+                                                            name={
+                                                                subNavItem.icon
                                                             }
-                                                        ></span>
+                                                        />
                                                     )}
                                                     {subNavItem.label}
                                                 </button>
