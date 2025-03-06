@@ -18,7 +18,9 @@ const Icon = ({
     const imgSrc = `https://ds.cdn.questdiagnostics.com/assets/ds-icons/ds-icon${isBranded ? '--illustrative-green' : ''}${isBrandedWhite ? '--illustrative-white' : ''}--${name}.svg`;
 
     const spanClass = classNames(
-        `ds-icon--${isIllustrative ? 'ill--' : ''}${isLegacy ? 'legacy--' : ''}${name} ds-font-${size} ds-${color}`,
+        `ds-icon--${isIllustrative ? 'ill--' : ''}${isLegacy ? 'legacy--' : ''}${name}`,
+        { [`ds-font-${size}`]: size },
+        { [`ds-${color}`]: color },
         customClasses
     );
 
