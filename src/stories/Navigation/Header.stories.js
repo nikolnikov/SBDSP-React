@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../components/Button';
 import { Header } from './Header';
+import { sub } from 'date-fns';
 
 export default {
     title: 'Components/Navigation/Header',
@@ -122,9 +123,12 @@ export const HeaderWithNavigationSubnavAndUserMenu = {
     argTypes: {
         button: { table: { disable: true } },
         customClasses: { table: { disable: true } },
+        navData: { table: { disable: true } },
         noMargins: { table: { disable: true } },
         noMaxWidth: { table: { disable: true } },
-        userName: { table: { disable: true } }
+        subNavData: { table: { disable: true } },
+        userName: { table: { disable: true } },
+        userMenuContent: { table: { disable: true } }
     },
     name: 'Header with navigation, subnav and user menu'
 };
