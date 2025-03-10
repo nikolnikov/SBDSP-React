@@ -4,7 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Footer = ({
+const QDSFooter = ({
     customClasses = [],
     hideLogo,
     hideNav,
@@ -336,7 +336,7 @@ const Footer = ({
     );
 };
 
-Footer.propTypes = {
+QDSFooter.propTypes = {
     customClasses: PropTypes.string,
     logo: PropTypes.bool,
     hideNav: PropTypes.bool,
@@ -344,4 +344,4 @@ Footer.propTypes = {
     noMaxWidth: PropTypes.bool
 };
 
-export default Footer;
+export default QDSFooter;

@@ -3,7 +3,7 @@ import DSCard from '../components/Card';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Card = ({ 
+export const QDSCard = ({ 
     children,
     customClasses = [],
     title
@@ -17,7 +17,7 @@ export const Card = ({
     );
 };
 
-Card.propTypes = {
+QDSCard.propTypes = {
     customClasses: PropTypes.string,
     children: PropTypes.node,
     title: PropTypes.string

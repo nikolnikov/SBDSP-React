@@ -1,8 +1,8 @@
-import { Badge } from './Badge';
+import { QDSBadge } from './Badge';
 
 export default {
     title: 'Components/Badge',
-    component: Badge,
+    component: QDSBadge,
     parameters: {
         layout: 'centered',
         actions: {

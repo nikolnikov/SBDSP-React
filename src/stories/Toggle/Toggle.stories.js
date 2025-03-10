@@ -1,8 +1,8 @@
-import { Toggle } from './Toggle';
+import { QDSToggle } from './Toggle';
 
 export default {
     title: 'Components/Toggle switch',
-    component: Toggle,
+    component: QDSToggle,
     parameters: {
         layout: 'centered',
         actions: {

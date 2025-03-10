@@ -4,7 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Button = ({
+const QDSButton = ({
     clickHandler,
     customClasses = [],
     icon,
@@ -14,7 +14,7 @@ const Button = ({
     isInverse,
     isSave,
     label,
-    size = 'large',
+    size = 'lg',
     type
 }) => {
     return (
@@ -92,7 +92,7 @@ const Button = ({
     );
 };
 
-Button.propTypes = {
+QDSButton.propTypes = {
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
     icon: PropTypes.string,
@@ -102,8 +102,8 @@ Button.propTypes = {
     isInverse: PropTypes.bool,
     isSave: PropTypes.bool,
     label: PropTypes.string,
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    size: PropTypes.oneOf(['sm', 'lg']),
     type: PropTypes.oneOf(['primary', 'secondary', 'ghost'])
 };
 
-export default Button;
+export default QDSButton;

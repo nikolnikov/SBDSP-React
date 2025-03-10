@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DSModal from '../components/Modal';
 import PropTypes from 'prop-types';
 
-export const Modal = ({ 
+export const QDSModal = ({ 
     backdropClickable = true,
     buttonHandler,
     buttonLabel,
@@ -52,7 +52,7 @@ export const Modal = ({
     );
 };
 
-Modal.propTypes = {
+QDSModal.propTypes = {
     backdropClickable: PropTypes.bool,
     buttonHandler: PropTypes.func,
     buttonLabel: PropTypes.string,

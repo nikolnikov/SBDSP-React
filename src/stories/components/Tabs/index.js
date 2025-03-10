@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Tabs = ({
+const QDSTabs = ({
     children,
     contentClasses = [],
     labels,
@@ -59,7 +59,7 @@ const Tabs = ({
     );
 };
 
-Tabs.propTypes = {
+QDSTabs.propTypes = {
     children: PropTypes.arrayOf(
         PropTypes.oneOfType([PropTypes.object, PropTypes.node])
     ).isRequired,
@@ -73,4 +73,4 @@ Tabs.propTypes = {
     defaultSelectedTab: PropTypes.number
 };
 
-export default Tabs;
+export default QDSTabs;

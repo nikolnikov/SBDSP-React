@@ -1,8 +1,8 @@
-import { Checkbox } from './Checkbox';
+import { QDSCheckbox } from './Checkbox';
 
 export default {
     title: 'Components/Checkbox',
-    component: Checkbox,
+    component: QDSCheckbox,
     parameters: {
         layout: 'centered',
         actions: {

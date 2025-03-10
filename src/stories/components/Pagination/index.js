@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import InputSelect from '../InputSelect';
-import Tooltip from '../Tooltip';
+import QDSIconButton from '../Button/IconButton.index';
+import QDSInputSelect from '../InputSelect';
 
-function Pagination({
+function QDSPagination({
     customClasses,
     totalItemCount,
     itemCountSelectionArray
@@ -59,7 +59,7 @@ function Pagination({
                 <div className="ds-pagination__size">
                     <span>Items per page:</span>
 
-                    <InputSelect
+                    <QDSInputSelect
                         menuClass="ds-dropdown--pagination"
                         onChange={e => {
                             paginationReset(e);
@@ -76,42 +76,30 @@ function Pagination({
                 </div>
 
                 <div className="ds-pagination__actions">
-                    <button
-                        className={classNames('ds-button', '--icon', {
-                            '--disabled': groupCount === 1
-                        })}
-                        onClick={groupPreviousHandler}
-                    >
-                        <Tooltip tooltip="Previous page">
-                            <span
-                                className="ds-icon--caret-left"
-                                aria-label="Previous"
-                                role="img"
-                            ></span>
-                        </Tooltip>
-                    </button>
+                    <QDSIconButton
+                        customClasses={groupCount === 1 ? '--disabled' : ''}
+                        clickHandler={groupPreviousHandler}
+                        icon="caret-left"
+                        size="md"
+                        tooltip={groupCount === 1 ? '' : 'Previous page'}
+                    />
 
-                    <button
-                        className={classNames('ds-button', '--icon', {
-                            '--disabled': endingItem >= totalItems
-                        })}
-                        onClick={groupNextHandler}
-                    >
-                        <Tooltip tooltip="Next page">
-                            <span
-                                className="ds-icon--caret-right"
-                                aria-label="Next"
-                                role="img"
-                            ></span>
-                        </Tooltip>
-                    </button>
+                    <QDSIconButton
+                        customClasses={
+                            endingItem >= totalItems ? '--disabled' : ''
+                        }
+                        clickHandler={groupNextHandler}
+                        icon="caret-right"
+                        size="md"
+                        tooltip={endingItem >= totalItems ? '' : 'Next page'}
+                    />
                 </div>
             </div>
         </div>
     );
 }
 
-Pagination.propTypes = {
+QDSPagination.propTypes = {
     customClasses: PropTypes.string,
     nextHandler: PropTypes.func,
     prevHandler: PropTypes.func,
@@ -119,4 +107,4 @@ Pagination.propTypes = {
     itemCountSelectionArray: PropTypes.array
 };
 
-export default Pagination;
+export default QDSPagination;

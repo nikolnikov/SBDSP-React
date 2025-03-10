@@ -51,7 +51,7 @@ h2#stories,
 }
 
 .docs-story { 
-    min-height: 150px;
+    min-height: 140px;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -74,7 +74,7 @@ h2#stories,
 
 .docs-story .css-1qq744x {
     background: #fff;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 .sb-story.sb-unstyled > div {

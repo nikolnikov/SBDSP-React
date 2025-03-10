@@ -3,11 +3,11 @@
 import React from 'react';
 import classNames from 'classnames';
 import propTypes from 'prop-types';
-import Button from '../Button';
-import IconButton from '../Button/IconButton.index';
+import QDSButton from '../Button';
+import QDSIconButton from '../Button/IconButton.index';
 import MuiModal from '@mui/material/Modal';
 
-const Modal = ({
+const QDSModal = ({
     backdropClickable = true,
     buttonHandler,
     buttonLabel,
@@ -42,9 +42,9 @@ const Modal = ({
                         <h1>{title}</h1>
 
                         {!hideX && (
-                            <IconButton
+                            <QDSIconButton
                                 icon="close"
-                                size="medium"
+                                size="md"
                                 clickHandler={modalClose}
                             />
                         )}
@@ -54,7 +54,7 @@ const Modal = ({
 
                     <div className="ds-modal__actions">
                         {ghostButtonLabel && (
-                            <Button
+                            <QDSButton
                                 label={ghostButtonLabel}
                                 type="ghost"
                                 clickHandler={ghostButtonHandler}
@@ -63,7 +63,7 @@ const Modal = ({
 
                         <div className="ds-modal__actions-right">
                             {secondaryButtonLabel && (
-                                <Button
+                                <QDSButton
                                     label={secondaryButtonLabel}
                                     type="secondary"
                                     clickHandler={secondaryButtonHandler}
@@ -71,7 +71,7 @@ const Modal = ({
                             )}
 
                             {buttonLabel && (
-                                <Button
+                                <QDSButton
                                     label={buttonLabel}
                                     clickHandler={buttonHandler}
                                 />
@@ -84,7 +84,7 @@ const Modal = ({
     );
 };
 
-Modal.propTypes = {
+QDSModal.propTypes = {
     backdropClickable: propTypes.bool,
     buttonHandler: propTypes.func,
     buttonLabel: propTypes.string,
@@ -101,4 +101,4 @@ Modal.propTypes = {
     type: propTypes.oneOf(['alert', 'error', 'informative'])
 };
 
-export default Modal;
+export default QDSModal;

@@ -4,7 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Badge = ({
+const QDSBadge = ({
     customClasses = [],
     hasNotification,
     isCircle,
@@ -30,7 +30,7 @@ const Badge = ({
     );
 };
 
-Badge.propTypes = {
+QDSBadge.propTypes = {
     color: PropTypes.string,
     customClasses: PropTypes.string,
     hasNotification: PropTypes.bool,
@@ -40,4 +40,4 @@ Badge.propTypes = {
     status: PropTypes.string
 };
 
-export default Badge;
+export default QDSBadge;

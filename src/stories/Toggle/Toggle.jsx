@@ -3,7 +3,7 @@ import DSToggle from '../components/Toggle';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Toggle = ({ 
+export const QDSToggle = ({ 
     customClasses = [],
     isChecked = false,
     isDisabled = false,
@@ -27,7 +27,7 @@ export const Toggle = ({
     );
 };
 
-Toggle.propTypes = {
+QDSToggle.propTypes = {
     customClasses: PropTypes.string,
     isChecked: PropTypes.bool,
     isDisabled: PropTypes.bool,

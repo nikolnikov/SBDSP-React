@@ -3,7 +3,7 @@ import DSFooter from '../components/Footer';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Footer = ({ 
+export const QDSFooter = ({ 
     customClasses,
     hideLogo = false,
     hideNav = false,
@@ -21,7 +21,7 @@ export const Footer = ({
     );
 };
 
-Footer.propTypes = {
+QDSFooter.propTypes = {
     customClasses: PropTypes.string,
     hideLogo: PropTypes.bool,
     hideNav: PropTypes.bool,

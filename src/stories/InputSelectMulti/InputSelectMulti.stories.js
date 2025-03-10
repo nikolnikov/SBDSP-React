@@ -1,8 +1,8 @@
-import { InputMultiSelect } from './InputSelectMulti';
+import { QDSInputMultiSelect } from './InputSelectMulti';
 
 export default {
     title: 'Components/Input multi select',
-    component: InputMultiSelect,
+    component: QDSInputMultiSelect,
     parameters: {
         layout: 'centered',
         actions: {
@@ -90,7 +90,7 @@ export const InputMultiSelectWithTooltip = {
     args: {
         ...BasicInputMultiSelect.args,
         inputId: 'input-6',
-        tooltipMessage: 'Tooltip message goes here.'
+        tooltip: 'Tooltip message goes here.'
     },
     argTypes: {
         ...BasicInputMultiSelect.argTypes

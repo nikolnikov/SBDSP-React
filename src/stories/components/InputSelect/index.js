@@ -3,11 +3,11 @@
 import React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
-import Tooltip from '../Tooltip';
+import QDSIconButton from '../Button/IconButton.index';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const InputSelect = ({
+const QDSInputSelect = ({
     customClasses = [],
     errorMessage,
     hasError,
@@ -21,7 +21,7 @@ const InputSelect = ({
     options,
     placeholder,
     selectedValue,
-    tooltipMessage
+    tooltip
 }) => {
     return (
         <div
@@ -33,19 +33,13 @@ const InputSelect = ({
         >
             <label className="ds-input__label" htmlFor={inputId}>
                 {label && <span>{label}</span>}
-                {tooltipMessage && (
-                    <Tooltip tooltip={tooltipMessage}>
-                        <button
-                            className="ds-tooltip ds-button --icon --sm"
-                            aria-label="tooltip"
-                        >
-                            <span
-                                className="ds-icon--info"
-                                aria-label="info filled"
-                                role="img"
-                            />
-                        </button>
-                    </Tooltip>
+                {tooltip && (
+                    <QDSIconButton
+                        customClasses="ds-tooltip"
+                        icon="info"
+                        size="sm"
+                        tooltip={tooltip}
+                    />
                 )}
             </label>
             <Select
@@ -83,14 +77,20 @@ const InputSelect = ({
                 ))}
             </Select>
             {errorMessage && (
-                <div className="ds-input__error">{errorMessage}</div>
+                <div className="ds-input__error" role="alert">
+                    {errorMessage}
+                </div>
             )}
-            {hintMessage && <div className="ds-input__hint">{hintMessage}</div>}
+            {hintMessage && !errorMessage && (
+                <div className="ds-input__hint" role="tooltip">
+                    {hintMessage}
+                </div>
+            )}
         </div>
     );
 };
 
-InputSelect.propTypes = {
+QDSInputSelect.propTypes = {
     customClasses: PropTypes.string,
     errorMessage: PropTypes.string,
     hasError: PropTypes.bool,
@@ -104,7 +104,7 @@ InputSelect.propTypes = {
     options: PropTypes.array.isRequired,
     placeholder: PropTypes.string,
     selectedValue: PropTypes.string,
-    tooltipMessage: PropTypes.string
+    tooltip: PropTypes.string
 };
 
-export default InputSelect;
+export default QDSInputSelect;

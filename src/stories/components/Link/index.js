@@ -3,8 +3,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import QDSIcon from '../Icon';
 
-const Link = ({
+const QDSLink = ({
     customClasses = [],
     iconLeft,
     iconRight,
@@ -25,19 +26,9 @@ const Link = ({
                 '--icons': iconLeft || iconRight
             })}
         >
-            {iconLeft && (
-                <span
-                    className={`ds-icon--${iconLeft}`}
-                    aria-label={iconLeft}
-                ></span>
-            )}
+            {iconLeft && <QDSIcon name={iconLeft} />}
             <span>{label}</span>
-            {iconRight && (
-                <span
-                    className={`ds-icon--${iconRight}`}
-                    aria-label={iconRight}
-                ></span>
-            )}
+            {iconRight && <QDSIcon name={iconRight} />}
         </a>
     ) : (
         <a
@@ -55,7 +46,7 @@ const Link = ({
     );
 };
 
-Link.propTypes = {
+QDSLink.propTypes = {
     customClasses: PropTypes.string,
     iconLeft: PropTypes.string,
     iconRight: PropTypes.string,
@@ -66,4 +57,4 @@ Link.propTypes = {
     url: PropTypes.string
 };
 
-export default Link;
+export default QDSLink;

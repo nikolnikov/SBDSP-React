@@ -1,8 +1,8 @@
-import { InputSelect } from './InputSelect';
+import { QDSInputSelect } from './InputSelect';
 
 export default {
     title: 'Components/Input select',
-    component: InputSelect,
+    component: QDSInputSelect,
     parameters: {
         layout: 'centered',
         actions: {
@@ -90,7 +90,7 @@ export const InputSelectWithTooltip = {
     args: {
         ...BasicInputSelect.args,
         inputId: 'input-6',
-        tooltipMessage: 'Tooltip message goes here.'
+        tooltip: 'Tooltip message goes here.'
     },
     argTypes: {
         ...BasicInputSelect.argTypes

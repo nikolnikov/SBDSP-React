@@ -2,7 +2,7 @@ import React from 'react';
 import DSTabs from '../components/Tabs';
 import PropTypes from 'prop-types';
 
-export const Tabs = ({ 
+export const QDSTabs = ({ 
     children,
     contentClasses = [],
     labels,
@@ -19,7 +19,7 @@ export const Tabs = ({
     );
 };
 
-Tabs.propTypes = {
+QDSTabs.propTypes = {
     children: PropTypes.arrayOf(
         PropTypes.oneOfType([PropTypes.object, PropTypes.node])
     ).isRequired,

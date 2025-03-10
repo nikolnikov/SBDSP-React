@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DSToast from '../components/Toast';
 import PropTypes from 'prop-types';
 
-export const Toast = ({ 
+export const QDSToast = ({ 
     duration,
     message,
     noIcon = false,
@@ -39,7 +39,7 @@ export const Toast = ({
     );
 };
 
-Toast.propTypes = {
+QDSToast.propTypes = {
     duration: PropTypes.number,
     message: PropTypes.string.isRequired,
     noIcon: PropTypes.bool,

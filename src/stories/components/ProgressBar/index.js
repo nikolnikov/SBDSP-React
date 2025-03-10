@@ -4,7 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const ProgressBar = ({ customClasses = [], fillPercentage }) => {
+const QDSProgressBar = ({ customClasses = [], fillPercentage }) => {
     return (
         <div className={classNames('ds-progressbar', customClasses)}>
             <div
@@ -17,9 +17,9 @@ const ProgressBar = ({ customClasses = [], fillPercentage }) => {
     );
 };
 
-ProgressBar.propTypes = {
+QDSProgressBar.propTypes = {
     customClasses: PropTypes.string,
     fillPercentage: PropTypes.number
 };
 
-export default ProgressBar;
+export default QDSProgressBar;

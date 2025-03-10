@@ -1,8 +1,8 @@
-import { Toast } from './Toast';
+import { QDSToast } from './Toast';
 
 export default {
     title: 'Components/Toast',
-    component: Toast,
+    component: QDSToast,
     parameters: {
         layout: 'centered',
         actions: {

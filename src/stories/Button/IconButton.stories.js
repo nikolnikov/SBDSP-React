@@ -1,8 +1,8 @@
-import { IconButton } from './IconButton';
+import { QDSIconButton } from './IconButton';
 
 export default {
     title: 'Components/Button/Icon',
-    component: IconButton,
+    component: QDSIconButton,
     parameters: {
         layout: 'centered',
         actions: {
@@ -18,7 +18,7 @@ export default {
 export const PrimaryIconButton = {
     args: {
         icon: 'gear',
-        size: 'large'
+        size: 'lg'
     },
     argTypes: {
         customClasses: { table: { disable: true } },
@@ -50,6 +50,16 @@ export const InverseIconButton = {
     args: {
         ...PrimaryIconButton.args,
         isInverse: true
+    },
+    argTypes: {
+        ...PrimaryIconButton.argTypes
+    }
+};
+
+export const IconButtonWithTooltip = {
+    args: {
+        ...PrimaryIconButton.args,
+        tooltip: 'Settings'
     },
     argTypes: {
         ...PrimaryIconButton.argTypes

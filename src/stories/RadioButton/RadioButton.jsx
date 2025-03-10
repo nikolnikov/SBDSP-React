@@ -3,7 +3,7 @@ import DSRadioButton from '../components/RadioButton';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const RadioButton = ({ 
+export const QDSRadioButton = ({ 
     customClasses = [],
     inputId,
     isChecked = false,
@@ -27,7 +27,7 @@ export const RadioButton = ({
     );
 };
 
-RadioButton.propTypes = {
+QDSRadioButton.propTypes = {
     customClasses: PropTypes.string,
     inputId: PropTypes.string.isRequired,
     isChecked: PropTypes.bool,

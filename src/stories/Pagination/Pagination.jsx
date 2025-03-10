@@ -3,28 +3,22 @@ import DSPagination from '../components/Pagination';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Pagination = ({ 
+export const QDSPagination = ({ 
     customClasses,
-    nextHandler,
-    prevHandler,
     totalItemCount,
     itemCountSelectionArray,
 }) => {
     return (
         <DSPagination
             customClasses={classNames(customClasses)}
-            nextHandler={nextHandler}
-            prevHandler={prevHandler}
             totalItemCount={totalItemCount}
             itemCountSelectionArray={itemCountSelectionArray}
         />
     );
 };
 
-Pagination.propTypes = {
+QDSPagination.propTypes = {
     customClasses: PropTypes.string,
-    nextHandler: PropTypes.func,
-    prevHandler: PropTypes.func,
     totalItemCount: PropTypes.number,
     itemCountSelectionArray: PropTypes.array
 };

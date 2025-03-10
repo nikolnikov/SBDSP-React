@@ -3,7 +3,7 @@ import DSBadge from '../components/Badge'
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Badge = ({ 
+export const QDSBadge = ({ 
     customClasses = [],
     hasNotification = false,
     isCircle = false,
@@ -25,7 +25,7 @@ export const Badge = ({
     );
 };
 
-Badge.propTypes = {
+QDSBadge.propTypes = {
     customClasses: PropTypes.array,
     hasNotification: PropTypes.bool,
     isCircle: PropTypes.bool,

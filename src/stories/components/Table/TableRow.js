@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Button from '../Button';
-import IconButton from '../Button/IconButton.index';
+import QDSButton from '../Button';
+import QDSIconButton from '../Button/IconButton.index';
 import Collapse from '@mui/material/Collapse';
 import MuiTableCell from '@mui/material/TableCell';
 import MuiTableRow from '@mui/material/TableRow';
-import ContextualMenu from '../ContextualMenu';
+import QDSContextualMenu from '../ContextualMenu';
 import PropTypes from 'prop-types';
 
 const TableRow = ({ expandable, tableCellData }) => {
@@ -32,11 +32,11 @@ const TableRow = ({ expandable, tableCellData }) => {
             <MuiTableRow className="ds-table__row" key={tableCellData.id}>
                 {expandable && (
                     <MuiTableCell className="ds-table__row-td expansion-tab">
-                        <IconButton
+                        <QDSIconButton
                             customClasses={open ? '--expanded' : ''}
                             icon="expand"
-                            size="large"
                             clickHandler={handleRowClick}
+                            size="md"
                         />
                     </MuiTableCell>
                 )}
@@ -68,12 +68,12 @@ const TableRow = ({ expandable, tableCellData }) => {
                     >
                         {tableCellData.action.menuItems ? (
                             <>
-                                <IconButton
+                                <QDSIconButton
                                     clickHandler={openMenu}
                                     icon="legacy--overflow"
-                                    size="large"
+                                    size="md"
                                 />
-                                <ContextualMenu
+                                <QDSContextualMenu
                                     closeMenu={closeMenu}
                                     menuItems={tableCellData.action.menuItems}
                                     menuRight
@@ -81,12 +81,12 @@ const TableRow = ({ expandable, tableCellData }) => {
                                 />
                             </>
                         ) : (
-                            <Button
+                            <QDSButton
                                 clickHandler={tableCellData.action.action}
                                 label={tableCellData.action.title}
                                 ariaLabel={tableCellData.action.title}
                                 type="secondary"
-                                size="small"
+                                size="sm"
                             />
                         )}
                     </MuiTableCell>

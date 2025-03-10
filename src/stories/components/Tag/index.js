@@ -3,8 +3,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import Icon from '../Icon';
 
-const Tag = ({
+const QDSTag = ({
     clickHandler,
     customClasses = [],
     isDisabled,
@@ -25,14 +26,12 @@ const Tag = ({
             tabIndex={isDisabled ? '-1' : 0}
         >
             {label}
-            {showClose && (
-                <span className="ds-icon--close" aria-label="close"></span>
-            )}
+            {showClose && <Icon name="close" />}
         </button>
     );
 };
 
-Tag.propTypes = {
+QDSTag.propTypes = {
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
     isDisabled: PropTypes.bool,
@@ -42,4 +41,4 @@ Tag.propTypes = {
     showClose: PropTypes.bool
 };
 
-export default Tag;
+export default QDSTag;

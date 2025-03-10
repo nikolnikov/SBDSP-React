@@ -9,7 +9,7 @@ import DatePickerInput from './DatePickerInput';
 import Caption from './Caption';
 import Overlay from '../Overlay';
 
-const DatePicker = ({
+const QDSDatepicker = ({
     customClasses,
     errorMessage,
     hasError,
@@ -225,7 +225,7 @@ const DatePicker = ({
     );
 };
 
-DatePicker.propTypes = {
+QDSDatepicker.propTypes = {
     customClasses: PropTypes.string,
     errorMessage: PropTypes.string,
     hasError: PropTypes.bool,
@@ -241,4 +241,4 @@ DatePicker.propTypes = {
     showOnTop: PropTypes.bool
 };
 
-export default DatePicker;
+export default QDSDatepicker;

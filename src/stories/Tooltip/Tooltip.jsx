@@ -2,23 +2,23 @@ import React from 'react';
 import DSTooltip from '../components/Tooltip';
 import PropTypes from 'prop-types';
 
-export const Tooltip = ({ 
+export const QDSTooltip = ({ 
     children, 
-    placement = "top",
-    tooltip
+    message,
+    placement = "top"
 }) => {
     return (
         <DSTooltip
             placement={placement}
-            tooltip={tooltip}
+            message={message}
         >
             {children}
         </DSTooltip>
     );
 };
 
-Tooltip.propTypes = {
+QDSTooltip.propTypes = {
     children: PropTypes.node,
-    placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-    tooltip: PropTypes.string,
+    message: PropTypes.string,
+    placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left'])
 };

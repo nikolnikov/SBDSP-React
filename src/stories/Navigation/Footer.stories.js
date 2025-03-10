@@ -1,8 +1,8 @@
-import { Footer } from './Footer';
+import { QDSFooter } from './Footer';
 
 export default {
     title: 'Components/Navigation/Footer',
-    component: Footer,
+    component: QDSFooter,
     parameters: {
         layout: 'centered',
         actions: {

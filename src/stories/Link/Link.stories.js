@@ -1,8 +1,8 @@
-import { Link } from './Link';
+import { QDSLink } from './Link';
 
 export default {
     title: 'Components/Link',
-    component: Link,
+    component: QDSLink,
     parameters: {
         layout: 'centered',
         actions: {

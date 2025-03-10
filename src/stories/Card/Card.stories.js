@@ -1,8 +1,8 @@
-import { Card } from './Card';
+import { QDSCard } from './Card';
 
 export default {
     title: 'Components/Card',
-    component: Card,
+    component: QDSCard,
     parameters: {
         layout: 'centered',
         actions: {

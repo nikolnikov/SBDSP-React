@@ -3,7 +3,7 @@ import DSProgressBar from '../components/ProgressBar';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const ProgressBar = ({ 
+export const QDSProgressBar = ({ 
     customClasses = [],
     fillPercentage
 }) => {
@@ -15,7 +15,7 @@ export const ProgressBar = ({
     );
 };
 
-ProgressBar.propTypes = {
+QDSProgressBar.propTypes = {
     customClasses: PropTypes.array,
     fillPercentage: PropTypes.number
 };

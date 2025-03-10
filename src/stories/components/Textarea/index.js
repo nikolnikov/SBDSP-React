@@ -4,7 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Textarea = ({
+const QDSTextarea = ({
     customClasses = [],
     errorMessage,
     hasError,
@@ -43,14 +43,20 @@ const Textarea = ({
             ></textarea>
 
             {errorMessage && (
-                <div className="ds-input__error">{errorMessage}</div>
+                <div className="ds-input__error" role="alert">
+                    {errorMessage}
+                </div>
             )}
-            {hintMessage && <div className="ds-input__hint">{hintMessage}</div>}
+            {hintMessage && !errorMessage && (
+                <div className="ds-input__hint" role="tooltip">
+                    {hintMessage}
+                </div>
+            )}
         </div>
     );
 };
 
-Textarea.propTypes = {
+QDSTextarea.propTypes = {
     customClasses: PropTypes.string,
     errorMessage: PropTypes.string,
     hasError: PropTypes.bool,
@@ -64,4 +70,4 @@ Textarea.propTypes = {
     placeholder: PropTypes.string
 };
 
-export default Textarea;
+export default QDSTextarea;

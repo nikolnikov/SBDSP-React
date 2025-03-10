@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import HeaderNav from './HeaderNav';
 import HeaderSubNav from './HeaderSubNav';
 
-const Header = ({
+const QDSHeader = ({
     button,
     customClasses,
     logo,
@@ -14,10 +14,12 @@ const Header = ({
     noMargins,
     noMaxWidth,
     navData,
+    notificationsTitle,
     subNavData,
     userAvatarInitial,
     userMenuContent,
-    userName
+    userName,
+    userNotifications
 }) => {
     return (
         <header className="ds-header">
@@ -39,9 +41,11 @@ const Header = ({
                 <HeaderNav
                     button={button}
                     navData={navData}
+                    notificationsTitle={notificationsTitle}
                     userAvatarInitial={userAvatarInitial}
                     userMenuContent={userMenuContent}
                     userName={userName}
+                    userNotifications={userNotifications}
                 />
             </div>
 
@@ -57,7 +61,7 @@ const Header = ({
     );
 };
 
-Header.propTypes = {
+QDSHeader.propTypes = {
     button: PropTypes.object,
     customClasses: PropTypes.string,
     logo: PropTypes.string,
@@ -65,10 +69,12 @@ Header.propTypes = {
     noMargins: PropTypes.bool,
     noMaxWidth: PropTypes.bool,
     navData: PropTypes.array,
+    notificationsTitle: PropTypes.string,
     subNavData: PropTypes.array,
     userAvatarInitial: PropTypes.string,
     userMenuContent: PropTypes.node,
-    userName: PropTypes.string
+    userName: PropTypes.string,
+    userNotifications: PropTypes.array
 };
 
-export default Header;
+export default QDSHeader;

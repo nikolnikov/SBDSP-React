@@ -2,7 +2,7 @@ import React from 'react';
 import DSHeader from '../components/Header';
 import PropTypes from 'prop-types';
 
-export const Header = ({ 
+export const QDSHeader = ({ 
     button,
     customClasses,
     logo,
@@ -10,10 +10,12 @@ export const Header = ({
     noMargins = false,
     noMaxWidth = false,
     navData,
+    notificationsTitle,
     subNavData,
     userAvatarInitial,
     userMenuContent,
-    userName
+    userName,
+    userNotifications
 }) => {
     return (
         <DSHeader
@@ -21,27 +23,31 @@ export const Header = ({
             customClasses={customClasses}
             logo={logo}
             logoSize={logoSize}
+            navData={navData}
             noMargins={noMargins}
             noMaxWidth={noMaxWidth}
-            navData={navData}
+            notificationsTitle={notificationsTitle}
             subNavData={subNavData}
             userAvatarInitial={userAvatarInitial}
             userMenuContent={userMenuContent}
             userName={userName}
+            userNotifications={userNotifications}
         />
     );
 };
 
-Header.propTypes = {
+QDSHeader.propTypes = {
     button: PropTypes.object,
     customClasses: PropTypes.string,
     logo: PropTypes.string,
     logoSize: PropTypes.string,
+    navData: PropTypes.array,
     noMargins: PropTypes.bool,
     noMaxWidth: PropTypes.bool,
-    navData: PropTypes.array,
+    notificationsTitle: PropTypes.string,
     subNavData: PropTypes.array,
     userAvatarInitial: PropTypes.string,
     userMenuContent: PropTypes.node,
-    userName: PropTypes.string
+    userName: PropTypes.string,
+    userNotifications: PropTypes.array
 };

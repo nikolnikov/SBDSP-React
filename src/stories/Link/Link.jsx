@@ -3,7 +3,7 @@ import DSLink from '../components/Link';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Link = ({ 
+export const QDSLink = ({ 
     customClasses = [],
     iconLeft,
     iconRight,
@@ -27,7 +27,7 @@ export const Link = ({
     );
 };
 
-Link.propTypes = {
+QDSLink.propTypes = {
     customClasses: PropTypes.string,
     iconLeft: PropTypes.string,
     iconRight: PropTypes.string,

@@ -3,33 +3,40 @@ import DSIconButton from '../components/Button/IconButton.index'
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const IconButton = ({ 
-    customClasses = null,
-    icon = null,
-    isDestructive = false,
-    isDisabled = false,
-    isInverse = false,
-    size = 'large'
+export const QDSIconButton = ({ 
+    clickHandler,
+    customClasses = [],
+    icon,
+    isDestructive,
+    isDisabled,
+    isInverse,
+    size = 'lg',
+    tooltip,
+    tooltipPlacement = 'top'
 }) => {  
     return (
         <DSIconButton
-            clickHandler={() => console.log('Button Clicked')}
+            clickHandler={clickHandler}    
             customClasses={classNames(customClasses)}
             icon={icon}
             isDestructive={isDestructive}
             isDisabled={isDisabled}
             isInverse={isInverse}
             size={size}
+            tooltip={tooltip}
+            tooltipPlacement={tooltipPlacement}
         />
     );
 };
 
-IconButton.propTypes = {
+QDSIconButton.propTypes = {
+    clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
     icon: PropTypes.string,
     isDestructive: PropTypes.bool,
     isDisabled: PropTypes.bool,
     isInverse: PropTypes.bool,
-    clickHandler: PropTypes.func,
-    size: PropTypes.oneOf(['small', 'medium', 'large'])
+    size: PropTypes.oneOf(['sm', 'md', 'lg']),
+    tooltip: PropTypes.string,
+    tooltipPlacement: PropTypes.oneOf(['top', 'right', 'bottom', 'left'])
 };

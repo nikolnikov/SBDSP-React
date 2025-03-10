@@ -4,7 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Icon = ({
+const QDSIcon = ({
     color,
     customClasses,
     name,
@@ -38,7 +38,7 @@ const Icon = ({
     return <span className={spanClass} aria-label={name} role="img"></span>;
 };
 
-Icon.propTypes = {
+QDSIcon.propTypes = {
     color: PropTypes.string,
     customClasses: PropTypes.string,
     name: PropTypes.string,
@@ -50,4 +50,4 @@ Icon.propTypes = {
     size: PropTypes.string
 };
 
-export default Icon;
+export default QDSIcon;

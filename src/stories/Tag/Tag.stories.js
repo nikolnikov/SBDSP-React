@@ -1,8 +1,8 @@
-import { Tag } from './Tag';
+import { QDSTag } from './Tag';
 
 export default {
     title: 'Components/Tag',
-    component: Tag,
+    component: QDSTag,
     parameters: {
         layout: 'centered',
         actions: {

@@ -3,7 +3,7 @@ import DSDatePicker from '../components/DatePicker'
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Datepicker = ({ 
+export const QDSDatepicker = ({ 
     customClasses,
     errorMessage,
     hasError = false,
@@ -37,7 +37,7 @@ export const Datepicker = ({
     );
 };
 
-Datepicker.propTypes = {
+QDSDatepicker.propTypes = {
     customClasses: PropTypes.string,
     errorMessage: PropTypes.string,
     hasError: PropTypes.bool,

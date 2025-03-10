@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Overlay from '../Overlay';
 
-const NavRail = ({ navItems, noHeader }) => {
+const QDSNavRail = ({ navItems, noHeader }) => {
     const [activeItem, setActiveItem] = useState(null);
     const [activeSubItem, setActiveSubItem] = useState(null);
     const [showDrawer, setShowDrawer] = useState(false);
@@ -172,9 +172,9 @@ const NavRail = ({ navItems, noHeader }) => {
     );
 };
 
-NavRail.propTypes = {
+QDSNavRail.propTypes = {
     navItems: PropTypes.array.isRequired,
     noHeader: PropTypes.bool
 };
 
-export default NavRail;
+export default QDSNavRail;

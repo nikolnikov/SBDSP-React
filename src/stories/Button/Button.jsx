@@ -3,7 +3,7 @@ import DSButton from '../components/Button'
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Button = ({ 
+export const QDSButton = ({ 
     customClasses = null,
     icon = null,
     iconRight = null,
@@ -12,7 +12,7 @@ export const Button = ({
     isInverse = false,
     isSave = false,
     label,
-    size = 'large',
+    size = 'lg',
     type = 'primary',
 }) => {  
     const [buttonStatus, setButtonStatus] = useState('');
@@ -64,7 +64,7 @@ export const Button = ({
     );
 };
 
-Button.propTypes = {
+QDSButton.propTypes = {
     label: PropTypes.string,
     customClasses: PropTypes.string,
     icon: PropTypes.string,
@@ -74,6 +74,6 @@ Button.propTypes = {
     isInverse: PropTypes.bool,
     isSave: PropTypes.bool,
     clickHandler: PropTypes.func,
-    size: PropTypes.oneOf(['small', 'large']),
+    size: PropTypes.oneOf(['sm', 'lg']),
     type: PropTypes.oneOf(['primary', 'secondary', 'ghost']),
 };

@@ -3,7 +3,7 @@ import DSLoader from '../components/Loader';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Loader = ({ 
+export const QDSLoader = ({ 
     customClasses = [],
     isDeterminate = false,
     isCentered = false,
@@ -52,7 +52,7 @@ export const Loader = ({
     );
 };
 
-Loader.propTypes = {
+QDSLoader.propTypes = {
     customClasses: PropTypes.string,
     isCentered: PropTypes.bool,
     isDeterminate: PropTypes.bool,

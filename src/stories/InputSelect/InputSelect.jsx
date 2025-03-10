@@ -3,7 +3,7 @@ import DSInputSelect from '../components/InputSelect';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const InputSelect = ({
+export const QDSInputSelect = ({
     customClasses = [],
     errorMessage,
     hasError = false,
@@ -17,7 +17,7 @@ export const InputSelect = ({
     options,
     placeholder,
     selectedValue,
-    tooltipMessage
+    tooltip
 }) => {
     const [value, setValue] = useState(selectedValue || '');
 
@@ -43,12 +43,12 @@ export const InputSelect = ({
             options={options}
             placeholder={placeholder}
             selectedValue={value}
-            tooltipMessage={tooltipMessage}
+            tooltip={tooltip}
         />
     );
 };
 
-InputSelect.propTypes = {
+QDSInputSelect.propTypes = {
     customClasses: PropTypes.string,
     errorMessage: PropTypes.string,
     hasError: PropTypes.bool,
@@ -62,5 +62,5 @@ InputSelect.propTypes = {
     options: PropTypes.array.isRequired,
     placeholder: PropTypes.string,
     selectedValue: PropTypes.string,
-    tooltipMessage: PropTypes.string
+    tooltip: PropTypes.string
 };

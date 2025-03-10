@@ -3,7 +3,7 @@ import DSProgressStepper from '../components/ProgressStepper';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const ProgressStepper = ({ 
+export const QDSProgressStepper = ({ 
     customClasses = [],
     isCancelled,
     isError,
@@ -29,7 +29,7 @@ export const ProgressStepper = ({
     );
 };
 
-ProgressStepper.propTypes = {
+QDSProgressStepper.propTypes = {
     customClasses: PropTypes.string,
     steps: PropTypes.array,
     hideLabels: PropTypes.bool,

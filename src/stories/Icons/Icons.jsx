@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import DSIcon from '../components/Icon';
 
-export const Icon = ({ 
+export const QDSIcon = ({ 
     color,
     customClasses,
     name,
@@ -23,7 +23,7 @@ export const Icon = ({
     );
 };
 
-Icon.propTypes = {
+QDSIcon.propTypes = {
     color: PropTypes.string,
     customClasses: PropTypes.string,
     name: PropTypes.string,

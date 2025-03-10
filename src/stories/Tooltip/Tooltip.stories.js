@@ -1,9 +1,9 @@
 import React from 'react';
-import { Tooltip } from './Tooltip';
+import { QDSTooltip } from './Tooltip';
 
 export default {
     title: 'Components/Tooltip',
-    component: Tooltip,
+    component: QDSTooltip,
     parameters: {
         layout: 'centered',
         actions: {
@@ -19,8 +19,8 @@ export default {
 export const DefaultTooltip = {
     args: {
         children: <span>Show tooltip</span>,
-        placement: 'top',
-        tooltip: 'Tooltip message goes here.'
+        message: 'Tooltip message goes here.',
+        placement: 'top'
     },
     argTypes: {
         children: { table: { disable: true } }

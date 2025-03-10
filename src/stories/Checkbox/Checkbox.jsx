@@ -3,7 +3,7 @@ import DSCheckbox from '../components/Checkbox';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Checkbox = ({ 
+export const QDSCheckbox = ({ 
     inputId,
     label,
     name,
@@ -30,7 +30,7 @@ export const Checkbox = ({
     );
 };
 
-Checkbox.propTypes = {
+QDSCheckbox.propTypes = {
     inputId: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

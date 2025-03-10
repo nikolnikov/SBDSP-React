@@ -10,7 +10,7 @@ import MuiTableContainer from '@mui/material/TableContainer';
 import DSTableHead from './TableHead';
 import DSTableRow from './TableRow';
 
-const Table = ({
+const QDSTable = ({
     customClasses,
     isExpandable,
     isFlat,
@@ -67,7 +67,7 @@ const Table = ({
     );
 };
 
-Table.propTypes = {
+QDSTable.propTypes = {
     customClasses: PropTypes.string,
     isExpandable: PropTypes.bool,
     isFlat: PropTypes.bool,
@@ -79,4 +79,4 @@ Table.propTypes = {
     sortProperty: PropTypes.string
 };
 
-export default Table;
+export default QDSTable;

@@ -3,7 +3,7 @@ import DSAvatar from '../components/Avatar';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Avatar = ({ 
+export const QDSAvatar = ({ 
     button = false,
     clickHandler,
     customClasses = [],
@@ -11,7 +11,7 @@ export const Avatar = ({
     initial = 'A',
     hasNotification = false,
     outlined = false,
-    size = 'large'
+    size = 'lg'
 }) => {
     return (
         <DSAvatar
@@ -27,7 +27,7 @@ export const Avatar = ({
     );
 };
 
-Avatar.propTypes = {
+QDSAvatar.propTypes = {
     button: PropTypes.bool,
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
@@ -35,5 +35,5 @@ Avatar.propTypes = {
     hasNotification: PropTypes.bool,
     initial: PropTypes.string,
     outlined: PropTypes.bool,
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge'])
+    size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl'])
 };

@@ -3,7 +3,7 @@ import DSAccordion from '../components/Accordion';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Accordion = ({ 
+export const QDSAccordion = ({ 
     customClasses,
     openSingleItem = false,
     defaultExpanded = false,
@@ -19,7 +19,7 @@ export const Accordion = ({
     );
 };
 
-Accordion.propTypes = {
+QDSAccordion.propTypes = {
     customClasses: PropTypes.string,
     openSingleItem: PropTypes.bool,
     defaultExpanded: PropTypes.bool,

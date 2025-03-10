@@ -3,7 +3,7 @@ import DSHeader from '../components/Header';
 import DSNavRail from '../components/NavRail';
 import PropTypes from 'prop-types';
 
-export const Rail = ({ 
+export const QDSRail = ({ 
     navItems, noHeader = true
 }) => {
     return (
@@ -23,7 +23,7 @@ export const Rail = ({
     );
 };
 
-Rail.propTypes = {
+QDSRail.propTypes = {
     navItems: PropTypes.array.isRequired,
     noHeader: PropTypes.bool
 };

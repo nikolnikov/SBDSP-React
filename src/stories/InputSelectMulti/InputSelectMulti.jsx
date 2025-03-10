@@ -3,7 +3,7 @@ import DSInputMultiSelect from '../components/InputMultiSelect';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const InputMultiSelect = ({
+export const QDSInputMultiSelect = ({
     customClasses = [],
     errorMessage,
     hasError = false,
@@ -17,7 +17,7 @@ export const InputMultiSelect = ({
     options,
     placeholder,
     selectedValue = [],
-    tooltipMessage
+    tooltip
 }) => {
     const [value, setValue] = useState(selectedValue || []);
 
@@ -49,12 +49,12 @@ export const InputMultiSelect = ({
             options={options}
             placeholder={placeholder}
             selectedValue={Array.isArray(value) ? value : []}
-            tooltipMessage={tooltipMessage}
+            tooltip={tooltip}
         />
     );
 };
 
-InputMultiSelect.propTypes = {
+QDSInputMultiSelect.propTypes = {
     customClasses: PropTypes.string,
     errorMessage: PropTypes.string,
     hasError: PropTypes.bool,
@@ -68,5 +68,5 @@ InputMultiSelect.propTypes = {
     options: PropTypes.array.isRequired,
     placeholder: PropTypes.string,
     selectedValue: PropTypes.arrayOf(PropTypes.string),
-    tooltipMessage: PropTypes.string
+    tooltip: PropTypes.string
 };

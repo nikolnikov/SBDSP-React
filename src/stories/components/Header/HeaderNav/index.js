@@ -1,21 +1,32 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import classNames from 'classnames';
-import Icon from '../../Icon';
+import QDSIcon from '../../Icon';
+import QDSIconButton from '../../Button/IconButton.index';
 
 const HeaderNav = ({
     button,
     navData,
+    notificationsTitle,
+    userNotifications,
     userAvatarInitial,
     userMenuContent,
     userName
 }) => {
     const [userMenuOpen, setUserMenuOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(null);
+    const [notificationsOpen, setNotificationsMenuOpen] = useState(false);
     const navRef = useRef(null);
+    const notificationsRef = useRef(null);
     const userMenuRef = useRef(null);
 
     const userMenuToggle = () => {
         setUserMenuOpen(prevState => !prevState);
+        setMenuOpen(null);
+    };
+
+    const userNotificationsToggle = () => {
+        setNotificationsMenuOpen(prevState => !prevState);
+        setMenuOpen(null);
     };
 
     const menuToggle = idx => {
@@ -32,6 +43,14 @@ const HeaderNav = ({
             !userMenuRef.current.contains(event.target)
         ) {
             setUserMenuOpen(false);
+            setNotificationsMenuOpen(false);
+        }
+
+        if (
+            notificationsRef.current &&
+            !notificationsRef.current.contains(event.target)
+        ) {
+            setNotificationsMenuOpen(false);
         }
     }, []);
 
@@ -64,11 +83,11 @@ const HeaderNav = ({
                                     }
                                 >
                                     {navItem.icon && (
-                                        <Icon name={navItem.icon} />
+                                        <QDSIcon name={navItem.icon} />
                                     )}
                                     {navItem.label}
                                     {navItem.subNav && (
-                                        <Icon name="caret-down" />
+                                        <QDSIcon name="caret-down" />
                                     )}
                                 </button>
 
@@ -85,7 +104,7 @@ const HeaderNav = ({
                                                     }
                                                 >
                                                     {subNavItem.icon && (
-                                                        <Icon
+                                                        <QDSIcon
                                                             name={
                                                                 subNavItem.icon
                                                             }
@@ -100,6 +119,48 @@ const HeaderNav = ({
                             </div>
                         </React.Fragment>
                     ))}
+
+                {userNotifications && userNotifications.length > 0 && (
+                    <div
+                        className={classNames('ds-header__nav-item', {
+                            '--active': notificationsOpen
+                        })}
+                        ref={notificationsRef}
+                    >
+                        <button onClick={userNotificationsToggle}>
+                            <QDSIcon name="bell" />
+                            Notifications
+                            <span className="ds-icon--caret-down"></span>
+                        </button>
+
+                        {notificationsOpen && (
+                            <div className="ds-header__dropdown --notifications">
+                                {notificationsTitle && (
+                                    <h4>{notificationsTitle}</h4>
+                                )}
+                                {userNotifications.map((notification, idx) => (
+                                    <div
+                                        key={idx}
+                                        className="ds-header__dropdown-item"
+                                    >
+                                        <QDSIcon name="bell" />
+
+                                        <div className="ds-header__notification-content">
+                                            <b>{notification.title}</b>
+                                            <p>{notification.message}</p>
+                                        </div>
+
+                                        <QDSIconButton
+                                            icon="close"
+                                            onClick={() => {}}
+                                            size="sm"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                )}
             </div>
 
             {button && button}

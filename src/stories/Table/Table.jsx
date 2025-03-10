@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import '!style-loader!css-loader!sass-loader!./table.scss';
 
-export const Table = ({ 
+export const QDSTable = ({ 
     customClasses,
     isExpandable = false,
     isFlat = false,
@@ -31,7 +31,7 @@ export const Table = ({
     );
 };
 
-Table.propTypes = {
+QDSTable.propTypes = {
     customClasses: PropTypes.string,
     isExpandable: PropTypes.bool,
     isFlat: PropTypes.bool,

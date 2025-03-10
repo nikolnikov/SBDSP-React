@@ -3,9 +3,11 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import Tooltip from '../Tooltip';
+import QDSIcon from '../Icon';
+import QDSIconButton from '../Button/IconButton.index';
+import QDSLoader from '../Loader';
 
-const Input = ({
+const QDSInput = ({
     customClasses = [],
     errorMessage,
     hasError,
@@ -20,7 +22,7 @@ const Input = ({
     name,
     onChange,
     placeholder,
-    tooltipMessage,
+    tooltip,
     type
 }) => {
     return (
@@ -37,29 +39,17 @@ const Input = ({
             <label className="ds-input__label" htmlFor={inputId}>
                 {label && <span>{label}</span>}
 
-                {tooltipMessage && (
-                    <Tooltip tooltip={tooltipMessage}>
-                        <button
-                            className="ds-tooltip ds-button --icon --sm"
-                            aria-label="tooltip"
-                        >
-                            <span
-                                className="ds-icon--info"
-                                aria-label="info filled"
-                                role="img"
-                            ></span>
-                        </button>
-                    </Tooltip>
+                {tooltip && (
+                    <QDSIconButton
+                        customClasses="ds-tooltip"
+                        icon="info"
+                        size="sm"
+                        tooltip={tooltip}
+                    />
                 )}
             </label>
             <div className="ds-flex --start-center --row">
-                {iconLeft && (
-                    <span
-                        className={`ds-icon--${iconLeft} --left`}
-                        aria-label={`${iconLeft}`}
-                        role="img"
-                    ></span>
-                )}
+                {iconLeft && <QDSIcon customClasses="--left" name={iconLeft} />}
                 <input
                     disabled={isDisabled}
                     id={inputId}
@@ -69,23 +59,10 @@ const Input = ({
                     onChange={value => onChange(value)}
                 />
                 {iconRight && (
-                    <span
-                        className={`ds-icon--${iconRight} --right`}
-                        aria-label={`${iconRight}`}
-                        role="img"
-                    ></span>
+                    <QDSIcon customClasses="--right" name={iconRight} />
                 )}
                 {isLoading && (
-                    <div
-                        className="ds-loading --small --right"
-                        aria-label="loading"
-                        role="progressbar"
-                    >
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
+                    <QDSLoader customClasses="ds-loading --right" isSmall />
                 )}
             </div>
 
@@ -94,7 +71,7 @@ const Input = ({
                     {errorMessage}
                 </div>
             )}
-            {hintMessage && (
+            {hintMessage && !errorMessage && (
                 <div className="ds-input__hint" role="tooltip">
                     {hintMessage}
                 </div>
@@ -103,7 +80,7 @@ const Input = ({
     );
 };
 
-Input.propTypes = {
+QDSInput.propTypes = {
     customClasses: PropTypes.string,
     errorMessage: PropTypes.string,
     hasError: PropTypes.bool,
@@ -118,8 +95,8 @@ Input.propTypes = {
     name: PropTypes.string,
     onChange: PropTypes.func,
     placeholder: PropTypes.string,
-    tooltipMessage: PropTypes.string,
+    tooltip: PropTypes.string,
     type: PropTypes.string
 };
 
-export default Input;
+export default QDSInput;

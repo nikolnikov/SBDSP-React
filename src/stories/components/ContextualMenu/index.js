@@ -4,7 +4,7 @@ import React from 'react';
 import MuiMenu from '@mui/material/Menu';
 import PropTypes from 'prop-types';
 
-const ContextualMenu = ({
+const QDSContextualMenu = ({
     children,
     closeMenu,
     menuItems,
@@ -59,6 +59,7 @@ const ContextualMenu = ({
                                   item.action(() => {});
                                   closeMenu();
                               }}
+                              role="menuitem"
                               tabIndex={0}
                           >
                               {item.title}
@@ -69,7 +70,7 @@ const ContextualMenu = ({
     );
 };
 
-ContextualMenu.propTypes = {
+QDSContextualMenu.propTypes = {
     children: PropTypes.node,
     closeMenu: PropTypes.func,
     menuItems: PropTypes.array,
@@ -79,4 +80,4 @@ ContextualMenu.propTypes = {
     openMenu: PropTypes.object
 };
 
-export default ContextualMenu;
+export default QDSContextualMenu;

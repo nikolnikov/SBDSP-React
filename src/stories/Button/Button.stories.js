@@ -1,8 +1,8 @@
-import { Button } from './Button';
+import { QDSButton } from './Button';
 
 export default {
     title: 'Components/Button/Standard',
-    component: Button,
+    component: QDSButton,
     parameters: {
         layout: 'centered',
         actions: {
@@ -18,7 +18,7 @@ export default {
 export const PrimaryButton = {
     args: {
         label: 'Button label',
-        size: 'large',
+        size: 'lg',
         type: 'primary'
     },
     argTypes: {

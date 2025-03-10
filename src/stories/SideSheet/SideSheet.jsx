@@ -3,7 +3,7 @@ import DSSideSheet from '../components/SideSheet';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const SideSheet = ({ 
+export const QDSSideSheet = ({ 
     customClasses = [],
     children,
     title,
@@ -35,7 +35,7 @@ export const SideSheet = ({
     );
 };
 
-SideSheet.propTypes = {
+QDSSideSheet.propTypes = {
     children: PropTypes.node,
     customClasses: PropTypes.string,
     title: PropTypes.string,

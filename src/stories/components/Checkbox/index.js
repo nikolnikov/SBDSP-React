@@ -4,7 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Checkbox = ({
+const QDSCheckbox = ({
     inputId,
     label,
     name,
@@ -39,7 +39,7 @@ const Checkbox = ({
     );
 };
 
-Checkbox.propTypes = {
+QDSCheckbox.propTypes = {
     inputId: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -51,4 +51,4 @@ Checkbox.propTypes = {
     value: PropTypes.string
 };
 
-export default Checkbox;
+export default QDSCheckbox;

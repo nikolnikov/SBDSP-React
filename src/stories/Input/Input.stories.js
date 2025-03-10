@@ -1,8 +1,8 @@
-import { Input } from './Input';
+import { QDSInput } from './Input';
 
 export default {
     title: 'Components/Input',
-    component: Input,
+    component: QDSInput,
     parameters: {
         layout: 'centered',
         actions: {
@@ -124,7 +124,7 @@ export const InputWithTooltip = {
     args: {
         ...BasicInput.args,
         inputId: 'input-10',
-        tooltipMessage: 'Tooltip message goes here.'
+        tooltip: 'Tooltip message goes here.'
     },
     argTypes: {
         ...BasicInput.argTypes

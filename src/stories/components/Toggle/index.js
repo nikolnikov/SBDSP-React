@@ -4,7 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Toggle = ({
+const QDSToggle = ({
     isChecked,
     customClasses = [],
     isDisabled,
@@ -45,7 +45,7 @@ const Toggle = ({
     );
 };
 
-Toggle.propTypes = {
+QDSToggle.propTypes = {
     isChecked: PropTypes.bool,
     customClasses: PropTypes.string,
     isDisabled: PropTypes.bool,
@@ -56,4 +56,4 @@ Toggle.propTypes = {
     rightLabel: PropTypes.string
 };
 
-export default Toggle;
+export default QDSToggle;

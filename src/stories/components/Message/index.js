@@ -1,9 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import IconButton from '../Button/IconButton.index';
+import QDSIcon from '../Icon/';
+import QDSIconButton from '../Button/IconButton.index';
 
-const Message = ({
+const QDSMessage = ({
     actions,
     closeHandler,
     customClasses,
@@ -14,10 +15,10 @@ const Message = ({
     type
 }) => {
     const iconType = {
-        informative: { className: 'ds-icon--info', label: 'informative' },
-        success: { className: 'ds-icon--check-circle', label: 'success' },
-        warning: { className: 'ds-icon--warning', label: 'alert' },
-        error: { className: 'ds-icon--warning-octagon', label: 'error' }
+        informative: 'info',
+        success: 'check-circle',
+        warning: 'warning',
+        error: 'warning-octagon'
     };
 
     const icon = iconType[type];
@@ -29,13 +30,7 @@ const Message = ({
         >
             {!noIcon && (
                 <div className="ds-message__icon">
-                    {icon && (
-                        <span
-                            className={icon.className}
-                            aria-label={icon.label}
-                            role="img"
-                        ></span>
-                    )}
+                    <QDSIcon name={icon} />
                 </div>
             )}
             <div className="ds-message__content">
@@ -59,11 +54,11 @@ const Message = ({
 
             {!hideX && (
                 <div className="ds-message__close">
-                    <IconButton
+                    <QDSIconButton
                         icon="close"
                         label="close"
                         clickHandler={closeHandler}
-                        size="medium"
+                        size="md"
                     />
                 </div>
             )}
@@ -71,7 +66,7 @@ const Message = ({
     );
 };
 
-Message.propTypes = {
+QDSMessage.propTypes = {
     actions: PropTypes.array,
     closeHandler: PropTypes.func,
     customClasses: PropTypes.string,
@@ -82,4 +77,4 @@ Message.propTypes = {
         .isRequired
 };
 
-export default Message;
+export default QDSMessage;

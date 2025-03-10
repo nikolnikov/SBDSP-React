@@ -1,8 +1,8 @@
-import { Message } from './Message';
+import { QDSMessage } from './Message';
 
 export default {
     title: 'Components/Message',
-    component: Message,
+    component: QDSMessage,
     parameters: {
         layout: 'centered',
         actions: {

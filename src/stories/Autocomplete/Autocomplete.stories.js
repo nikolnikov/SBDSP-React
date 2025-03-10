@@ -1,8 +1,8 @@
-import { Autocomplete } from './Autocomplete';
+import { QDSAutocomplete } from './Autocomplete';
 
 export default {
     title: 'Components/Autocomplete',
-    component: Autocomplete,
+    component: QDSAutocomplete,
     parameters: {
         layout: 'centered',
         actions: {

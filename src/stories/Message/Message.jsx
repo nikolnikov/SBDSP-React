@@ -2,7 +2,7 @@ import React from 'react';
 import DSMessage from '../components/Message';
 import PropTypes from 'prop-types';
 
-export const Message = ({
+export const QDSMessage = ({
     actions,
     closeHandler,
     hideX = false,
@@ -28,7 +28,7 @@ export const Message = ({
     );
 };
 
-Message.propTypes = {
+QDSMessage.propTypes = {
     actions: PropTypes.array,
     closeHandler: PropTypes.func,
     hideX: PropTypes.bool,

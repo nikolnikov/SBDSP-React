@@ -1,6 +1,6 @@
 import React from 'react';
 import { Canvas, Stories } from '@storybook/addon-docs/blocks';
-import { Icon } from './Icons';
+import { QDSIcon } from './Icons';
 import '!style-loader!css-loader!sass-loader!./icons.scss';
 
 // export const StoryDocs = () => {
@@ -14,7 +14,7 @@ import '!style-loader!css-loader!sass-loader!./icons.scss';
 
 export default {
     title: 'Components/Icons',
-    component: Icon,
+    component: QDSIcon,
     parameters: {
         layout: 'centered',
         actions: {
@@ -31,7 +31,7 @@ export default {
     tags: ['autodocs', '!dev']
 };
 
-const Template = args => <Icon {...args} />;
+const Template = args => <QDSIcon {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

@@ -1,8 +1,8 @@
-import { Avatar } from './Avatar';
+import { QDSAvatar } from './Avatar';
 
 export default {
     title: 'Components/Avatar',
-    component: Avatar,
+    component: QDSAvatar,
     parameters: {
         layout: 'centered',
         actions: {
@@ -18,7 +18,7 @@ export default {
 export const SolidAvatar = {
     args: {
         initial: 'A',
-        size: 'large'
+        size: 'lg'
     },
     argTypes: {
         customClasses: { table: { disable: true } },

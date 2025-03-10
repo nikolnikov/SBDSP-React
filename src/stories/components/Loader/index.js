@@ -5,7 +5,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Loader = ({
+const QDSLoader = ({
     customClasses = [],
     isDeterminate,
     isCentered,
@@ -28,7 +28,7 @@ const Loader = ({
     );
 };
 
-Loader.propTypes = {
+QDSLoader.propTypes = {
     customClasses: PropTypes.string,
     isCentered: PropTypes.bool,
     isDeterminate: PropTypes.bool,
@@ -37,4 +37,4 @@ Loader.propTypes = {
     isSmall: PropTypes.bool
 };
 
-export default Loader;
+export default QDSLoader;

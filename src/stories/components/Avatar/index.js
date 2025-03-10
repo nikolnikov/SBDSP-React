@@ -4,7 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Avatar = ({
+const QDSAvatar = ({
     button,
     clickHandler,
     customClasses = [],
@@ -43,7 +43,7 @@ const Avatar = ({
     );
 };
 
-Avatar.propTypes = {
+QDSAvatar.propTypes = {
     button: PropTypes.bool,
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
@@ -51,7 +51,7 @@ Avatar.propTypes = {
     hasNotification: PropTypes.bool,
     initial: PropTypes.string,
     outlined: PropTypes.bool,
-    size: PropTypes.oneOf(['xlarge', 'large', 'medium', 'small'])
+    size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl'])
 };
 
-export default Avatar;
+export default QDSAvatar;

@@ -3,10 +3,10 @@
 import React from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import { SnackbarContent } from '@mui/material';
-import IconButton from '../Button/IconButton.index';
+import QDSIconButton from '../Button/IconButton.index';
 import PropTypes from 'prop-types';
 
-const Toast = ({
+const QDSToast = ({
     duration,
     message,
     noIcon,
@@ -24,7 +24,7 @@ const Toast = ({
             )}
 
             {!duration && !textLinkLabel && (
-                <IconButton icon="close" size="medium" clickHandler={onClose} />
+                <QDSIconButton icon="close" size="md" clickHandler={onClose} />
             )}
         </>
     );
@@ -51,7 +51,7 @@ const Toast = ({
     );
 };
 
-Toast.propTypes = {
+QDSToast.propTypes = {
     duration: PropTypes.number,
     message: PropTypes.string.isRequired,
     noIcon: PropTypes.bool,
@@ -61,4 +61,4 @@ Toast.propTypes = {
     type: PropTypes.oneOf(['success', 'error', 'alert', 'informative'])
 };
 
-export default Toast;
+export default QDSToast;

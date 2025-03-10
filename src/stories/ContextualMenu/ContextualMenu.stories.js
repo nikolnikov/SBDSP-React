@@ -1,8 +1,8 @@
-import { ContextualMenu } from './ContextualMenu';
+import { QDSContextualMenu } from './ContextualMenu';
 
 export default {
     title: 'Components/Contextual menu',
-    component: ContextualMenu,
+    component: QDSContextualMenu,
     parameters: {
         layout: 'centered',
         actions: {

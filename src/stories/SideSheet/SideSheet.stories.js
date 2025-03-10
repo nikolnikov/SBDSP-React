@@ -1,8 +1,8 @@
-import { SideSheet } from './SideSheet';
+import { QDSSideSheet } from './SideSheet';
 
 export default {
     title: 'Components/Side sheet',
-    component: SideSheet,
+    component: QDSSideSheet,
     parameters: {
         layout: 'centered',
         actions: {

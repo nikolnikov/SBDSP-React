@@ -3,7 +3,7 @@ import DSAutocomplete from '../components/Autocomplete';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export const Autocomplete = ({ 
+export const QDSAutocomplete = ({ 
     customClasses = [],
     errorMessage,
     hasError = false,
@@ -40,7 +40,7 @@ export const Autocomplete = ({
     );
 };
 
-Autocomplete.propTypes = {
+QDSAutocomplete.propTypes = {
     customClasses: PropTypes.string,
     errorMessage: PropTypes.string,
     hasError: PropTypes.bool,

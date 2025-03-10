@@ -3,7 +3,7 @@ import DSInput from '../components/Input';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Input = ({
+export const QDSInput = ({
     customClasses = [],
     errorMessage,
     hasError = false,
@@ -18,7 +18,7 @@ export const Input = ({
     name,
     onChange = () => {},
     placeholder,
-    tooltipMessage,
+    tooltip,
     type
 }) => {
     return (
@@ -37,13 +37,13 @@ export const Input = ({
             name={name}
             onChange={onChange}
             placeholder={placeholder}
-            tooltipMessage={tooltipMessage}
+            tooltip={tooltip}
             type={type}
         />
     );
 };
 
-Input.propTypes = {
+QDSInput.propTypes = {
     customClasses: PropTypes.string,
     errorMessage: PropTypes.string,
     hasError: PropTypes.bool,
@@ -58,6 +58,6 @@ Input.propTypes = {
     name: PropTypes.string,
     onChange: PropTypes.func,
     placeholder: PropTypes.string,
-    tooltipMessage: PropTypes.string,
+    tooltip: PropTypes.string,
     type: PropTypes.string
 };

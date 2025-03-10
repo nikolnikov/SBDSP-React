@@ -1,8 +1,8 @@
-import { Accordion } from './Accordion';
+import { QDSAccordion } from './Accordion';
 
 export default {
     title: 'Components/Accordion',
-    component: Accordion,
+    component: QDSAccordion,
     parameters: {
         layout: 'centered',
         actions: {

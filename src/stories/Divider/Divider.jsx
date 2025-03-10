@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from "classnames";
 import PropTypes from 'prop-types';
 
-export const Divider = ({ 
+export const QDSDivider = ({ 
     color, 
     customClasses
 }) => {
@@ -15,7 +15,7 @@ export const Divider = ({
     );
 };
 
-Divider.propTypes = {
+QDSDivider.propTypes = {
     color: PropTypes.string,
     customClasses: PropTypes.string,
 };

@@ -1,8 +1,8 @@
-import { ProgressStepper } from './ProgressStepper';
+import { QDSProgressStepper } from './ProgressStepper';
 
 export default {
     title: 'Components/Progress stepper',
-    component: ProgressStepper,
+    component: QDSProgressStepper,
     parameters: {
         layout: 'centered',
         actions: {

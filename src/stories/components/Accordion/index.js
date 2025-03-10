@@ -6,7 +6,7 @@ import AccordionMultipleItems from './AccordionMultipleItems';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Accordion = ({
+const QDSAccordion = ({
     customClasses,
     openSingleItem,
     defaultExpanded,
@@ -49,11 +49,11 @@ const Accordion = ({
     );
 };
 
-Accordion.propTypes = {
+QDSAccordion.propTypes = {
     customClasses: PropTypes.string,
     openSingleItem: PropTypes.bool,
     defaultExpanded: PropTypes.bool,
     accordionContent: PropTypes.array
 };
 
-export default Accordion;
+export default QDSAccordion;

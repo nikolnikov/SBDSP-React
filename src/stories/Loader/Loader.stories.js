@@ -1,8 +1,8 @@
-import { Loader } from './Loader';
+import { QDSLoader } from './Loader';
 
 export default {
     title: 'Components/Loader',
-    component: Loader,
+    component: QDSLoader,
     parameters: {
         layout: 'centered',
         actions: {

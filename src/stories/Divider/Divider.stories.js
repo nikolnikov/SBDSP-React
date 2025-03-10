@@ -1,8 +1,8 @@
-import { Divider } from './Divider';
+import { QDSDivider } from './Divider';
 
 export default {
     title: 'Components/Divider',
-    component: Divider,
+    component: QDSDivider,
     parameters: {
         layout: 'centered',
         actions: {

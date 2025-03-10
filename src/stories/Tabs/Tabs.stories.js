@@ -1,9 +1,9 @@
 import React from 'react';
-import { Tabs } from './Tabs';
+import { QDSTabs } from './Tabs';
 
 export default {
     title: 'Components/Tabs',
-    component: Tabs,
+    component: QDSTabs,
     parameters: {
         layout: 'centered',
         actions: {

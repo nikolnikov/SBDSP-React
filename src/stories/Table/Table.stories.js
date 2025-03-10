@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from './Table';
+import { QDSTable } from './Table';
 import {
     tableHeadDataOne,
     tableCellDataOne,
@@ -9,7 +9,7 @@ import {
 
 export default {
     title: 'Components/Table',
-    component: Table,
+    component: QDSTable,
     parameters: {
         layout: 'centered',
         actions: {
@@ -31,7 +31,7 @@ const Template = args => {
         : tableHeadDataOne;
 
     return (
-        <Table
+        <QDSTable
             {...args}
             tableHeadData={tableHeadData}
             tableCellData={tableCellData}

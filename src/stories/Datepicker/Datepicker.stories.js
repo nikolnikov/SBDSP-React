@@ -1,10 +1,8 @@
-import React from 'react';
-import { Canvas, Controls } from '@storybook/blocks';
-import { Datepicker } from './Datepicker';
+import { QDSDatepicker } from './Datepicker';
 
 export default {
     title: 'Components/Datepicker',
-    component: Datepicker,
+    component: QDSDatepicker,
     parameters: {
         layout: 'centered',
         actions: {

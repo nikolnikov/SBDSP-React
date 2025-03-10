@@ -3,7 +3,7 @@ import DSTag from '../components/Tag';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-export const Tag = ({ 
+export const QDSTag = ({ 
     clickHandler,
     customClasses = [],
     isDisabled = false,
@@ -25,7 +25,7 @@ export const Tag = ({
     );
 };
 
-Tag.propTypes = {
+QDSTag.propTypes = {
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
     isDisabled: PropTypes.bool,

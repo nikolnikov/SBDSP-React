@@ -1,9 +1,9 @@
 import React from 'react';
-import { Modal } from './Modal';
+import { QDSModal } from './Modal';
 
 export default {
     title: 'Components/Modal',
-    component: Modal,
+    component: QDSModal,
     parameters: {
         layout: 'centered',
         actions: {

@@ -1,8 +1,8 @@
-import { RadioButton } from './RadioButton';
+import { QDSRadioButton } from './RadioButton';
 
 export default {
     title: 'Components/Radio buton',
-    component: RadioButton,
+    component: QDSRadioButton,
     parameters: {
         layout: 'centered',
         actions: {

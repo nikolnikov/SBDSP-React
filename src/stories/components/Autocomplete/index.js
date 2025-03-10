@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import MuiAutocomplete from '@mui/material/Autocomplete';
 import Popper from '@mui/material/Popper';
 
-const Autocomplete = ({
+const QDSAutocomplete = ({
     customClasses = [],
     errorMessage,
     hasError,
@@ -79,10 +79,14 @@ const Autocomplete = ({
                     </div>
 
                     {errorMessage && (
-                        <div className="ds-input__error">{errorMessage}</div>
+                        <div className="ds-input__error" role="alert">
+                            {errorMessage}
+                        </div>
                     )}
                     {hintMessage && (
-                        <div className="ds-input__hint">{hintMessage}</div>
+                        <div className="ds-input__hint" role="tooltip">
+                            {hintMessage}
+                        </div>
                     )}
                 </div>
             )}
@@ -90,7 +94,7 @@ const Autocomplete = ({
     );
 };
 
-Autocomplete.propTypes = {
+QDSAutocomplete.propTypes = {
     customClasses: PropTypes.string,
     errorMessage: PropTypes.string,
     hasError: PropTypes.bool,
@@ -106,4 +110,4 @@ Autocomplete.propTypes = {
     optionList: PropTypes.array
 };
 
-export default Autocomplete;
+export default QDSAutocomplete;
