@@ -21,7 +21,7 @@ export const DefaultToast = {
         message: 'New results are available.'
     },
     argTypes: {
-        conClose: { table: { disable: true } },
+        onClose: { table: { disable: true } },
         opened: { table: { disable: true } }
     }
 };

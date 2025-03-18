@@ -77,6 +77,10 @@ h2#stories,
     padding: 50px 20px;
 }
 
+.docs-story .css-1qq744x:has([class*="--inverse"]) {
+    background: #034c1f;
+}
+
 .sb-story.sb-unstyled > div {
     display: flex;
     justify-content: center;

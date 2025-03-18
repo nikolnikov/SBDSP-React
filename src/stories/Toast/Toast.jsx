@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DSToast from '../components/Toast';
+import QDSButton from '../components/Button';
 import PropTypes from 'prop-types';
 
 export const QDSToast = ({ 
@@ -17,12 +18,10 @@ export const QDSToast = ({
 
     return (
         <>
-            <button
-                className="ds-button --primary"
-                onClick={showToast}
-            >
-                Open toast
-            </button>
+            <QDSButton
+                clickHandler={showToast}
+                label="Open toast"
+            />
 
             <DSToast
                 duration={duration}
