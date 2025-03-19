@@ -29,7 +29,7 @@ export const SolidAvatar = {
 export const OutlinedAvatar = {
     args: {
         ...SolidAvatar.args,
-        outlined: true
+        isOutlined: true
     },
     argTypes: {
         ...SolidAvatar.argTypes

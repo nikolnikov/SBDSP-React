@@ -7,6 +7,9 @@ export const QDSToast = ({
     duration,
     message,
     noIcon = false,
+    positionY = 'top',
+    positionYOffset,
+    positionYOffsetMobile,
     textLinkLabel,
     type
 }) => {
@@ -31,6 +34,9 @@ export const QDSToast = ({
                     setToastOpen(false);
                 }}
                 opened={toastOpen}
+                positionY={positionY}
+                positionYOffset={positionYOffset}
+                positionYOffsetMobile={positionYOffsetMobile}
                 textLinkLabel={textLinkLabel}
                 type={type}
             />
@@ -43,7 +49,10 @@ QDSToast.propTypes = {
     message: PropTypes.string.isRequired,
     noIcon: PropTypes.bool,
     onClose: PropTypes.func,
-    opened: PropTypes.bool,
+    opened: PropTypes.bool.isRequired,
+    positionY: PropTypes.oneOf(['top', 'bottom']),
+    positionYOffset: PropTypes.number,
+    positionYOffsetMobile: PropTypes.number,
     textLinkLabel: PropTypes.string,
     type: PropTypes.oneOf(['success', 'error', 'alert', 'informative'])
 };

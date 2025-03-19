@@ -22,7 +22,9 @@ export const DefaultToast = {
     },
     argTypes: {
         onClose: { table: { disable: true } },
-        opened: { table: { disable: true } }
+        opened: { table: { disable: true } },
+        positionYOffset: { table: { disable: true } },
+        positionYOffsetMobile: { table: { disable: true } }
     }
 };
 

@@ -5,22 +5,22 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const QDSAvatar = ({
-    button,
     clickHandler,
-    customClasses = [],
+    customClasses,
+    isButton,
     isDisabled,
+    isOutlined,
     initial,
     hasNotification,
-    outlined,
     size
 }) => {
-    return button ? (
+    return isButton ? (
         <button
             className={classNames('ds-avatar', customClasses, {
                 '--disabled': isDisabled,
                 '--notification': hasNotification,
-                '--solid': !outlined,
-                '--outlined': outlined,
+                '--solid': !isOutlined,
+                '--outlined': isOutlined,
                 [`--${size}`]: size
             })}
             onClick={clickHandler}
@@ -33,8 +33,8 @@ const QDSAvatar = ({
                 [customClasses]: customClasses,
                 '--disabled': isDisabled,
                 '--notification': hasNotification,
-                '--solid': !outlined,
-                '--outlined': outlined,
+                '--solid': !isOutlined,
+                '--outlined': isOutlined,
                 [`--${size}`]: size
             })}
         >
@@ -44,13 +44,13 @@ const QDSAvatar = ({
 };
 
 QDSAvatar.propTypes = {
-    button: PropTypes.bool,
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
+    isButton: PropTypes.bool,
     isDisabled: PropTypes.bool,
+    isOutlined: PropTypes.bool,
     hasNotification: PropTypes.bool,
     initial: PropTypes.string,
-    outlined: PropTypes.bool,
     size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl'])
 };
 

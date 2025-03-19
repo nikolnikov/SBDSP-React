@@ -21,7 +21,9 @@ export const DefaultLink = {
         url: null
     },
     argTypes: {
-        customClasses: { table: { disable: true } }
+        customClasses: { table: { disable: true } },
+        url: { table: { disable: true } },
+        newWindow: { table: { disable: true } }
     }
 };
 

@@ -4,36 +4,36 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 export const QDSAvatar = ({ 
-    button = false,
     clickHandler,
-    customClasses = [],
+    customClasses,
+    isButton = false,
     isDisabled = false,
+    isOutlined = false,
     initial = 'A',
     hasNotification = false,
-    outlined = false,
     size = 'lg'
 }) => {
     return (
         <DSAvatar
-            button={button}
             clickHandler={clickHandler}
             customClasses={classNames(customClasses)}
+            isButton={isButton}
             isDisabled={isDisabled}
+            isOutlined={isOutlined}
             initial={initial}
             hasNotification={hasNotification}
-            outlined={outlined}
             size={size}
         />
     );
 };
 
 QDSAvatar.propTypes = {
-    button: PropTypes.bool,
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
+    isButton: PropTypes.bool,
     isDisabled: PropTypes.bool,
+    isOutlined: PropTypes.bool,
     hasNotification: PropTypes.bool,
     initial: PropTypes.string,
-    outlined: PropTypes.bool,
     size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl'])
 };

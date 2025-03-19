@@ -12,19 +12,22 @@ const QDSToast = ({
     noIcon,
     onClose,
     opened,
+    positionY = 'top',
+    positionYOffset,
+    positionYOffsetMobile,
     textLinkLabel,
     type
 }) => {
     const action = (
         <>
             {textLinkLabel && (
-                <a className="ds-link" href={null} onClick={onClose}>
+                <a href={null} className="ds-link" onClick={onClose}>
                     {textLinkLabel}
                 </a>
             )}
 
             {!duration && !textLinkLabel && (
-                <QDSIconButton icon="close" size="md" clickHandler={onClose} />
+                <QDSIconButton icon="close" clickHandler={onClose} />
             )}
         </>
     );
@@ -40,7 +43,31 @@ const QDSToast = ({
             open={opened}
             autoHideDuration={duration}
             onClose={onClose}
-            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            anchorOrigin={{
+                vertical: positionY ? `${positionY}` : 'top',
+                horizontal: 'center'
+            }}
+            sx={{
+                ...(positionY === 'top'
+                    ? {
+                          top: {
+                              xs: positionYOffsetMobile
+                                  ? `${positionYOffsetMobile}px`
+                                  : 40,
+                              md: positionYOffset ? `${positionYOffset}px` : 64
+                          }
+                      }
+                    : {
+                          bottom: {
+                              xs: positionYOffsetMobile
+                                  ? `${positionYOffsetMobile}px`
+                                  : 40,
+                              md: positionYOffset ? `${positionYOffset}px` : 64
+                          }
+                      }),
+                left: '50%',
+                transform: 'translateX(-50%)'
+            }}
         >
             <SnackbarContent
                 action={action}
@@ -55,8 +82,11 @@ QDSToast.propTypes = {
     duration: PropTypes.number,
     message: PropTypes.string.isRequired,
     noIcon: PropTypes.bool,
-    onClose: PropTypes.func.isRequired,
+    onClose: PropTypes.func,
     opened: PropTypes.bool.isRequired,
+    positionY: PropTypes.oneOf(['top', 'bottom']),
+    positionYOffset: PropTypes.number,
+    positionYOffsetMobile: PropTypes.number,
     textLinkLabel: PropTypes.string,
     type: PropTypes.oneOf(['success', 'error', 'alert', 'informative'])
 };
