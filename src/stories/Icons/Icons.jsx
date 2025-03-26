@@ -7,8 +7,6 @@ export const QDSIcon = ({
     color,
     customClasses,
     name,
-    isIllustrative,
-    isLegacy,
     size
 }) => {
     return (
@@ -16,8 +14,6 @@ export const QDSIcon = ({
             color={color}
             customClasses={classNames(customClasses)}
             name={name}
-            isIllustrative={isIllustrative}
-            isLegacy={isLegacy}
             size={size}
         />
     );
@@ -27,7 +23,5 @@ QDSIcon.propTypes = {
     color: PropTypes.string,
     customClasses: PropTypes.string,
     name: PropTypes.string,
-    isIllustrative: PropTypes.bool,
-    isLegacy: PropTypes.bool,
     size: PropTypes.string
 };
