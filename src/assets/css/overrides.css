@@ -155,6 +155,10 @@ h2.sbdocs-subtitle h4 {
     min-width: auto;
 }
 
+body.sb-show-main {
+    background-color: #fafafa;
+}
+
 .dark-bg .sbdocs-preview.sb-unstyled .docs-story .css-1qq744x,
 .sb-anchor[id*='-inverse'] .sbdocs-preview.sb-unstyled .docs-story .css-1qq744x,
 .sbdocs-preview.sb-unstyled.inverse .docs-story .css-1qq744x,

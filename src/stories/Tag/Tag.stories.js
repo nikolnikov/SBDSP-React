@@ -25,16 +25,6 @@ export const PrimaryTag = {
     }
 };
 
-export const SelectedPrimaryTag = {
-    args: {
-        ...PrimaryTag.args,
-        isSelected: true
-    },
-    argTypes: {
-        ...PrimaryTag.argTypes
-    }
-};
-
 export const DisabledPrimaryTag = {
     args: {
         ...PrimaryTag.args,
@@ -49,17 +39,6 @@ export const SecondaryTag = {
     args: {
         ...PrimaryTag.args,
         isSecondary: true
-    },
-    argTypes: {
-        ...PrimaryTag.argTypes
-    }
-};
-
-export const SelectedSecondaryTag = {
-    args: {
-        ...PrimaryTag.args,
-        isSecondary: true,
-        isSelected: true
     },
     argTypes: {
         ...PrimaryTag.argTypes

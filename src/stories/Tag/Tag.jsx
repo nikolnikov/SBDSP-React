@@ -8,7 +8,6 @@ export const QDSTag = ({
     customClasses = [],
     isDisabled = false,
     isSecondary = false,
-    isSelected = false,
     label,
     showClose = false
 }) => {
@@ -18,7 +17,6 @@ export const QDSTag = ({
             clickHandler={clickHandler}
             isDisabled={isDisabled}
             isSecondary={isSecondary}
-            isSelected={isSelected}
             label={label}
             showClose={showClose}
         />
@@ -30,7 +28,6 @@ QDSTag.propTypes = {
     customClasses: PropTypes.string,
     isDisabled: PropTypes.bool,
     isSecondary: PropTypes.bool,
-    isSelected: PropTypes.bool,
     label: PropTypes.string.isRequired,
     showClose: PropTypes.bool
 };

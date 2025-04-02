@@ -92,7 +92,6 @@ QDSModal.propTypes = {
     ghostButtonHandler: propTypes.func,
     ghostButtonLabel: propTypes.string,
     hideX: propTypes.bool,
-    linkLabel: propTypes.string,
     modalClose: propTypes.func,
     opened: propTypes.bool,
     secondaryButtonHandler: propTypes.func,

@@ -1,8 +1,8 @@
-import { QDSRadioButton } from './RadioButton';
+import { QDSRadioGroup } from './RadioButton';
 
 export default {
     title: 'Components/Radio buton',
-    component: QDSRadioButton,
+    component: QDSRadioGroup,
     parameters: {
         layout: 'centered',
         actions: {
@@ -15,47 +15,70 @@ export default {
     tags: ['autodocs', '!dev']
 };
 
-export const DefaultRadioButton = {
+const radioOptions = [
+    {
+        inputId: 'option1',
+        value: 'option1',
+        label: 'Option 1',
+        isDisabled: false
+    },
+    {
+        inputId: 'option2',
+        value: 'option2',
+        label: 'Option 2',
+        isDisabled: false
+    },
+    {
+        inputId: 'option3',
+        value: 'option3',
+        label: 'Option 3',
+        isDisabled: true
+    }
+];
+
+const radioOptions2 = [
+    {
+        inputId: 'option4',
+        value: 'option4',
+        label: 'Option 1',
+        isDisabled: false
+    },
+    {
+        inputId: 'option5',
+        value: 'option5',
+        label: 'Option 2',
+        isDisabled: false
+    },
+    {
+        inputId: 'option6',
+        value: 'option6',
+        label: 'Option 3',
+        isDisabled: true
+    }
+];
+
+export const HorizontalRadioGroup = {
     args: {
-        inputId: 'radio-1',
-        label: 'Radio button label',
-        onChange: () => {},
-        name: 'radio-1',
-        value: 'radio-1'
+        groupLabel: 'Horizontal group',
+        groupName: 'radio-group',
+        radioOptions: radioOptions,
+        onChange: () => {}
     },
     argTypes: {
         customClasses: { table: { disable: true } },
-        inputId: { table: { disable: true } },
-        name: { table: { disable: true } },
-        onChange: { table: { disable: true } },
-        value: { table: { disable: true } }
+        onChange: { table: { disable: true } }
     }
 };
 
-export const DisabledRadioButton = {
+export const VerticalRadioGroup = {
     args: {
-        inputId: 'radio-2',
-        isDisabled: true,
-        label: 'Radio button label',
+        groupLabel: 'Vertical group',
+        groupName: 'radio-group-vertical',
+        radioOptions: radioOptions2,
         onChange: () => {},
-        name: 'radio-2',
-        value: 'radio-2'
+        isVertical: true
     },
     argTypes: {
-        ...DefaultRadioButton.argTypes
-    }
-};
-
-export const CheckedRadioButton = {
-    args: {
-        inputId: 'radio-3',
-        isChecked: true,
-        label: 'Radio button label',
-        onChange: () => {},
-        name: 'radio-3',
-        value: 'radio-3'
-    },
-    argTypes: {
-        ...DefaultRadioButton.argTypes
+        ...HorizontalRadioGroup.argTypes
     }
 };
