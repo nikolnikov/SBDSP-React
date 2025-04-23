@@ -56,7 +56,7 @@ const QDSTable = ({
                 <MuiTableBody>
                     {visibleRows.map(tableCellData => (
                         <DSTableRow
-                            key={tableCellData.id}
+                            key={tableCellData.id.value}
                             expandable={isExpandable}
                             tableCellData={tableCellData}
                         />

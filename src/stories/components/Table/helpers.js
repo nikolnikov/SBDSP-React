@@ -1,8 +1,18 @@
 export const descendingComparator = (a, b, orderBy) => {
-    if (b[orderBy] < a[orderBy]) {
+    // Handle nested objects with value property
+    const aValue =
+        a[orderBy] && typeof a[orderBy] === 'object'
+            ? a[orderBy].value
+            : a[orderBy];
+    const bValue =
+        b[orderBy] && typeof b[orderBy] === 'object'
+            ? b[orderBy].value
+            : b[orderBy];
+
+    if (bValue < aValue) {
         return -1;
     }
-    if (b[orderBy] > a[orderBy]) {
+    if (bValue > aValue) {
         return 1;
     }
     return 0;

@@ -70,7 +70,7 @@ QDSMessage.propTypes = {
     actions: PropTypes.array,
     closeHandler: PropTypes.func,
     customClasses: PropTypes.string,
-    message: PropTypes.node.isRequired,
+    message: PropTypes.string.isRequired,
     noIcon: PropTypes.bool,
     title: PropTypes.string,
     type: PropTypes.oneOf(['informative', 'success', 'warning', 'error'])

@@ -13,7 +13,7 @@ const QDSTooltip = forwardRef(
                 placement={placement}
                 ref={ref}
             >
-                <div>{children}</div>
+                {children}
             </MUITooltip>
         );
     }

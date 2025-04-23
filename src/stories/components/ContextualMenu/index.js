@@ -2,6 +2,7 @@
 
 import React from 'react';
 import MuiMenu from '@mui/material/Menu';
+import QDSIcon from '../Icon';
 import PropTypes from 'prop-types';
 
 const QDSContextualMenu = ({
@@ -62,6 +63,7 @@ const QDSContextualMenu = ({
                               role="menuitem"
                               tabIndex={0}
                           >
+                              {item.icon && <QDSIcon name={item.icon} />}
                               {item.title}
                           </button>
                       );

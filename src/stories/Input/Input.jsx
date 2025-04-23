@@ -19,7 +19,8 @@ export const QDSInput = ({
     onChange = () => {},
     placeholder,
     tooltip,
-    type
+    type,
+    value
 }) => {
     return (
         <DSInput
@@ -39,6 +40,7 @@ export const QDSInput = ({
             placeholder={placeholder}
             tooltip={tooltip}
             type={type}
+            value={value}
         />
     );
 };
@@ -59,5 +61,6 @@ QDSInput.propTypes = {
     onChange: PropTypes.func,
     placeholder: PropTypes.string,
     tooltip: PropTypes.string,
-    type: PropTypes.string
+    type: PropTypes.string,
+    value: PropTypes.string
 };

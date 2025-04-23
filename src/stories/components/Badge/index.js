@@ -37,7 +37,14 @@ QDSBadge.propTypes = {
     isCircle: PropTypes.bool,
     label: PropTypes.string,
     secondary: PropTypes.bool,
-    status: PropTypes.string
+    status: PropTypes.oneOf([
+        'neutral',
+        'informative',
+        'success',
+        'warning',
+        'error',
+        'new'
+    ])
 };
 
 export default QDSBadge;

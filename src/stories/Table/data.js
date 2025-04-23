@@ -23,28 +23,32 @@ export const tableHeadDataOne = [
 
 export const tableCellDataOne = [
     {
-        id: 0,
-        name: 'Blake, Edward',
-        test: 'Antibody Screen, RBC with Reflex to Identification, Titer, and Antigen Typing',
-        labRefId: '1234',
-        orderedBy: 'Osterman, Jon',
-        status: 'Input needed'
+        id: { value: 0 },
+        name: { value: 'Blake, Edward' },
+        test: {
+            value: 'Antibody Screen, RBC with Reflex to Identification, Titer, and Antigen Typing'
+        },
+        labRefId: { value: '1234' },
+        orderedBy: { value: 'Osterman, Jon' },
+        status: { value: 'Input needed' }
     },
     {
-        id: 1,
-        name: 'Jupiter, Sally',
-        test: 'CBC (includes Differential and Platelets) with Automated Differential',
-        labRefId: '5678',
-        orderedBy: 'Osterman, Jon',
-        status: 'Received at Quest'
+        id: { value: 1 },
+        name: { value: 'Jupiter, Sally' },
+        test: {
+            value: 'CBC (includes Differential and Platelets) with Automated Differential'
+        },
+        labRefId: { value: '5678' },
+        orderedBy: { value: 'Osterman, Jon' },
+        status: { value: 'Received at Quest' }
     },
     {
-        id: 2,
-        name: 'Kovachs, Walter',
-        test: 'Lipid Panel',
-        labRefId: '9012',
-        orderedBy: 'Osterman, Jon',
-        status: 'Resulted'
+        id: { value: 2 },
+        name: { value: 'Kovachs, Walter' },
+        test: { value: 'Lipid Panel' },
+        labRefId: { value: '9012' },
+        orderedBy: { value: 'Osterman, Jon' },
+        status: { value: 'Resulted' }
     }
 ];
 
@@ -77,7 +81,7 @@ export const tableHeadDataTwo = [
         defaultSortOrder: 'asc'
     },
     {
-        id: 'action',
+        id: 'actions',
         label: '',
         noSort: true
     }
@@ -85,99 +89,114 @@ export const tableHeadDataTwo = [
 
 export const tableCellDataTwo = [
     {
-        id: 0,
-        toggle: true,
-        name: 'Blake, Edward',
-        test: 'Antibody Screen, RBC with Reflex to Identification, Titer, and Antigen Typing',
-        labRefId: '1234',
-        orderedBy: 'Osterman, Jon',
-        status: 'Input needed',
-        action: {
+        id: { value: 0 },
+        toggle: { value: true },
+        name: { value: 'Blake, Edward', truncate: true },
+        test: {
+            value: 'Antibody Screen, RBC with Reflex to Identification, Titer, and Antigen Typing',
+            truncate: true
+        },
+        labRefId: { value: '1234' },
+        orderedBy: { value: 'Osterman, Jon', truncate: true },
+        status: { value: 'Input needed' },
+        actions: {
             menuItems: [
                 {
                     title: 'Edit',
+                    icon: 'edit',
                     action: () => {
                         console.log('Edit');
                     }
                 },
                 {
                     title: 'Print',
+                    icon: 'print',
                     action: () => {
                         console.log('Print');
                     }
                 },
                 {
-                    title: 'Cancel',
+                    title: 'Delete',
+                    icon: 'trash',
                     action: () => {
-                        console.log('Cancel');
+                        console.log('Delete');
                     }
                 }
             ]
         },
-        expansionContent: 'Content goes here.'
+        expandedContent: { value: `Content goes here.` }
     },
     {
-        id: 1,
-        toggle: true,
-        name: 'Jupiter, Sally',
-        test: 'CBC (includes Differential and Platelets) with Automated Differential',
-        labRefId: '5678',
-        orderedBy: 'Osterman, Jon',
-        status: 'Received at Quest',
-        action: {
+        id: { value: 1 },
+        toggle: { value: true },
+        name: { value: 'Jupiter, Sally', truncate: true },
+        test: {
+            value: 'CBC (includes Differential and Platelets) with Automated Differential',
+            truncate: true
+        },
+        labRefId: { value: '5678' },
+        orderedBy: { value: 'Osterman, Jon', truncate: true },
+        status: { value: 'Received at Quest' },
+        actions: {
             menuItems: [
                 {
                     title: 'Edit',
+                    icon: 'edit',
                     action: () => {
                         console.log('Edit');
                     }
                 },
                 {
                     title: 'Print',
+                    icon: 'print',
                     action: () => {
                         console.log('Print');
                     }
                 },
                 {
-                    title: 'Cancel',
+                    title: 'Delete',
+                    icon: 'trash',
                     action: () => {
-                        console.log('Cancel');
+                        console.log('Delete');
                     }
                 }
             ]
         },
-        expansionContent: 'Content goes here.'
+        expandedContent: { value: `Content goes here.` }
     },
     {
-        id: 2,
-        toggle: true,
-        name: 'Kovachs, Walter',
-        test: 'Lipid Panel',
-        labRefId: '9012',
-        orderedBy: 'Osterman, Jon',
-        status: 'Resulted',
-        action: {
+        id: { value: 2 },
+        toggle: { value: true },
+        name: { value: 'Kovachs, Walter', truncate: true },
+        test: { value: 'Lipid Panel', truncate: true },
+        labRefId: { value: '9012' },
+        orderedBy: { value: 'Osterman, Jon', truncate: true },
+        status: { value: 'Resulted' },
+        actions: {
             menuItems: [
                 {
                     title: 'Edit',
+                    icon: 'edit',
                     action: () => {
                         console.log('Edit');
                     }
                 },
                 {
                     title: 'Print',
+                    icon: 'print',
                     action: () => {
                         console.log('Print');
                     }
                 },
                 {
-                    title: 'Cancel',
+                    title: 'Delete',
+                    icon: 'trash',
                     action: () => {
-                        console.log('Cancel');
+                        console.log('Delete');
                     }
                 }
             ]
         },
-        expansionContent: 'Content goes here.'
+        expandedContent: { value: `Content goes here.` }
     }
 ];

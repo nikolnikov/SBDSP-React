@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const DatePickerInput = ({
+const DatepickerInput = ({
     customClasses,
     handleInputDateChange,
     errorMessage,
@@ -10,10 +10,12 @@ const DatePickerInput = ({
     hintMessage,
     toggleCalendar,
     label,
+    inputId,
     inputRef,
     isDisabled,
     isRange,
     isRequired,
+    isSimple,
     fromDate,
     placeholder,
     selectedDay,
@@ -77,12 +79,24 @@ const DatePickerInput = ({
                         ></span>
                     </button>
                 </div>
+            ) : isSimple ? (
+                <input
+                    aria-labelledby="Selected day"
+                    placeholder={placeholder}
+                    onChange={e => handleInputDateChange(e)}
+                    id={inputId}
+                    value={selectedDay}
+                    name="Selected day"
+                    onFocusCapture={handleInputFocus}
+                    type="date"
+                />
             ) : (
                 <div className="ds-flex --start-center --row">
                     <input
                         aria-labelledby="Selected day"
                         placeholder={placeholder}
                         onChange={e => handleInputDateChange(e)}
+                        id={inputId}
                         value={selectedDay}
                         name="Selected day"
                         onFocusCapture={handleInputFocus}
@@ -109,7 +123,7 @@ const DatePickerInput = ({
     );
 };
 
-DatePickerInput.propTypes = {
+DatepickerInput.propTypes = {
     customClasses: PropTypes.string,
     handleInputDateChange: PropTypes.func,
     errorMessage: PropTypes.string,
@@ -117,14 +131,17 @@ DatePickerInput.propTypes = {
     hintMessage: PropTypes.string,
     toggleCalendar: PropTypes.func,
     label: PropTypes.string,
+    inputId: PropTypes.string,
     inputRef: PropTypes.object,
     isDisabled: PropTypes.bool,
     isRange: PropTypes.bool,
     isRequired: PropTypes.bool,
+    isSimple: PropTypes.bool,
     fromDate: PropTypes.string,
     placeholder: PropTypes.string,
+    selectedDay: PropTypes.string,
     toDate: PropTypes.string,
     showCalendar: PropTypes.bool
 };
 
-export default DatePickerInput;
+export default DatepickerInput;

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 export const QDSToast = ({ 
     duration,
+    hideDismiss,
     message,
     noIcon = false,
     positionY = 'top',
@@ -28,6 +29,7 @@ export const QDSToast = ({
 
             <DSToast
                 duration={duration}
+                hideDismiss={hideDismiss}
                 message={message}
                 noIcon={noIcon}
                 onClose={() => {
@@ -46,10 +48,11 @@ export const QDSToast = ({
 
 QDSToast.propTypes = {
     duration: PropTypes.number,
+    hideDismiss: PropTypes.bool,
     message: PropTypes.string.isRequired,
     noIcon: PropTypes.bool,
     onClose: PropTypes.func,
-    opened: PropTypes.bool.isRequired,
+    opened: PropTypes.bool,
     positionY: PropTypes.oneOf(['top', 'bottom']),
     positionYOffset: PropTypes.number,
     positionYOffsetMobile: PropTypes.number,

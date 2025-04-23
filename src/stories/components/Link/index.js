@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import QDSIcon from '../Icon';
 
 const QDSLink = ({
-    customClasses = [],
+    customClasses,
     iconLeft,
     iconRight,
     isDestructive,

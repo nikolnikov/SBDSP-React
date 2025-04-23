@@ -14,7 +14,8 @@ export const QDSTextarea = ({
     label,
     name,
     onChange,
-    placeholder
+    placeholder,
+    value
 }) => {
     return (
         <DSTextarea
@@ -29,6 +30,7 @@ export const QDSTextarea = ({
             name={name}
             onChange={onChange}
             placeholder={placeholder}
+            value={value}
         />
     );
 };
@@ -44,5 +46,6 @@ QDSTextarea.propTypes = {
     label: PropTypes.string,
     name: PropTypes.string,
     onChange: PropTypes.func,
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
+    value: PropTypes.string
 };

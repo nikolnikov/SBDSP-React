@@ -15,7 +15,8 @@ const QDSTextarea = ({
     label,
     name,
     onChange,
-    placeholder
+    placeholder,
+    value
 }) => {
     return (
         <div
@@ -39,7 +40,8 @@ const QDSTextarea = ({
                 id={inputId}
                 name={name}
                 placeholder={placeholder}
-                onChange={value => onChange(value)}
+                onChange={onChange}
+                value={value}
             ></textarea>
 
             {errorMessage && (
@@ -67,7 +69,8 @@ QDSTextarea.propTypes = {
     label: PropTypes.string,
     name: PropTypes.string,
     onChange: PropTypes.func,
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
+    value: PropTypes.string
 };
 
 export default QDSTextarea;

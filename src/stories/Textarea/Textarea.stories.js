@@ -1,7 +1,7 @@
 import { QDSTextarea } from './Textarea';
 
 export default {
-    title: 'Components/Textarea',
+    title: 'Components/Text area',
     component: QDSTextarea,
     parameters: {
         layout: 'centered',
@@ -15,7 +15,7 @@ export default {
     tags: ['autodocs', '!dev']
 };
 
-export const BasicTextarea = {
+export const BasicTextArea = {
     args: {
         inputId: 'textarea-1',
         label: 'Textarea label',
@@ -25,51 +25,52 @@ export const BasicTextarea = {
         customClasses: { table: { disable: true } },
         inputId: { table: { disable: true } },
         name: { table: { disable: true } },
-        onChange: { table: { disable: true } }
+        onChange: { table: { disable: true } },
+        value: { table: { disable: true } }
     }
 };
 
-export const RequiredTextarea = {
+export const RequiredTextArea = {
     args: {
-        ...BasicTextarea.args,
+        ...BasicTextArea.args,
         inputId: 'textarea-2',
         isRequired: true
     },
     argTypes: {
-        ...BasicTextarea.argTypes
+        ...BasicTextArea.argTypes
     }
 };
 
-export const DisabledTextarea = {
+export const DisabledTextArea = {
     args: {
-        ...BasicTextarea.args,
+        ...BasicTextArea.args,
         inputId: 'textarea-3',
         isDisabled: true
     },
     argTypes: {
-        ...BasicTextarea.argTypes
+        ...BasicTextArea.argTypes
     }
 };
 
-export const TextareaWithError = {
+export const TextAreaWithError = {
     args: {
-        ...BasicTextarea.args,
+        ...BasicTextArea.args,
         errorMessage: 'Error message goes here.',
         hasError: true,
         inputId: 'textarea-4'
     },
     argTypes: {
-        ...BasicTextarea.argTypes
+        ...BasicTextArea.argTypes
     }
 };
 
-export const TextareaWithHintText = {
+export const TextAreaWithHintText = {
     args: {
-        ...BasicTextarea.args,
+        ...BasicTextArea.args,
         hintMessage: 'Hint message goes here.',
         inputId: 'textarea-5'
     },
     argTypes: {
-        ...BasicTextarea.argTypes
+        ...BasicTextArea.argTypes
     }
 };

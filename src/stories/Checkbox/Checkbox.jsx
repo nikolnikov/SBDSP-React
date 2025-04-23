@@ -11,6 +11,7 @@ export const QDSCheckbox = ({
     customClasses = [],
     isDisabled = false,
     isIndeterminate = false,
+    isRequired = false,
     onChange,
     value
 }) => {
@@ -24,6 +25,7 @@ export const QDSCheckbox = ({
             customClasses={classNames(customClasses)}
             isDisabled={isDisabled}
             isIndeterminate={isIndeterminate}
+            isRequired={isRequired}
             onChange={onChange}
             value={value}
         />
@@ -38,6 +40,7 @@ QDSCheckbox.propTypes = {
     customClasses: PropTypes.string,
     isDisabled: PropTypes.bool,
     isIndeterminate: PropTypes.bool,
+    isRequired: PropTypes.bool,
     onChange: PropTypes.func,
     value: PropTypes.string
 };

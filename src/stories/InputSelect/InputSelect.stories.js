@@ -1,7 +1,7 @@
 import { QDSInputSelect } from './InputSelect';
 
 export default {
-    title: 'Components/Input select',
+    title: 'Components/Select/Single',
     component: QDSInputSelect,
     parameters: {
         layout: 'centered',
@@ -23,7 +23,7 @@ const inputSelectOptions = [
     'Last 5 days'
 ];
 
-export const BasicInputSelect = {
+export const BasicSelect = {
     args: {
         inputId: 'input-1',
         label: 'Input label',
@@ -41,58 +41,58 @@ export const BasicInputSelect = {
     }
 };
 
-export const RequiredInputSelect = {
+export const RequiredSelect = {
     args: {
-        ...BasicInputSelect.args,
+        ...BasicSelect.args,
         inputId: 'input-2',
         isRequired: true
     },
     argTypes: {
-        ...BasicInputSelect.argTypes
+        ...BasicSelect.argTypes
     }
 };
 
-export const DisabledInputSelect = {
+export const DisabledSelect = {
     args: {
-        ...BasicInputSelect.args,
+        ...BasicSelect.args,
         inputId: 'input-3',
         isDisabled: true
     },
     argTypes: {
-        ...BasicInputSelect.argTypes
+        ...BasicSelect.argTypes
     }
 };
 
-export const InputSelectWithError = {
+export const SelectWithError = {
     args: {
-        ...BasicInputSelect.args,
+        ...BasicSelect.args,
         errorMessage: 'Error message goes here.',
         hasError: true,
         inputId: 'input-4'
     },
     argTypes: {
-        ...BasicInputSelect.argTypes
+        ...BasicSelect.argTypes
     }
 };
 
-export const InputSelectWithHintText = {
+export const SelectWithHintText = {
     args: {
-        ...BasicInputSelect.args,
+        ...BasicSelect.args,
         hintMessage: 'Hint message goes here.',
         inputId: 'input-5'
     },
     argTypes: {
-        ...BasicInputSelect.argTypes
+        ...BasicSelect.argTypes
     }
 };
 
-export const InputSelectWithTooltip = {
+export const SelectWithTooltip = {
     args: {
-        ...BasicInputSelect.args,
+        ...BasicSelect.args,
         inputId: 'input-6',
         tooltip: 'Tooltip message goes here.'
     },
     argTypes: {
-        ...BasicInputSelect.argTypes
+        ...BasicSelect.argTypes
     }
 };

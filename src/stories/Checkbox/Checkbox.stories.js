@@ -18,7 +18,7 @@ export default {
 export const DefaultCheckbox = {
     args: {
         inputId: 'checkbox-1',
-        label: 'Default checkbox',
+        label: 'Checkbox label',
         name: 'checkbox-1',
         onChange: () => {},
         value: 'checkbox-1'
@@ -26,17 +26,18 @@ export const DefaultCheckbox = {
     argTypes: {
         customClasses: { table: { disable: true } },
         inputId: { table: { disable: true } },
+        isChecked: { table: { disable: true } },
         name: { table: { disable: true } },
         onChange: { table: { disable: true } },
         value: { table: { disable: true } }
     }
 };
 
-export const DisabledCheckbox = {
+export const RequiredCheckbox = {
     args: {
         inputId: 'checkbox-2',
-        isDisabled: true,
-        label: 'Default checkbox',
+        isRequired: true,
+        label: 'Checkbox label',
         name: 'checkbox-2',
         onChange: () => {},
         value: 'checkbox-2'
@@ -46,11 +47,11 @@ export const DisabledCheckbox = {
     }
 };
 
-export const CheckedCheckbox = {
+export const DisabledCheckbox = {
     args: {
         inputId: 'checkbox-3',
-        isChecked: true,
-        label: 'Default checkbox',
+        isDisabled: true,
+        label: 'Checkbox label',
         name: 'checkbox-3',
         onChange: () => {},
         value: 'checkbox-3'
@@ -60,14 +61,28 @@ export const CheckedCheckbox = {
     }
 };
 
-export const IndeterminateCheckbox = {
+export const CheckedCheckbox = {
     args: {
         inputId: 'checkbox-4',
-        isIndeterminate: true,
-        label: 'Default checkbox',
+        isChecked: true,
+        label: 'Checkbox label',
         name: 'checkbox-4',
         onChange: () => {},
         value: 'checkbox-4'
+    },
+    argTypes: {
+        ...DefaultCheckbox.argTypes
+    }
+};
+
+export const IndeterminateCheckbox = {
+    args: {
+        inputId: 'checkbox-5',
+        isIndeterminate: true,
+        label: 'Default checkbox',
+        name: 'checkbox-5',
+        onChange: () => {},
+        value: 'checkbox-5'
     },
     argTypes: {
         ...DefaultCheckbox.argTypes

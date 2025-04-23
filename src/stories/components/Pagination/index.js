@@ -100,7 +100,9 @@ function QDSPagination({
 }
 
 QDSPagination.propTypes = {
-    customClasses: PropTypes.string,
+    customClasses: PropTypes.array,
+    nextHandler: PropTypes.func,
+    prevHandler: PropTypes.func,
     totalItemCount: PropTypes.number,
     itemCountSelectionArray: PropTypes.array
 };

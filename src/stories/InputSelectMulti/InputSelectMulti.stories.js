@@ -1,7 +1,7 @@
 import { QDSInputMultiSelect } from './InputSelectMulti';
 
 export default {
-    title: 'Components/Input multi select',
+    title: 'Components/Select/Multi',
     component: QDSInputMultiSelect,
     parameters: {
         layout: 'centered',
@@ -23,7 +23,7 @@ const nameOptions = [
     'Osterman, Jon'
 ];
 
-export const BasicInputMultiSelect = {
+export const BasicMultiSelect = {
     args: {
         inputId: 'input-1',
         label: 'Input label',
@@ -41,58 +41,58 @@ export const BasicInputMultiSelect = {
     }
 };
 
-export const RequiredInputMultiSelect = {
+export const RequiredMultiSelect = {
     args: {
-        ...BasicInputMultiSelect.args,
+        ...BasicMultiSelect.args,
         inputId: 'input-2',
         isRequired: true
     },
     argTypes: {
-        ...BasicInputMultiSelect.argTypes
+        ...BasicMultiSelect.argTypes
     }
 };
 
-export const DisabledInputMultiSelect = {
+export const DisabledMultiSelect = {
     args: {
-        ...BasicInputMultiSelect.args,
+        ...BasicMultiSelect.args,
         inputId: 'input-3',
         isDisabled: true
     },
     argTypes: {
-        ...BasicInputMultiSelect.argTypes
+        ...BasicMultiSelect.argTypes
     }
 };
 
-export const InputMultiSelectWithError = {
+export const MultiSelectWithError = {
     args: {
-        ...BasicInputMultiSelect.args,
+        ...BasicMultiSelect.args,
         errorMessage: 'Error message goes here.',
         hasError: true,
         inputId: 'input-4'
     },
     argTypes: {
-        ...BasicInputMultiSelect.argTypes
+        ...BasicMultiSelect.argTypes
     }
 };
 
-export const InputMultiSelectWithHintText = {
+export const MultiSelectWithHintText = {
     args: {
-        ...BasicInputMultiSelect.args,
+        ...BasicMultiSelect.args,
         hintMessage: 'Hint message goes here.',
         inputId: 'input-5'
     },
     argTypes: {
-        ...BasicInputMultiSelect.argTypes
+        ...BasicMultiSelect.argTypes
     }
 };
 
-export const InputMultiSelectWithTooltip = {
+export const MultiSelectWithTooltip = {
     args: {
-        ...BasicInputMultiSelect.args,
+        ...BasicMultiSelect.args,
         inputId: 'input-6',
         tooltip: 'Tooltip message goes here.'
     },
     argTypes: {
-        ...BasicInputMultiSelect.argTypes
+        ...BasicMultiSelect.argTypes
     }
 };

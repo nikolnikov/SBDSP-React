@@ -29,6 +29,16 @@ export const BasicDatepicker = {
     }
 };
 
+export const SimpleDatepicker = {
+    args: {
+        ...BasicDatepicker.args,
+        isSimple: true
+    },
+    argTypes: {
+        ...BasicDatepicker.argTypes
+    }
+};
+
 export const DateRangePicker = {
     args: {
         isRange: true,

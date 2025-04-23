@@ -1,7 +1,7 @@
 import { QDSInput } from './Input';
 
 export default {
-    title: 'Components/Input',
+    title: 'Components/Text input',
     component: QDSInput,
     parameters: {
         layout: 'centered',
@@ -15,7 +15,7 @@ export default {
     tags: ['autodocs', '!dev']
 };
 
-export const BasicInput = {
+export const BasicTextInput = {
     args: {
         inputId: 'input-1',
         label: 'Input label',
@@ -26,107 +26,108 @@ export const BasicInput = {
         inputId: { table: { disable: true } },
         type: { table: { disable: true } },
         name: { table: { disable: true } },
-        onChange: { table: { disable: true } }
+        onChange: { table: { disable: true } },
+        value: { table: { disable: true } }
     }
 };
 
-export const RequiredInput = {
+export const RequiredTextInput = {
     args: {
-        ...BasicInput.args,
+        ...BasicTextInput.args,
         inputId: 'input-2',
         isRequired: true
     },
     argTypes: {
-        ...BasicInput.argTypes
+        ...BasicTextInput.argTypes
     }
 };
 
-export const DisabledInput = {
+export const DisabledTextInput = {
     args: {
-        ...BasicInput.args,
+        ...BasicTextInput.args,
         inputId: 'input-3',
         isDisabled: true
     },
     argTypes: {
-        ...BasicInput.argTypes
+        ...BasicTextInput.argTypes
     }
 };
 
-export const InputWithLeftIcon = {
+export const TextInputWithLeftIcon = {
     args: {
-        ...BasicInput.args,
+        ...BasicTextInput.args,
         inputId: 'input-4',
         iconLeft: 'search'
     },
     argTypes: {
-        ...BasicInput.argTypes
+        ...BasicTextInput.argTypes
     }
 };
 
-export const InputWithRightIcon = {
+export const TextInputWithRightIcon = {
     args: {
-        ...BasicInput.args,
+        ...BasicTextInput.args,
         inputId: 'input-5',
         iconRight: 'location'
     },
     argTypes: {
-        ...BasicInput.argTypes
+        ...BasicTextInput.argTypes
     }
 };
 
-export const InputWithBothIcons = {
+export const TextInputWithBothIcons = {
     args: {
-        ...BasicInput.args,
+        ...BasicTextInput.args,
         inputId: 'input-6',
         iconLeft: 'search',
         iconRight: 'location'
     },
     argTypes: {
-        ...BasicInput.argTypes
+        ...BasicTextInput.argTypes
     }
 };
 
-export const InputWithError = {
+export const TextInputWithError = {
     args: {
-        ...BasicInput.args,
+        ...BasicTextInput.args,
         errorMessage: 'Error message goes here.',
         hasError: true,
         inputId: 'input-7'
     },
     argTypes: {
-        ...BasicInput.argTypes
+        ...BasicTextInput.argTypes
     }
 };
 
-export const InputWithHintText = {
+export const TextInputWithHintText = {
     args: {
-        ...BasicInput.args,
+        ...BasicTextInput.args,
         hintMessage: 'Hint message goes here.',
         inputId: 'input-8'
     },
     argTypes: {
-        ...BasicInput.argTypes
+        ...BasicTextInput.argTypes
     }
 };
 
-export const InputWithLoader = {
+export const TextInputWithLoader = {
     args: {
-        ...BasicInput.args,
+        ...BasicTextInput.args,
         inputId: 'input-9',
         isLoading: true
     },
     argTypes: {
-        ...BasicInput.argTypes
+        ...BasicTextInput.argTypes
     }
 };
 
-export const InputWithTooltip = {
+export const TextInputWithTooltip = {
     args: {
-        ...BasicInput.args,
+        ...BasicTextInput.args,
         inputId: 'input-10',
         tooltip: 'Tooltip message goes here.'
     },
     argTypes: {
-        ...BasicInput.argTypes
+        ...BasicTextInput.argTypes
     }
 };
