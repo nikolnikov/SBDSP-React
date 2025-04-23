@@ -1,5 +1,5 @@
 import React from 'react';
-import DSDatepicker from '../components/Datepicker'
+import DSDatepicker from '../components/DatePicker'
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 

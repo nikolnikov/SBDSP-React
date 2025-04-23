@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import DatepickerInput from './DatepickerInput';
+import DatepickerInput from './DatePickerInput';
 import Caption from './Caption';
 import Overlay from '../Overlay';
 
