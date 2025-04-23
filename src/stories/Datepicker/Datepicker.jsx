@@ -1,5 +1,5 @@
 import React from 'react';
-import DSDatePicker from '../components/DatePicker'
+import DSDatepicker from '../components/Datepicker'
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -22,7 +22,7 @@ export const QDSDatepicker = ({
     showOnTop = false
 }) => {
     return (
-        <DSDatePicker
+        <DSDatepicker
             customClasses={classNames(customClasses)}
             errorMessage={errorMessage}
             hasError={hasError}
