@@ -11,9 +11,10 @@ export const parameters = {
         }
     },
     options: {
-        storySort: {
-            order: 'alphabetical',
-            locales: 'en-US'
+        storySort: (a, b) => {
+            return a.title.localeCompare(b.title, undefined, {
+                numeric: true
+            });
         }
     }
 };
