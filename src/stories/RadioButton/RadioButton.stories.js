@@ -1,7 +1,7 @@
 import { QDSRadioGroup } from './RadioButton';
 
 export default {
-    title: 'Components/Radio buton',
+    title: 'Components/Radio button',
     component: QDSRadioGroup,
     parameters: {
         layout: 'centered',
