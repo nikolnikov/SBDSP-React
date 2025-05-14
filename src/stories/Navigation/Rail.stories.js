@@ -1,8 +1,8 @@
-import { QDSRail } from './Rail';
+import { QDSNavRail } from './Rail';
 
 export default {
     title: 'Components/Navigation/Rail',
-    component: QDSRail,
+    component: QDSNavRail,
     parameters: {
         layout: 'centered',
         actions: {

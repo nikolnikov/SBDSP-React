@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const AccordionItem = ({
     onClick,
     content,
-    header,
+    title,
     icon,
     isExpanded = false
 }) => {
@@ -30,7 +30,7 @@ const AccordionItem = ({
                             aria-label={icon}
                         ></span>
                     )}
-                    {header}
+                    {title}
                 </div>
                 <span className="ds-icon--expand" aria-label="expand"></span>
             </button>
@@ -50,7 +50,7 @@ AccordionItem.propTypes = {
     icon: PropTypes.string,
     onClick: PropTypes.func,
     content: PropTypes.node,
-    header: PropTypes.node,
+    title: PropTypes.node,
     isExpanded: PropTypes.bool
 };
 

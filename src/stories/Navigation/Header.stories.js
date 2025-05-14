@@ -23,14 +23,12 @@ export default {
     tags: ['autodocs', '!dev']
 };
 
-export const HeaderWithNavigationSubnavAndUserMenu = {
+export const HeaderWithNavigationAndSubnav = {
     args: {
         logo: 'https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg',
         logoSize: 'md',
         navData: headerNavData,
-        subNavData: headerSubNavData,
-        userAvatarInitial: 'E',
-        userMenuContent: userMenuContent
+        subNavData: headerSubNavData
     },
     argTypes: {
         button: { table: { disable: true } },
@@ -43,8 +41,7 @@ export const HeaderWithNavigationSubnavAndUserMenu = {
         userName: { table: { disable: true } },
         userMenuContent: { table: { disable: true } },
         userNotifications: { table: { disable: true } }
-    },
-    name: 'Header with navigation, subnav and user menu'
+    }
 };
 
 export const HeaderWithNavigationAndButton = {
@@ -63,7 +60,7 @@ export const HeaderWithNavigationAndButton = {
         navData: headerNavData
     },
     argTypes: {
-        ...HeaderWithNavigationSubnavAndUserMenu.argTypes
+        ...HeaderWithNavigationAndSubnav.argTypes
     }
 };
 
@@ -76,7 +73,7 @@ export const HeaderWithNavigationAndNotifications = {
         userNotifications: userNotifications
     },
     argTypes: {
-        ...HeaderWithNavigationSubnavAndUserMenu.argTypes
+        ...HeaderWithNavigationAndSubnav.argTypes
     }
 };
 
@@ -87,7 +84,7 @@ export const HeaderWithNavigation = {
         navData: headerNavData
     },
     argTypes: {
-        ...HeaderWithNavigationSubnavAndUserMenu.argTypes
+        ...HeaderWithNavigationAndSubnav.argTypes
     }
 };
 
@@ -106,11 +103,11 @@ export const HeaderWithButton = {
         )
     },
     argTypes: {
-        ...HeaderWithNavigationSubnavAndUserMenu.argTypes
+        ...HeaderWithNavigationAndSubnav.argTypes
     }
 };
 
-export const HeaderWithAvatar = {
+export const HeaderWithAvatarAndUserMenu = {
     args: {
         logo: 'https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg',
         logoSize: 'md',
@@ -118,7 +115,7 @@ export const HeaderWithAvatar = {
         userMenuContent: userMenuContent
     },
     argTypes: {
-        ...HeaderWithNavigationSubnavAndUserMenu.argTypes
+        ...HeaderWithNavigationAndSubnav.argTypes
     }
 };
 
@@ -128,6 +125,6 @@ export const BasicHeader = {
         logoSize: 'md'
     },
     argTypes: {
-        ...HeaderWithNavigationSubnavAndUserMenu.argTypes
+        ...HeaderWithNavigationAndSubnav.argTypes
     }
 };

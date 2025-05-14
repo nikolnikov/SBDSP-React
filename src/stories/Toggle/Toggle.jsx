@@ -8,10 +8,10 @@ export const QDSToggle = ({
     isChecked = false,
     isDisabled = false,
     inputId,
-    leftLabel,
+    label,
+    labelPosition = 'after',
     name,
     onChange,
-    rightLabel
 }) => {
     return (
         <DSToggle
@@ -19,10 +19,10 @@ export const QDSToggle = ({
             isChecked={isChecked}
             isDisabled={isDisabled}
             inputId={inputId}
-            leftLabel={leftLabel}
+            label={label}
+            labelPosition={labelPosition}
             name={name}
             onChange={onChange}
-            rightLabel={rightLabel}
         />
     );
 };
@@ -32,8 +32,8 @@ QDSToggle.propTypes = {
     isChecked: PropTypes.bool,
     isDisabled: PropTypes.bool,
     inputId: PropTypes.string.isRequired,
-    leftLabel: PropTypes.string,
+    label: PropTypes.string,
+    labelPosition: PropTypes.oneOf(['before', 'after']),
     name: PropTypes.string,
     onChange: PropTypes.func,
-    rightLabel: PropTypes.string
 };

@@ -25,7 +25,8 @@ QDSAccordion.propTypes = {
     defaultExpanded: PropTypes.bool,
     accordionContent: PropTypes.arrayOf(
         PropTypes.shape({
-            header: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            icon: PropTypes.string,
             content: PropTypes.string.isRequired
         })
     ).isRequired,

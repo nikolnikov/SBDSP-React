@@ -21,6 +21,7 @@ const QDSDatepicker = ({
     isRequired,
     isSimple,
     label,
+    onInputChange,
     placeholder,
     offset,
     showOnTop,
@@ -233,6 +234,7 @@ const QDSDatepicker = ({
                     isRange={isRange}
                     isRequired={isRequired}
                     isSimple={isSimple}
+                    onInputChange={onInputChange}
                     placeholder={placeholder}
                     {...(isRange
                         ? {
@@ -270,6 +272,7 @@ QDSDatepicker.propTypes = {
     isSimple: PropTypes.bool,
     label: PropTypes.string.isRequired,
     offset: PropTypes.number,
+    onInputChange: PropTypes.func,
     placeholder: PropTypes.string,
     showOnTop: PropTypes.bool,
     selectedDay: PropTypes.string,

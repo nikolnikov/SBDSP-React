@@ -1,7 +1,7 @@
 import { QDSToggle } from './Toggle';
 
 export default {
-    title: 'Components/Toggle switch',
+    title: 'Components/Toggle',
     component: QDSToggle,
     parameters: {
         layout: 'centered',
@@ -18,8 +18,8 @@ export default {
 export const BasicToggle = {
     args: {
         inputId: 'toggle-1',
-        leftLabel: 'Off',
-        rightLabel: 'On'
+        label: 'Label',
+        labelPosition: 'after'
     },
     argTypes: {
         customClasses: { table: { disable: true } },
@@ -31,9 +31,9 @@ export const BasicToggle = {
 
 export const DisabledToggle = {
     args: {
+        ...BasicToggle.args,
         inputId: 'toggle-2',
-        isDisabled: true,
-        leftLabel: 'Disabled'
+        isDisabled: true
     },
     argTypes: {
         ...BasicToggle.argTypes
@@ -42,9 +42,9 @@ export const DisabledToggle = {
 
 export const CheckedToggle = {
     args: {
+        ...BasicToggle.args,
         inputId: 'toggle-3',
-        isChecked: true,
-        leftLabel: 'Checked'
+        isChecked: true
     },
     argTypes: {
         ...BasicToggle.argTypes

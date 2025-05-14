@@ -39,3 +39,6 @@ Default.args = {
     name: 'info',
     size: '24'
 };
+Default.argTypes = {
+    customClasses: { table: { disable: true } }
+};

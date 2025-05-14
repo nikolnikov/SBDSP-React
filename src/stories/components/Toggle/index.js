@@ -9,10 +9,10 @@ const QDSToggle = ({
     customClasses = [],
     isDisabled,
     inputId,
-    leftLabel,
+    label,
+    labelPosition = 'after',
     name,
-    onChange,
-    rightLabel
+    onChange
 }) => {
     return (
         <div
@@ -20,9 +20,9 @@ const QDSToggle = ({
                 '--disabled': isDisabled
             })}
         >
-            {leftLabel && (
+            {label && labelPosition === 'before' && (
                 <div className="ds-toggle-switch__label" aria-label={inputId}>
-                    {leftLabel}
+                    {label}
                 </div>
             )}
             <label className="ds-toggle-switch__container" htmlFor={inputId}>
@@ -36,9 +36,9 @@ const QDSToggle = ({
                 />
                 <div className="ds-toggle-switch__slider"></div>
             </label>
-            {rightLabel && (
+            {label && labelPosition === 'after' && (
                 <div className="ds-toggle-switch__label" aria-label={inputId}>
-                    {rightLabel}
+                    {label}
                 </div>
             )}
         </div>
@@ -50,10 +50,10 @@ QDSToggle.propTypes = {
     customClasses: PropTypes.string,
     isDisabled: PropTypes.bool,
     inputId: PropTypes.string.isRequired,
-    leftLabel: PropTypes.string,
+    label: PropTypes.string,
+    labelPosition: PropTypes.oneOf(['before', 'after']),
     name: PropTypes.string,
-    onChange: PropTypes.func,
-    rightLabel: PropTypes.string
+    onChange: PropTypes.func
 };
 
 export default QDSToggle;

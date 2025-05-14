@@ -14,7 +14,7 @@ const AccordionMultipleItems = ({ onClick, item, defaultExpanded }) => {
         <AccordionItem
             isExpanded={isOpen || defaultExpanded}
             onClick={toggle}
-            header={item.header}
+            title={item.title}
             icon={item.icon}
             content={item.content}
         />

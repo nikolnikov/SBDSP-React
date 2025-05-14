@@ -4,7 +4,7 @@ import QDSButton from '../components/Button';
 import PropTypes from 'prop-types';
 
 export const QDSToast = ({ 
-    duration,
+    duration = 5000,
     hideDismiss,
     message,
     noIcon = false,

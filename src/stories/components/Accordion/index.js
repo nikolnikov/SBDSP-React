@@ -29,7 +29,7 @@ const QDSAccordion = ({
             <AccordionItem
                 isExpanded={isOpen}
                 onClick={toggle}
-                header={item.header}
+                title={item.title}
                 icon={item.icon}
                 content={item.content}
                 key={index}

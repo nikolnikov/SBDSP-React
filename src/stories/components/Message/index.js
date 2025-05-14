@@ -70,6 +70,7 @@ QDSMessage.propTypes = {
     actions: PropTypes.array,
     closeHandler: PropTypes.func,
     customClasses: PropTypes.string,
+    hideX: PropTypes.bool,
     message: PropTypes.string.isRequired,
     noIcon: PropTypes.bool,
     title: PropTypes.string,

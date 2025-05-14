@@ -66,15 +66,6 @@ export const AlertToast = {
     }
 };
 
-export const ToastWithCloseButton = {
-    args: {
-        message: 'New results are available.'
-    },
-    argTypes: {
-        ...DefaultToast.argTypes
-    }
-};
-
 export const ToastWithTextLink = {
     args: {
         message: 'New results are available.',
