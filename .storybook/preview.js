@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { themes } from '@storybook/theming';
-// import '@iframe-resizer/child';
 import '!style-loader!css-loader!sass-loader!/src/assets/css/overrides.css';
 import '!style-loader!css-loader!sass-loader!/src/assets/css/dsp.scss';
 
