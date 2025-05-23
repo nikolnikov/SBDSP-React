@@ -17,22 +17,19 @@ export default {
 
 const menuItemData = [
     {
-        title: 'Menu item 1',
-        action: () => {
-            console.log('Menu item 1 clicked');
-        }
+        icon: 'edit',
+        label: 'Edit',
+        action: () => console.log('Edit clicked!')
     },
     {
-        title: 'Menu item 2',
-        action: () => {
-            console.log('Menu item 2 clicked');
-        }
+        icon: 'trash',
+        label: 'Delete',
+        action: () => console.log('Delete clicked!')
     },
     {
-        title: 'Menu item 3',
-        action: () => {
-            console.log('Menu item 3 clicked');
-        }
+        icon: 'print',
+        label: 'Print',
+        action: () => console.log('Print clicked!')
     }
 ];
 
@@ -43,7 +40,15 @@ export const DefaultContextualMenu = {
     },
     argTypes: {
         closeMenu: { table: { disable: true } },
-        menuItems: { table: { disable: true } },
+        menuItems: {
+            table: {
+                type: {
+                    summary:
+                        '[{ icon: string, label: string, action: function }]'
+                }
+            }
+        },
+        menuWidth: { table: { disable: true } },
         openMenu: { table: { disable: true } },
         children: { table: { disable: true } },
         menuClass: { table: { disable: true } }

@@ -53,7 +53,7 @@ const QDSContextualMenu = ({
                 : menuItems.map((item, idx) => {
                       return (
                           <button
-                              aria-label={item.title}
+                              aria-label={item.label}
                               key={idx}
                               className="ds-menu__item"
                               onClick={() => {
@@ -64,7 +64,7 @@ const QDSContextualMenu = ({
                               tabIndex={0}
                           >
                               {item.icon && <QDSIcon name={item.icon} />}
-                              {item.title}
+                              {item.label}
                           </button>
                       );
                   })}

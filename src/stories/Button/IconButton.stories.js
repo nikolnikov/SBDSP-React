@@ -59,7 +59,7 @@ export const InverseIconButton = {
 export const IconButtonWithTooltip = {
     args: {
         ...PrimaryIconButton.args,
-        tooltip: 'Settings'
+        tooltip: 'Tooltip goes here.'
     },
     argTypes: {
         ...PrimaryIconButton.argTypes

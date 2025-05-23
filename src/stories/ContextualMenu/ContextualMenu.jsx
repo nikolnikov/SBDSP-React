@@ -20,7 +20,7 @@ export const QDSContextualMenu = ({
     return (
         <>
             <DSIconButton
-                icon="user-circle"
+                icon="gear"
                 clickHandler={handleClick}
             />
 

@@ -26,7 +26,6 @@ export const DefaultCheckbox = {
     argTypes: {
         customClasses: { table: { disable: true } },
         inputId: { table: { disable: true } },
-        isChecked: { table: { disable: true } },
         name: { table: { disable: true } },
         onChange: { table: { disable: true } },
         value: { table: { disable: true } }
