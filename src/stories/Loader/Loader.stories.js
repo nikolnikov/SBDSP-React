@@ -1,7 +1,7 @@
 import { QDSLoader } from './Loader';
 
 export default {
-    title: 'Components/Loader',
+    title: 'Components/Loader/Spinner',
     component: QDSLoader,
     parameters: {
         layout: 'centered',

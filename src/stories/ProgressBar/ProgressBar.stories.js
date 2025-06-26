@@ -1,7 +1,7 @@
 import { QDSProgressBar } from './ProgressBar';
 
 export default {
-    title: 'Components/Progress bar',
+    title: 'Components/Progress indicator/Progress bar',
     component: QDSProgressBar,
     parameters: {
         layout: 'centered',

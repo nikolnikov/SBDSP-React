@@ -1,7 +1,7 @@
 import { QDSPagination } from './Pagination';
 
 export default {
-    title: 'Components/Pagination',
+    title: 'Components/Navigation/Pagination',
     component: QDSPagination,
     parameters: {
         layout: 'centered',

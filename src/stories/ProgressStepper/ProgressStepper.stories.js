@@ -1,7 +1,7 @@
 import { QDSProgressStepper } from './ProgressStepper';
 
 export default {
-    title: 'Components/Progress stepper',
+    title: 'Components/Progress indicator/Progress stepper',
     component: QDSProgressStepper,
     parameters: {
         layout: 'centered',

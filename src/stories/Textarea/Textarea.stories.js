@@ -1,7 +1,7 @@
 import { QDSTextarea } from './Textarea';
 
 export default {
-    title: 'Components/Text area',
+    title: 'Components/Inputs/Text area',
     component: QDSTextarea,
     parameters: {
         layout: 'centered',

@@ -1,7 +1,7 @@
 import { QDSInputSelect } from './InputSelect';
 
 export default {
-    title: 'Components/Select/Single',
+    title: 'Components/Inputs/Single select',
     component: QDSInputSelect,
     parameters: {
         layout: 'centered',

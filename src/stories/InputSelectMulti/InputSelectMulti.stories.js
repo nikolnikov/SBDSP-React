@@ -1,7 +1,7 @@
 import { QDSInputMultiSelect } from './InputSelectMulti';
 
 export default {
-    title: 'Components/Select/Multi',
+    title: 'Components/Inputs/Multi select',
     component: QDSInputMultiSelect,
     parameters: {
         layout: 'centered',
