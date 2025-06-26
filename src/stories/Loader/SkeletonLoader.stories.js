@@ -42,9 +42,7 @@ export const BasicSkeletonLoader = {
                             <div className="ds-avatar --solid --xl">HM</div>
 
                             <div className="ds-row ds-flex --column ds-ml-24">
-                                <h3 className="margin-0 ds-mb-4">
-                                    Hollis Mason
-                                </h3>
+                                <h3 className="ds-mb-4">Hollis Mason</h3>
                                 <div className="ds-mb-4">
                                     Sex: M &nbsp;&nbsp; DOB: 09/21/1934
                                 </div>
@@ -77,7 +75,7 @@ const handleToggle = () => {
         <QDSAvatar initial="HM" size="xl" />
 
         <div className="ds-row ds-flex --column ds-ml-24">
-            <h3 className="margin-0 ds-mb-4">
+            <h3 className="ds-mb-4">
                 Hollis Mason
             </h3>
             <div className="ds-mb-4">
