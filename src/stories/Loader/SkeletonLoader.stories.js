@@ -68,7 +68,6 @@ const handleToggle = () => {
 };
 
 <QDSButton
-    customClasses="ds-m-auto"
     clickHandler={handleToggle}
     label="Toggle skeleton loader"
 />
