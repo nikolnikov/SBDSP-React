@@ -42,10 +42,8 @@ export const BasicSkeletonLoader = {
                             <div className="ds-avatar --solid --xl">HM</div>
 
                             <div className="ds-row ds-flex --column ds-ml-24">
-                                <h3 className="ds-mb-4">Hollis Mason</h3>
-                                <div className="ds-mb-4">
-                                    Sex: M &nbsp;&nbsp; DOB: 09/21/1934
-                                </div>
+                                <h3 className="ds-m-0">Hollis Mason</h3>
+                                <div>Sex: M &nbsp;&nbsp; DOB: 09/21/1934</div>
                                 <div>Location: New York, NY</div>
                             </div>
                         </div>
@@ -70,23 +68,9 @@ const handleToggle = () => {
     label="Toggle skeleton loader"
 />
 
-<QDSCard>
-    <div className={"ds-flex --row --start-center" + (loading ? " ds-loading-data" : "")}>
-        <QDSAvatar initial="HM" size="xl" />
-
-        <div className="ds-row ds-flex --column ds-ml-24">
-            <h3 className="ds-mb-4">
-                Hollis Mason
-            </h3>
-            <div className="ds-mb-4">
-                Sex: M &nbsp;&nbsp; DOB: 09/21/1934
-            </div>
-            <div>
-                Location: New York, NY
-            </div>
-        </div>
-    </div>
-</QDSCard>
+<div className={(loading ? " ds-loading-data" : "")}>
+    Content to mask goes here.
+</div>
                 `
             }
         }
