@@ -9,7 +9,7 @@ export const QDSDivider = ({
     return (
         <hr
             className={classNames("ds-divider", customClasses, {
-                [`${color}`]: color,
+                [`ds-${color}--bg`]: color,
             })}
         />
     );
