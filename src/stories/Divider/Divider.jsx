@@ -3,7 +3,7 @@ import classNames from "classnames";
 import PropTypes from 'prop-types';
 
 export const QDSDivider = ({ 
-    color, 
+    color = green__800, 
     customClasses
 }) => {
     return (

@@ -215,3 +215,7 @@ body.sb-show-main.dark-theme {
     top: 0 !important;
     width: 100% !important;
 }
+
+.ds-button {
+    margin: auto;
+}
