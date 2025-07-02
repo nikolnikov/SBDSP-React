@@ -225,12 +225,12 @@ body.sb-show-main.dark-theme {
     width: 100%;
 }
 
-#storybook-root > .ds-datepicker__wrapper {
+#storybook-root .ds-datepicker__wrapper {
     margin: auto;
     max-width: 280px;
 }
 
-#storybook-root > .ds-input__error,
-#storybook-root > .ds-input__hint {
+#storybook-root .ds-input__error,
+#storybook-root .ds-input__hint {
     text-align: left;
 }
