@@ -68,8 +68,7 @@ h2#stories,
 }
 
 .docs-story > div > div,
-.sb-story.sb-unstyled,
-.sb-show-main.sb-main-centered #storybook-root {
+.sb-story.sb-unstyled {
     width: 100%;
 }
 
