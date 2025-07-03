@@ -224,10 +224,6 @@ body.sb-show-main.dark-theme {
     margin: 0;
 }
 
-#storybook-root {
-    width: 100%;
-}
-
 #storybook-root .ds-datepicker__wrapper {
     margin: auto;
     max-width: 280px;
