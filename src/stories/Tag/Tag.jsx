@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 export const QDSTag = ({ 
     clickHandler,
     customClasses = [],
+    hideHandler,
     isDisabled = false,
     isSecondary = false,
     label,
@@ -15,6 +16,7 @@ export const QDSTag = ({
         <DSTag
             customClasses={classNames(customClasses)}
             clickHandler={clickHandler}
+            hideHandler={hideHandler}
             isDisabled={isDisabled}
             isSecondary={isSecondary}
             label={label}
@@ -26,6 +28,7 @@ export const QDSTag = ({
 QDSTag.propTypes = {
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
+    hideHandler: PropTypes.func,
     isDisabled: PropTypes.bool,
     isSecondary: PropTypes.bool,
     label: PropTypes.string.isRequired,

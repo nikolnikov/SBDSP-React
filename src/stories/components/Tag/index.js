@@ -3,11 +3,11 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import QDSIcon from '../Icon';
 
 const QDSTag = ({
     clickHandler,
     customClasses,
+    hideHandler,
     isDisabled,
     isSecondary,
     label,
@@ -24,6 +24,13 @@ const QDSTag = ({
         }
     };
 
+    const handleHide = () => {
+        if (!isDisabled) {
+            setIsSelected(prevState => !prevState);
+            hideHandler();
+        }
+    };
+
     return (
         <button
             className={classNames('ds-tag', customClasses, {
@@ -36,7 +43,14 @@ const QDSTag = ({
             tabIndex={isDisabled ? '-1' : 0}
         >
             {label}
-            {showClose && <QDSIcon name="close" />}
+            {showClose && (
+                <span
+                    className="ds-icon--close"
+                    role="button"
+                    aria-label="Dismiss"
+                    onClick={handleHide}
+                ></span>
+            )}
         </button>
     );
 };
@@ -44,6 +58,7 @@ const QDSTag = ({
 QDSTag.propTypes = {
     clickHandler: PropTypes.func,
     customClasses: PropTypes.string,
+    hideHandler: PropTypes.func,
     isDisabled: PropTypes.bool,
     isSecondary: PropTypes.bool,
     label: PropTypes.string.isRequired,
