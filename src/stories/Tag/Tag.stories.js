@@ -21,7 +21,8 @@ export const PrimaryTag = {
     },
     argTypes: {
         clickHandler: { table: { disable: true } },
-        customClasses: { table: { disable: true } }
+        customClasses: { table: { disable: true } },
+        hideHandler: { table: { disable: true } }
     }
 };
 

@@ -232,3 +232,7 @@ body.sb-show-main.dark-theme {
     max-width: fit-content;
     text-align: left;
 }
+
+#storybook-root hr {
+    width: calc(100vw - 30px);
+}
