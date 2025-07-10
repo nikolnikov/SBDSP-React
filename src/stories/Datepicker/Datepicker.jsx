@@ -13,7 +13,6 @@ export const QDSDatepicker = ({
     isDisabled = false,
     isRange = false,
     isRequired = false,
-    isSimple = false,
     label,
     offset,
     placeholder,
@@ -32,7 +31,6 @@ export const QDSDatepicker = ({
             isDisabled={isDisabled}
             isRange={isRange}
             isRequired={isRequired}
-            isSimple={isSimple}
             label={label}
             offset={offset}
             placeholder={placeholder}
@@ -53,7 +51,6 @@ QDSDatepicker.propTypes = {
     isDisabled: PropTypes.bool,
     isRange: PropTypes.bool,
     isRequired: PropTypes.bool,
-    isSimple: PropTypes.bool,
     label: PropTypes.string,
     offset: PropTypes.number,
     placeholder: PropTypes.string,

@@ -15,7 +15,6 @@ const DatepickerInput = ({
     isDisabled,
     isRange,
     isRequired,
-    isSimple,
     fromDate,
     placeholder,
     selectedDay,
@@ -79,17 +78,6 @@ const DatepickerInput = ({
                         ></span>
                     </button>
                 </div>
-            ) : isSimple ? (
-                <input
-                    aria-labelledby="Selected day"
-                    placeholder={placeholder}
-                    onChange={e => handleInputDateChange(e)}
-                    id={inputId}
-                    value={selectedDay}
-                    name="Selected day"
-                    onFocusCapture={handleInputFocus}
-                    type="date"
-                />
             ) : (
                 <div className="ds-flex --start-center --row">
                     <input
@@ -138,7 +126,6 @@ DatepickerInput.propTypes = {
     isDisabled: PropTypes.bool,
     isRange: PropTypes.bool,
     isRequired: PropTypes.bool,
-    isSimple: PropTypes.bool,
     fromDate: PropTypes.string,
     placeholder: PropTypes.string,
     selectedDay: PropTypes.string,
