@@ -6,11 +6,13 @@ import PropTypes from 'prop-types';
 
 const QDSProgressBar = ({ customClasses = [], fillPercentage }) => {
     return (
-        <div className={classNames('ds-progressbar', customClasses)}>
+        <div
+            className={classNames('ds-progressbar', customClasses)}
+            role="progressbar"
+        >
             <div
                 className="--fill"
                 style={{ width: `${fillPercentage}%` }}
-                role="progressbar"
                 aria-label="Progress"
             ></div>
         </div>

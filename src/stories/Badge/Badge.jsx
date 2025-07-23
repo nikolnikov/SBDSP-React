@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 export const QDSBadge = ({ 
     customClasses = [],
     hasNotification = false,
+    icon,
     isCircle = false,
     color,
     label,
@@ -16,6 +17,7 @@ export const QDSBadge = ({
         <DSBadge
             customClasses={classNames(customClasses)}
             hasNotification={hasNotification}
+            icon={icon}
             isCircle={isCircle}
             color={color}
             label={label}
@@ -28,6 +30,7 @@ export const QDSBadge = ({
 QDSBadge.propTypes = {
     customClasses: PropTypes.array,
     hasNotification: PropTypes.bool,
+    icon: PropTypes.string,
     isCircle: PropTypes.bool,
     color: PropTypes.string,
     label: PropTypes.string,

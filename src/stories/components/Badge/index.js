@@ -3,10 +3,12 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import QDSIcon from '../Icon';
 
 const QDSBadge = ({
     customClasses = [],
     hasNotification,
+    icon,
     isCircle,
     color,
     label,
@@ -25,6 +27,7 @@ const QDSBadge = ({
             })}
             role={'status'}
         >
+            {icon && !hasNotification && !isCircle && <QDSIcon name={icon} />}
             {label}
         </div>
     );
@@ -34,6 +37,7 @@ QDSBadge.propTypes = {
     color: PropTypes.string,
     customClasses: PropTypes.string,
     hasNotification: PropTypes.bool,
+    icon: PropTypes.string,
     isCircle: PropTypes.bool,
     label: PropTypes.string,
     secondary: PropTypes.bool,
