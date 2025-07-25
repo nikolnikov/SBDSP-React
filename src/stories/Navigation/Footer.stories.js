@@ -21,6 +21,17 @@ export const CorportateFooter = {
         customClasses: { table: { disable: true } },
         margins: { table: { disable: true } },
         maxWidth: { table: { disable: true } }
+    },
+    parameters: {
+        docs: {
+            source: {
+                language: 'html',
+                type: 'code',
+                code: `
+Please contact the Design System team for the Footer code snippet.
+                `.trim()
+            }
+        }
     }
 };
 
@@ -32,6 +43,17 @@ export const CorportateFooterWithNoLogo = {
         customClasses: { table: { disable: true } },
         margins: { table: { disable: true } },
         maxWidth: { table: { disable: true } }
+    },
+    parameters: {
+        docs: {
+            source: {
+                language: 'html',
+                type: 'code',
+                code: `
+Please contact the Design System team for the Footer code snippet.
+                `.trim()
+            }
+        }
     }
 };
 
@@ -43,6 +65,17 @@ export const LightCorportateFooter = {
         customClasses: { table: { disable: true } },
         margins: { table: { disable: true } },
         maxWidth: { table: { disable: true } }
+    },
+    parameters: {
+        docs: {
+            source: {
+                language: 'html',
+                type: 'code',
+                code: `
+Please contact the Design System team for the Footer code snippet.
+                `.trim()
+            }
+        }
     }
 };
 
@@ -55,5 +88,16 @@ export const LightCorportateFooterWithNoLogo = {
         customClasses: { table: { disable: true } },
         margins: { table: { disable: true } },
         maxWidth: { table: { disable: true } }
+    },
+    parameters: {
+        docs: {
+            source: {
+                language: 'html',
+                type: 'code',
+                code: `
+Please contact the Design System team for the Footer code snippet.
+                `.trim()
+            }
+        }
     }
 };
