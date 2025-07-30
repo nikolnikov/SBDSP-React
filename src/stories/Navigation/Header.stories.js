@@ -27,6 +27,7 @@ export const HeaderWithNavigationAndSubnav = {
     args: {
         logo: 'https://ds.cdn.questdiagnostics.com/assets/img/qd-brand--horizontal--green.svg',
         logoSize: 'md',
+        logoUrl: '/',
         navData: headerNavData,
         subNavData: headerSubNavData
     },

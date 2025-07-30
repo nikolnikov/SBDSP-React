@@ -11,6 +11,7 @@ const QDSHeader = ({
     customClasses,
     logo,
     logoSize,
+    logoUrl,
     noMargins,
     noMaxWidth,
     navData,
@@ -33,7 +34,7 @@ const QDSHeader = ({
                     className={classNames('ds-brand-wrapper', {
                         [`--${logoSize}`]: logoSize
                     })}
-                    href="/"
+                    href={logoUrl || '/'}
                 >
                     <img src={logo} alt="logo" />
                 </a>
@@ -65,7 +66,8 @@ QDSHeader.propTypes = {
     button: PropTypes.object,
     customClasses: PropTypes.string,
     logo: PropTypes.string,
-    logoSize: PropTypes.string,
+    logoSize: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+    logoUrl: PropTypes.string,
     noMargins: PropTypes.bool,
     noMaxWidth: PropTypes.bool,
     navData: PropTypes.array,

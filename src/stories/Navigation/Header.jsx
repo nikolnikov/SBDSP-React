@@ -7,6 +7,7 @@ export const QDSHeader = ({
     customClasses,
     logo,
     logoSize,
+    logoUrl,
     noMargins = false,
     noMaxWidth = false,
     navData,
@@ -23,6 +24,7 @@ export const QDSHeader = ({
             customClasses={customClasses}
             logo={logo}
             logoSize={logoSize}
+            logoUrl={logoUrl}
             navData={navData}
             noMargins={noMargins}
             noMaxWidth={noMaxWidth}
@@ -40,7 +42,8 @@ QDSHeader.propTypes = {
     button: PropTypes.object,
     customClasses: PropTypes.string,
     logo: PropTypes.string,
-    logoSize: PropTypes.string,
+    logoSize: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+    logoUrl: PropTypes.string,
     navData: PropTypes.array,
     noMargins: PropTypes.bool,
     noMaxWidth: PropTypes.bool,
