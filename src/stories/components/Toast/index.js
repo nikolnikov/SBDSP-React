@@ -7,7 +7,7 @@ import QDSIconButton from '../Button/IconButton.index';
 import PropTypes from 'prop-types';
 
 const QDSToast = ({
-    duration = 5000,
+    duration,
     hideDismiss,
     message,
     noIcon,
@@ -22,9 +22,9 @@ const QDSToast = ({
     const action = (
         <>
             {textLinkLabel && !hideDismiss && (
-                <a href={null} className="ds-link" onClick={onClose}>
+                <span className="ds-link" role="button" onClick={onClose}>
                     {textLinkLabel}
-                </a>
+                </span>
             )}
 
             {!textLinkLabel && !hideDismiss && (

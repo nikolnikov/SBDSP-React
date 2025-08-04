@@ -292,6 +292,7 @@ const QDSFooter = ({
                                         </a>
                                     </li>
                                     <li>
+                                        {/* eslint-disable-next-line */}
                                         <a
                                             className="ds-link --icons"
                                             href={null}
