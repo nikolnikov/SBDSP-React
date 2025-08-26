@@ -34,6 +34,7 @@ const QDSAutocomplete = ({
         <MuiAutocomplete
             disabled={isDisabled}
             id={inputId}
+            clearOnBlur={false}
             onInputChange={(e, newInputValue) => {
                 setInputValue(newInputValue);
             }}
@@ -83,7 +84,7 @@ const QDSAutocomplete = ({
                             {errorMessage}
                         </div>
                     )}
-                    {hintMessage && (
+                    {hintMessage && !hasError && (
                         <div className="ds-input__hint" role="tooltip">
                             {hintMessage}
                         </div>
@@ -97,17 +98,17 @@ const QDSAutocomplete = ({
 QDSAutocomplete.propTypes = {
     customClasses: PropTypes.string,
     errorMessage: PropTypes.string,
+    getSelection: PropTypes.func,
     hasError: PropTypes.bool,
     hintMessage: PropTypes.string,
     inputId: PropTypes.string,
     isDisabled: PropTypes.bool,
-    searchIcon: PropTypes.bool,
-    label: PropTypes.string,
-    placeholder: PropTypes.string,
     isRequired: PropTypes.bool,
+    label: PropTypes.string,
     maxWidth: PropTypes.number,
-    getSelection: PropTypes.func,
-    optionList: PropTypes.array
+    optionList: PropTypes.array,
+    placeholder: PropTypes.string,
+    searchIcon: PropTypes.bool
 };
 
 export default QDSAutocomplete;

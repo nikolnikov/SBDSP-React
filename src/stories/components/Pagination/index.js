@@ -22,7 +22,6 @@ function QDSPagination({
         setEndingItem(selection);
         setStartingItem(1);
         setItemsPerPage(selection);
-        setItemsPerPage(selection);
         setGroupCount(1);
     };
 
@@ -72,7 +71,11 @@ function QDSPagination({
                 </div>
 
                 <div className="ds-pagination__range">
-                    <span className="--range-label">{`${startingItem} - ${endingItem} of ${totalItems}`}</span>
+                    <span className="--range-label">
+                        {endingItem > totalItems
+                            ? `${startingItem} - ${totalItems} of ${totalItems}`
+                            : `${startingItem} - ${endingItem} of ${totalItems}`}
+                    </span>
                 </div>
 
                 <div className="ds-pagination__actions">
@@ -100,7 +103,7 @@ function QDSPagination({
 }
 
 QDSPagination.propTypes = {
-    customClasses: PropTypes.array,
+    customClasses: PropTypes.string,
     nextHandler: PropTypes.func,
     prevHandler: PropTypes.func,
     totalItemCount: PropTypes.number,

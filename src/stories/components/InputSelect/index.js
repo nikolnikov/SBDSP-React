@@ -81,7 +81,7 @@ const QDSInputSelect = ({
                     {errorMessage}
                 </div>
             )}
-            {hintMessage && !errorMessage && (
+            {hintMessage && !hasError && (
                 <div className="ds-input__hint" role="tooltip">
                     {hintMessage}
                 </div>

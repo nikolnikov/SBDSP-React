@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AccordionItem from './AccordionItem';
 import PropTypes from 'prop-types';
 
 const AccordionMultipleItems = ({ onClick, item, defaultExpanded }) => {
-    const [isOpen, setOpen] = useState(defaultExpanded);
+    const [isOpen, setOpen] = useState(!!defaultExpanded);
+
+    useEffect(() => {
+        setOpen(!!defaultExpanded);
+    }, [defaultExpanded]);
 
     const toggle = () => {
-        onClick({ expanded: !isOpen, target: item });
-        setOpen(() => !isOpen);
+        const next = !isOpen;
+        onClick({ expanded: next, target: item });
+        setOpen(next);
     };
 
     return (
         <AccordionItem
-            isExpanded={isOpen || defaultExpanded}
+            isExpanded={isOpen}
             onClick={toggle}
             title={item.title}
             icon={item.icon}

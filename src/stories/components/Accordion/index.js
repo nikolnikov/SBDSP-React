@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AccordionItem from './AccordionItem';
 import AccordionMultipleItems from './AccordionMultipleItems';
 import classNames from 'classnames';
@@ -9,36 +9,41 @@ import PropTypes from 'prop-types';
 const QDSAccordion = ({
     customClasses,
     openSingleItem,
-    defaultExpanded,
-    accordionContent
+    defaultExpanded = false,
+    accordionContent = []
 }) => {
-    const [activeIndex, setActiveIndex] = useState(-1);
+    const [activeIndex, setActiveIndex] = useState(
+        openSingleItem && defaultExpanded ? 0 : -1
+    );
+
+    useEffect(() => {
+        if (openSingleItem) {
+            setActiveIndex(defaultExpanded ? 0 : -1);
+        }
+    }, [defaultExpanded, openSingleItem]);
 
     const content = accordionContent.map((item, index) => {
-        const isOpen = index === activeIndex;
+        if (openSingleItem) {
+            const isOpen = index === activeIndex;
+            return (
+                <AccordionItem
+                    isExpanded={isOpen}
+                    key={index}
+                    title={item.title}
+                    icon={item.icon}
+                    content={item.content}
+                    onClick={() =>
+                        setActiveIndex(prev => (prev === index ? -1 : index))
+                    }
+                />
+            );
+        }
 
-        const toggle = () => {
-            if (isOpen) {
-                index = -1;
-            }
-
-            setActiveIndex(index);
-        };
-
-        return openSingleItem ? (
-            <AccordionItem
-                isExpanded={isOpen}
-                onClick={toggle}
-                title={item.title}
-                icon={item.icon}
-                content={item.content}
-                key={index}
-            />
-        ) : (
+        return (
             <AccordionMultipleItems
-                item={item}
-                onClick={toggle}
                 key={index}
+                item={item}
+                onClick={() => {}}
                 defaultExpanded={defaultExpanded}
             />
         );
