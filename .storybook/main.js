@@ -10,9 +10,6 @@ const config = {
                 actions: false
             }
         }
-        // './addons/source-tab/manager.js'
-        // '@chromatic-com/storybook',
-        // '@storybook/addon-interactions'
     ],
     framework: {
         name: '@storybook/react-webpack5',
