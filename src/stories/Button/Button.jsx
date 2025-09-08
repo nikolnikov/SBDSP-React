@@ -7,6 +7,7 @@ export const QDSButton = ({
     customClasses = null,
     icon = null,
     iconRight = null,
+    isCondensed = false,
     isDestructive = false,
     isDisabled = false,
     isInverse = false,
@@ -53,6 +54,7 @@ export const QDSButton = ({
             customClasses={isSave ? `${customSaveClasses}` : classNames(customClasses)}
             icon={icon}
             iconRight={iconRight}
+            isCondensed={isCondensed}
             isDestructive={isDestructive}
             isDisabled={isDisabled}
             isInverse={isInverse}
@@ -69,6 +71,7 @@ QDSButton.propTypes = {
     customClasses: PropTypes.string,
     icon: PropTypes.string,
     iconRight: PropTypes.string,
+    isCondensed: PropTypes.bool,
     isDestructive: PropTypes.bool,
     isDisabled: PropTypes.bool,
     isInverse: PropTypes.bool,

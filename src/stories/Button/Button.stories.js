@@ -23,7 +23,8 @@ export const PrimaryButton = {
     },
     argTypes: {
         customClasses: { table: { disable: true } },
-        clickHandler: { table: { disable: true } }
+        clickHandler: { table: { disable: true } },
+        isCondensed: { table: { disable: true } }
     }
 };
 
@@ -145,6 +146,17 @@ export const DestructiveGhostButton = {
     args: {
         ...PrimaryButton.args,
         isDestructive: true,
+        type: 'ghost'
+    },
+    argTypes: {
+        ...PrimaryButton.argTypes
+    }
+};
+
+export const CondensedGhostButton = {
+    args: {
+        ...PrimaryButton.args,
+        isCondensed: true,
         type: 'ghost'
     },
     argTypes: {
