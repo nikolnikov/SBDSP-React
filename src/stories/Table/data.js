@@ -102,21 +102,21 @@ export const tableCellDataTwo = [
         actions: {
             menuItems: [
                 {
-                    title: 'Edit',
+                    label: 'Edit',
                     icon: 'edit',
                     action: () => {
                         console.log('Edit');
                     }
                 },
                 {
-                    title: 'Print',
+                    label: 'Print',
                     icon: 'print',
                     action: () => {
                         console.log('Print');
                     }
                 },
                 {
-                    title: 'Delete',
+                    label: 'Delete',
                     icon: 'trash',
                     action: () => {
                         console.log('Delete');
@@ -140,21 +140,21 @@ export const tableCellDataTwo = [
         actions: {
             menuItems: [
                 {
-                    title: 'Edit',
+                    label: 'Edit',
                     icon: 'edit',
                     action: () => {
                         console.log('Edit');
                     }
                 },
                 {
-                    title: 'Print',
+                    label: 'Print',
                     icon: 'print',
                     action: () => {
                         console.log('Print');
                     }
                 },
                 {
-                    title: 'Delete',
+                    label: 'Delete',
                     icon: 'trash',
                     action: () => {
                         console.log('Delete');
@@ -175,21 +175,21 @@ export const tableCellDataTwo = [
         actions: {
             menuItems: [
                 {
-                    title: 'Edit',
+                    label: 'Edit',
                     icon: 'edit',
                     action: () => {
                         console.log('Edit');
                     }
                 },
                 {
-                    title: 'Print',
+                    label: 'Print',
                     icon: 'print',
                     action: () => {
                         console.log('Print');
                     }
                 },
                 {
-                    title: 'Delete',
+                    label: 'Delete',
                     icon: 'trash',
                     action: () => {
                         console.log('Delete');
