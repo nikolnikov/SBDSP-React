@@ -25,7 +25,7 @@ const QDSButton = ({
                     className={classNames('ds-button', customClasses, {
                         [`--${type}`]: type,
                         '--primary': type !== 'secondary',
-                        [`--${size}`]: size,
+                        [`--${size}`]: size && type !== 'option',
                         '--destructive': isDestructive,
                         '--disabled': isDisabled,
                         '--inverse': isInverse,
@@ -60,8 +60,11 @@ const QDSButton = ({
                 <button
                     className={classNames('ds-button', customClasses, {
                         [`--${type}`]: type,
-                        '--primary': type !== 'ghost' && type !== 'secondary',
-                        [`--${size}`]: size,
+                        '--primary':
+                            type !== 'ghost' &&
+                            type !== 'secondary' &&
+                            type !== 'option',
+                        [`--${size}`]: size && type !== 'option',
                         '--condensed': isCondensed,
                         '--destructive': isDestructive,
                         '--disabled': isDisabled,
@@ -106,7 +109,7 @@ QDSButton.propTypes = {
     isSave: PropTypes.bool,
     label: PropTypes.string,
     size: PropTypes.oneOf(['sm', 'lg']),
-    type: PropTypes.oneOf(['primary', 'secondary', 'ghost'])
+    type: PropTypes.oneOf(['primary', 'secondary', 'ghost', 'option'])
 };
 
 export default QDSButton;

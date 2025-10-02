@@ -106,7 +106,7 @@ const DatepickerInput = ({
             {errorMessage && (
                 <div className="ds-input__error">{errorMessage}</div>
             )}
-            {hintMessage && !errorMessage && (
+            {hintMessage && !hasError && (
                 <div className="ds-input__hint">{hintMessage}</div>
             )}
         </div>

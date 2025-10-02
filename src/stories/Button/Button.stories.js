@@ -163,3 +163,14 @@ export const CondensedGhostButton = {
         ...PrimaryButton.argTypes
     }
 };
+
+export const OptionButton = {
+    args: {
+        ...PrimaryButton.args,
+        label: 'Option button with a longer label',
+        type: 'option'
+    },
+    argTypes: {
+        ...PrimaryButton.argTypes
+    }
+};

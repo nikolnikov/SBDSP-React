@@ -15,10 +15,15 @@ const QDSIconButton = ({
     isInverse,
     size = 'lg',
     tooltip,
-    tooltipPlacement = 'top'
+    tooltipPlacement = 'top',
+    hideTooltipOnClick = true
 }) => {
     return tooltip ? (
-        <QDSTooltip message={tooltip} placement={tooltipPlacement}>
+        <QDSTooltip
+            message={tooltip}
+            placement={tooltipPlacement}
+            closeOnChildClick={hideTooltipOnClick}
+        >
             <button
                 className={classNames('ds-button --icon', customClasses, {
                     [`--${size}`]: size,
@@ -57,7 +62,8 @@ QDSIconButton.propTypes = {
     isInverse: PropTypes.bool,
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
     tooltip: PropTypes.string,
-    tooltipPlacement: PropTypes.oneOf(['top', 'right', 'bottom', 'left'])
+    tooltipPlacement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+    hideTooltipOnClick: PropTypes.bool
 };
 
 export default QDSIconButton;

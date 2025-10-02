@@ -240,3 +240,8 @@ body.sb-show-main.dark-theme {
 #storybook-root hr {
     width: calc(100vw - 30px);
 }
+
+.ds-chatbot__intro .ds-button,
+.ds-chatbot__feedback-options .ds-button {
+    margin: 0;
+}

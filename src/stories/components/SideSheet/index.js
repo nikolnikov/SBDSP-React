@@ -8,7 +8,8 @@ import QDSOverlay from '../Overlay';
 
 const QDSSideSheet = ({
     children,
-    customClasses = [],
+    customClasses,
+    isChatbot = false,
     onClose,
     opened,
     title
@@ -17,29 +18,42 @@ const QDSSideSheet = ({
 
     const onSidesheetScroll = e => {
         const sidesheetScrollTop = e.currentTarget.scrollTop;
-
-        sidesheetScrollTop > 0
-            ? sidesheetHeaderRef.current.classList.add('--scrolled')
-            : sidesheetHeaderRef.current?.classList.remove('--scrolled');
+        if (!sidesheetHeaderRef.current) return; // Only applies when chatbot header is rendered
+        if (sidesheetScrollTop > 0) {
+            sidesheetHeaderRef.current.classList.add('--scrolled');
+        } else {
+            sidesheetHeaderRef.current.classList.remove('--scrolled');
+        }
     };
 
     return (
         <>
             <div
                 className={classNames('ds-sidesheet', customClasses, {
-                    '--opened': opened
+                    '--opened': opened,
+                    '--chatbot': isChatbot
                 })}
                 onScroll={e => {
                     onSidesheetScroll(e);
                 }}
             >
-                <div className="ds-sidesheet__header" ref={sidesheetHeaderRef}>
-                    <span>{title}</span>
-
-                    <QDSIconButton icon="close" clickHandler={onClose} />
-                </div>
-
-                <div className="ds-sidesheet__content">{children}</div>
+                {isChatbot ? (
+                    children
+                ) : (
+                    <>
+                        <div
+                            className="ds-sidesheet__header"
+                            ref={sidesheetHeaderRef}
+                        >
+                            <span>{title}</span>
+                            <QDSIconButton
+                                icon="close"
+                                clickHandler={onClose}
+                            />
+                        </div>
+                        <div className="ds-sidesheet__content">{children}</div>
+                    </>
+                )}
             </div>
 
             <QDSOverlay clickHandler={onClose} noScroll opened={opened} />

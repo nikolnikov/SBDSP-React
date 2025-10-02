@@ -31,8 +31,8 @@ const QDSToggle = ({
                     type="checkbox"
                     id={inputId}
                     name={name}
-                    {...(isChecked && { defaultChecked: true })}
                     onChange={onChange}
+                    checked={isChecked}
                 />
                 <div className="ds-toggle-switch__slider"></div>
             </label>

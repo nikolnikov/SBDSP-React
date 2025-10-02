@@ -78,5 +78,5 @@ QDSButton.propTypes = {
     isSave: PropTypes.bool,
     clickHandler: PropTypes.func,
     size: PropTypes.oneOf(['sm', 'lg']),
-    type: PropTypes.oneOf(['primary', 'secondary', 'ghost']),
+    type: PropTypes.oneOf(['primary', 'secondary', 'ghost', 'option'])
 };

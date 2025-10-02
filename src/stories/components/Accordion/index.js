@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AccordionItem from './AccordionItem';
 import AccordionMultipleItems from './AccordionMultipleItems';
 import classNames from 'classnames';
@@ -15,12 +15,6 @@ const QDSAccordion = ({
     const [activeIndex, setActiveIndex] = useState(
         openSingleItem && defaultExpanded ? 0 : -1
     );
-
-    useEffect(() => {
-        if (openSingleItem) {
-            setActiveIndex(defaultExpanded ? 0 : -1);
-        }
-    }, [defaultExpanded, openSingleItem]);
 
     const content = accordionContent.map((item, index) => {
         if (openSingleItem) {
