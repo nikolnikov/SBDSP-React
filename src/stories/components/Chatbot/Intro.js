@@ -24,7 +24,6 @@ const QDSChatbotIntro = ({
                 not be considered a substitute for professional medical advice.
                 <div className="ds-mt-16 ds-flex --row --wrap --end-center">
                     <QDSButton
-                        customClasses="ds-mr-16"
                         clickHandler={onClose}
                         label="Cancel"
                         size="sm"

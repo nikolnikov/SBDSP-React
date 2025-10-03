@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import QDSButton from '../Button';
 import QDSIconButton from '../Button/IconButton.index';
 import QDSChatbotIntro from './Intro';
+import QDSToast from '../Toast';
 
 const getPrimaryResponse = response => {
     if (!response) return '';
@@ -33,6 +34,7 @@ const QDSChatbotContent = ({
     const [copiedByTurn, setCopiedByTurn] = useState({});
     const [activeThumbs, setActiveThumbs] = useState({});
     const [feedbackVisibility, setFeedbackVisibility] = useState({});
+    const [showFeedbackToast, setShowFeedbackToast] = useState(false);
 
     const renderFeedbackOptions = () => {
         if (!Array.isArray(feedbackOptions)) return null;
@@ -130,11 +132,27 @@ const QDSChatbotContent = ({
     const handleThumbsDownClick = turn => {
         const id = turn?.id;
         if (!id) return;
-        setActiveThumbs(prev => {
-            const nextVal = prev[id] === 'down' ? null : 'down';
-            setFeedbackVisibility(v => ({ ...v, [id]: nextVal === 'down' }));
-            return { ...prev, [id]: nextVal };
-        });
+        const isMobile =
+            typeof window !== 'undefined' && window.innerWidth < 768;
+        if (isMobile) {
+            // On small screens just acknowledge feedback via toast, do not open feedback block
+            setActiveThumbs(prev => {
+                const nextVal = prev[id] === 'down' ? null : 'down';
+                if (nextVal === 'down') setShowFeedbackToast(true);
+                return { ...prev, [id]: nextVal };
+            });
+            setFeedbackVisibility(prev => ({ ...prev, [id]: false }));
+        } else {
+            // Existing desktop / larger screen behavior
+            setActiveThumbs(prev => {
+                const nextVal = prev[id] === 'down' ? null : 'down';
+                setFeedbackVisibility(v => ({
+                    ...v,
+                    [id]: nextVal === 'down'
+                }));
+                return { ...prev, [id]: nextVal };
+            });
+        }
         if (typeof thumbsDownHandler === 'function') {
             thumbsDownHandler(turn);
         }
@@ -180,7 +198,9 @@ const QDSChatbotContent = ({
                                 data-testid="chatbot-response"
                             >
                                 {!isVisible ? (
-                                    <div className="ds-loading-data"></div>
+                                    <div className="ds-loading-data">
+                                        &nbsp;
+                                    </div>
                                 ) : (
                                     primary
                                 )}
@@ -201,7 +221,7 @@ const QDSChatbotContent = ({
                                                         )
                                                     }
                                                     icon="copy"
-                                                    size="sm"
+                                                    size="md"
                                                     tooltip="Copy"
                                                 />
                                             )}
@@ -210,37 +230,35 @@ const QDSChatbotContent = ({
                                                 <QDSIconButton
                                                     clickHandler={() => {}}
                                                     icon="check"
-                                                    size="sm"
+                                                    size="md"
                                                     tooltip="Copied"
                                                 />
                                             )}
 
                                             <QDSIconButton
-                                                customClasses={
-                                                    activeThumbs[turn.id] ===
-                                                    'up'
-                                                        ? '--active'
-                                                        : ''
-                                                }
                                                 clickHandler={() =>
                                                     handleThumbsUpClick(turn)
                                                 }
-                                                icon="thumbs-up"
-                                                size="sm"
+                                                icon={
+                                                    activeThumbs[turn.id] ===
+                                                    'up'
+                                                        ? 'thumbs-up-filled'
+                                                        : 'thumbs-up'
+                                                }
+                                                size="md"
                                                 tooltip="Good response"
                                             />
                                             <QDSIconButton
-                                                customClasses={
-                                                    activeThumbs[turn.id] ===
-                                                    'down'
-                                                        ? '--active'
-                                                        : ''
-                                                }
                                                 clickHandler={() =>
                                                     handleThumbsDownClick(turn)
                                                 }
-                                                icon="thumbs-down"
-                                                size="sm"
+                                                icon={
+                                                    activeThumbs[turn.id] ===
+                                                    'down'
+                                                        ? 'thumbs-down-filled'
+                                                        : 'thumbs-down'
+                                                }
+                                                size="md"
                                                 tooltip="Bad response"
                                             />
                                             <QDSIconButton
@@ -248,7 +266,7 @@ const QDSChatbotContent = ({
                                                     handleRetry(turn)
                                                 }
                                                 icon="arrows-counter-clockwise"
-                                                size="sm"
+                                                size="md"
                                                 tooltip="Try again"
                                             />
                                         </div>
@@ -286,6 +304,15 @@ const QDSChatbotContent = ({
                         </React.Fragment>
                     );
                 })}
+            {showFeedbackToast && (
+                <QDSToast
+                    opened={showFeedbackToast}
+                    onClose={() => setShowFeedbackToast(false)}
+                    message="Thanks for providing feedback"
+                    duration={5000}
+                    type="success"
+                />
+            )}
         </div>
     );
 };
