@@ -22,6 +22,7 @@ export const QDSChatbot = ({
     onClose,
     restart,
     responses = [],
+    responseLoadingDelay = 2000,
     suggestionQuestions = [],
     thumbsDownHandler,
     thumbsUpHandler,
@@ -70,6 +71,7 @@ export const QDSChatbot = ({
                     onClose={handleClose}
                     restart={restart}
                     responses={responses}
+                    responseLoadingDelay={responseLoadingDelay}
                     suggestionQuestions={suggestionQuestions}
                     thumbsDownHandler={thumbsDownHandler}
                     thumbsUpHandler={thumbsUpHandler}
@@ -113,6 +115,7 @@ QDSChatbot.propTypes = {
             followup: PropTypes.string
         })
     ),
+    responseLoadingDelay: PropTypes.number,
     suggestionQuestions: PropTypes.arrayOf(
         PropTypes.shape({
             question: PropTypes.string,

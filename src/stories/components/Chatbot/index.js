@@ -23,6 +23,7 @@ const QDSChatbot = ({
     onClose,
     restart,
     responses = [],
+    responseLoadingDelay,
     suggestionQuestions = [],
     thumbsDownHandler,
     thumbsUpHandler,
@@ -124,6 +125,7 @@ const QDSChatbot = ({
                     introMessage={introMessage}
                     suggestionQuestions={suggestionQuestions}
                     responses={responses}
+                    responseLoadingDelay={responseLoadingDelay}
                     showConversation={hasAskedFirstQuestion}
                     conversation={conversation}
                     onSuggestionSelect={handleSuggestionSelect}
@@ -183,6 +185,7 @@ QDSChatbot.propTypes = {
             })
         ])
     ),
+    responseLoadingDelay: PropTypes.number,
     suggestionQuestions: PropTypes.arrayOf(
         PropTypes.shape({
             question: PropTypes.string,

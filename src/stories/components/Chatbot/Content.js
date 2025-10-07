@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import QDSButton from '../Button';
 import QDSIconButton from '../Button/IconButton.index';
@@ -28,13 +28,26 @@ const QDSChatbotContent = ({
     contentRef,
     onRetry,
     thumbsDownHandler,
-    thumbsUpHandler
+    thumbsUpHandler,
+    responseLoadingDelay
 }) => {
     const [visibleResponses, setVisibleResponses] = useState({});
     const [copiedByTurn, setCopiedByTurn] = useState({});
     const [activeThumbs, setActiveThumbs] = useState({});
     const [feedbackVisibility, setFeedbackVisibility] = useState({});
     const [showFeedbackToast, setShowFeedbackToast] = useState(false);
+    // Internal ref to always have a DOM reference even if a ref isn't passed in
+    const internalContentRef = useRef(null);
+
+    // Utility to support either function refs or object refs passed via props
+    const attachContentRef = node => {
+        if (typeof contentRef === 'function') {
+            contentRef(node);
+        } else if (contentRef && typeof contentRef === 'object') {
+            contentRef.current = node; // eslint-disable-line no-param-reassign
+        }
+        internalContentRef.current = node;
+    };
 
     const renderFeedbackOptions = () => {
         if (!Array.isArray(feedbackOptions)) return null;
@@ -75,14 +88,29 @@ const QDSChatbotContent = ({
             if (turn?.id && !visibleResponses[turn.id]) {
                 const to = setTimeout(() => {
                     setVisibleResponses(prev => ({ ...prev, [turn.id]: true }));
-                }, 2000);
+                }, responseLoadingDelay);
                 timeouts.push(to);
             }
         });
         return () => {
             timeouts.forEach(t => clearTimeout(t));
         };
-    }, [conversation, visibleResponses]);
+    }, [conversation, visibleResponses, responseLoadingDelay]);
+
+    // Always keep the viewport scrolled to the bottom so the latest question/response is visible
+    useEffect(() => {
+        if (!showConversation) return;
+        const el = internalContentRef.current;
+        if (!el) return;
+        // Use requestAnimationFrame to ensure DOM has painted new content before scrolling
+        requestAnimationFrame(() => {
+            try {
+                el.scrollTop = el.scrollHeight;
+            } catch (e) {
+                /* noop */
+            }
+        });
+    }, [showConversation, conversation?.length, visibleResponses]);
 
     const copyContent = (text, turnId) => {
         if (!navigator?.clipboard || !text) return;
@@ -161,7 +189,7 @@ const QDSChatbotContent = ({
     return (
         <div
             className="ds-chatbot__content"
-            ref={contentRef}
+            ref={attachContentRef}
             onScroll={onScroll}
         >
             {!showConversation && (
@@ -355,6 +383,7 @@ QDSChatbotContent.propTypes = {
             })
         ])
     ),
+    responseLoadingDelay: PropTypes.number,
     onSuggestionSelect: PropTypes.func,
     onScroll: PropTypes.func,
     contentRef: PropTypes.oneOfType([
