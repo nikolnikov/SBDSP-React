@@ -170,8 +170,5 @@
         "presets": [
             "react-app"
         ]
-    },
-    "publishConfig": {
-        "registry": "http://cdrepo01.ops.medplus.com:8080/artifactory/api/npm/qdx-local-npm"
     }
 }
