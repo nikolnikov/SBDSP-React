@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import MuiMenu from '@mui/material/Menu';
+import MuiMenuItem from '@mui/material/MenuItem';
 import QDSTooltip from '../Tooltip';
 import QDSIconButton from '../Button/IconButton.index';
 
@@ -108,7 +109,14 @@ const QDSBreadcrumb = ({ customClasses = [], breadcrumbs = [] }) => {
 
             if (truncatedMenuItems.includes(index)) {
                 return (
-                    <button key={index} className="ds-menu__item">
+                    <MuiMenuItem
+                        key={index}
+                        className="ds-menu__item"
+                        onClick={() => {
+                            window.location.href = breadcrumb.href;
+                            handleMenuClose();
+                        }}
+                    >
                         <QDSTooltip
                             key={index}
                             message={breadcrumb.label}
@@ -116,7 +124,7 @@ const QDSBreadcrumb = ({ customClasses = [], breadcrumbs = [] }) => {
                         >
                             {content}
                         </QDSTooltip>
-                    </button>
+                    </MuiMenuItem>
                 );
             }
 

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import MuiMenu from '@mui/material/Menu';
+import MuiMenuItem from '@mui/material/MenuItem';
 import QDSIcon from '../Icon';
 import PropTypes from 'prop-types';
 
@@ -46,13 +47,14 @@ const QDSContextualMenu = ({
             }
             onClose={closeMenu}
             open={open}
+            autoFocus={true}
             PaperProps={{ sx: { width: menuWidth } }}
         >
             {children
                 ? children
                 : menuItems.map((item, idx) => {
                       return (
-                          <button
+                          <MuiMenuItem
                               aria-label={item.label}
                               key={idx}
                               className="ds-menu__item"
@@ -61,11 +63,12 @@ const QDSContextualMenu = ({
                                   closeMenu();
                               }}
                               role="menuitem"
-                              tabIndex={0}
+                              tabIndex={-1}
+                              autoFocus={idx === 0}
                           >
                               {item.icon && <QDSIcon name={item.icon} />}
                               {item.label}
-                          </button>
+                          </MuiMenuItem>
                       );
                   })}
         </MuiMenu>

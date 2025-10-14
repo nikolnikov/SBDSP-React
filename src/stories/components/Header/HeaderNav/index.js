@@ -177,7 +177,7 @@ const HeaderNav = ({
                         onClick={userMenuToggle}
                         ref={userMenuRef}
                     >
-                        <div className="ds-avatar --solid --medium">
+                        <div className="ds-avatar --solid --md">
                             {userAvatarInitial}
                         </div>
                         {userName && (
