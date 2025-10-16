@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import QDSButton from '../Button';
 import QDSIconButton from '../Button/IconButton.index';
@@ -10,6 +10,68 @@ const getPrimaryResponse = response => {
     const marker = ' Do you want me';
     const idx = response.indexOf(marker);
     return idx >= 0 ? response.substring(0, idx) : response;
+};
+
+// Custom hook for typing animation
+const useTypingEffect = (text, speed = 0, isVisible = false) => {
+    const [displayedText, setDisplayedText] = useState('');
+    const [isTyping, setIsTyping] = useState(false);
+    const [isComplete, setIsComplete] = useState(false);
+
+    useEffect(() => {
+        if (!isVisible || !text) {
+            setDisplayedText('');
+            setIsTyping(false);
+            setIsComplete(false);
+            return;
+        }
+
+        setIsTyping(true);
+        setIsComplete(false);
+        setDisplayedText('');
+
+        let currentIndex = 0;
+        const timer = setInterval(() => {
+            if (currentIndex < text.length) {
+                setDisplayedText(text.slice(0, currentIndex + 1));
+                currentIndex++;
+            } else {
+                setIsTyping(false);
+                setIsComplete(true);
+                clearInterval(timer);
+            }
+        }, speed);
+
+        return () => clearInterval(timer);
+    }, [text, speed, isVisible]);
+
+    return { displayedText, isTyping, isComplete };
+};
+
+// Component for individual response with typing effect
+const TypingResponse = ({ text, isVisible, turnId, onComplete }) => {
+    const { displayedText, isComplete } = useTypingEffect(text, 15, isVisible);
+
+    const handleComplete = useCallback(() => {
+        if (onComplete && turnId) {
+            onComplete(turnId);
+        }
+    }, [onComplete, turnId]);
+
+    useEffect(() => {
+        if (isComplete) {
+            handleComplete();
+        }
+    }, [isComplete, handleComplete]);
+
+    return <span>{displayedText}</span>;
+};
+
+TypingResponse.propTypes = {
+    text: PropTypes.string,
+    isVisible: PropTypes.bool,
+    turnId: PropTypes.string,
+    onComplete: PropTypes.func
 };
 
 const QDSChatbotContent = ({
@@ -36,6 +98,8 @@ const QDSChatbotContent = ({
     const [activeThumbs, setActiveThumbs] = useState({});
     const [feedbackVisibility, setFeedbackVisibility] = useState({});
     const [showFeedbackToast, setShowFeedbackToast] = useState(false);
+    const [typingComplete, setTypingComplete] = useState({});
+    const [followupTypingComplete, setFollowupTypingComplete] = useState({});
     // Internal ref to always have a DOM reference even if a ref isn't passed in
     const internalContentRef = useRef(null);
 
@@ -81,6 +145,12 @@ const QDSChatbotContent = ({
             if (Object.keys(visibleResponses).length > 0) {
                 setVisibleResponses({});
             }
+            if (Object.keys(typingComplete).length > 0) {
+                setTypingComplete({});
+            }
+            if (Object.keys(followupTypingComplete).length > 0) {
+                setFollowupTypingComplete({});
+            }
             return;
         }
         const timeouts = [];
@@ -95,7 +165,13 @@ const QDSChatbotContent = ({
         return () => {
             timeouts.forEach(t => clearTimeout(t));
         };
-    }, [conversation, visibleResponses, responseLoadingDelay]);
+    }, [
+        conversation,
+        visibleResponses,
+        responseLoadingDelay,
+        typingComplete,
+        followupTypingComplete
+    ]);
 
     // Always keep the viewport scrolled to the bottom so the latest question/response is visible
     useEffect(() => {
@@ -110,7 +186,13 @@ const QDSChatbotContent = ({
                 /* noop */
             }
         });
-    }, [showConversation, conversation?.length, visibleResponses]);
+    }, [
+        showConversation,
+        conversation?.length,
+        visibleResponses,
+        typingComplete,
+        followupTypingComplete
+    ]);
 
     const copyContent = (text, turnId) => {
         if (!navigator?.clipboard || !text) return;
@@ -139,10 +221,28 @@ const QDSChatbotContent = ({
         setActiveThumbs(prev => ({ ...prev, [turn.id]: null }));
         setFeedbackVisibility(prev => ({ ...prev, [turn.id]: false }));
         setCopiedByTurn(prev => ({ ...prev, [turn.id]: false }));
+        setTypingComplete(prev => ({ ...prev, [turn.id]: false }));
+        setFollowupTypingComplete(prev => ({ ...prev, [turn.id]: false }));
         if (typeof onRetry === 'function') {
             onRetry(turn);
         }
     };
+
+    // Memoized handler for typing completion
+    const handleTypingComplete = useCallback(turnId => {
+        setTypingComplete(prev => ({
+            ...prev,
+            [turnId]: true
+        }));
+    }, []);
+
+    // Memoized handler for followup typing completion
+    const handleFollowupTypingComplete = useCallback(turnId => {
+        setFollowupTypingComplete(prev => ({
+            ...prev,
+            [turnId]: true
+        }));
+    }, []);
 
     const handleThumbsUpClick = turn => {
         const id = turn?.id;
@@ -230,104 +330,134 @@ const QDSChatbotContent = ({
                                         &nbsp;
                                     </div>
                                 ) : (
-                                    primary
+                                    <TypingResponse
+                                        text={primary}
+                                        isVisible={isVisible}
+                                        turnId={turn.id}
+                                        onComplete={handleTypingComplete}
+                                    />
                                 )}
-                                {isVisible && primary && (
-                                    <>
-                                        {followup && (
-                                            <div className="ds-chatbot__response-followup">
-                                                {followup}
-                                            </div>
-                                        )}
-                                        <div className="ds-chatbot__response-actions">
-                                            {!copiedByTurn[turn.id] && (
-                                                <QDSIconButton
-                                                    clickHandler={() =>
-                                                        copyContent(
-                                                            primary,
-                                                            turn.id
-                                                        )
-                                                    }
-                                                    icon="copy"
-                                                    size="md"
-                                                    tooltip="Copy"
-                                                />
-                                            )}
-
-                                            {copiedByTurn[turn.id] && (
-                                                <QDSIconButton
-                                                    clickHandler={() => {}}
-                                                    icon="check"
-                                                    size="md"
-                                                    tooltip="Copied"
-                                                />
-                                            )}
-
-                                            <QDSIconButton
-                                                clickHandler={() =>
-                                                    handleThumbsUpClick(turn)
-                                                }
-                                                icon={
-                                                    activeThumbs[turn.id] ===
-                                                    'up'
-                                                        ? 'thumbs-up-filled'
-                                                        : 'thumbs-up'
-                                                }
-                                                size="md"
-                                                tooltip="Good response"
-                                            />
-                                            <QDSIconButton
-                                                clickHandler={() =>
-                                                    handleThumbsDownClick(turn)
-                                                }
-                                                icon={
-                                                    activeThumbs[turn.id] ===
-                                                    'down'
-                                                        ? 'thumbs-down-filled'
-                                                        : 'thumbs-down'
-                                                }
-                                                size="md"
-                                                tooltip="Bad response"
-                                            />
-                                            <QDSIconButton
-                                                clickHandler={() =>
-                                                    handleRetry(turn)
-                                                }
-                                                icon="arrows-counter-clockwise"
-                                                size="md"
-                                                tooltip="Try again"
-                                            />
-                                        </div>
-
-                                        {activeThumbs[turn.id] === 'down' &&
-                                            feedbackVisibility[turn.id] && (
-                                                <div className="ds-chatbot__feedback">
-                                                    <div className="ds-chatbot__feedback-content">
-                                                        <div className="ds-chatbot__feedback-title">
-                                                            Provide Feedback:
-                                                        </div>
-
-                                                        {renderFeedbackOptions()}
-                                                    </div>
-
-                                                    <div className="ds-chatbot__feedback-close">
-                                                        <QDSIconButton
-                                                            clickHandler={() =>
-                                                                setFeedbackVisibility(
-                                                                    prev => ({
-                                                                        ...prev,
-                                                                        [turn.id]: false
-                                                                    })
-                                                                )
-                                                            }
-                                                            icon="close"
-                                                            size="md"
-                                                        />
-                                                    </div>
+                                {isVisible &&
+                                    primary &&
+                                    typingComplete[turn.id] && (
+                                        <>
+                                            {followup && (
+                                                <div className="ds-chatbot__response-followup">
+                                                    <TypingResponse
+                                                        text={followup}
+                                                        isVisible={
+                                                            typingComplete[
+                                                                turn.id
+                                                            ]
+                                                        }
+                                                        turnId={turn.id}
+                                                        onComplete={
+                                                            handleFollowupTypingComplete
+                                                        }
+                                                    />
                                                 </div>
                                             )}
-                                    </>
-                                )}
+                                            {(!followup ||
+                                                followupTypingComplete[
+                                                    turn.id
+                                                ]) && (
+                                                <div className="ds-chatbot__response-actions">
+                                                    {!copiedByTurn[turn.id] && (
+                                                        <QDSIconButton
+                                                            clickHandler={() =>
+                                                                copyContent(
+                                                                    primary,
+                                                                    turn.id
+                                                                )
+                                                            }
+                                                            icon="copy"
+                                                            size="md"
+                                                            tooltip="Copy"
+                                                        />
+                                                    )}
+
+                                                    {copiedByTurn[turn.id] && (
+                                                        <QDSIconButton
+                                                            clickHandler={() => {}}
+                                                            icon="check"
+                                                            size="md"
+                                                            tooltip="Copied"
+                                                        />
+                                                    )}
+
+                                                    <QDSIconButton
+                                                        clickHandler={() =>
+                                                            handleThumbsUpClick(
+                                                                turn
+                                                            )
+                                                        }
+                                                        icon={
+                                                            activeThumbs[
+                                                                turn.id
+                                                            ] === 'up'
+                                                                ? 'thumbs-up-filled'
+                                                                : 'thumbs-up'
+                                                        }
+                                                        size="md"
+                                                        tooltip="Good response"
+                                                    />
+                                                    <QDSIconButton
+                                                        clickHandler={() =>
+                                                            handleThumbsDownClick(
+                                                                turn
+                                                            )
+                                                        }
+                                                        icon={
+                                                            activeThumbs[
+                                                                turn.id
+                                                            ] === 'down'
+                                                                ? 'thumbs-down-filled'
+                                                                : 'thumbs-down'
+                                                        }
+                                                        size="md"
+                                                        tooltip="Bad response"
+                                                    />
+                                                    <QDSIconButton
+                                                        clickHandler={() =>
+                                                            handleRetry(turn)
+                                                        }
+                                                        icon="arrows-counter-clockwise"
+                                                        size="md"
+                                                        tooltip="Try again"
+                                                    />
+                                                </div>
+                                            )}
+
+                                            {activeThumbs[turn.id] === 'down' &&
+                                                feedbackVisibility[turn.id] && (
+                                                    <div className="ds-chatbot__feedback">
+                                                        <div className="ds-chatbot__feedback-content">
+                                                            <div className="ds-chatbot__feedback-title">
+                                                                Provide
+                                                                Feedback:
+                                                            </div>
+
+                                                            {renderFeedbackOptions()}
+                                                        </div>
+
+                                                        <div className="ds-chatbot__feedback-close">
+                                                            <QDSIconButton
+                                                                clickHandler={() =>
+                                                                    setFeedbackVisibility(
+                                                                        prev => ({
+                                                                            ...prev,
+                                                                            [turn.id]: false
+                                                                        })
+                                                                    )
+                                                                }
+                                                                icon="close"
+                                                                size="md"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                )}
+                                        </>
+                                    )}
                             </div>
                         </React.Fragment>
                     );
